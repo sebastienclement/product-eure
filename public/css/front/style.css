@@ -1,0 +1,30 @@
+/* ================GENERALE================ */
+body{
+  background-color: lightgrey;
+}
+.wrap {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ================HEADER================ */
+header {
+    background-color: #FFF;
+    padding: 15px 0;
+}
+.menu-co {
+    display: flex;
+    justify-content: flex-end;
+}
+.menu-co li a{
+    padding: 5px;
+}
+
+
+/* ================MAIN================ */
+
+
+
+
+/* ================FOOTER================ */
