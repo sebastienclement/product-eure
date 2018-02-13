@@ -54,7 +54,7 @@ Route::group(['namespace' => 'Front'], function() {
 
 
 //Routes Admin
-Route::group(['namespace' => 'Admin'], function() {
+Route::group(['namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function() {
 
   //Route page accueil dashboard
   Route::get('/awesome-admin', 'AdminDashboardController@dashboard')->name('dashboard');
