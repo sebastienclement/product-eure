@@ -11,7 +11,10 @@ body{
 /* ================HEADER================ */
 header {
     background-color: #FFF;
-    padding: 15px 0;
+}
+nav#sticker {
+  padding: 15px 0;
+  z-index: 10000;
 }
 .menu-co {
     display: flex;
@@ -23,7 +26,9 @@ header {
 
 
 /* ================MAIN================ */
-
+section#carousel {
+  z-index: 5;
+}
 
 
 
