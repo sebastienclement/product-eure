@@ -9,27 +9,30 @@
   {!! Form::open(['route' => 'contact-action', 'method' => 'post', 'novalidate' => 'novalidate']) !!}
 
   <div class="form-group">
-    {!! Form::label('nom', 'Votre nom : ', ['class' => '']) !!}
-    {!! Form::text('nom', null, ['placeholder' => 'votre nom', 'class' => 'form-control']) !!}
-    {!! $errors->first('nom', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+    {!! Form::label('name', 'Votre item : ', ['class' => '']) !!}
+    {!! Form::text('name', null, ['placeholder' => 'votre item', 'class' => 'form-control']) !!}
+    {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
 
   <div class="form-group">
-    {!! Form::label('email', 'Votre e-mail : ', ['class' => '']) !!}
-    {!! Form::email('email', null,['placeholder' => 'example@gmail.com', 'class' => 'form-control']) !!}
-    {!! $errors->first('email', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+    {!! Form::label('comment', 'Description : ', ['class' => '']) !!}
+    {!! Form::text('comment', null, ['placeholder' => 'Description', 'class' => 'form-control']) !!}
+    {!! $errors->first('comment', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
 
   <div class="form-group">
-    {!! Form::label('sujet', 'Sujet : ', ['class' => '']) !!}
-    {!! Form::text('sujet', null, ['placeholder' => 'Sujet', 'class' => 'form-control']) !!}
-    {!! $errors->first('sujet', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-  </div>
-
-  <div class="form-group">
-    {!! Form::label('message', 'Votre message : ', ['class' => '']) !!}
-    {!! Form::textarea('message', null, ['placeholder' => 'Votre message', 'class' => 'form-control']) !!}
-    {!! $errors->first('message', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+    {!! Form::label('categorie', 'Catégorie : ', ['class' => '']) !!}<br>
+    {!! Form::select('categorie', [
+        'Catégrories'  => [
+            'Choix'  => 'Choix',
+            'Légumes'  => 'Légumes',
+            'Fruits'   => 'Fruits',
+            'Viandes'  => 'Viandes',
+            'Liquides' => 'Liquides',
+            'Crèmerie' => 'Crèmerie',
+            ]
+        ]); !!}
+    {!! $errors->first('categories', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
 
 
