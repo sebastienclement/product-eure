@@ -47,7 +47,7 @@ class ProducersTableSeeder extends Seeder
 
       $producers[] = array(
 
-          'user_id'=>'2',
+          'user_id'=>'3',
           'name'   =>  'john paul et compagnie',
           'siret' =>  12133215465,
           'adresse' => '28 rue de labas',

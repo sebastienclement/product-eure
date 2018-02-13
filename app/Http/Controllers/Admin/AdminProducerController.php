@@ -11,7 +11,7 @@ class AdminProducerController extends Controller
 {
   public function showListProducers()
   {
-    $producers = Producer::all();
+    $producers = Producer::with('user')->get();
     return view('admin/list-producers', compact('producers'));
   }
 
