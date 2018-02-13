@@ -332,15 +332,15 @@
     </div>
 
     <!-- jQuery -->
-    <script src="{{asset('js/jquery-1.9.1.min.js')}}"></script>
+    <script src="{{asset('js/admin/jquery-1.9.1.min.js')}}"></script>
     <!-- Bootstrap -->
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/admin/bootstrap.min.js')}}"></script>
     <!-- FastClick -->
-    <script src="{{asset('js/fastclick.js')}}"></script>
+    <script src="{{asset('js/admin/fastclick.js')}}"></script>
     <!-- NProgress -->
-    <script src="{{asset('js/nprogress.js')}}"></script>
+    <script src="{{asset('js/admin/nprogress.js')}}"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="{{asset('js/custom.min.js')}}"></script>
+    <script src="{{asset('js/admin/custom.min.js')}}"></script>
   </body>
 </html>
