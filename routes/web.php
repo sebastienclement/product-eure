@@ -57,7 +57,7 @@ Route::group(['namespace' => 'Front'], function() {
 Route::group(['namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function() {
 
   //Route page accueil dashboard
-  Route::get('/awesome-admin', 'AdminDashboardController@dashboard')->name('dashboard');
+  Route::get('/admin', 'AdminDashboardController@dashboard')->name('dashboard');
 
 
 //////
@@ -70,8 +70,8 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth', 'admin']], functi
   Route::post('/admin/new-item', 'AdminItemController@actionNewItem')->name('admin-new-item-action');
 
   //Route update item
-  Route::get('/admin/edit-item/{id}', 'AdminItemController@showEditItem')->name('admin-edit-item');
-  Route::put('/admin/edit-item/{id}', 'AdminItemController@actionEditItem')->name('admin-edit-item');
+  Route::get('/admin/edit-item/{id}', 'AdminItemController@showEditItem')->name('admin-edit-item-view');
+  Route::put('/admin/edit-item/{id}', 'AdminItemController@actionEditItem')->name('admin-edit-item-action');
 
   // Route suppression item
   Route::delete('/admin/delete-item/{id}', 'AdminItemController@deleteItem')->name('admin-delete-item');
@@ -85,12 +85,12 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth', 'admin']], functi
   Route::get('/admin/list-retails', 'AdminRetailController@showListRetails')->name('admin-list-retail');
 
   //Route ajout retail
-  Route::get('/admin/new-retail', 'AdminRetailController@showNewItem')->name('admin-new-item-view');
-  Route::post('/admin/new-retail', 'AdminRetailController@actionNewItem')->name('admin-new-item-action');
+  Route::get('/admin/new-retail', 'AdminRetailController@showNewItem')->name('admin-new-retail-view');
+  Route::post('/admin/new-retail', 'AdminRetailController@actionNewItem')->name('admin-new-retail-action');
 
   // Route update retail
-  Route::get('/admin/edit-retail/{id}', 'AdminRetailController@showEditRetail')->name('admin-edit-retail');
-  Route::put('/admin/edit-retail/{id}', 'AdminRetailController@actionEditRetail')->name('admin-edit-retail');
+  Route::get('/admin/edit-retail/{id}', 'AdminRetailController@showEditRetail')->name('admin-edit-retail-view');
+  Route::put('/admin/edit-retail/{id}', 'AdminRetailController@actionEditRetail')->name('admin-edit-retail-action');
 
   //Route supp retail
   Route::delete('/admin/delete-retail/{id}', 'AdminRetailController@deleteRetail')->name('admin-delete-retail');
