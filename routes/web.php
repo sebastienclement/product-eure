@@ -54,7 +54,7 @@ Route::group(['namespace' => 'Front'], function() {
 
 
 //Routes Admin
-Route::group(['namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function() {
+  Route::group(['namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function() {
 
   //Route page accueil dashboard
   Route::get('/admin', 'AdminDashboardController@dashboard')->name('dashboard');
@@ -104,8 +104,8 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth', 'admin']], functi
   Route::get('/admin/list-categories', 'AdminCategoryController@showListCategories')->name('admin-list-category');
 
   //Route ajout nouvelle categorie
-  Route::get('/admin/new-category', 'AdminCategoryController@showNewCategory')->name('admin-new-item-view');
-  Route::post('/admin/new-category', 'AdminCategoryController@actionNewCategory')->name('admin-new-item-action');
+  Route::get('/admin/new-category', 'AdminCategoryController@showNewCategory')->name('admin-new-category-view');
+  Route::post('/admin/new-category', 'AdminCategoryController@actionNewCategory')->name('admin-new-category-action');
 
   //Route update categorie
   Route::get('/admin/edit-category/{id}', 'AdminCategoryController@showEditCategory')->name('admin-edit-category');
