@@ -8,6 +8,7 @@
 @endsection
 
 @section('content')
+  <section id="carousel">
     <div class="flexslider">
       <ul class="slides">
         <li>
@@ -24,17 +25,16 @@
         </li>
       </ul>
     </div>
-    
+  </section>
 @endsection
 
 @section('js')
-  <script src="{{ asset('js/jquery-1.9.1.min.js') }}" charset="utf-8"></script>
+  {{-- <script src="{{ asset('js/jquery.min.js') }}" charset="utf-8"></script> --}}
+
   <script src="{{ asset('js/jquery.flexslider.js') }}" charset="utf-8"></script>
   <script type="text/javascript">
-  $(window).load(function() {
     $('.flexslider').flexslider({
       animation: "slide"
-    });
   });
   </script>
 @endsection

@@ -11,7 +11,11 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <header>
+<header>
+<div class="" style="background-color:cyan; height:100px;">
+
+</div>
+  <nav id="sticker">
     <div class="wrap">
         <ul class="nav navbar-nav navbar-right menu-co">
             <!-- Authentication Links -->
@@ -43,11 +47,20 @@
         @endif
         </ul>
     </div>
+  </nav>
+
 </header>
 <main>
     @yield('content')
 </main>
 <footer>
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" charset="utf-8"></script>
+<script src="{{ asset('js/jquery.sticky.js') }}" charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#sticker").sticky({topSpacing:0});
+});
+</script>
 @yield('js')
 </body>
