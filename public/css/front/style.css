@@ -1,6 +1,6 @@
 /* ================GENERALE================ */
 body{
-  background-color: lightgrey;
+  /* background-color: green; */
 }
 .wrap {
     max-width: 1200px;
@@ -14,7 +14,6 @@ header {
 }
 nav#sticker {
   padding: 15px 0;
-  z-index: 10000;
 }
 .menu-co {
     display: flex;
@@ -23,13 +22,34 @@ nav#sticker {
 .menu-co li a{
     padding: 5px;
 }
-
-
 /* ================MAIN================ */
-section#carousel {
-  z-index: 5;
+
+section#para {
+  margin: 100px 0 50px;
+}
+div#parallax {
+  background: url("../../img/deux.jpg") no-repeat fixed;
+  background-size: cover;
+  height: 400px;
+}
+section#map {
+  text-align: center;
+}
+section#map h1 {
+  font-size: 40px;
+  padding: 20px 0;
 }
 
 
-
 /* ================FOOTER================ */
+footer {
+  padding: 30px;
+  background-color: grey;
+}
+footer ul {
+  display: flex;
+  justify-content: space-around;
+}
+footer ul li {
+  width: 30%;
+}

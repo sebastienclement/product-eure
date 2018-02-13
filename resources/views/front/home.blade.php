@@ -26,6 +26,18 @@
       </ul>
     </div>
   </section>
+  <section id="para">
+    <div id="parallax"></div>
+  </section>
+
+  <section id="map">
+    <h1>Map de recherche.</h1>
+    <div class="carte">
+      <img src="{{ asset('img/4607.jpg')}}" style="height:800px; width:800px;"alt="">
+
+    </div>
+  </section>
+
 @endsection
 
 @section('js')
