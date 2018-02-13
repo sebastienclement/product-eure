@@ -22,11 +22,11 @@ class Producer_retailTableSeeder extends Seeder
           'retail_id'=> 2,
       );
       $producerretail[] = array(
-          'producer_id'   =>  1,
+          'producer_id'   =>  2,
           'retail_id'=> 2,
       );
       $producerretail[] = array(
-          'producer_id'   =>  2,
+          'producer_id'   =>  1,
           'retail_id'=> 1,
       );
       DB::table('producer_retail')->insert($producerretail);
