@@ -12,7 +12,6 @@ class AdminItemController extends Controller
     public function showListItems()
     {
       $items = Item::with('category')->get();
-
       return view('admin/list-items', compact('items'));
     }
 

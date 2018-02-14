@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-  <section id="carousel">
+  {{-- <section id="carousel">
     <div class="flexslider">
       <ul class="slides">
         <li>
@@ -25,7 +25,13 @@
         </li>
       </ul>
     </div>
-  </section>
+  </section> --}}
+  <div id="presentation">
+    <div class="wrap">
+      <p> Bienvenue chez Product'eure. Trouvez tout ce que notre département peut vous offrir. Viandes, Légumes, Fromage, Produits Fabriqués...
+          Et bien plus encore. Achetez des produits frais et locales et soutenez nos agriculteurs.</p>
+    </div>
+  </div>
   <section id="para">
     <div id="parallax"></div>
   </section>
@@ -43,10 +49,7 @@
 @section('js')
   {{-- <script src="{{ asset('js/jquery.min.js') }}" charset="utf-8"></script> --}}
 
-  <script src="{{ asset('js/jquery.flexslider.js') }}" charset="utf-8"></script>
-  <script type="text/javascript">
-    $('.flexslider').flexslider({
-      animation: "slide"
-  });
-  </script>
+  <script src="{{ asset('js/front/jquery.flexslider.js') }}" charset="utf-8"></script>
+  <script src="{{ asset('js/front/main.js') }}" charset="utf-8"></script>
+
 @endsection

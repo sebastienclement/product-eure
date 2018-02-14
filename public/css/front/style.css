@@ -1,33 +1,80 @@
 /* ================GENERALE================ */
 body{
-  /* background-color: green; */
+  /* background-color: #3E8022; */
+}
+*,h1,h2,h3,p{
+  font-family: 'Roboto', sans-serif;
 }
 .wrap {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+
+}
+
+a, a:visited{
+    text-decoration: none;
+    color: #000;
 }
 
 /* ================HEADER================ */
 header {
-    background-color: #FFF;
+    background-color: #99CCFF;
+    position: relative;
+
+}
+
+header h1{
+    font-size: 3rem;
+    color:#000;
+    line-height: 100px;
+    font-weight: bold;
 }
 nav#sticker {
-  padding: 15px 0;
+  z-index: 10000;
 }
+
+nav ul li a{
+  text-transform: uppercase;
+  line-height: 100px;
+}
+
+nav ul li a:hover{
+  background-color: #3E8022;
+  color:white;
+}
+
 .menu-co {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+
 }
 .menu-co li a{
     padding: 5px;
+}
+
+#inscription a{
+  text-transform: uppercase;
+  border-bottom: 1px solid green;
+  margin-left: 6px;
+
+
 }
 /* ================MAIN================ */
 
 section#para {
   margin: 100px 0 50px;
 }
-div#parallax {
+#presentation{
+  background-color: #3E8022;
+  padding:2%;
+}
+#presentation p {
+  font-size:1.3rem;
+  color:white;
+}
+
+ div#parallax {
   background: url("../../img/deux.jpg") no-repeat fixed;
   background-size: cover;
   height: 400px;
