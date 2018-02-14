@@ -20,7 +20,7 @@
         <ul class="nav navbar-nav navbar-right flex">
             <li><a href="{{ route('home') }}"><img src="{{ asset('img/logo.png')}}"></a></li>
             <nav class="menu-co" id="sticker">
-            <li><a href="#">Produits</a></li>
+            <li><a href="{{ route('list-item') }}">Produits</a></li>
             <li><a href="{{ route('list-producer') }}">Producteurs</a></li>
             @if (Auth::guest())
                 {{-- <li><a href="{{ route('login') }}">Nos Producteurs</a></li> --}}

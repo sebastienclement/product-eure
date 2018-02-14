@@ -15,9 +15,13 @@
   <ul>
   @foreach ($categories as $key => $categorie)
       <div class="single_prod">
-        <li><h3><a href="#">{{$categorie->name}}</a></h3></li>
-        <li>{{$categorie->description}}</li>
-        <li>{{$categorie->zone}}</li>
+        <li><h3><a href="#">{{ucfirst($categorie->name)}}</a></h3></li>
+          <li>
+            <ul>@foreach ($categorie->item as $i)
+                    <li>{{ $i->name}}</li>
+                @endforeach
+            </ul>
+          </li>
       </div>
   @endforeach
 </ul>

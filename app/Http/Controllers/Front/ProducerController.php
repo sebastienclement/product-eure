@@ -11,7 +11,7 @@ class ProducerController extends Controller
     public function showProfilProducer($id)
     {
       $producer = Producer::with('item','retail')->findOrFail($id);
-      dd($producer);
+      
       return view('front/profil-public', compact('producer'));
     }
 

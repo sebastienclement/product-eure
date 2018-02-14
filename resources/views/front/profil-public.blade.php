@@ -18,7 +18,12 @@
         <li>{{$a->name}}</li>
   @endforeach
   </ul>
-
+  <ul>
+  @foreach ($producer->retail as $b)
+        <li>{{$b->name}}</li>
+        <li>{{$b->lieu}}</li>
+  @endforeach
+  </ul>
   <img src="{{$producer->path_image}}" alt="Une photo de {{$producer->name}}">
 @endsection
 

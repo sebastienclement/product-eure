@@ -32,7 +32,7 @@ Route::group(['namespace' => 'Front'], function() {
   Route::get('/nos-producteurs', 'ProducerController@showAllProducers')->name('list-producer');
 
   // Route listing items
-  Route::get('/nos-produits', 'CategoryController@showAllCategories')->name('item-producer');
+  Route::get('/nos-produits', 'CategoryController@showAllCategories')->name('list-item');
 
   // Route profil public producteur
   Route::get('/profil/{id}', 'ProducerController@showProfilProducer')->name('profil-public');  // avec 'slug' en parametre
