@@ -19,7 +19,7 @@ class CategoriesTableSeeder extends Seeder
       );
 
       $categories[] = array(
-          'name'   =>  'legume',
+          'name'   =>  'légume',
       );
 
       $categories[] = array(

@@ -16,6 +16,8 @@
       <th scope="col">Produit</th>
       <th scope="col">Comment</th>
       <th scope="col">Categorie</th>
+      <th scope="col">Modifier</th>
+      <th scope="col">Effacer</th>
 
     </tr>
   </thead>
@@ -27,11 +29,15 @@
       <td>{{$item->name}}</td>
       <td>{{$item->comment}}</td>
       <td>{{$item->category->name}}</td>
+      <td><a href="{{ route('admin-edit-item-view',['id' => $item->id ]) }}">update</a></td>
+      <td>
+        {!! Form::open(['route' => ['admin-delete-item', $item->id], 'method' => 'delete', 'novalidate' => 'novalidate']) !!}
 
+          {!! Form::submit('Effacer', ['class' => 'btn btn-success']) !!}
 
-
+      {!! Form::close() !!}
+      </td>
     </tr>
-
   @endforeach
 
   </tbody>

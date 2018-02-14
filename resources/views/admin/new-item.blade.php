@@ -6,10 +6,11 @@
 @endsection
 
 @section('content')
-  {!! Form::open(['route' => 'contact-action', 'method' => 'post', 'novalidate' => 'novalidate']) !!}
+  {{-- {{ dd($select)}} --}}
+  {!! Form::open(['route' => 'admin-new-item-action', 'method' => 'post', 'novalidate' => 'novalidate']) !!}
 
   <div class="form-group">
-    {!! Form::label('name', 'Votre item : ', ['class' => '']) !!}
+    {!! Form::label('name', 'Votre produit : ', ['class' => '']) !!}
     {!! Form::text('name', null, ['placeholder' => 'votre item', 'class' => 'form-control']) !!}
     {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
@@ -22,19 +23,10 @@
 
   <div class="form-group">
     {!! Form::label('categorie', 'Catégorie : ', ['class' => '']) !!}<br>
-    {!! Form::select('categorie', [
-        'Catégrories'  => [
-            'Choix'  => 'Choix',
-            'Légumes'  => 'Légumes',
-            'Fruits'   => 'Fruits',
-            'Viandes'  => 'Viandes',
-            'Liquides' => 'Liquides',
-            'Crèmerie' => 'Crèmerie',
-            ]
-        ]); !!}
-    {!! $errors->first('categories', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+    {!! Form::select('categorie', $select, null, ['class'=>'']) !!}
+    {{-- {{ Form::select('categorie', $categories->pluck('name','id'), null, ['class'=>'']) }} --}}
+    {!! $errors->first('categorie', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
-
 
     {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}
 
