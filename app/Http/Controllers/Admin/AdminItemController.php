@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\NewItemRequest;
+use App\Http\Requests\AdminItemRequest;
 use Carbon\Carbon;
 use App\Models\Item;
 use App\Models\Category;//ajout
@@ -14,6 +14,8 @@ class AdminItemController extends Controller
     public function showListItems()
     {
       $items = Item::with('category')->get();
+
+
       return view('admin/list-items', compact('items'));
     }
 
@@ -24,11 +26,11 @@ class AdminItemController extends Controller
       $select[''] = 'tous';
       foreach($categories as $categorie){
         $select[$categorie->id] = $categorie->name;
-    }
+      }
       return view('admin/new-item', compact('select','categories'));//ajout compact
     }
 
-    public function actionNewItem(NewItemRequest $request)
+    public function actionNewItem(AdminItemRequest $request)
     {
       // Item::create($request->all());//ne fonctionne que si on modifie le nom du champ concerné
 
@@ -58,7 +60,7 @@ class AdminItemController extends Controller
       return view('admin/edit-item', compact('item','select'));
     }
 
-    public function actionEditItem(NewItemRequest $request,$id)
+    public function actionEditItem(AdminItemRequest $request,$id)
     {
       $item = Item::FindOrFail($id);
       // $item->update($request->all());
