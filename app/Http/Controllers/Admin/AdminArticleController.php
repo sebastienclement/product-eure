@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminArticleRequest;
 use Illuminate\Http\Request;
 
 use App\Models\Article;
@@ -21,9 +22,12 @@ class AdminArticleController extends Controller
     return view('admin/new-article');
   }
 
-  public function actionNewArticle(ArticleRequest $request)
+  public function newArticleAction(AdminArticleRequest $request)
   {
-    Article::create($request->all());
+    $inputs = array_merge($request->all(),['user_id' => Auth::id()]);
+    // dd($inputs);
+    Article::create($inputs);
+
     return redirect()->route('dashboard')->with('success', 'Article créé');
   }
 
@@ -33,7 +37,7 @@ class AdminArticleController extends Controller
     return view('admin/edit-article', compact('article'));
   }
 
-  public function actionEditArticle(ArticleRequest $request, $id)
+  public function actionEditArticle(AdminArticleRequest $request, $id)
   {
     $article = Article::FindOrFail($id);
     return redirect()->route('dashboard')->with('success', 'Article modifié');

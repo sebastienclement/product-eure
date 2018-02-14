@@ -19,6 +19,7 @@ class CreateItemsTable extends Migration
           $table->string('comment');
           $table->integer('category_id');
           $table->timestamps();
+          $table->softDeletes();
       });
     }
 

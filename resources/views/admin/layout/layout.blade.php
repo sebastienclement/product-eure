@@ -61,6 +61,7 @@
                   <li><a><i class="fa fa-cutlery "></i> Produits <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('admin-list-category')}}">Catégories</a></li>
+                      <li><a href="{{route('admin-new-category-view')}}">Nouvelle catégories</a></li>
                       <li><a href="{{route('admin-list-item')}}">Items</a></li>
                       <li><a href="{{route('admin-new-item-view')}}">Nouvel Item</a></li>
                     </ul>
@@ -76,7 +77,7 @@
                   <li><a><i class="fa fa-table"></i> Articles <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="tables.html">Articles</a></li>
-                      <li><a href="tables_dynamic.html">Nouvel Article</a></li>
+                      <li><a href="{{route('admin-new-article-view')}}">Nouvel Article</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>

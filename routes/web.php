@@ -114,8 +114,8 @@ Route::group(['namespace' => 'Front'], function() {
   Route::post('/admin/new-category', 'AdminCategoryController@actionNewCategory')->name('admin-new-category-action');
 
   //Route update categorie
-  Route::get('/admin/edit-category/{id}', 'AdminCategoryController@showEditCategory')->name('admin-edit-category');
-  Route::put('/admin/edit-category/{id}', 'AdminCategoryController@actionEditCategory')->name('admin-edit-category');
+  Route::get('/admin/edit-category/{id}', 'AdminCategoryController@showEditCategory')->where('id','[0-9]+')->name('admin-edit-category-view');
+  Route::put('/admin/edit-category/{id}', 'AdminCategoryController@actionEditCategory')->name('admin-edit-category-action');
 
   //Route supp categorie
   Route::delete('/admin/delete-category/{id}', 'AdminCategoryController@deleteCategory')->name('admin-delete-category');
@@ -148,7 +148,7 @@ Route::group(['namespace' => 'Front'], function() {
   Route::get('/admin/list-article', 'AdminArticleController@showListArticles')->name('admin-list-article');
 
   //Route ajout article
-  Route::get('/admin/new-article', 'AdminArticleController@newArticle')->name('admin-new-article-view');
+  Route::get('/admin/new-article', 'AdminArticleController@showNewArticle')->name('admin-new-article-view');
   Route::post('/admin/new-article', 'AdminArticleController@newArticleAction')->name('admin-new-article-action');
 
   //Route update article

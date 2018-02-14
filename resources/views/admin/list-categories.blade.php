@@ -13,7 +13,9 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nom de la catégorie</th>
+      <th>Nom de la catégorie</th>
+      <th>Modifier</th>
+      <th>Effacer</th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +24,14 @@
     <tr>
       <th scope="row">{{$category->id}}</th>
       <td>{{$category->name}}</td>
+      <td><a href="{{ route('admin-edit-category-view',['id' => $category->id ]) }}">update</a></td>
+      <td>
+        {!! Form::open(['route' => ['admin-delete-category', $category->id], 'method' => 'delete', 'novalidate' => 'novalidate']) !!}
+
+          {!! Form::submit('Effacer', ['class' => 'btn btn-success']) !!}
+
+      {!! Form::close() !!}
+      </td>
     </tr>
 
   @endforeach

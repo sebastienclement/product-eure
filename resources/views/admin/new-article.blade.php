@@ -6,6 +6,23 @@
 @endsection
 
 @section('content')
+  {!! Form::open(['route' => 'admin-new-article-action', 'method' => 'post', 'novalidate' => 'novalidate']) !!}
+
+  <div class="form-group">
+    {!! Form::label('title', 'Votre titre : ', ['class' => '']) !!}
+    {!! Form::text('title', null, ['placeholder' => 'votre titre', 'class' => 'form-control']) !!}
+    {!! $errors->first('title', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+  </div>
+
+  <div class="form-group">
+    {!! Form::label('content', 'Description : ', ['class' => '']) !!}
+    {!! Form::text('content', null, ['placeholder' => 'Description', 'class' => 'form-control']) !!}
+    {!! $errors->first('content', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+  </div>
+
+    {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}
+
+  {!! Form::close() !!}
 @endsection
 
 @section('js')
