@@ -6,6 +6,7 @@
 @endsection
 
 @section('content')
+  {{-- {{ dd($items)}} --}}
   <div class="title_left">
     <h3>Listing des Produits par Catégories</h3>
   </div>
