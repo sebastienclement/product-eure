@@ -76,7 +76,7 @@
                   </li>
                   <li><a><i class="fa fa-table"></i> Articles <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tables.html">Articles</a></li>
+                      <li><a href="{{route('admin-list-article')}}">Articles</a></li>
                       <li><a href="{{route('admin-new-article-view')}}">Nouvel Article</a></li>
                     </ul>
                   </li>

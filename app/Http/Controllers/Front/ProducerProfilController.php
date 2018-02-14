@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Producer;
 use App\Http\Requests\ProducerRequest;
+// use App\Http\Middleware\Abonne;
 use Auth;
 
 class ProducerProfilController extends Controller
@@ -14,7 +15,7 @@ class ProducerProfilController extends Controller
   public function __construct()
   {
     $this->middleware('auth');
-    // $this->middleware('abonne');
+    $this->middleware('abonne');
   }
 
   /**
