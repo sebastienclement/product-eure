@@ -152,7 +152,7 @@ Route::group(['namespace' => 'Front'], function() {
   Route::post('/admin/new-article', 'AdminArticleController@newArticleAction')->name('admin-new-article-action');
 
   //Route update article
-  Route::get('/admin/edit-article', 'AdminArticleController@showEditArticle')->name('admin-edit-article-view');
+  Route::get('/admin/edit-article/{id}', 'AdminArticleController@showEditArticle')->where('id','[0-9]+')->name('admin-edit-article-view');
   Route::put('/admin/edit-article', 'AdminArticleController@actionEditArticle')->name('admin-edit-article-action');
 
   //Route supp article
