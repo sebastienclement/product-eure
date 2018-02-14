@@ -50,6 +50,6 @@
   {{-- <script src="{{ asset('js/jquery.min.js') }}" charset="utf-8"></script> --}}
 
   <script src="{{ asset('js/front/jquery.flexslider.js') }}" charset="utf-8"></script>
-  <script src="{{ asset('js/front/main.js') }}" charset="utf-8"></script>
+
 
 @endsection

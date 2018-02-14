@@ -6,18 +6,18 @@
 @endsection
 
 @section('content')
-  <h2>Tous nos producteurs</h2>
+  <h2>Tous nos produits</h2>
 @php
   // dd($producers)
 @endphp
 
 <div class="wrap">
   <ul>
-  @foreach ($producers as $key => $producer)
+  @foreach ($categories as $key => $categorie)
       <div class="single_prod">
-        <li><h3><a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">{{$producer->name}}</a></h3></li>
-        <li>{{$producer->description}}</li>
-        <li>{{$producer->zone}}</li>
+        <li><h3><a href="#">{{$categorie->name}}</a></h3></li>
+        <li>{{$categorie->description}}</li>
+        <li>{{$categorie->zone}}</li>
       </div>
   @endforeach
 </ul>

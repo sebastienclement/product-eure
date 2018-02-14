@@ -20,8 +20,6 @@ a, a:visited{
 /* ================HEADER================ */
 header {
     background-color: #99CCFF;
-    position: relative;
-
 }
 
 header h1{
@@ -30,13 +28,15 @@ header h1{
     line-height: 100px;
     font-weight: bold;
 }
+.flex{
+    display: flex;
+}
 nav#sticker {
   z-index: 10000;
 }
 
 nav ul li a{
   text-transform: uppercase;
-  line-height: 100px;
 }
 
 nav ul li a:hover{
@@ -46,27 +46,38 @@ nav ul li a:hover{
 
 .menu-co {
     display: flex;
-    justify-content: space-between;
-
+    justify-content: flex-end;
+    width:80%;
+    align-self: flex-end;
+    padding: 10px;
 }
+
 .menu-co li a{
-    padding: 5px;
+    display: block;
+    margin: 0 30px;
+    font-size: 1.4rem;
 }
 
-#inscription a{
-  text-transform: uppercase;
-  border-bottom: 1px solid green;
-  margin-left: 6px;
+.menu-co li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #D19B26;
+    transition: width .3s;
+}
 
-
+.menu-co li a:hover:after {
+    width: 100%;
+    //transition: width .3s;
 }
 /* ================MAIN================ */
 
 section#para {
-  margin: 100px 0 50px;
+  /* margin: 100px 0 50px; */
 }
 #presentation{
-  background-color: #3E8022;
+  background-color: rgba(104,157,113,0.9);
   padding:2%;
 }
 #presentation p {
@@ -87,7 +98,24 @@ section#map h1 {
   padding: 20px 0;
 }
 
+.single_prod{
+  padding: 10px;
+  border-radius: 8px;
+  border:1px solid #D19B26;
+  float:left;
+  width:48%;
+  margin:1%;
+}
+ h2{
+  text-align: center;
+  padding:30px;
+  font-size: 1.4rem;
+}
+.single_prod h3{
+  padding: 10px 0 ;
+  font-weight: bold;
 
+}
 /* ================FOOTER================ */
 footer {
   padding: 30px;
@@ -96,7 +124,4 @@ footer {
 footer ul {
   display: flex;
   justify-content: space-around;
-}
-footer ul li {
-  width: 30%;
 }
