@@ -44,10 +44,10 @@ class HomeController extends Controller
       $b = ProducerRetail::all();
 
 
-      $c = Producer::find(2)->retail;
-          foreach ($c as $d) {
-            echo $d->name;
-          }
+      // $c = Producer::find(2)->retail;
+      //     foreach ($c as $d) {
+      //       echo $d->name;
+      //     }
 
 
 
