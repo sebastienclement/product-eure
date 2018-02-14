@@ -8,11 +8,11 @@ use App\Models\Producer;
 
 class ProducerController extends Controller
 {
-    public function showProfilProducer($slug)
+    public function showProfilProducer($id)
     {
-      $producer = Producer::findOrFail($slug);
-
-      return view('front/profil-public/', compact('producer'));
+      $producer = Producer::with('item','retail')->findOrFail($id);
+      dd($producer);
+      return view('front/profil-public', compact('producer'));
     }
 
     public function showAllProducers()

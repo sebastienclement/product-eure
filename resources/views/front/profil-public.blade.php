@@ -13,6 +13,12 @@
 
   <p>{{$producer->adresse}}</p>
 
+  <ul>
+  @foreach ($producer->item as $a)
+        <li>{{$a->name}}</li>
+  @endforeach
+  </ul>
+
   <img src="{{$producer->path_image}}" alt="Une photo de {{$producer->name}}">
 @endsection
 
