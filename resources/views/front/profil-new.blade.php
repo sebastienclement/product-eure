@@ -3,9 +3,11 @@
 @endsection
 
 @section('title')
+  Inscrivez-vous
 @endsection
 
 @section('content')
+  @include('front.formulaire-producer')
 @endsection
 
 @section('js')

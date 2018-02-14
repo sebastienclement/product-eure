@@ -4,13 +4,33 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Producer;
+use App\Http\Requests\ProducerRequest;
+use Auth;
+
 class ProducerProfilController extends Controller
 {
+
+  public function __construct()
+  {
+    $this->middleware('auth');
+    // $this->middleware('abonne');
+  }
+
+  /**
+   * [showEditProfilProducer description]
+   * @return [type] [description]
+   */
   public function showEditProfilProducer()
   {
     return view('front/profil-edit');
   }
 
+
+  /**
+   * [actionEditProfilProducer description]
+   * @return [type] [description]
+   */
   public function actionEditProfilProducer()
   {
 
@@ -20,17 +40,33 @@ class ProducerProfilController extends Controller
     return redirect()->route('front/profil-edit')->with('success', 'Votre profil a été mis à jour');
   }
 
+  /**
+   * [showNewProfilProducer description]
+   * @return [type] [description]
+   */
   public function showNewProfilProducer()
   {
     return view('front/profil-new');
   }
 
-  public function actionNewProfilProducer()
+  /**
+   * [actionNewProfilProducer description]
+   * @param  ProducerRequest $request [description]
+   * @return [type]                   [description]
+   */
+  public function actionNewProfilProducer(ProducerRequest $request)
   {
 
     // Requete d'insertion dans la bdd sur la table producer
     // puis redirect sur la page profil éditable avec mess success
 
-    return redirect()->route('front/profil-edit')->with('success', 'Votre profil vient d\'être créé');
+     // dd($request);
+    $inputs = array_merge($request->all(), [
+     'user_id' => Auth::id(),
+     'slug' => str_slug($request->name)
+    ]);
+    Producer::create($inputs);
+
+    return redirect()->route('home')->with('success', 'Votre profil producteur vient d\'être créé');
   }
 }

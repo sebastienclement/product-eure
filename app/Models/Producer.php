@@ -8,7 +8,7 @@ class Producer extends Model
 {
     protected $table = "producers" ;
 
-    protected $fillable = ['name','content','statut','user_id', 'slug', 'description'];
+    protected $fillable = ['name','statut','user_id', 'slug', 'description','adresse','zipcode','phone','website','producer_email'];
 
 
   public function user()

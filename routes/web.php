@@ -39,8 +39,8 @@ Route::group(['namespace' => 'Front'], function() {
   Route::put('/mon-profil/{slug}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'slug' en parametre
 
   // Routes profil création producteur
-  Route::get('/profil/creer-un-profil', 'ProducerProfilController@showNewProfilProducer')->name('new-profil-view');
-  Route::post('/profil/creer-un-profil', 'ProducerProfilController@actionNewProfilProducer')->name('new-profil-action');
+  Route::get('/creer-un-profil', 'ProducerProfilController@showNewProfilProducer')->name('new-profil-view');
+  Route::post('/creer-un-profil', 'ProducerProfilController@actionNewProfilProducer')->name('new-profil-action');
 
   //Route resultat de recherche
   Route::get('/recherche', 'SearchController@actionSearchForm')->name('search-result');

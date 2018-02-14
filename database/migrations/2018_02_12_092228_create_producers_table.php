@@ -20,10 +20,14 @@ class CreateProducersTable extends Migration
               ->onDelete('restrict')->onUpdate('restrict');
         $table->string('name');
         $table->string('slug')->unique();
-        $table->string('siret');
+        $table->string('siret')->nullable();
         $table->string('adresse');
-        $table->text('description');
+        $table->integer('zipcode');
         $table->string('zone')->nullable();
+        $table->string('producer_email');
+        $table->string('phone')->nullable();
+        $table->string('website')->nullable();
+        $table->text('description');
         $table->string('path_img')->nullable();
         $table->timestamps();
       });
