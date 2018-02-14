@@ -70,7 +70,7 @@ Route::group(['namespace' => 'Front'], function() {
   Route::post('/admin/new-item', 'AdminItemController@actionNewItem')->name('admin-new-item-action');
 
   //Route update item
-  Route::get('/admin/edit-item/{id}', 'AdminItemController@showEditItem')->name('admin-edit-item-view');
+  Route::get('/admin/edit-item/{id}', 'AdminItemController@showEditItem')->where('id','[0-9]+')->name('admin-edit-item-view');
   Route::put('/admin/edit-item/{id}', 'AdminItemController@actionEditItem')->name('admin-edit-item-action');
 
   // Route suppression item
