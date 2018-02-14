@@ -19,8 +19,10 @@ class CreateProducersTable extends Migration
         $table->foreign('user_id')->references('id')->on('users')
               ->onDelete('restrict')->onUpdate('restrict');
         $table->string('name');
+        $table->string('slug')->unique();
         $table->string('siret');
         $table->string('adresse');
+        $table->text('description');
         $table->string('zone')->nullable();
         $table->string('path_img')->nullable();
         $table->timestamps();

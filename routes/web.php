@@ -28,12 +28,15 @@ Route::group(['namespace' => 'Front'], function() {
   Route::get('/mentions-legales', 'HomeController@mentions')->name('mentions');
   Route::get('/conditions-utilisation', 'HomeController@conditions')->name('conditions');
 
+  // Route listing producteurs
+  Route::get('/nos-producteurs', 'ProducerController@showAllProducers')->name('list-producer');
+
   // Route profil public producteur
-  Route::get('/profil/{name}', 'ProducerController@showProfilProducer')->name('profil-public');  // avec 'name' en parametre
+  Route::get('/profil/{slug}', 'ProducerController@showProfilProducer')->name('profil-public');  // avec 'slug' en parametre
 
   // Routes profil editable producteur
-  Route::get('/profil/{name}', 'ProducerProfilController@showEditProfilProducer')->name('edit-profil-view'); // avec 'name' en parametre
-  Route::put('/profil/{name}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'name' en parametre
+  Route::get('/mon-profil/{slug}', 'ProducerProfilController@showEditProfilProducer')->name('edit-profil-view'); // avec 'slug' en parametre
+  Route::put('/mon-profil/{slug}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'slug' en parametre
 
   // Routes profil création producteur
   Route::get('/profil/creer-un-profil', 'ProducerProfilController@showNewProfilProducer')->name('new-profil-view');
@@ -127,8 +130,8 @@ Route::group(['namespace' => 'Front'], function() {
   Route::post('/admin/new-producer', 'AdminProducerController@newProducerAction')->name('admin-new-producer-action');
 
   //Route update producer
-  Route::get('/admin/edit-producer/{id}', 'AdminProducerController@showEditProducer')->name('admin-edit-producer');
-  Route::put('/admin/edit-producer/{id}', 'AdminProducerController@actionEditProducer')->name('admin-edit-producer');
+  Route::get('/admin/edit-producer/{id}', 'AdminProducerController@showEditProducer')->name('admin-edit-producer-view');
+  Route::put('/admin/edit-producer/{id}', 'AdminProducerController@actionEditProducer')->name('admin-edit-producer-action');
 
   //Route supp producer
   Route::delete('/admin/delete-producer/{id}', 'AdminProducerController@deleteProducer')->name('admin-delete-producer');
@@ -146,8 +149,8 @@ Route::group(['namespace' => 'Front'], function() {
   Route::post('/admin/new-article', 'AdminArticleController@newArticleAction')->name('admin-new-article-action');
 
   //Route update article
-  Route::get('/admin/edit-article', 'AdminArticleController@showEditArticle')->name('admin-edit-article');
-  Route::put('/admin/edit-article', 'AdminArticleController@actionEditArticle')->name('admin-edit-article');
+  Route::get('/admin/edit-article', 'AdminArticleController@showEditArticle')->name('admin-edit-article-view');
+  Route::put('/admin/edit-article', 'AdminArticleController@actionEditArticle')->name('admin-edit-article-action');
 
   //Route supp article
   Route::delete('/admin/delete-article', 'AdminArticleController@deleteArticle')->name('admin-delete-article');
