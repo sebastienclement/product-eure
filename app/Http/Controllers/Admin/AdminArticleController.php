@@ -13,7 +13,7 @@ class AdminArticleController extends Controller
   {
     // systeme de brouillon pour les articles ???
     // $articles = Article::where('statut', '=', 'actif')->paginate(5);
-    return view('admin/dashboard', compact('articles'));
+    return view('admin/list-articles', compact('articles'));
   }
 
   public function showNewArticle()

@@ -15,11 +15,23 @@ class CategoriesTableSeeder extends Seeder
       $categories = [];
 
       $categories[] = array(
-          'name'   =>  'fruits',
+          'name'   =>  'fruit',
       );
 
       $categories[] = array(
-          'name'   =>  'legumes',
+          'name'   =>  'légume',
+      );
+
+      $categories[] = array(
+          'name'   =>  'viande',
+      );
+
+      $categories[] = array(
+          'name'   =>  'boisson',
+      );
+
+      $categories[] = array(
+          'name'   =>  'laitage',
       );
 
 
