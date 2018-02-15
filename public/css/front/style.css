@@ -135,3 +135,63 @@ footer ul {
   display: flex;
   justify-content: space-around;
 }
+
+
+/* ================= SVG MAP =================== */
+
+#search_map .content{
+    width:85%;
+    margin: auto;
+    padding: 70px 0;
+}
+
+#search_map .content .img-svg{
+	width:100%;
+	display: block;
+	margin:auto;
+	margin-bottom: 5em;
+}
+
+.img-svg path{
+		fill: SteelBlue;
+		stroke-width: 1px;
+		transition: fill 0.3s;
+}
+
+.img-svg path:hover{
+		fill: SteelBlue;
+    opacity: 0.4;
+    stroke-width:2px;
+    cursor: pointer;
+    stroke-linejoin: round;
+}
+
+.full_width {
+  width:100%;
+}
+
+.full_width h1{
+  font-size:1.6em;
+  text-align: center;
+  padding-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+#info-box {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 2px solid #BF0A30;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: arial;
+}
+
+#eure-map{
+  display: block;
+  /* position: absolute; */
+}

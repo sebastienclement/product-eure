@@ -16,8 +16,15 @@
 
   <div class="form-group">
     {!! Form::label('content', 'Description : ', ['class' => '']) !!}
-    {!! Form::text('content', null, ['placeholder' => 'Description', 'class' => 'form-control']) !!}
+    {!! Form::textarea('content', null, ['placeholder' => 'Description', 'class' => 'form-control']) !!}
     {!! $errors->first('content', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+  </div>
+  <div class="form-group">
+    {!! Form::label('status', 'Choix du status : ', ['class' => '']) !!}<br>
+    {!! Form::select('status', ['' => ' choix',
+      'brouillon'   => 'brouillon',
+      'publié' => 'publié']);!!}
+    {!! $errors->first('status', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
 
     {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}

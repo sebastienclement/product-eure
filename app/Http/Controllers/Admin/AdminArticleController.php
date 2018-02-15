@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminArticleRequest;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 use App\Models\Article;
 use Auth;
 
@@ -40,9 +40,18 @@ class AdminArticleController extends Controller
     return view('admin/edit-article', compact('article'));
   }
 
-  public function actionEditArticle(AdminArticleRequest $request, $id)
+  public function actionEditArticle(AdminArticleRequest $request, $id )
   {
-    $article = Article::FindOrFail($id);
+
+    $post = $request->all();
+
+    \DB::table('articles')->where('id',  $id )->update([
+        'title'       => $post['title'],
+        'content'     => $post['content'],
+        'status'      => $post['status'],
+        'updated_at'  => Carbon::now(),
+    ]);
+
     return redirect()->route('dashboard')->with('success', 'Article modifié');
   }
 

@@ -17,6 +17,7 @@ class CreateArticlesTable extends Migration
           $table->increments('id');
           $table->string('title');
           $table->text('content');
+          $table->enum('status', ['publié','brouillon'])->default('brouillon');
           $table->integer('user_id')->unsigned();
           $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('restrict')->onUpdate('restrict');

@@ -39,8 +39,14 @@
   <section id="map">
     <h1>Map de recherche.</h1>
     <div class="carte">
-      <img src="{{ asset('img/4607.jpg')}}" style="height:800px; width:800px;"alt="">
+      <div class="full_width" id="search_map">
+          <div class="content">
+              <h1>La carte SVG qui va bien</h1>
+              <div class="img-svg"><?php include('img/eure-region-naturelle.svg'); ?></div>
+          </div>
+      </div>
 
+      <img src="{{ asset('img/4607.jpg')}}" style="height:800px; width:800px;"alt="">
     </div>
   </section>
 
