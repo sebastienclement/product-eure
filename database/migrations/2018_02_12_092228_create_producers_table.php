@@ -30,6 +30,8 @@ class CreateProducersTable extends Migration
         $table->text('description');
         $table->string('path_img')->nullable();
         $table->timestamps();
+        $table->softDeletes();
+
       });
     }
 

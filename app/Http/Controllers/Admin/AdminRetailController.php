@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminRetailRequest;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Retail;
 use Carbon\Carbon;
