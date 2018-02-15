@@ -35,9 +35,56 @@
   <section id="para">
     <div id="parallax">
       <div id="presentation">
-        <div class="wrap">
-          <p> Bienvenue chez Product'eure. Trouvez tout ce que notre département peut vous offrir. Viandes, Légumes, Fromage, Produits Fabriqués...
-            Et bien plus encore. Achetez des produits frais et locales et soutenez nos agriculteurs.</p>
+        <div id="search-tag">
+            <h2>N'hésitez pas à consultez la <span><a href="{{ route('list-producer') }}">liste de tous nos producteurs</a></span>
+            <p>ou<br>trouvez celui qui vous convient.</p>
+            {!!Form::open(['route' => 'home','method' => 'post']) !!}
+
+              {!! Form::label('bovin', 'Bovins', ['class' => '']) !!}
+              {!! Form::radio('bovin', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
+              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+
+
+              {!! Form::label('fruit', 'Fruits', ['class' => '']) !!}
+              {!! Form::radio('fruit', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
+              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+
+
+              {!! Form::label('legume', 'Légumes', ['class' => '']) !!}
+              {!! Form::radio('legume', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
+              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+
+
+              {!! Form::label('produit', 'Produits Fermiers', ['class' => '']) !!}
+              {!! Form::radio('bovin', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
+              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+
+
+              {!! Form::label('lait', 'Produits Laitiers', ['class' => '']) !!}
+              {!! Form::radio('bovin', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
+              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+
+
+              {!! Form::label('ovin', 'Ovins', ['class' => '']) !!}
+              {!! Form::radio('ovin', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
+              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+
+
+              {!! Form::label('volaille', 'Volailles', ['class' => '']) !!}
+              {!! Form::radio('volaille', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
+              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+
+            {!! Form::submit('Chercher', ['class' => 'btn']) !!}
+            {!!Form::close()!!}
+
+
+
+
+
+
+
+
+
         </div>
       </div>
     </div>

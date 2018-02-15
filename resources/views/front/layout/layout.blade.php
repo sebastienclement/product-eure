@@ -18,29 +18,26 @@
     <div class="wrap">
 
         <ul class="nav navbar-nav navbar-right header_flex">
-            <div>
-            <li><a href="{{ route('home') }}"><img src="{{ asset('img/logo.png')}}"></a></li>
-            </div>
+            <li><a href="{{ route('home') }}"><img src="{{ asset('img/logo.png')}}" width="100px" height="auto"></a></li>
+            {{-- <li><a href="{{ route('list-producer') }}">Nos Producteurs</a></li> --}}
             <div id="header_right">
-              <h1>Product'Eure</h1>
               <nav class="menu-co" id="sticker">
-                  <li><a href="{{ route('list-item') }}">Produits</a></li>
-                  <li><a href="{{ route('list-producer') }}">Producteurs</a></li>
-                  @if (Auth::guest())
-                      <li><a href="{{ route('login') }}">Connexion</a></li>
-                      <li><a href="{{ route('register') }}">Inscription</a></li>
-                  @else
-                  <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                  <li>
-                      <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                Logout
-                      </a>
-                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              {{ csrf_field() }}
-                      </form>
-                  </li>
+                    @if (Auth::guest())
+                        <li><a href="{{ route('register') }}">Inscription</a></li>
+                        <li><a href="{{ route('login') }}">Connexion</a></li>
+                    @else
+                    <li><a href="">{{ ucfirst(Auth::user()->name) }}</a></li>
+                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li>
+                        <a href="{{ route('logout') }}"
+                                  onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                                  Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                        </form>
+                    </li>
               </nav>
             </div>
         @endif
@@ -54,15 +51,14 @@
     @yield('content')
 </main>
 <footer>
-  <ul class="wrap">
-    <div>
-    <li>Product'Eure  <?php echo date('Y') ; ?></li>
-      <li><a href="{{ route('contact-view') }}">Nous Contacter</a></li>
-      <li><a href="{{ route('contact-view') }}">Mentions Légales</a></li>
-      <li>Product'Eure  <?php echo date('Y') ; ?></li>
-    </div>
-    <div><img src="{{ asset('img/4607.jpg')}}" style="height:200px; width:auto;"alt=""></div>
-  </ul>
+  <div class="wrap footer-flex">
+    <img src="{{ asset('img/4607.jpg')}}" style="height:200px; width:auto;"alt="">
+    <ul class="wrap">
+        <li><a href="{{ route('contact-view') }}">Nous Contacter</a></li>
+        <li><a href="{{ route('contact-view') }}">Mentions Légales</a></li>
+        <li>Product'Eure  <?php echo date('Y') ; ?></li>
+    </ul>
+  </div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" charset="utf-8"></script>
 <script src="{{ asset('js/jquery.sticky.js') }}" charset="utf-8"></script>
