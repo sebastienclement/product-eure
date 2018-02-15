@@ -28,7 +28,8 @@ header h1{
     line-height: 100px;
     font-weight: bold;
     font-size: 4rem;
-    padding-bottom: 20px;
+    letter-spacing: 0.1em;
+
 }
 
 
@@ -39,8 +40,13 @@ header h1{
     height: 100%;
 }
 
+
+#header_right{
+    padding-bottom: 20px;
+}
 #header_right h1{
     text-align: center;
+    color: #D19B26;
 }
 
 
@@ -194,4 +200,16 @@ footer ul {
 #eure-map{
   display: block;
   /* position: absolute; */
+}
+
+
+@media screen and (min-width: 200px) and (max-width: 640px){
+
+.header_flex{
+  flex-direction: column;
+}
+
+.header_flex h1{
+  display:none;
+}
 }
