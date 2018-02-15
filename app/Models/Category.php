@@ -22,4 +22,9 @@ class Category extends Model
     return $this->hasMany('\App\Models\Item');
   }
 
+  public function producer()
+  {
+    return $this->belongsToMany('App\Models\Producer');
+  }
+
 }

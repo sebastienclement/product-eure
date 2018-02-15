@@ -55,6 +55,7 @@
                     <ul class="nav child_menu">
                       <li><a href="{{route('admin-list-producer')}}">Users</a></li>
                       <li><a href="{{route('admin-list-producer')}}">Producteurs</a></li>
+                      <li><a href="{{route('admin-new-producer-view')}}">Ajouter un producteur</a></li>
                       {{-- <li><a href="index3.html">Dashboard3</a></li> --}}
                     </ul>
                   </li>
@@ -69,7 +70,7 @@
                   <li><a><i class="fa fa-university"></i> Lieux de ventes <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('admin-list-retail')}}">Lieux de ventes</a></li>
-                      <li><a href="media_gallery.html">Media Gallery</a></li>
+                      <li><a href="{{route('admin-new-retail-view')}}">Ajouter un lieu de vente</a></li>
 
 
                     </ul>

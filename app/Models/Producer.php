@@ -25,4 +25,9 @@ class Producer extends Model
   {
     return $this->belongsToMany('App\Models\Retail');
   }
+
+  public function category()
+  {
+    return $this->belongsToMany('App\Models\Category');
+  }
 }
