@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Dosis|Fugaz+One" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/front/reset.css')}}">
     @yield('css')
     <link rel="stylesheet" href="{{asset('css/front/style.css')}}">
@@ -55,9 +55,13 @@
 </main>
 <footer>
   <ul class="wrap">
+    <div>
     <li>Product'Eure  <?php echo date('Y') ; ?></li>
-    <li><a href="{{ route('contact-view') }}">Nous Contacter</a></li>
-    <li><a href="{{ route('contact-view') }}">Mentions Légales</a></li>
+      <li><a href="{{ route('contact-view') }}">Nous Contacter</a></li>
+      <li><a href="{{ route('contact-view') }}">Mentions Légales</a></li>
+      <li>Product'Eure  <?php echo date('Y') ; ?></li>
+    </div>
+    <div><img src="{{ asset('img/4607.jpg')}}" style="height:200px; width:auto;"alt=""></div>
   </ul>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" charset="utf-8"></script>

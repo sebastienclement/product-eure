@@ -1,9 +1,11 @@
 /* ================GENERALE================ */
 body{
   /* background-color: #3E8022; */
+  /* font-family: 'Fugaz One', sans-serif; */
 }
-*,h1,h2,h3,p{
-  font-family: 'Roboto', sans-serif;
+
+p{
+  font-family: 'Dosis', sans-serif;
 }
 .wrap {
     max-width: 1200px;
@@ -22,17 +24,6 @@ header {
     background-color: #99CCFF;
 }
 
-header h1{
-    font-size: 3rem;
-    color:#000;
-    line-height: 100px;
-    font-weight: bold;
-    font-size: 4rem;
-    letter-spacing: 0.1em;
-
-}
-
-
 .header_flex{
     display: flex;
     justify-content: space-between;
@@ -46,7 +37,10 @@ header h1{
 }
 #header_right h1{
     text-align: center;
-    color: #D19B26;
+    color: #3E8022;
+    font-size: 3rem;
+    line-height: 100px;
+    font-weight: bold;
 }
 
 
@@ -72,15 +66,23 @@ nav ul li a:hover{
     display: block;
     margin: 0 30px;
     font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+}
+
+.menu-co li a:hover{
+    /* color: #D19B26; */
 }
 
 .menu-co li a::after {
     content: '';
     display: block;
     width: 0;
-    height: 2px;
+    height: 3px;
     background: #D19B26;
     transition: width .3s;
+    margin-top: 3px;
 }
 
 .menu-co li a:hover:after {
@@ -89,53 +91,113 @@ nav ul li a:hover{
 }
 /* ================MAIN================ */
 
+
+/*
+/*========= Presentation + img ==========
+*/
+
 section#para {
   /* margin: 100px 0 50px; */
 }
 #presentation{
-  background-color: rgba(104,157,113,0.9);
-  padding:2%;
+  background-color: rgba(104,157,113,0.7);
+  padding:1%;
 }
 #presentation p {
   font-size:1.3rem;
+  line-height: 1.9rem;
   color:white;
 }
 
- div#parallax {
+div#parallax {
   background: url("../../img/deux.jpg") no-repeat fixed;
   background-size: cover;
-  height: 400px;
-}
-section#map {
-  text-align: center;
-}
-section#map h1 {
-  font-size: 40px;
-  padding: 20px 0;
+  height: 600px;
 }
 
-.single_prod{
-  padding: 10px;
-  border-radius: 8px;
-  border:1px solid #D19B26;
-  float:left;
-  width:48%;
-  margin:1%;
+div#parallax_2 {
+ background: url("../../img/deux.jpg") no-repeat fixed;
+ background-size: cover;
+ height: 600px;
 }
- h2{
+
+
+/*
+/*========= INFO ==========
+*/
+
+#info-contener{
+  background: #99CCFF;
+
+}
+
+.info_flex{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+/* .info_flex:after{
+  content: " ";
+  background: tomato;
+  position: absolute;
+  width:120%;
+  top:0;
+  left:-60px;
+  right:-40px;
+  bottom:0;
+  z-index: 1;
+  transform: skewX(-15deg);
+} */
+.info_flex>div{
+  width: 48%;
+  padding:20px 20px;
+  margin: 60px 0;
+
+}
+
+.info_flex>div h2{
+  font-size:1.5rem;
   text-align: center;
-  padding:30px;
-  font-size: 1.4rem;
-}
-.single_prod h3{
-  padding: 10px 0 ;
+  padding-bottom: 20px;
   font-weight: bold;
-
 }
+
+.info_flex>div li{
+  font-size:1.3rem;
+  padding-top: 20px;
+  color: aliceBlue;
+  font-family: 'Dosis','sans-serif';
+}
+
+#info-prod{
+ /* background-color: rgba(209,155,38,1);
+ box-shadow: 0 9px 18px rgba(0,0,0,0.30), 0 10px 7px rgba(0,0,0,0.22);   */
+  position: relative;
+}
+ .info_prod:after{
+  content: " ";
+  background: black;
+  position: absolute;
+  width:120%;
+  top:0;
+  left:-10px;
+  right:-10px;
+  bottom:0;
+  z-index: 10;
+  transform: skewX(-15deg);
+}
+
+#info-abo{
+  background-color: rgba(209,155,38,1);
+    box-shadow: 0 9px 18px rgba(0,0,0,0.30), 0 10px 7px rgba(0,0,0,0.22);
+  position: relative;
+}
+
+
 /* ================FOOTER================ */
 footer {
   padding: 30px;
-  background-color: grey;
+  border-top: 1px solid  grey;
 }
 footer ul {
   display: flex;
@@ -144,6 +206,14 @@ footer ul {
 
 
 /* ================= SVG MAP =================== */
+section#map {
+  text-align: center;
+}
+
+section#map h1 {
+  font-size: 40px;
+  padding: 20px 0;
+}
 
 #search_map .content{
     width:85%;
