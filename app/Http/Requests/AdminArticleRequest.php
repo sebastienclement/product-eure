@@ -26,6 +26,7 @@ class AdminArticleRequest extends FormRequest
         return [
             'title'  => 'required',
             'content'=> 'required|min:5|max:100',
+            'status'  => 'required',
         ];
     }
     public function messages()
@@ -33,6 +34,7 @@ class AdminArticleRequest extends FormRequest
         return [
             'title'      => 'Vous devez renseigner ce champ SVP',
             'content'   => 'Vous devez renseigner ce champ SVP',
+            'status'   => 'Vous devez renseigner ce champ SVP',
         ];
     }
 }

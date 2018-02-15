@@ -62,8 +62,6 @@ class AdminItemController extends Controller
 
     public function actionEditItem(AdminItemRequest $request,$id)
     {
-      $item = Item::FindOrFail($id);
-      // $item->update($request->all());
       $post = $request->all();
 
       \DB::table('items')->where('id', $id)->update([
@@ -72,7 +70,6 @@ class AdminItemController extends Controller
           'category_id' => $post['categorie'],
           'updated_at'  => Carbon::now(),
       ]);
-
       return redirect()->route('dashboard')->with('success', 'Modification de l\'item prise en compte');
     }
 
