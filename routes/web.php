@@ -153,10 +153,10 @@ Route::group(['namespace' => 'Front'], function() {
 
   //Route update article
   Route::get('/admin/edit-article/{id}', 'AdminArticleController@showEditArticle')->where('id','[0-9]+')->name('admin-edit-article-view');
-  Route::put('/admin/edit-article', 'AdminArticleController@actionEditArticle')->name('admin-edit-article-action');
+  Route::put('/admin/edit-article/{id}', 'AdminArticleController@actionEditArticle')->name('admin-edit-article-action');
 
   //Route supp article
-  Route::delete('/admin/delete-article', 'AdminArticleController@deleteArticle')->name('admin-delete-article');
+  Route::delete('/admin/delete-article/{id}', 'AdminArticleController@deleteArticle')->name('admin-delete-article');
 //
 //////
 

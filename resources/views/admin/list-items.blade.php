@@ -30,11 +30,11 @@
       <td>{{$item->name}}</td>
       <td>{{$item->comment}}</td>
       <td>{{$item->category->name}}</td>
-      <td><a href="{{ route('admin-edit-item-view',['id' => $item->id ]) }}">update</a></td>
+      <td><a class="btn btn-success" href="{{ route('admin-edit-item-view',['id' => $item->id ]) }}">update</a></td>
       <td>
         {!! Form::open(['route' => ['admin-delete-item', $item->id], 'method' => 'delete', 'novalidate' => 'novalidate']) !!}
 
-          {!! Form::submit('Effacer', ['class' => 'btn btn-success']) !!}
+          {!! Form::submit('Effacer', ['class' => 'btn btn-danger']) !!}
 
       {!! Form::close() !!}
       </td>
