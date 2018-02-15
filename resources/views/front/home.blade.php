@@ -34,10 +34,49 @@
   </div> --}}
   <section id="para">
     <div id="parallax">
-      <div id="presentation">
-        <div class="wrap">
-          <p> Bienvenue chez Product'eure. Trouvez tout ce que notre département peut vous offrir. Viandes, Légumes, Fromage, Produits Fabriqués...
-            Et bien plus encore. Achetez des produits frais et locales et soutenez nos agriculteurs.</p>
+      <div>
+        <div id="bandeau">
+          <h2>hihgiugiugiugiugiug</h2>
+        <div>
+        <div id="search-tag">
+            <h2>N'hésitez pas à consultez la <span><a href="{{ route('list-producer') }}">liste de tous nos producteurs</a></span>
+            <p>ou<br>trouvez celui qui vous convient.</p>
+            {!!Form::open(['route' => 'home','method' => 'post']) !!}
+
+            <label for="bovins"class="btn btn-default m-r-mini">Bovins
+                <input id="bovins" type="radio" name="category" >
+            </label>
+            <label for="volaille"class="btn btn-default m-r-mini">Volaille
+                <input id="volaille" type="radio" name="category" >
+            </label>
+            <label for="Ovins"class="btn btn-default m-r-mini">Ovins
+                <input id="Ovins" type="radio" name="category" >
+            </label>
+            <label for="Lait"class="btn btn-default m-r-mini">Lait
+                <input id="Lait" type="radio" name="category" >
+            </label>
+            <label for="fruit"class="btn btn-default m-r-mini">Fruit
+                <input id="fruit" type="radio" name="category" >
+            </label>
+            <label for="fruit"class="btn btn-default m-r-mini">Légumes
+                <input id="fruit" type="radio" name="category" >
+            </label>
+            <label for="porc"class="btn btn-default m-r-mini">Porcs
+                <input id="porc" type="radio" name="category" >
+            </label>
+            <label for="miel"class="btn btn-default m-r-mini">Miel
+                <input id="miel" type="radio" name="category" >
+            </label>
+            <label for="prod"class="btn btn-default m-r-mini">Produits Fermiers
+                <input id="prod" type="radio" name="category" >
+            </label>
+
+            {{Form::submit('Envoyer', array('class' => ''))}}
+            {{Form::close()}}
+
+
+
+
         </div>
       </div>
     </div>
