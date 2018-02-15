@@ -41,6 +41,7 @@
 
   {!! Form::close() !!}
 
+  {!! file_get_contents(asset('img/icons/010-bee.svg')) !!}
 
 @endsection
 
