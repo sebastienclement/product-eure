@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProducerRequest;
 use Illuminate\Http\Request;
-
 use App\Models\Producer;
 use Auth;
 
@@ -12,6 +12,7 @@ class AdminProducerController extends Controller
   public function showListProducers()
   {
     $producers = Producer::with('user')->get();
+
     return view('admin/list-producers', compact('producers'));
   }
 
@@ -22,7 +23,12 @@ class AdminProducerController extends Controller
 
   public function actionNewProducer(ProducerRequest $request)
   {
-    Producer::create($request->all());
+    $inputs = array_merge($request->all(), [
+     'user_id' => Auth::id(),
+     'slug'    => str_slug($request->name)
+    ]);
+    Producer::create($inputs);
+
     return redirect()->route('dashboard')->with('success', 'Nouveau Producteur créé');
   }
 

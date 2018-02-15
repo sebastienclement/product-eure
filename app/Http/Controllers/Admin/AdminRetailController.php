@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminRetailRequest;
 use Illuminate\Http\Request;
-
 use App\Models\Retail;
+use Carbon\Carbon;
 use Auth;
 
 class AdminRetailController extends Controller
@@ -12,6 +13,7 @@ class AdminRetailController extends Controller
   public function showListRetails()
   {
     $retails = Retail::all();
+
     return view('admin/list-retails', compact('retails'));
   }
 
@@ -20,28 +22,46 @@ class AdminRetailController extends Controller
     return view('admin/new-retail');
   }
 
-  public function actionNewRetail(RetailRequest $request)
+  public function actionNewRetail(AdminRetailRequest $request)
   {
-    Retail::create($request->all());
+    $post = $request->all();
+
+    \DB::table('retails')->insert([
+        'name'  => $post['name'],
+        'lieu'  => $post['lieu'],
+        'zone'  => $post['zone'],
+        'created_at'  => Carbon::now(),
+    ]);
+
     return redirect()->route('dashboard')->with('success', 'Retail créé');
   }
 
   public function showEditRetail($id)
   {
     $retail = Retail::FindOrFail($id);
+
     return view('admin/edit-retail', compact('retail'));
   }
 
-  public function actionEditRetail(RetailRequest $request, $id)
+  public function actionEditRetail(AdminRetailRequest $request, $id)
   {
-    $retail = Retail::FindOrFail($id);
+    $post = $request->all();
+
+    \DB::table('retails')->where('id',  $id )->update([
+        'name'        => $post['name'],
+        'lieu'        => $post['lieu'],
+        'zone'        => $post['zone'],
+        'updated_at'  => Carbon::now(),
+    ]);
     return redirect()->route('dashboard')->with('success', 'Retail modifié');
   }
 
   public function deleteRetail($id)
   {
     $retail = Retail::FindOrFail($id);
+
     $retail->delete();
+
     return redirect()->route('dashboard')->with('success', 'Retail supprimé');
   }
 }

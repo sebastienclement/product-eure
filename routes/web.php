@@ -84,18 +84,18 @@ Route::group(['namespace' => 'Front'], function() {
 //
 //////
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////
 //
   //Route listing retails
   Route::get('/admin/list-retails', 'AdminRetailController@showListRetails')->name('admin-list-retail');
 
   //Route ajout retail
-  Route::get('/admin/new-retail', 'AdminRetailController@showNewItem')->name('admin-new-retail-view');
-  Route::post('/admin/new-retail', 'AdminRetailController@actionNewItem')->name('admin-new-retail-action');
+  Route::get('/admin/new-retail', 'AdminRetailController@showNewRetail')->name('admin-new-retail-view');
+  Route::post('/admin/new-retail', 'AdminRetailController@actionNewRetail')->name('admin-new-retail-action');
 
   // Route update retail
-  Route::get('/admin/edit-retail/{id}', 'AdminRetailController@showEditRetail')->name('admin-edit-retail-view');
+  Route::get('/admin/edit-retail/{id}', 'AdminRetailController@showEditRetail')->where('id','[0-9]+')->name('admin-edit-retail-view');
   Route::put('/admin/edit-retail/{id}', 'AdminRetailController@actionEditRetail')->name('admin-edit-retail-action');
 
   //Route supp retail
@@ -103,7 +103,7 @@ Route::group(['namespace' => 'Front'], function() {
 //
 //////
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////
 //
   //Route listing categories
@@ -129,8 +129,8 @@ Route::group(['namespace' => 'Front'], function() {
   Route::get('/admin/list-producers', 'AdminProducerController@showListProducers')->name('admin-list-producer');
 
   //Route ajout Producer
-  Route::get('/admin/new-producer', 'AdminProducerController@newProducer')->name('admin-new-producer-view');
-  Route::post('/admin/new-producer', 'AdminProducerController@newProducerAction')->name('admin-new-producer-action');
+  Route::get('/admin/new-producer', 'AdminProducerController@showNewProducer')->name('admin-new-producer-view');
+  Route::post('/admin/new-producer', 'AdminProducerController@actionNewProducer')->name('admin-new-producer-action');
 
   //Route update producer
   Route::get('/admin/edit-producer/{id}', 'AdminProducerController@showEditProducer')->name('admin-edit-producer-view');

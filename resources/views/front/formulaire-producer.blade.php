@@ -1,6 +1,5 @@
 
 
-  {!! Form::open(['route' => 'new-profil-action', 'method' => 'post', 'novalidate' => 'novalidate']) !!}
 
   {{-- <div class="form-group">
     {!! Form::label('image', 'Image de votre entreprise : ', ['class' => '']) !!}
@@ -51,5 +50,3 @@
   </div>
 
     {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}
-
-  {!! Form::close() !!}
