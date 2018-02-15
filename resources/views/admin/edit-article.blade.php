@@ -22,9 +22,10 @@
   </div>
   <div class="form-group">
     {!! Form::label('status', 'Choix du status : ', ['class' => '']) !!}<br>
-    {!! Form::select('status', ['' => ' choix',
+    {!! Form::select('status', [
+             ''     => 'choix',
       'brouillon'   => 'brouillon',
-      'publié' => 'publié'],$article->status);!!}
+      'publié'      => 'publié'],$article->status);!!}
     {!! $errors->first('status', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
 
