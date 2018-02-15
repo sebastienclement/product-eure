@@ -27,10 +27,23 @@ header h1{
     color:#000;
     line-height: 100px;
     font-weight: bold;
+    font-size: 4rem;
+    padding-bottom: 20px;
 }
-.flex{
+
+
+.header_flex{
     display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
 }
+
+#header_right h1{
+    text-align: center;
+}
+
+
 nav#sticker {
   z-index: 10000;
 }
@@ -46,9 +59,6 @@ nav ul li a:hover{
 
 .menu-co {
     display: flex;
-    justify-content: flex-end;
-    width:80%;
-    align-self: flex-end;
     padding: 10px;
 }
 

@@ -17,29 +17,32 @@
 
     <div class="wrap">
 
-        <ul class="nav navbar-nav navbar-right flex">
+        <ul class="nav navbar-nav navbar-right header_flex">
+            <div>
             <li><a href="{{ route('home') }}"><img src="{{ asset('img/logo.png')}}"></a></li>
-            <nav class="menu-co" id="sticker">
-            <li><a href="{{ route('list-item') }}">Produits</a></li>
-            <li><a href="{{ route('list-producer') }}">Producteurs</a></li>
-            @if (Auth::guest())
-                {{-- <li><a href="{{ route('login') }}">Nos Producteurs</a></li> --}}
-                <li><a href="{{ route('login') }}">Connexion</a></li>
-                <li><a href="{{ route('register') }}">Inscription</a></li>
-                {{-- <li><a href="{{ route('register') }}">Register</a></li> --}}
-            @else
-                <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li>
-                    <a href="{{ route('logout') }}"
-                              onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();">
-                              Logout
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                    </form>
-                </li>
-            </nav>
+            </div>
+            <div id="header_right">
+              <h1>Product'Eure</h1>
+              <nav class="menu-co" id="sticker">
+                  <li><a href="{{ route('list-item') }}">Produits</a></li>
+                  <li><a href="{{ route('list-producer') }}">Producteurs</a></li>
+                  @if (Auth::guest())
+                      <li><a href="{{ route('login') }}">Connexion</a></li>
+                      <li><a href="{{ route('register') }}">Inscription</a></li>
+                  @else
+                  <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                  <li>
+                      <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                Logout
+                      </a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              {{ csrf_field() }}
+                      </form>
+                  </li>
+              </nav>
+            </div>
         @endif
         </ul>
     </div>
