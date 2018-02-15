@@ -7,6 +7,7 @@
     home
 @endsection
 
+
 @section('content')
   {{-- <section id="carousel">
     <div class="flexslider">
@@ -34,48 +35,45 @@
   </div> --}}
   <section id="para">
     <div id="parallax">
-      <div id="presentation">
+      <div>
+        <div id="bandeau">
+          <h2>hihgiugiugiugiugiug</h2>
+        <div>
         <div id="search-tag">
             <h2>N'hésitez pas à consultez la <span><a href="{{ route('list-producer') }}">liste de tous nos producteurs</a></span>
             <p>ou<br>trouvez celui qui vous convient.</p>
             {!!Form::open(['route' => 'home','method' => 'post']) !!}
 
-              {!! Form::label('bovin', 'Bovins', ['class' => '']) !!}
-              {!! Form::radio('bovin', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
-              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+            <label for="bovins"class="btn btn-default m-r-mini">Bovins
+                <input id="bovins" type="radio" name="category" >
+            </label>
+            <label for="volaille"class="btn btn-default m-r-mini">Volaille
+                <input id="volaille" type="radio" name="category" >
+            </label>
+            <label for="Ovins"class="btn btn-default m-r-mini">Ovins
+                <input id="Ovins" type="radio" name="category" >
+            </label>
+            <label for="Lait"class="btn btn-default m-r-mini">Lait
+                <input id="Lait" type="radio" name="category" >
+            </label>
+            <label for="fruit"class="btn btn-default m-r-mini">Fruit
+                <input id="fruit" type="radio" name="category" >
+            </label>
+            <label for="fruit"class="btn btn-default m-r-mini">Légumes
+                <input id="fruit" type="radio" name="category" >
+            </label>
+            <label for="porc"class="btn btn-default m-r-mini">Porcs
+                <input id="porc" type="radio" name="category" >
+            </label>
+            <label for="miel"class="btn btn-default m-r-mini">Miel
+                <input id="miel" type="radio" name="category" >
+            </label>
+            <label for="prod"class="btn btn-default m-r-mini">Produits Fermiers
+                <input id="prod" type="radio" name="category" >
+            </label>
 
-
-              {!! Form::label('fruit', 'Fruits', ['class' => '']) !!}
-              {!! Form::radio('fruit', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
-              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-
-
-              {!! Form::label('legume', 'Légumes', ['class' => '']) !!}
-              {!! Form::radio('legume', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
-              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-
-
-              {!! Form::label('produit', 'Produits Fermiers', ['class' => '']) !!}
-              {!! Form::radio('bovin', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
-              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-
-
-              {!! Form::label('lait', 'Produits Laitiers', ['class' => '']) !!}
-              {!! Form::radio('bovin', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
-              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-
-
-              {!! Form::label('ovin', 'Ovins', ['class' => '']) !!}
-              {!! Form::radio('ovin', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
-              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-
-
-              {!! Form::label('volaille', 'Volailles', ['class' => '']) !!}
-              {!! Form::radio('volaille', 0, ['placeholder' => 'Nom de l\'entreprise', 'class' => 'form-control']) !!}
-              {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-
-            {!! Form::submit('Chercher', ['class' => 'btn']) !!}
-            {!!Form::close()!!}
+            {{Form::submit('Envoyer', array('class' => ''))}}
+            {{Form::close()}}
 
 
 
