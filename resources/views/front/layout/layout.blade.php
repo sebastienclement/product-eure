@@ -53,7 +53,7 @@
 <main>
     @yield('content')
 </main>
-<footer>
+<footer style="background-color: cyan;">
   <ul class="wrap">
     <div>
     <li>Product'Eure  <?php echo date('Y') ; ?></li>
@@ -61,7 +61,7 @@
       <li><a href="{{ route('contact-view') }}">Mentions Légales</a></li>
       <li>Product'Eure  <?php echo date('Y') ; ?></li>
     </div>
-    <div><img src="{{ asset('img/4607.jpg')}}" style="height:200px; width:auto;"alt=""></div>
+    <div><img src="{{ asset('img/personnage.png')}}" style="height:200px; width:auto;"alt=""></div>
   </ul>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" charset="utf-8"></script>
