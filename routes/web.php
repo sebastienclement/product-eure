@@ -133,7 +133,7 @@ Route::group(['namespace' => 'Front'], function() {
   Route::post('/admin/new-producer', 'AdminProducerController@actionNewProducer')->name('admin-new-producer-action');
 
   //Route update producer
-  Route::get('/admin/edit-producer/{id}', 'AdminProducerController@showEditProducer')->name('admin-edit-producer-view');
+  Route::get('/admin/edit-producer/{id}', 'AdminProducerController@showEditProducer')->where('id','[0-9]+')->name('admin-edit-producer-view');
   Route::put('/admin/edit-producer/{id}', 'AdminProducerController@actionEditProducer')->name('admin-edit-producer-action');
 
   //Route supp producer

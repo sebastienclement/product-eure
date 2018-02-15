@@ -3,12 +3,20 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Producer extends Model
+
 {
+    use SoftDeletes;
+
     protected $table = "producers" ;
 
     protected $fillable = ['name','statut','user_id', 'slug', 'description','adresse','zipcode','phone','website','producer_email'];
+
+    protected $dates = ['deleted_at'];
+
 
 
   public function user()

@@ -14,11 +14,13 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nom de la société</th>
-      <th scope="col">Nom de l'utilisateur</th>
+      <th scope="col">Nom</th>
       <th scope="col">Adresse</th>
       <th scope="col">Siret</th>
       <th scope="col">Zone</th>
       <th scope="col">Crée le</th>
+      <th scope="col">Modifer</th>
+      <th scope="col">Effacer</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +34,14 @@
       <td>{{$producer->siret}}</td>
       <td>{{$producer->zone}}</td>
       <td>{{$producer->created_at}}</td>
+      <td><a class="btn btn-success" href="{{ route('admin-edit-producer-view',['id' => $producer->id ]) }}">update</a></td>
+      <td>
+        {!! Form::open(['route' => ['admin-delete-producer', $producer->id], 'method' => 'delete', 'novalidate' => 'novalidate']) !!}
+
+          {!! Form::submit('Effacer', ['class' => 'btn btn-danger']) !!}
+
+      {!! Form::close() !!}
+      </td>
     </tr>
 
   @endforeach

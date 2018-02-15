@@ -72,7 +72,9 @@
     <div class="carte">
       <div class="full_width" id="search_map">
           <div class="content">
-              <div class="img-svg"><?php include('img/eure-region-naturelle.svg'); ?></div>
+              <div class="img-svg">
+                {!! file_get_contents(asset('img/eure-region-naturelle.svg')) !!}
+              </div>
           </div>
       </div>
     </div>
