@@ -9,12 +9,12 @@
   >
   <g
      id="g36"
-     style="fill:#b9b9b9;stroke:#ffffff;stroke-width:1px"
+
      transform="matrix(0.999751,0,0,0.999751,-400.77787,-84.353991)">
     <a
        class="path region-c"
        xlink:href=""
-       xlink:title="Vexin-Normand"
+       xlink:title="Vexin Normand"
        id="c">
       <path
          data-info="<div>Hello, ici il y a X producteurs</div>"
@@ -40,7 +40,7 @@
     <a
        class="path region-a"
        xlink:href=""
-       xlink:title="Pays-Roumois"
+       xlink:title="Pays Roumois et Marais Vernier"
        id="a">
       <path
          data-info="<div>Hello, ici il y a X producteurs</div>"
@@ -53,7 +53,7 @@
     <a
        class="path region-e"
        xlink:href=""
-       xlink:title="Pays-Ouche"
+       xlink:title="Pays d'Ouche"
        id="e">
       <path
          data-info="<div>Hello, ici il y a X producteurs</div>"
@@ -66,7 +66,7 @@
     <a
        class="path region-f"
        xlink:href=""
-       xlink:title="Plateau-St-Andre"
+       xlink:title="Plateau de Saint André"
        id="f">
       <path
          data-info="<div>Hello, ici il y a X producteurs</div>"
@@ -79,7 +79,7 @@
     <a
        class="path region-b"
        xlink:href=""
-       xlink:title="Campagne-Neubourg"
+       xlink:title="Campagne du Neubourg"
        id="b">
       <path
          data-info="<div>Hello, ici il y a X producteurs</div>"

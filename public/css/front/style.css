@@ -159,15 +159,16 @@ footer ul {
 }
 
 .img-svg path{
-		fill: SteelBlue;
+		fill: #99CCFF;
 		stroke-width: 1px;
-		transition: fill 0.3s;
+		/* transition: fill 0.3s; */
 }
 
 .img-svg path:hover{
-		fill: SteelBlue;
-    opacity: 0.4;
-    stroke-width:2px;
+		fill: #3E8022;
+    opacity: 0.7;
+    stroke-width:1px;
+    stroke:White;
     cursor: pointer;
     stroke-linejoin: round;
 }
@@ -190,11 +191,11 @@ footer ul {
   top: 0px;
   left: 0px;
   z-index: 1;
-  background-color: #ffffff;
-  border: 2px solid #BF0A30;
+  background-color: whitesmoke;
+  border: 2px solid #D19B26;
   border-radius: 5px;
   padding: 5px;
-  font-family: arial;
+  font-family: 'Dosis', sans-serif;
 }
 
 #eure-map{

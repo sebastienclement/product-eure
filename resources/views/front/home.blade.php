@@ -41,7 +41,6 @@
     <div class="carte">
       <div class="full_width" id="search_map">
           <div class="content">
-              <h1>La carte SVG qui va bien</h1>
               <div class="img-svg"><?php include('img/eure-region-naturelle.svg'); ?></div>
           </div>
       </div>

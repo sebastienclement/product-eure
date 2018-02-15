@@ -1,5 +1,5 @@
 
-</div>
+
   {!! Form::open(['route' => 'new-profil-action', 'method' => 'post', 'novalidate' => 'novalidate']) !!}
 
   {{-- <div class="form-group">
