@@ -64,6 +64,7 @@
     <div><img src="{{ asset('img/4607.jpg')}}" style="height:200px; width:auto;"alt=""></div>
   </ul>
 </footer>
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" charset="utf-8"></script>
 <script src="{{ asset('js/jquery.sticky.js') }}" charset="utf-8"></script>
 <script src="{{ asset('js/front/main.js') }}" charset="utf-8"></script>
