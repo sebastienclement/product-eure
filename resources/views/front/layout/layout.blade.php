@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Dosis|Fugaz+One" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/front/reset.css')}}">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
     @yield('css')
     <link rel="stylesheet" href="{{asset('css/front/style.css')}}">
     <title>@yield('title')</title>
@@ -14,12 +15,12 @@
 <body>
 <header>
 
-
+<a href="{{ route('home') }}"><img src="{{ asset('img/logo.png')}}" width="200px" height="auto"></a>
     <div class="wrap">
 
-        <ul class="nav navbar-nav navbar-right header_flex">
-            <li><a href="{{ route('home') }}"><img src="{{ asset('img/logo.png')}}" width="100px" height="auto"></a></li>
-            {{-- <li><a href="{{ route('list-producer') }}">Nos Producteurs</a></li> --}}
+        <ul class="header_flex">
+
+            <h1>Product'Eure</h1>
             <div id="header_right">
               <nav class="menu-co" id="sticker">
                     @if (Auth::guest())

@@ -2,6 +2,7 @@
 body{
   /* background-color: #3E8022; */
   /* font-family: 'Fugaz One', sans-serif; */
+
 }
 
 p{
@@ -11,7 +12,11 @@ p{
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+}
 
+.wrap-s{
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 a, a:visited{
@@ -27,45 +32,30 @@ header {
 .header_flex{
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+
 
 }
-
+.header_flex h1{
+    font-size: 4rem;
+    padding: 20px;
+}
+header img{
+    position: fixed;
+    z-index: 20;
+    top:-20px;
+}
 
 #header_right{
-    padding-bottom: 20px;
+
+    align-self: center;
 }
-#header_right h1{
-    text-align: center;
-    color: #3E8022;
-    font-size: 3rem;
-    line-height: 100px;
-    font-weight: bold;
-}
-
-
-nav#sticker {
-  z-index: 10000;
-}
-
-nav ul li a{
-  text-transform: uppercase;
-  font-size: 0.5rem;
-}
-
-nav ul li a:hover{
-  background-color: #3E8022;
-  color:white;
-}
-
-
-
 .menu-co li a{
     display: inline-block;
     font-size: 1.1rem;
     color: rgba(0, 0, 0, 0.7);
     font-family: 'Dosis', sans-serif;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .menu-co li a:hover{
@@ -93,9 +83,20 @@ nav ul li a:hover{
 /*========= Presentation + img ==========
 */
 
-section#para {
-  /* margin: 100px 0 50px; */
+#parallax{
+    position: relative;
 }
+
+#presentation{
+    background-color: rgba(104,157,113,0.7);
+    padding:10px;
+
+}
+
+#presentation{
+    text-align: center;
+}
+
 #search-tag{
   background-color: rgba(255,255,255,0.7);
   position:absolute;
@@ -111,9 +112,64 @@ section#para {
   text-align: center;
 }
 #search-tag h2 span a {
-  color:red;
+  color:rgba(104,157,113,1);
   text-transform: uppercase;
 }
+
+#icon-flex{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.icon{
+    width:50px;
+    height: 50px;
+    background-color: #fff;
+    padding:5px;
+    border-radius:4px;
+
+}
+.icon label{
+    cursor: pointer;
+}
+#search-tag input:checked + div {
+  background-color:rgba(104,157,113,0.7);
+  border:1px solid green;
+}
+
+#search-tag input[type=radio]{
+    position:fixed;
+    left:-9999px;
+}
+#search-tag input[type=text]{
+    margin-top: 20px;
+    padding: 4px;
+    font-size:1.2rem;
+    width:50%;
+    height:30px;
+    border-radius: 4px;
+    border: none;
+}
+#search-tag input[type=text]:focus{
+    border: 1px solid green;
+}
+
+#search-tag input[type=submit]{
+    display: block;
+    height:30px;
+    width:80px;
+    margin: 20px auto;
+    border-radius: 4px;
+    border:none;
+    cursor: pointer;
+    background-color: rgba(104,157,113,0.7);
+}
+
+#search-tag input[type=submit]:hover{
+    background-color: rgba(104,157,113,1)
+
+}
+
 
 div#parallax {
   background: url("../../img/deux.jpg") no-repeat fixed;

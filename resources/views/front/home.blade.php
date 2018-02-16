@@ -1,6 +1,7 @@
 @extends('front.layout.layout')
 @section('css')
   <link rel="stylesheet" href="{{asset('css/front/flexslider.css')}}">
+  <link href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 @endsection
 
 @section('title')
@@ -26,50 +27,79 @@
       </ul>
     </div>
   </section> --}}
-  {{-- <div id="presentation">
-    <div class="wrap">
-      <p> Bienvenue chez Product'eure. Trouvez tout ce que notre département peut vous offrir. Viandes, Légumes, Fromage, Produits Fabriqués...
-          Et bien plus encore. Achetez des produits frais et locales et soutenez nos agriculteurs.</p>
-    </div>
-  </div> --}}
+
   <section id="para">
     <div id="parallax">
-      <div>
-        <div id="bandeau">
-          <h2>hihgiugiugiugiugiug</h2>
-        <div>
+        <div id="presentation">
+            <div class="wrap-s">
+                <p> En facilitant la vente direct, et sans intermédiaire, nous souhaitons permettre le rapprochement entre les agriculteurs et les Eurois. Pour des produits de qualités et locales, cherchez votre futur dealer chez product'Eure !</p>
+            </div>
+        </div>
+
         <div id="search-tag">
             <h2>N'hésitez pas à consultez la <span><a href="{{ route('list-producer') }}">liste de tous nos producteurs</a></span>
-            <p>ou<br>trouvez celui qui vous convient.</p>
+            <p>ou<br>Trouvez celui qui vous convient en fonction de votre envie.</p>
             {!!Form::open(['route' => 'home','method' => 'post']) !!}
+            <div id="icon-flex">
 
-            <label for="bovins"class="btn btn-default m-r-mini">Bovins
                 <input id="bovins" type="radio" name="category" >
-            </label>
-            <label for="volaille"class="btn btn-default m-r-mini">Volaille
-                <input id="volaille" type="radio" name="category" >
-            </label>
-            <label for="Ovins"class="btn btn-default m-r-mini">Ovins
-                <input id="Ovins" type="radio" name="category" >
-            </label>
-            <label for="Lait"class="btn btn-default m-r-mini">Lait
-                <input id="Lait" type="radio" name="category" >
-            </label>
-            <label for="fruit"class="btn btn-default m-r-mini">Fruit
-                <input id="fruit" type="radio" name="category" >
-            </label>
-            <label for="fruit"class="btn btn-default m-r-mini">Légumes
-                <input id="fruit" type="radio" name="category" >
-            </label>
-            <label for="porc"class="btn btn-default m-r-mini">Porcs
+                <div class="icon">
+                    <label for="bovins"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/024-cow.svg')) !!}
+                    </label>
+                </div>
                 <input id="porc" type="radio" name="category" >
-            </label>
-            <label for="miel"class="btn btn-default m-r-mini">Miel
+                <div class="icon">
+                    <label for="porc"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/022-pig.svg')) !!}
+                    </label>
+                </div>
+                <input id="volaille" type="radio" name="category" >
+                <div class="icon">
+                    <label for="volaille"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/041-chicken.svg')) !!}
+                    </label>
+                </div>
+                <input id="Ovins" type="radio" name="category" >
+                    <div class="icon"><label for="Ovins"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/sheep.svg')) !!}
+                    </label>
+                </div>
+                <input id="Lait" type="radio" name="category" >
+                <div class="icon">
+                    <label for="Lait"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/020-milk.svg')) !!}
+                    </label>
+                </div>
+                <input id="fruit" type="radio" name="category" >
+                <div class="icon">
+                    <label for="fruit"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/023-tomato.svg')) !!}
+                    </label>
+                </div>
+                <input id="legume" type="radio" name="category" >
+                <div class="icon">
+                    <label for="legume"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/013-vegetable.svg')) !!}
+                    </label>
+                </div>
+                <input id="plante" type="radio" name="category" >
+                <div class="icon">
+                    <label for="plante"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/030-tree.svg')) !!}
+                    </label>
+                </div>
                 <input id="miel" type="radio" name="category" >
-            </label>
-            <label for="prod"class="btn btn-default m-r-mini">Produits Fermiers
+                <div class="icon">
+                    <label for="miel"class="btn btn-default m-r-mini">{!!     file_get_contents(asset('img/icons/010-bee.svg')) !!}
+                    </label>
+                </div>
                 <input id="prod" type="radio" name="category" >
-            </label>
+                <div class="icon">
+                    <label for="prod"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/beer.svg')) !!}
+                    </label>
+                </div>
+            </div>
+
+            <p>Un produit ? Un Producteur ? Un code postal ? Dites le nous ici, et nous ferons de notre mieux pour le trouver.</p>
+            <div class="form-group">
+              <i class="fas fa-search"></i>
+              {!! Form::text('nom', null, ['placeholder' => 'Votre recherche', 'class' => 'form-control']) !!}
+              {!! $errors->first('nom', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+            </div>
+
 
             {{Form::submit('Envoyer', array('class' => ''))}}
             {{Form::close()}}
@@ -78,7 +108,7 @@
 
 
         </div>
-      </div>
+
     </div>
   </section>
 
