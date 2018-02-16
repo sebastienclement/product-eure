@@ -23,7 +23,7 @@ class CreateProducersTable extends Migration
         $table->string('siret')->nullable();
         $table->string('adresse');
         $table->integer('zipcode');
-        $table->string('zone')->nullable();
+        $table->string('zone');
         $table->string('producer_email');
         $table->string('phone')->nullable();
         $table->string('website')->nullable();
