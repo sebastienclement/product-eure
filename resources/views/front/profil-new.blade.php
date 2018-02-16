@@ -7,11 +7,11 @@
 @endsection
 
 @section('content')
-  {!! Form::open(['route' => 'new-profil-action', 'method' => 'post', 'novalidate' => 'novalidate']) !!}
+  {!! Form::open(['route' => 'new-profil-action', 'method' => 'post','files' => true, 'novalidate' => 'novalidate']) !!}
 
   @include('front.formulaire-producer')
   {!! Form::close() !!}
-  
+
 @endsection
 
 @section('js')

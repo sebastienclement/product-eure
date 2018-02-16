@@ -60,33 +60,46 @@ class ProducerProfilController extends Controller
 
     // Requete d'insertion dans la bdd sur la table producer
     // puis redirect sur la page profil éditable avec mess success
+  // dd($zone = $this->generateZoning($request->zipcode));
+    // dd($request);
 
-     // dd($request);
     $inputs = array_merge($request->all(), [
+     'zone'    => $this->generateZoning($request->zipcode),
      'user_id' => Auth::id(),
-     'slug' => str_slug($request->name)
+     'slug'    => str_slug($request->name)
     ]);
     Producer::create($inputs);
 
     return redirect()->route('home')->with('success', 'Votre profil producteur vient d\'être créé');
   }
 
-
+  /**
+   * [permet de d'affilier la zone depuis le code postal de la production
+   * afin de pouvoir utiliser cette donnée pour la recherche via la carte sur la page d'accueil]
+   * @param  [int] $zipcode [code postal du producteur]
+   * @return [str]          [la zone du producteur]
+   */
   private function generateZoning($zipcode)
   {
-    if (($zipcode === 27290) || ($zipcode === 27310) || ($zipcode === 27350)  || ($zipcode === 27370) || ($zipcode === 27500) || ($zipcode === 27520) || ($zipcode === 27670) || ($zipcode === 27680)) {
-      return $zone = 'a';
-    } elseif (($zipcode === 27100) || ($zipcode === 27110) || ($zipcode === 27340) || ($zipcode === 27400) || ($zipcode === 27430) || ($zipcode === 27460) || ($zipcode === 27590) || ($zipcode === 27690) || ($zipcode === 27740)) {
-      return $zone = 'b';
-    } elseif (($zipcode === 27140) || ($zipcode === 27150) || ($zipcode === 27200) || ($zipcode === 27360) || ($zipcode === 27380) || ($zipcode === 27420) || ($zipcode === 27440) || ($zipcode === 27480) || ($zipcode === 27510) || ($zipcode === 27610) || ($zipcode === 27620) || ($zipcode === 27630) || ($zipcode === 27660) || ($zipcode === 27700) || ($zipcode === 27720) || ($zipcode === 27790) || ($zipcode === 27830) || ($zipcode === 27850) || ($zipcode === 27860) || ($zipcode === 27870) || ($zipcode === 27910)) {
-      return $zone = 'c';
-    } elseif (($zipcode === 27170) || ($zipcode === 27210) || ($zipcode === 27230) || ($zipcode === 27260) || ($zipcode === 27300) || ($zipcode === 27410) || ($zipcode === 27450) || ($zipcode === 27470) || ($zipcode === 27550) || ($zipcode === 27560) || ($zipcode === 27800) || ($zipcode === 27890)) {
-      return $zone = 'd';
-    } elseif (($zipcode === 27130) || ($zipcode === 27160) || ($zipcode === 27190) || ($zipcode === 27240) || ($zipcode === 27250) || ($zipcode === 27270) || ($zipcode === 27320) || ($zipcode === 27330) || ($zipcode === 27390) || ($zipcode === 27570) || ($zipcode === 27580) || ($zipcode === 27760) || ($zipcode === 27700) || ($zipcode === 27820)) {
-      return $zone = 'e';
-    } elseif (($zipcode === 27000) || ($zipcode === 27120) || ($zipcode === 27180) || ($zipcode === 27220) || ($zipcode === 27490) || ($zipcode === 27530) || ($zipcode === 27540) || ($zipcode === 27600) || ($zipcode === 27640) || ($zipcode === 27650) || ($zipcode === 27710) || ($zipcode === 27730) || ($zipcode === 27750) || ($zipcode === 27780) || ($zipcode === 27810) || ($zipcode === 27920) || ($zipcode === 27930) || ($zipcode === 27940) || ($zipcode === 27950)) {
-      return $zone 'f';
+    $zipcodeA = [27290,27310,27350,27370,27500,27520,27670,27680];
+    $zipcodeB = [27100,27110,27340,27400,27430,27460,27590,27690,27740];
+    $zipcodeC = [27140,27150,27200,27360,27380,27420,27440,27480,27510,27610,27620,27630,27660,27700,27720,27790,27830,27850,27860,27870,27910];
+    $zipcodeD = [27170,27210,27230,27260,27300,27410,27450,27470,27550,27560,27800,27890];
+    $zipcodeE = [27130,27160,27190,27240,27250,27270,27320,27330,27390,27570,27580,27760,27770,27820];
+    $zipcodeF = [27000,27120,27180,27220,27490,27530,27540,27600,27640,27650,27710,27730,27750,27780,27810,27920,27930,27940,27950];
+
+    if (in_array($zipcode, $zipcodeA)) {
+      return 'a';
+    } elseif (in_array($zipcode, $zipcodeB)) {
+      return 'b';
+    } elseif (in_array($zipcode, $zipcodeC)) {
+      return 'c';
+    } elseif (in_array($zipcode, $zipcodeD)) {
+      return 'd';
+    } elseif (in_array($zipcode, $zipcodeE)) {
+      return 'e';
+    } elseif (in_array($zipcode, $zipcodeF)) {
+      return 'f';
     }
   }
-
 }

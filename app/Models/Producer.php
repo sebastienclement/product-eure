@@ -13,7 +13,7 @@ class Producer extends Model
 
     protected $table = "producers" ;
 
-    protected $fillable = ['name','statut','user_id', 'slug', 'description','adresse','zipcode','phone','website','producer_email'];
+    protected $fillable = ['name','statut','user_id', 'slug', 'description','adresse','zipcode','phone','website','producer_email','zone', 'path_img'];
 
     protected $dates = ['deleted_at'];
 
