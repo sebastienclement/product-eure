@@ -70,6 +70,9 @@ class ProducerProfilController extends Controller
      'zone'    => $this->generateZoning($request->zipcode),
      'user_id' => Auth::id(),
      'slug' => str_slug($request->name),
+     'path_img' => $path->path().'/'.$path->imageName(),
+     // 'original_name' => $path->original_name(),
+     // 'image_name' => $path->imageName(),
     ]);
     Producer::create($inputs);
     return redirect()->route('home')->with('success', 'Votre profil producteur vient d\'être créé');

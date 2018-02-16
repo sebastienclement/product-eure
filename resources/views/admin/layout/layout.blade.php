@@ -38,7 +38,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>Admin</h2>
+                <h2>{{Auth::user()->name}}</h2>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -174,7 +174,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
+                    <img src="images/img.jpg" alt="">{{Auth::user()->name}}
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -284,7 +284,17 @@
 
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
+                @if (session('danger'))
+                    <div class="alert alert-danger">
+                        {{ session('danger') }}
+                    </div>
+                @endif
               @yield('content')
 
               </div>
