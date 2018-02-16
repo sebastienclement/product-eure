@@ -282,27 +282,67 @@ div#parallax_2 {
 }
 
 /* ================FOOTER================ */
+
 footer {
-
   border-top: 1px solid  grey;
-
+  font-family: 'Dosis','sans-serif';
+  padding: 50px;
+  color: #fff;
+  background-color: #46879B;
+}
+footer div.wrap {
+  text-align:center;
+  padding:40px;
 }
 
+footer #flex-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* text-transform: uppercase; */
+  border-top: 2px solid rgba(209,155,38,1);
+  border-bottom: 2px solid rgba(209,155,38,1);
+  padding: 50px;
+}
+/* footer#content-logo {
+  display: flex;
+} */
+#list-footer {
+  width:30%;
+  text-align:center;
+  margin-bottom: 10px;
+}
+#nouveauté {
+  width:40%;
+  background-color: rgba(209,155,38,1);
+  padding:20px;
+  border-radius: 5px;
+}
+footer h4 {
+  font-size:1.5rem;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+
+}
 .footer-flex {
   display: flex;
   justify-content: center;
   width: 40%;
 }
-
-.footer-flex ul {
-  align-self: center;
-  margin-left: 50%;
-  line-height: 1.2rem;
+.list-footer {
+  padding: 10px;
   font-size: 1.2rem;
+  text-transform: uppercase;
 }
-.footer-flex img{
 
+.sprite ul{
+  display: flex;
+  justify-content: center;
 }
+.sprite li {
+  padding: 10px;
+}
+
 
 /* ================= SVG MAP =================== */
 section#map {
@@ -371,7 +411,9 @@ section#map h1 {
   display: block;
   /* position: absolute; */
 }
+/* ======================FOOTER ======================*/
 
+/* ======================FOOTER ======================*/
 
 @media screen and (min-width: 200px) and (max-width: 640px){
 

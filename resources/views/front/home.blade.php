@@ -8,7 +8,6 @@
     home
 @endsection
 
-
 @section('content')
   {{-- <section id="carousel">
     <div class="flexslider">
@@ -105,11 +104,6 @@
 
             {{Form::submit('Envoyer', array('class' => ''))}}
             {{Form::close()}}
-
-
-
-
-
 
 
 
