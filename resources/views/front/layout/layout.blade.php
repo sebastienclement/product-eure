@@ -50,16 +50,57 @@
 <main>
     @yield('content')
 </main>
-<footer style="background-color: cyan;">
-  <ul class="wrap">
-    <div>
-    <li>Product'Eure  <?php echo date('Y') ; ?></li>
-      <li><a href="{{ route('contact-view') }}">Nous Contacter</a></li>
-      <li><a href="{{ route('contact-view') }}">Mentions Légales</a></li>
-      <li>Product'Eure  <?php echo date('Y') ; ?></li>
+<footer>
+  <ul class="wrap flex-footer" id="flex-footer">
+    {{-- <li>
+      <div><img src="{{ asset('img/personnage.png')}}" style="height:150px; width:auto;"alt=""></div>
+
+    </li> --}}
+    <li>
+      <div><img src="{{ asset('img/Flag_of_Normandie.svg')}}" style="height:150px; width:auto;"alt=""></div>
+    </li>
+    <li>
+      <div><img src="{{ asset('img/Eure_(27)_logo_2016.svg')}}" style="height:150px; width:auto;"alt=""></div>
+    </li>
+    <li id="list-footer">
+      <ul>
+        <li>
+          <h4>
+            Product'Eure  <?php echo date('Y') ; ?>
+          </h4>
+        </li>
+        <li class="list-footer"><a href="{{ route('contact-view') }}">Nous Contacter</a></li>
+        <li class="list-footer"><a href="{{ route('mentions') }}">Mentions Légales</a></li>
+        <li class="list-footer"><a href="{{ route('conditions') }}">CGU</a></li>
+      </ul>
+    </li>
+    <div id="nouveauté">
+      <h4>Nouveautés</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
-    <div><img src="{{ asset('img/personnage.png')}}" style="height:200px; width:auto;"alt=""></div>
+
   </ul>
+  <div class="wrap">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+  <div class="sprite">
+    <ul>
+      <li>
+        <div><img src="{{ asset('img/facebook-3.svg')}}" style="height:40px; width:auto;"alt=""></div>
+      </li>
+      <li>
+        <div><img src="{{ asset('img/twitter-3.svg')}}" style="height:40px; width:auto;"alt=""></div>
+      </li>
+      <li>
+        <div><img src="{{ asset('img/instagram-2-1.svg')}}" style="height:40px; width:auto;"alt=""></div>
+      </li>
+      <li>
+        <div><img src="{{ asset('img/github-icon.svg')}}" style="height:40px; width:auto;"alt=""></div>
+      </li>
+    </ul>
+  </div>
 </footer>
 <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" charset="utf-8"></script>
