@@ -88,6 +88,7 @@ class ProducerProfilController extends Controller
      'zone'    => $this->generateZoning($request->zipcode),
      'user_id' => Auth::id(),
      'slug' => str_slug($request->name),
+     'a effacer'
     ]);
     Producer::create($inputs);
 
