@@ -38,9 +38,15 @@ header {
 .header_flex h1{
     font-size: 4rem;
     padding: 20px;
+    color: #46879B ;
+    font-family: 'Permanent Marker', cursive;
 }
+.header_flex h1 span{
+  color: #D19B26 ;
+}
+
 header img{
-    position: fixed;
+    position: absolute;
     z-index: 20;
     top:-20px;
 }
@@ -90,11 +96,16 @@ header img{
 #presentation{
     background-color: rgba(104,157,113,0.7);
     padding:10px;
+    text-align: center;
+
 
 }
 
-#presentation{
-    text-align: center;
+#presentation p{
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
 }
 
 #search-tag{
@@ -124,9 +135,11 @@ header img{
 .icon{
     width:50px;
     height: 50px;
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.7));
     padding:5px;
     border-radius:4px;
+    border: 1px solid green ;
+    /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
 
 }
 .icon label{
@@ -135,6 +148,7 @@ header img{
 #search-tag input:checked + div {
   background-color:rgba(104,157,113,0.7);
   border:1px solid green;
+box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 #search-tag input[type=radio]{

@@ -3,9 +3,11 @@
 @endsection
 
 @section('title')
+
 @endsection
 
 @section('content')
+{{dd($request)}}
 @endsection
 
 @section('js')

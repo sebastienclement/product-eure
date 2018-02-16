@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Dosis|Fugaz+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Dosis|Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/front/reset.css')}}">
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
     @yield('css')
@@ -20,7 +20,7 @@
 
         <ul class="header_flex">
 
-            <h1>Product'Eure</h1>
+            <h1>Product<span>'Eure</span></h1>
             <div id="header_right">
               <nav class="menu-co" id="sticker">
                     @if (Auth::guest())
