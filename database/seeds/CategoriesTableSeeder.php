@@ -15,15 +15,31 @@ class CategoriesTableSeeder extends Seeder
       $categories = [];
 
       $categories[] = array(
+          'name'   =>  'bovin',
+      );
+
+      $categories[] = array(
+          'name'   =>  'porc',
+      );
+
+      $categories[] = array(
+          'name'   =>  'volaille',
+      );
+
+      $categories[] = array(
+          'name'   =>  'ovin',
+      );
+
+      $categories[] = array(
+          'name'   =>  'produit laitier',
+      );
+
+      $categories[] = array(
           'name'   =>  'fruit',
       );
 
       $categories[] = array(
-          'name'   =>  'légume',
-      );
-
-      $categories[] = array(
-          'name'   =>  'viande',
+          'name'   =>  'legume',
       );
 
       $categories[] = array(
@@ -31,7 +47,11 @@ class CategoriesTableSeeder extends Seeder
       );
 
       $categories[] = array(
-          'name'   =>  'laitage',
+          'name'   =>  'miel',
+      );
+
+      $categories[] = array(
+          'name'   =>  'produit fabriqué',
       );
 
 
