@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Dosis|Permanent+Marker" rel="stylesheet">
+    {{-- <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet"> --}}
     <link rel="stylesheet" href="{{asset('css/front/reset.css')}}">
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
     @yield('css')
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="{{asset('css/front/style.css')}}">
     <title>@yield('title')</title>
 </head>
@@ -49,7 +51,18 @@
 
 </header>
 <main>
-    @yield('content')
+  @if (session('success'))
+      <div class="alert alert-success">
+          {{ session('success') }}
+      </div>
+  @endif
+
+  @if (session('danger'))
+      <div class="alert alert-danger">
+          {{ session('danger') }}
+      </div>
+  @endif
+  @yield('content')
 </main>
 <footer>
   <ul class="wrap flex-footer" id="flex-footer">

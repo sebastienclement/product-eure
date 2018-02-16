@@ -19,7 +19,7 @@ class PathUpload
 
   public function path()
   {
-    $path = 'upload/producer' . $this->dossier . '/' . date('Y') . '/' . date('m');
+    $path = 'upload/' . $this->dossier . '/' . date('Y') . '/' . date('m');
     return $path;
   }
 

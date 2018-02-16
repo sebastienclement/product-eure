@@ -7,10 +7,13 @@
 @endsection
 
 @section('content')
-  {!! Form::open(['route' => 'new-profil-action', 'method' => 'post','files' => true, 'novalidate' => 'novalidate']) !!}
+  <div class="formulaire-prod">
 
-  @include('front.formulaire-producer')
-  {!! Form::close() !!}
+    {!! Form::open(['route' => 'new-profil-action', 'method' => 'post','files' => true, 'novalidate' => 'novalidate']) !!}
+
+    @include('front.formulaire-producer')
+    {!! Form::close() !!}
+  </div>
 
 @endsection
 

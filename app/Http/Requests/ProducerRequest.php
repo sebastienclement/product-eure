@@ -26,7 +26,7 @@ class ProducerRequest extends FormRequest
         return [
             'name'        => 'required',
             'adresse'     => 'required',
-            'zipcode'     => 'required|regex:/27[0-9]{3}/',
+            'zipcode'     => 'regex:/27[0-9]{3}/',
             'description' => 'required|min:10|max:1500',
             'image'       => 'image|mimes:jpeg, png, jpg, svg|max:4096',
             'website'     => 'nullable',

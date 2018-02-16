@@ -6,7 +6,13 @@
 @endsection
 
 @section('content')
-  {!! Form::open(['route' => 'admin-new-producer-action', 'method' => 'post', 'novalidate' => 'novalidate']) !!}
+  {!! Form::open(['route' => 'admin-new-producer-action','files' => true, 'method' => 'post', 'novalidate' => 'novalidate']) !!}
+  
+  <div class="form-group">
+    {!! Form::label('image', 'Image de votre entreprise : ', ['class' => '']) !!}
+    {!! Form::file('image', ['class' => 'form-control']) !!}
+    {!! $errors->first('image', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+  </div>
 
   <div class="form-group">
     {!! Form::label('name', 'Nom de l\'entreprise : ', ['class' => '']) !!}

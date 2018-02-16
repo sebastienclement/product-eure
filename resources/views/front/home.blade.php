@@ -96,7 +96,7 @@
 
             <p>Un produit ? Un Producteur ? Un code postal ? Dites le nous ici, et nous ferons de notre mieux pour le trouver.</p>
             <div class="form-group">
-              <i class="fas fa-search"></i>
+              <i class="fa fa-search"></i>
               {!! Form::text('search', null, ['placeholder' => 'Votre recherche', 'class' => 'form-control']) !!}
               {!! $errors->first('search', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
             </div>

@@ -411,9 +411,14 @@ section#map h1 {
   display: block;
   /* position: absolute; */
 }
-/* ======================FOOTER ======================*/
+/* ======================Formulaire======================*/
+main div.formulaire-prod {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+  padding: 50px 30px;
+}
 
-/* ======================FOOTER ======================*/
 
 @media screen and (min-width: 200px) and (max-width: 640px){
 
