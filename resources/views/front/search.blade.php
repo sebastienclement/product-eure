@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-{{dd($request)}}
+{{dd($search)}}
 @endsection
 
 @section('js')
