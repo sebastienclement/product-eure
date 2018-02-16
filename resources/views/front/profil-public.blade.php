@@ -15,7 +15,8 @@
 
   <ul>
   @foreach ($producer->item as $a)
-        <li>{{$a->name}}</li>
+    <li>{{$a->name}}</li>
+    <li>{{$a->comment}}</li>
   @endforeach
   </ul>
   <ul>

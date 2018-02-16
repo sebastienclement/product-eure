@@ -28,24 +28,6 @@ class ProducerProfilController extends Controller
   }
 
   /**
-   * traitement des image via le service Upload
-   * [action description]
-   * @param  FormualaireRequest $request [description]
-   * @return [type]                      [description]
-   */
-  public function action(FormualaireRequest $request)
-  {
-    if(!empty($request->file('image'))) {
-      //uploader mon image
-      //ou mettre mon image et comment elle s'appelle
-      $path = new PathUpload($request->file('image'), 'formulaire');
-      $request->file('image')->move(public_path($path->path()), $path->imageName());
-    }
-
-    return redirect()->route('home')->with('success', 'ok good');
-  }
-
-  /**
    * [actionEditProfilProducer description]
    * @return [type] [description]
    */
@@ -77,22 +59,22 @@ class ProducerProfilController extends Controller
 
     // Requete d'insertion dans la bdd sur la table producer
     // puis redirect sur la page profil éditable avec mess success
+
     if(!empty($request->file('image'))) {
-      //uploader mon image
-      //ou mettre mon image et comment elle s'appelle
     $path = new PathUpload($request->file('image'), 'formulaire');
     $request->file('image')->move(public_path($path->path()), $path->imageName());
     }
-//==================================================================================
+
+
     $inputs = array_merge($request->all(), [
      'zone'    => $this->generateZoning($request->zipcode),
      'user_id' => Auth::id(),
      'slug' => str_slug($request->name),
-     'a effacer'
     ]);
     Producer::create($inputs);
-
     return redirect()->route('home')->with('success', 'Votre profil producteur vient d\'être créé');
+
+
   }
 
   /**

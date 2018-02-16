@@ -343,6 +343,9 @@ footer h4 {
   padding: 10px;
 }
 
+#toHidden {
+  display: none;
+}
 
 /* ================= SVG MAP =================== */
 section#map {
@@ -411,9 +414,9 @@ section#map h1 {
   display: block;
   /* position: absolute; */
 }
-/* ======================FOOTER ======================*/
 
-/* ======================FOOTER ======================*/
+
+/* ======================MEDIA QUERIES ======================*/
 
 @media screen and (min-width: 200px) and (max-width: 640px){
 

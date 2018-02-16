@@ -58,10 +58,10 @@
 
     </li> --}}
     <li>
-      <div><img src="{{ asset('img/Flag_of_Normandie.svg')}}" style="height:150px; width:auto;"alt=""></div>
+      <div>{!! file_get_contents(asset('img/flag_of_normandie.svg')) !!}</div>
     </li>
     <li>
-      <div><img src="{{ asset('img/Eure_(27)_logo_2016.svg')}}" style="height:150px; width:auto;"alt=""></div>
+      <div>{!! file_get_contents(asset('img/eure_2016.svg')) !!}</div>
     </li>
     <li id="list-footer">
       <ul>
@@ -89,21 +89,21 @@
   <div class="sprite">
     <ul>
       <li>
-        <div><img src="{{ asset('img/facebook-3.svg')}}" style="height:40px; width:auto;"alt=""></div>
+        <div>{!! file_get_contents(asset('img/facebook-3.svg')) !!}</div>
       </li>
       <li>
-        <div><img src="{{ asset('img/twitter-3.svg')}}" style="height:40px; width:auto;"alt=""></div>
+        <div>{!! file_get_contents(asset('img/twitter-3.svg')) !!}</div>
       </li>
       <li>
-        <div><img src="{{ asset('img/instagram-2-1.svg')}}" style="height:40px; width:auto;"alt=""></div>
+        <div>{!! file_get_contents(asset('img/instagram-2-1.svg')) !!}</div>
       </li>
       <li>
-        <div><img src="{{ asset('img/github-icon.svg')}}" style="height:40px; width:auto;"alt=""></div>
+        <div>{!! file_get_contents(asset('img/github-icon.svg')) !!}</div>
       </li>
     </ul>
   </div>
 </footer>
-<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div id="toHidden">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" charset="utf-8"></script>
 <script src="{{ asset('js/jquery.sticky.js') }}" charset="utf-8"></script>
 <script src="{{ asset('js/front/main.js') }}" charset="utf-8"></script>

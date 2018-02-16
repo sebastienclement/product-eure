@@ -32,7 +32,7 @@
     <div id="parallax">
         <div id="presentation">
             <div class="wrap-s">
-                <p> En facilitant la vente direct, et sans intermédiaire, nous souhaitons permettre le rapprochement entre les agriculteurs et les Eurois. Pour des produits de qualités et locales, cherchez votre futur dealer chez product'Eure !</p>
+                <p> En facilitant la vente directe, et sans intermédiaire, nous souhaitons permettre le rapprochement entre les agriculteurs et les Eurois. Pour des produits de qualités et locals, cherchez votre futur dealer chez product'Eure !</p>
             </div>
         </div>
 
@@ -94,7 +94,7 @@
                 </div>
             </div>
 
-            <p>Un produit ? Un Producteur ? Un code postal ? Dites le nous ici, et nous ferons de notre mieux pour le trouver.</p>
+            <p>Un produit ? Un Producteur ? Dites le nous ici, et nous ferons de notre mieux pour le trouver.</p>
             <div class="form-group">
               <i class="fas fa-search"></i>
               {!! Form::text('search', null, ['placeholder' => 'Votre recherche', 'class' => 'form-control']) !!}
@@ -105,7 +105,7 @@
             {{Form::submit('Envoyer', array('class' => ''))}}
             {{Form::close()}}
 
-
+            <p><a class="scrollToMap" href="#search_map">Ou bien rechercher via notre carte.</a></p>
 
 
         </div>
@@ -121,7 +121,7 @@
           <li>Gagnez En visibilité</li>
           <li>Présentez vos produits</li>
           <li>Renseignez vos différents point de ventes</li>
-          <li>Votre profil sera accessible à tous les visiteurs de Product'eur.com</li>
+          <li>Votre profil sera accessible à tous les visiteurs de Product'eur.fr</li>
           <li>Et c'est entièrement gratuit</li>
         </ul>
       </div>
@@ -129,7 +129,7 @@
         <h2>Vous êtes Locavores ?</h2>
         <ul>
           <li>Trouvez rapidement les producteurs du département</li>
-          <li>Rechercher par catégories ou par zone géographique</li>
+          <li>Rechercher par catégorie ou par zone géographique</li>
           <li>Inscrivez vous pour accéder à notre newsletter</li>
           <li>Et c'est entièrement gratuit, aussi</li>
         </ul>
