@@ -39,54 +39,55 @@
         <div id="search-tag">
             <h2>N'hésitez pas à consultez la <span><a href="{{ route('list-producer') }}">liste de tous nos producteurs</a></span>
             <p>ou<br>Trouvez celui qui vous convient en fonction de votre envie.</p>
-            {!!Form::open(['route' => 'home','method' => 'post']) !!}
+            {!!Form::open(['route' => 'search-result','method' => 'get']) !!}
             <div id="icon-flex">
 
-                <input id="bovins" type="radio" name="category" >
+                <input id="bovin"  value="Bovin" type="radio" name="category" >
                 <div class="icon">
-                    <label for="bovins"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/024-cow.svg')) !!}
+                    <label for="bovin"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/024-cow.svg')) !!}
                     </label>
                 </div>
-                <input id="porc" type="radio" name="category" >
+                <input id="porc" type="radio"  value="Porc" name="category" >
                 <div class="icon">
                     <label for="porc"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/022-pig.svg')) !!}
                     </label>
                 </div>
-                <input id="volaille" type="radio" name="category" >
+                <input id="volaille" type="radio"  value="Volaille" name="category" >
                 <div class="icon">
                     <label for="volaille"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/041-chicken.svg')) !!}
                     </label>
                 </div>
-                <input id="Ovins" type="radio" name="category" >
-                    <div class="icon"><label for="Ovins"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/sheep.svg')) !!}
+                <input id="Ovin" type="radio" value="Ovin" name="category" >
+                    <div class="icon">
+                    <label for="Ovin"  class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/sheep.svg')) !!}
                     </label>
                 </div>
-                <input id="Lait" type="radio" name="category" >
+                <input id="Lait" type="radio" value="Produit Laitier" name="category" >
                 <div class="icon">
-                    <label for="Lait"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/020-milk.svg')) !!}
+                    <label for="Lait"  class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/020-milk.svg')) !!}
                     </label>
                 </div>
-                <input id="fruit" type="radio" name="category" >
+                <input id="fruit" type="radio"  value="Fruit" name="category" >
                 <div class="icon">
                     <label for="fruit"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/023-tomato.svg')) !!}
                     </label>
                 </div>
-                <input id="legume" type="radio" name="category" >
+                <input id="legume" type="radio"  value="Légume" name="category" >
                 <div class="icon">
                     <label for="legume"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/013-vegetable.svg')) !!}
                     </label>
                 </div>
-                <input id="plante" type="radio" name="category" >
+                <input id="plante" type="radio"  value="Plante" name="category" >
                 <div class="icon">
                     <label for="plante"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/030-tree.svg')) !!}
                     </label>
                 </div>
-                <input id="miel" type="radio" name="category" >
+                <input id="miel" type="radio"  value="Miel" name="category" >
                 <div class="icon">
                     <label for="miel"class="btn btn-default m-r-mini">{!!     file_get_contents(asset('img/icons/010-bee.svg')) !!}
                     </label>
                 </div>
-                <input id="prod" type="radio" name="category" >
+                <input id="prod" type="radio"  value="Prod" name="category" >
                 <div class="icon">
                     <label for="prod"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/beer.svg')) !!}
                     </label>
@@ -96,8 +97,8 @@
             <p>Un produit ? Un Producteur ? Un code postal ? Dites le nous ici, et nous ferons de notre mieux pour le trouver.</p>
             <div class="form-group">
               <i class="fas fa-search"></i>
-              {!! Form::text('nom', null, ['placeholder' => 'Votre recherche', 'class' => 'form-control']) !!}
-              {!! $errors->first('nom', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+              {!! Form::text('search', null, ['placeholder' => 'Votre recherche', 'class' => 'form-control']) !!}
+              {!! $errors->first('search', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
             </div>
 
 
