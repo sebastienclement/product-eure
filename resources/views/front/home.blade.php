@@ -42,52 +42,52 @@
             {!!Form::open(['route' => 'search-result','method' => 'get']) !!}
             <div id="icon-flex">
 
-                <input id="bovin"  value="Bovin" type="radio" name="category" >
+                <input id="bovin"  value="1" type="radio" name="category" >
                 <div class="icon">
                     <label for="bovin"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/024-cow.svg')) !!}
                     </label>
                 </div>
-                <input id="porc" type="radio"  value="Porc" name="category" >
+                <input id="porc" type="radio"  value="2" name="category" >
                 <div class="icon">
                     <label for="porc"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/022-pig.svg')) !!}
                     </label>
                 </div>
-                <input id="volaille" type="radio"  value="Volaille" name="category" >
+                <input id="volaille" type="radio"  value="3" name="category" >
                 <div class="icon">
                     <label for="volaille"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/041-chicken.svg')) !!}
                     </label>
                 </div>
-                <input id="Ovin" type="radio" value="Ovin" name="category" >
+                <input id="Ovin" type="radio" value="4" name="category" >
                     <div class="icon">
                     <label for="Ovin"  class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/sheep.svg')) !!}
                     </label>
                 </div>
-                <input id="Lait" type="radio" value="Produit Laitier" name="category" >
+                <input id="Lait" type="radio" value="5" name="category" >
                 <div class="icon">
                     <label for="Lait"  class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/020-milk.svg')) !!}
                     </label>
                 </div>
-                <input id="fruit" type="radio"  value="Fruit" name="category" >
+                <input id="fruit" type="radio"  value="6" name="category" >
                 <div class="icon">
                     <label for="fruit"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/023-tomato.svg')) !!}
                     </label>
                 </div>
-                <input id="legume" type="radio"  value="Légume" name="category" >
+                <input id="legume" type="radio"  value="7" name="category" >
                 <div class="icon">
                     <label for="legume"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/013-vegetable.svg')) !!}
                     </label>
                 </div>
-                <input id="plante" type="radio"  value="Plante" name="category" >
+                <input id="plante" type="radio"  value="8" name="category" >
                 <div class="icon">
                     <label for="plante"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/030-tree.svg')) !!}
                     </label>
                 </div>
-                <input id="miel" type="radio"  value="Miel" name="category" >
+                <input id="miel" type="radio"  value="9" name="category" >
                 <div class="icon">
                     <label for="miel"class="btn btn-default m-r-mini">{!!     file_get_contents(asset('img/icons/010-bee.svg')) !!}
                     </label>
                 </div>
-                <input id="prod" type="radio"  value="Prod" name="category" >
+                <input id="prod" type="radio"  value="10" name="category" >
                 <div class="icon">
                     <label for="prod"class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/beer.svg')) !!}
                     </label>
