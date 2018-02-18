@@ -16,13 +16,14 @@ class CreateProducersTable extends Migration
       Schema::create('producers', function (Blueprint $table) {
         $table->increments('id');
         $table->integer('user_id')->unsigned();
-        $table->foreign('user_id')->references('id')->on('users')
-              ->onDelete('restrict')->onUpdate('restrict');
+        // $table->foreign('user_id')->references('id')->on('users')
+              // ->onDelete('restrict')->onUpdate('restrict');
         $table->string('name');
         $table->string('slug')->unique();
         $table->string('siret')->nullable();
         $table->string('adresse');
         $table->integer('zipcode');
+        $table->string('ville');
         $table->string('zone');
         $table->string('producer_email');
         $table->string('phone')->nullable();

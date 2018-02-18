@@ -75,4 +75,11 @@ class SearchController extends Controller
 
       return view('front/search',compact('producers','request','search'));
     }
+
+    public function actionSearchMap($zone)
+    {
+      $producers = Producer::where('zone', '=', $zone)->get();
+      dd($producers);
+      return view('front/search',compact('producers','zone'));
+    }
 }
