@@ -15,7 +15,7 @@
   <ul>
   @foreach ($producers as $key => $producer)
       <div class="single_prod">
-        <li><h3><a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">{{$producer->name}}</a></h3></li>
+        <li><h3><a href="{{ route('profil-public', ['slug' => $producer->slug]) }}">{{$producer->name}}</a></h3></li>
         <li>{{$producer->description}}</li>
         <li>{{$producer->zone}}</li>
       </div>
