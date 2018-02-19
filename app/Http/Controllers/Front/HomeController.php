@@ -50,12 +50,34 @@ class HomeController extends Controller
       //     }
 
 
+      
+      $nbProdRoumois = $this->countProducersByZone('pays-roumois-et-marais-vernier',$producers);
+      $nbProdNeubourg = $this->countProducersByZone('plateau-du-neubourg',$producers);
+      $nbProdVexin = $this->countProducersByZone('vexin-normand',$producers);
+      $nbProdLieuvin = $this->countProducersByZone('lieuvin',$producers);
+      $nbProdOuche = $this->countProducersByZone('pays-d-ouche',$producers);
+      $nbProdAndre = $this->countProducersByZone('plateau-de-saint-andre',$producers);
 
+      return view('front/home',compact('nbProdRoumois','nbProdNeubourg', 'nbProdVexin', 'nbProdLieuvin', 'nbProdOuche', 'nbProdAndre', 'articles','categories','producers','items','retails','users','a','b', 'c'));
+    }
 
-
-
-
-      return view('front/home',compact('$produce','articles','categories','producers','items','retails','users','a','b', 'c'));
+    /**
+     * [countProducersByZone permet à partir de la requête d'obtention de tous les producteurs d'avoir seulement ceux d'une zone précise]
+     * @param  [string] $valueZone [La zone souhaitée]
+     * @param  [array] $array [résultat de la requete $producers = Producer::all()]
+     * @return [int]        [le comptage final de producteurs sur la zone souhaitée]
+     */
+    private function countProducersByZone($valueZone, $array)
+    {
+      $i = 0;
+      foreach($array AS $line)
+      {
+        if($line->zone == $valueZone)
+        {
+            $i++;
+        }
+      }
+      return $i;
     }
 
     /**

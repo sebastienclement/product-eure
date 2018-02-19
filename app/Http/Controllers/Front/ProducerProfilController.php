@@ -70,7 +70,7 @@ class ProducerProfilController extends Controller
     }
 
     $inputs = array_merge($request->all(), [
-      // 'zone'    => $this->generateZoning($request->zipcode),
+      'zone'    => $this->generateZoning($request->zipcode),
       'user_id'  => Auth::id(),
       'slug'     => str_slug($request->name),
       'path_img' => $image,
@@ -98,17 +98,17 @@ class ProducerProfilController extends Controller
     $zipcodeF = [27000,27120,27180,27220,27490,27530,27540,27600,27640,27650,27710,27730,27750,27780,27810,27920,27930,27940,27950];
 
     if (in_array($zipcode, $zipcodeA)) {
-      return 'a';
+      return 'pays-roumois-et-marais-vernier';
     } elseif (in_array($zipcode, $zipcodeB)) {
-      return 'b';
+      return 'plateau-du-neubourg';
     } elseif (in_array($zipcode, $zipcodeC)) {
-      return 'c';
+      return 'vexin-normand';
     } elseif (in_array($zipcode, $zipcodeD)) {
-      return 'd';
+      return 'lieuvin';
     } elseif (in_array($zipcode, $zipcodeE)) {
-      return 'e';
+      return 'pays-d-ouche';
     } elseif (in_array($zipcode, $zipcodeF)) {
-      return 'f';
+      return 'plateau-de-saint-andre';
     }
   }
 }

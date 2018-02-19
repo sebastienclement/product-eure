@@ -45,8 +45,9 @@ Route::group(['namespace' => 'Front'], function() {
   Route::get('/creer-un-profil', 'ProducerProfilController@showNewProfilProducer')->name('new-profil-view');
   Route::post('/creer-un-profil', 'ProducerProfilController@actionNewProfilProducer')->name('new-profil-action');
 
-  //Route resultat de recherche
+  //Routes resultats de recherche
   Route::get('/recherche', 'SearchController@actionSearchForm')->name('search-result');
+  Route::get('/recherche/{zone}', 'SearchController@actionSearchMap')->name('search-result-map');
 
   //Routes contact
   Route::get('/contact', 'ContactController@showFormContact')->name('contact-view');
