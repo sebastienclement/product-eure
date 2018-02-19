@@ -554,7 +554,7 @@ main div.formulaire-prod {
  .photo {
    width: 500px;
    height: 280px;
-   background-color:black;
+   /* background-color:black; */
    box-sizing: border-box;
  }
  .containerpulic img {
