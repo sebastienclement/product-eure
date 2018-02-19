@@ -37,9 +37,12 @@ Route::group(['namespace' => 'Front'], function() {
   // Route profil public producteur
   Route::get('/profil/{slug}', 'ProducerController@showProfilProducer')->name('profil-public');  // avec 'slug' en parametre
 
+  // Route profil public perso producteur
+  Route::get('/profil', 'ProducerController@showProfilPersoProducer')->name('profil-perso');// Ajout bastien
+
   // Routes profil editable producteur
-  Route::get('/mon-profil/{slug}', 'ProducerProfilController@showEditProfilProducer')->name('edit-profil-view'); // avec 'slug' en parametre
-  Route::put('/mon-profil/{slug}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'slug' en parametre
+  Route::get('/mon-profil', 'ProducerProfilController@showEditProfilProducer')->name('edit-profil-view'); // avec 'slug' en parametre
+  Route::put('/mon-profil/{id}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'slug' en parametre
 
   // Routes profil création producteur
   Route::get('/creer-un-profil', 'ProducerProfilController@showNewProfilProducer')->name('new-profil-view');

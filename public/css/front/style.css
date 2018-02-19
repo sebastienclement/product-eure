@@ -323,10 +323,14 @@ footer h4 {
 #list-footer h4{
   font-family: 'Permanent Marker', cursive;
 }
-#list-footer h4 span{
-  color: #D19B26 ;
 
+#list-footer h4 span{
+  color: #99CCFF ;
 }
+#list-footer span.eureh4{
+  color: rgba(209,155,38,1);
+}
+
 
 #nouveauté {
   width:40%;
@@ -464,6 +468,9 @@ main div.formulaire-prod {
   padding: 3px 0;
 
 
+ }
+ .listDescriptionProfil {
+   padding-left: 5%;
  }
   .listDescriptionProfil h2 {
     font-size: 2em;

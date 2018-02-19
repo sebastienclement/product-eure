@@ -28,9 +28,12 @@
                     @if (Auth::guest())
                         <li><a href="{{ route('register') }}">Inscription</a></li>
                         <li><a href="{{ route('login') }}">Connexion</a></li>
+
                     @else
-                    <li><a href="">{{ ucfirst(Auth::user()->name) }}</a></li>
-                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ route('profil-perso') }}">{{ ucfirst(Auth::user()->name) }}</a></li>
+                    @if (Auth::user()->role == 'admin')
+                      <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    @endif
                     <li>
                         <a href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
@@ -77,7 +80,7 @@
       <ul>
         <li>
           <h4>
-            <span>Product</span>'<span>Eure</span><?php echo date('Y') ; ?>
+            <span>Product</span>'<span class="eureh4">Eure</span><?php echo date('Y') ; ?>
           </h4>
         </li>
         <li class="list-footer"><a href="{{ route('contact-view') }}">Nous Contacter</a></li>

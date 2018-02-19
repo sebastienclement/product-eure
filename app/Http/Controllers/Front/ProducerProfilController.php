@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Service\PathUpload;
 use App\Models\Producer;
+use Carbon\Carbon;
 use App\Http\Requests\ProducerRequest;
 // use App\Http\Middleware\Abonne;
 use Auth;
@@ -24,20 +25,48 @@ class ProducerProfilController extends Controller
    */
   public function showEditProfilProducer()
   {
-    return view('front/profil-edit');
+
+    $user = Auth::id();
+    $producer = Producer::where('user_id', '=', $user)->first();
+
+    return view('front/profil-edit', compact('producer'));
   }
 
-  /**
+   /**
    * [actionEditProfilProducer description]
    * @return [type] [description]
    */
-  public function actionEditProfilProducer()
+  public function actionEditProfilProducer(ProducerRequest $request, $id)
   {
-
     // Requete d'update sur la table producer
     // puis redirection sur la page profil éditable avec un message de succes
+    if(!empty($request->file('image'))) {
 
-    return redirect()->route('front/profil-edit')->with('success', 'Votre profil a été mis à jour');
+      $path = new PathUpload($request->file('image'), 'producer');
+      $request->file('image')->move(public_path($path->path()), $path->imageName());
+
+      $post = $request->all();
+
+      \DB::table('producers')->where('id', $id )->update([
+        'name'            => $post['name'],
+        'adresse'         => $post['adresse'],
+        'zipcode'         => $post['zipcode'],
+        'producer_email'  => $post['producer_email'],
+        'phone'           => $post['phone'],
+        'website'         => $post['website'],
+        'description'     => $post['description'],
+        'path_img'        => $path->path().'/'.$path->imageName(),
+        'updated_at'      => Carbon::now(),
+      ]);
+    } else {
+
+      $producer = Producer::FindOrFail($id);
+      // dd($producer['path_img']);
+      $producer->update($request->all());
+
+    }
+
+    return redirect()->route('profil-perso')->with('success', 'Votre profil a été mis à jour');
   }
 
   /**
@@ -77,7 +106,7 @@ class ProducerProfilController extends Controller
     ]);
     Producer::create($inputs);
 
-    return redirect()->route('home')->with('success', 'Votre profil producteur vient d\'être créé');
+    return redirect()->route('profil-perso')->with('success', 'Votre profil producteur vient d\'être créé');
 
 
   }

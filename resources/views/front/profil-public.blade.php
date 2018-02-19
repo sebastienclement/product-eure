@@ -1,4 +1,7 @@
 @extends('front.layout.layout')
+@section('bootstrap-css')
+  <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet">
+@endsection
 @section('css')
   <link href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 @endsection
@@ -11,6 +14,7 @@
   <div class="profilPublic">
 
     <section id="topContent">
+
       <div class="wrap containerpulic" style>
         <div class="photo">
           <img src="{{asset($producer->path_img)}}" alt="Une photo de {{$producer->name}}">
@@ -22,9 +26,17 @@
             <h2 id="nameProducteurProfil">{{$producer->name}}</h2>
             <p><i class="fa fa-comment"></i> :{{ $producer->description}}</p>
             <p><i class="fa fa-home"></i> :{{ $producer->adresse}},{{$producer->zipcode}}</p>
+            <p><i class="fa fa-home"></i> :{{ $producer->ville}}</p>
             <p><i class="fa fa-phone-square"></i> :{{ $producer->phone}}</p>
-            <p><i class="fa fa-envelope"></i> :{{ $producer->producer_email}}</p>
-
+            @if (!empty($producer->website))
+              <p><i class="fa fa-phone-square"></i> :{{ $producer->website}}</p>
+            @endif
+            @if (!empty($producer->producer_email))
+              <p><i class="fa fa-envelope"></i> :{{ $producer->producer_email}}</p>
+            @endif
+            @if (Auth::user()->id == $producer->user_id)
+                <p><a href="{{ route('edit-profil-view') }}" class="btn btn-success">Modifier mon profil</a></p>
+            @endif
           </div>
         </div>
       </div>
@@ -34,6 +46,9 @@
       <div class="itemRetailProfil wrap">
 
         <div class="itemProfil ">
+          @if (Auth::user()->id == $producer->user_id)
+              <p><a href="{{ route('home') }}" class="btn btn-success">Ajouter un produit</a></p>
+          @endif
           <h3 class="itemRetailTile">Voici les articles que nous proposons</h3>
           <ul>
             @foreach ($producer->item as $a)
@@ -42,11 +57,13 @@
           </ul>
         </div>
         <div class="retailProfil wrap">
+          @if (Auth::user()->id == $producer->user_id)
+              <p><a href="{{ route('home') }}" class="btn btn-success">Ajouter un lieu de vente</a></p>
+          @endif
           <h3 class="itemRetailTile">Les Points de vente pour nos produits</h3>
           <ul>
             @foreach ($producer->retail as $b)
               <li>{{$b->name}} à {{$b->lieu}}</li>
-              <li></li>
             @endforeach
           </ul>
         </div>
