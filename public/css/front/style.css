@@ -113,6 +113,7 @@ header img{
   left: 25%;
   top:50%;
   transform: translateY(-50%);
+  font-family: 'Dosis', sans-serif;
 }
 
 .inside-search h2 {
