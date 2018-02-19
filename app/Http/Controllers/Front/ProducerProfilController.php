@@ -95,7 +95,7 @@ class ProducerProfilController extends Controller
 
       $image =  $path->path().'/'.$path->imageName();
     } else {
-      $image = NULL;
+      $image = '/img/icons/040-farmer.png';
     }
 
     $inputs = array_merge($request->all(), [

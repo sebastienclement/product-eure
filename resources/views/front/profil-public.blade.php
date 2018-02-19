@@ -17,7 +17,8 @@
 
       <div class="wrap containerpulic" style>
         <div class="photo">
-          <img src="{{asset($producer->path_img)}}" alt="Une photo de {{$producer->name}}">
+          {{-- {!! file_get_contents(asset($producer->path_img)) !!} --}}
+          <img src="{{asset($producer->path_img)}}" alt="Une photo de {{$producer->name}}" width="500">
         </div>
 
         <div class="descriptionProfil" >

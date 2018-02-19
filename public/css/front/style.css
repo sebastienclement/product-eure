@@ -2,7 +2,7 @@
 body{
   /* background-color: #3E8022; */
   font-family: 'Dosis', sans-serif;
-  background-image: url('../../img/grain-opacity.png');
+  background-image: url('../../img/home/grain-opacity.png');
   overflow-x: hidden;
 }
 
@@ -187,7 +187,7 @@ header img{
 
 div#parallax {
   position: relative;
-  background: url("../../img/deux.jpg") no-repeat fixed;
+  background: url("../../img/home/deux.jpg") no-repeat fixed;
   background-size: cover;
   height: 600px;
 }
@@ -200,7 +200,7 @@ div#parallax {
 
 div#parallax_2 {
   position: relative;
-  background: url("../../img/trois.jpg") no-repeat fixed;
+  background: url("../../img/home/trois.jpg") no-repeat fixed;
   background-size: cover;
   height: 600px;
 }
@@ -555,7 +555,7 @@ main div.formulaire-prod {
    width: 500px;
    height: 280px;
    background-color:black;
-
+   box-sizing: border-box;
  }
  .containerpulic img {
    max-width: 500px;

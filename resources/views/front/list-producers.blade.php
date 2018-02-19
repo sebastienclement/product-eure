@@ -21,7 +21,7 @@
               <div class="detail-prod">
                 <h3>{{$producer->name}}</a></h3>
                 <p>{{$producer->description}}</p>
-                <p>{{$producer->zone}}</p>
+                <p>{{$producer->zipcode}} {{$producer->ville}}</p>
                 <p><a href="{{ route('profil-public', ['slug' => $producer->slug]) }}">Voir le Profil</a></p>
               </div>
         </div>

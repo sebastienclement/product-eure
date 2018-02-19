@@ -49,13 +49,11 @@
   </section>
 
   <section id="map" class="wrap">
-    {{-- {!! file_get_contents(asset('img/grain.svg')) !!} --}}
-
     <h2>La carte des producteurs de l'Eure</h2>
     <p> Trouver en un clic tous les producteurs proches de chez vous.</p>
           <div class="content">
               <div class="img-svg">
-                {!! file_get_contents(asset('img/eure-region-naturelle.svg')) !!}
+                {!! file_get_contents(asset('img/home/eure-region-naturelle.svg')) !!}
               </div>
           </div>
   </section>

@@ -17,7 +17,7 @@
 <body>
 <header>
 
-  <a href="{{ route('home') }}"><img src="{{ asset('img/logo.png')}}" width="200px" height="auto"></a>
+  <a href="{{ route('home') }}"><img src="{{ asset('img/home/logo.png')}}" width="200px" height="auto"></a>
     <div class="wrap">
 
         <ul class="header_flex">
@@ -66,15 +66,11 @@
 </main>
 <footer>
   <ul class="wrap flex-footer" id="flex-footer">
-    {{-- <li>
-      <div><img src="{{ asset('img/personnage.png')}}" style="height:150px; width:auto;"alt=""></div>
-
-    </li> --}}
     <li>
-      <div>{!! file_get_contents(asset('img/drapeau_normandie.svg')) !!}</div>
+      <div>{!! file_get_contents(asset('img/footer/drapeau_normandie.svg')) !!}</div>
     </li>
     <li>
-      <div>{!! file_get_contents(asset('img/eure_2016.svg')) !!}</div>
+      <div>{!! file_get_contents(asset('img/footer/eure_2016.svg')) !!}</div>
     </li>
     <li id="list-footer">
       <ul>
@@ -102,16 +98,16 @@
   <div class="sprite">
     <ul>
       <li>
-        <div>{!! file_get_contents(asset('img/facebook-3.svg')) !!}</div>
+        <div>{!! file_get_contents(asset('img/footer/facebook.svg')) !!}</div>
       </li>
       <li>
-        <div>{!! file_get_contents(asset('img/twitter-3.svg')) !!}</div>
+        <div>{!! file_get_contents(asset('img/footer/twitter.svg')) !!}</div>
       </li>
       <li>
-        <div>{!! file_get_contents(asset('img/instagram-2-1.svg')) !!}</div>
+        <div>{!! file_get_contents(asset('img/footer/instagram.svg')) !!}</div>
       </li>
       <li>
-        <div>{!! file_get_contents(asset('img/github-icon.svg')) !!}</div>
+        <div>{!! file_get_contents(asset('img/footer/github.svg')) !!}</div>
       </li>
     </ul>
   </div>

@@ -44,7 +44,7 @@ class AdminProducerController extends Controller
 
       $image = $path->path().'/'.$path->imageName();
     } else {
-      $image = NULL;
+      $image = 'img/icons/040-farmers.svg';
     }
 
     $inputs = array_merge($request->all(), [
