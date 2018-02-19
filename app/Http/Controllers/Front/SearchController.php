@@ -79,7 +79,8 @@ class SearchController extends Controller
     public function actionSearchMap($zone)
     {
       $producers = Producer::where('zone', '=', $zone)->get();
-      dd($producers);
-      return view('front/search',compact('producers','zone'));
+      $countsearch = count($producers);
+      // dd($producers);
+      return view('front/search',compact('producers','countsearch'));
     }
 }
