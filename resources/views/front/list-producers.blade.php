@@ -12,15 +12,21 @@
 @endphp
 
 <div class="wrap">
-  <ul>
+
   @foreach ($producers as $key => $producer)
-      <div class="single_prod">
-        <li><h3><a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">{{$producer->name}}</a></h3></li>
-        <li>{{$producer->description}}</li>
-        <li>{{$producer->zone}}</li>
-      </div>
+      <div class="single-prod">
+              <div class="img">
+                  {!! file_get_contents(asset('img/icons/040-farmer.svg')) !!}
+              </div>
+              <div class="detail-prod">
+                <h3>{{$producer->name}}</a></h3>
+                <p>{{$producer->description}}</p>
+                <p>{{$producer->zone}}</p>
+                <p><a href="{{ route('profil-public', ['slug' => $producer->slug]) }}">Voir le Profil</a></p>
+              </div>
+        </div>
   @endforeach
-</ul>
+
 </div>
 
 <div class="clear">

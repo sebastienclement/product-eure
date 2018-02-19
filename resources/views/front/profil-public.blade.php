@@ -34,8 +34,10 @@
             @if (!empty($producer->producer_email))
               <p><i class="fa fa-envelope"></i> :{{ $producer->producer_email}}</p>
             @endif
-            @if (Auth::user()->id == $producer->user_id)
+            @if (isset(Auth::user()->id))
+              @if (Auth::user()->id == $producer->user_id)
                 <p><a href="{{ route('edit-profil-view') }}" class="btn btn-success">Modifier mon profil</a></p>
+              @endif
             @endif
           </div>
         </div>
@@ -46,8 +48,10 @@
       <div class="itemRetailProfil wrap">
 
         <div class="itemProfil ">
-          @if (Auth::user()->id == $producer->user_id)
+          @if (isset(Auth::user()->id))
+            @if (Auth::user()->id == $producer->user_id)
               <p><a href="{{ route('home') }}" class="btn btn-success">Ajouter un produit</a></p>
+            @endif
           @endif
           <h3 class="itemRetailTile">Voici les articles que nous proposons</h3>
           <ul>
@@ -57,8 +61,10 @@
           </ul>
         </div>
         <div class="retailProfil wrap">
-          @if (Auth::user()->id == $producer->user_id)
+          @if (isset(Auth::user()->id))
+            @if (Auth::user()->id == $producer->user_id)
               <p><a href="{{ route('home') }}" class="btn btn-success">Ajouter un lieu de vente</a></p>
+            @endif
           @endif
           <h3 class="itemRetailTile">Les Points de vente pour nos produits</h3>
           <ul>
