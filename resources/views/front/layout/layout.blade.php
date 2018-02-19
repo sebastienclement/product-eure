@@ -22,7 +22,7 @@
 
         <ul class="header_flex">
 
-            <h1>Product<span>'Eure</span></h1>
+            <h1><a href="{{ route('home') }}">Product<span>'Eure</span></a></h1>
             <div id="header_right">
               <nav class="menu-co" id="sticker">
                     @if (Auth::guest())
@@ -44,9 +44,9 @@
                                 {{ csrf_field() }}
                         </form>
                     </li>
+                  @endif
               </nav>
             </div>
-        @endif
         </ul>
     </div>
 </header>
@@ -117,7 +117,6 @@
   </div>
 </footer>
 <div id="toHidden">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-<<<<<<< HEAD
 <script
   src="http://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -125,10 +124,10 @@
 <script src="{{ asset('js/jquery.sticky.js') }}" charset="utf-8"></script>
 <script src="{{ asset('js/front/main.js') }}" charset="utf-8"></script>
 
-=======
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js" charset="utf-8"></script>
 <script src="{{ asset('js/front/jquery.sticky.js') }}" charset="utf-8"></script>
 <script src="{{ asset('js/front/main.js') }}" charset="utf-8"></script>
->>>>>>> 74fade154e7d208523aa2d3e3d06558ae62ecec2
+
 @yield('js')
 </body>

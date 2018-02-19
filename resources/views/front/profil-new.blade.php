@@ -14,7 +14,7 @@
 
     {!! Form::open(['route' => 'new-profil-action', 'method' => 'post','files' => true, 'novalidate' => 'novalidate']) !!}
 
-    @include('front.formulaire-producer')
+    @include('front.form.formulaire-producer')
     {!! Form::close() !!}
   </div>
 

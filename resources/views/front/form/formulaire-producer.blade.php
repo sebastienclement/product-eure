@@ -26,6 +26,12 @@
   </div>
 
   <div class="form-group">
+    {!! Form::label('ville', 'Ville : ', ['class' => '']) !!}
+    {!! Form::text('ville', null,['placeholder' => 'Bernay', 'class' => 'form-control']) !!}
+    {!! $errors->first('ville', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+  </div>
+
+  <div class="form-group">
     {!! Form::label('description', 'Votre présentation : ', ['class' => '']) !!}
     {!! Form::textarea('description', null, ['placeholder' => 'Description de votre activité', 'class' => 'form-control']) !!}
     {!! $errors->first('description', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}

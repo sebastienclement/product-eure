@@ -16,10 +16,9 @@ class ProducersTableSeeder extends Seeder
       $date = new Datetime();
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'gaec des monts huglets',
           'slug'           => 'gaec-des-monts-huglets',
-          'siret'          =>  12133215465,
           'adresse'        => '1795 rue du lion',
           'ville'          => 'Manneville la Raoult',
           'zipcode'        => '27210',
@@ -32,10 +31,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'La ferme des cocottes',
           'slug'           => 'la-ferme-des-cocottes',
-          'siret'          =>  12133215465,
           'adresse'        => '1827 route de Foulbec',
           'zipcode'        => '27210',
           'ville'          => 'Saint-Maclou',
@@ -48,10 +46,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'EARL LES LANDES',
           'slug'           => 'earl-les-landes',
-          'siret'          =>  12133215465,
           'adresse'        => 'Les Jouveaux',
           'zipcode'        => '27310',
           'ville'          => 'Saint Ouen de Thouberville',
@@ -65,10 +62,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'le rucher d\'écaquelon',
           'slug'           => 'le-rucher-d-ecaquelon',
-          'siret'          =>  12133215465,
           'adresse'        => '28 rue de labas',
           'zipcode'        => '27290',
           'ville'          => 'Ecaquelon',
@@ -76,16 +72,15 @@ class ProducersTableSeeder extends Seeder
           'producer_email' => 'bob@laposte.fr',
           'phone'          => '0232565342',
           'website'        => null,
-          'description' => 'apiculteurs récoltants fabrication de Miel,pollen,propolis ,miel en rayons ,pain d\'épices,bougies ,nougat, etc...
+          'description' => 'apiculteurs récoltants fabrication de Miel, pollen,propolis, miel en rayons, pain d\'épices,bougies, nougat, etc...
           Vente directe au domicile sur rdv du mardi au samedi et vente sur les marchés de Bernay le samedi matin et Brionne le dimanche matin.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'horticulteur spilers',
           'slug'           => 'horticulteur-spilers',
-          'siret'          =>  12133215465,
           'adresse'        => '220 rte de la pyle',
           'zipcode'        => '27370',
           'ville'          => 'la pyle',
@@ -98,10 +93,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'faisanderie de brionne',
           'slug'           => 'faisanderie-de-brionne',
-          'siret'          =>  12133215465,
           'adresse'        => '25 rue jacques anquetil',
           'zipcode'        => '27800',
           'ville'          => 'Brionne',
@@ -114,10 +108,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'Maison Haas',
           'slug'           => 'maison-haas',
-          'siret'          =>  12133215465,
           'adresse'        => '12 Rue Ernest Neuville',
           'zipcode'        => '27110',
           'ville'          => 'Le Neubourg',
@@ -130,10 +123,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'EARL Mérimée',
           'slug'           => 'earl-merimee',
-          'siret'          =>  12133215465,
           'adresse'        => 'Route de Broglie 1',
           'zipcode'        => '27410',
           'ville'          => 'Jonquerets de Livet',
@@ -146,10 +138,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'EARL Du Puits',
           'slug'           => 'earldu-puits',
-          'siret'          =>  12133215465,
           'adresse'        => '16 rue du Puits',
           'zipcode'        => '27170',
           'ville'          => 'Berville la Campagne',
@@ -162,10 +153,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'la ferme saint aubinoise',
           'slug'           => 'la-ferme-saint-aubinoise',
-          'siret'          =>  12133215465,
           'adresse'        => '3 chemin de la hêtraie',
           'zipcode'        => '27300',
           'ville'          => 'Saint Aunbin le Vertueux',
@@ -197,10 +187,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'Artisan du végétal - Earl Bourgeais',
           'slug'           => 'artisan-du-végétal-earl-bourgeais',
-          'siret'          =>  12133215465,
           'adresse'        => '2 route de Verneuil',
           'zipcode'        => '27580',
           'ville'          => 'BOURTH',
@@ -213,10 +202,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'jardin d\'etienne',
           'slug'           => 'jardin-d-etienne',
-          'siret'          =>  12133215465,
           'adresse'        => '5 rue du Thuit Agron',
           'zipcode'        => '27370',
           'ville'          => 'le thuit signol',
@@ -229,10 +217,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'SARL DEBOOS',
           'slug'           => 'sarl-deboos',
-          'siret'          =>  12133215465,
           'adresse'        => '4 Rue aux juifs',
           'zipcode'        => '27110',
           'ville'          => 'DAUBEUF LA CAMPAGNE',
@@ -245,10 +232,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'Ferme Fruitière Les Vergers',
           'slug'           => 'ferme-fruitiere-les-vergers',
-          'siret'          =>  12133215465,
           'adresse'        => '22 Rue de l\'Eglise',
           'zipcode'        => '27400',
           'ville'          => 'Le Mesnil-Jourdain',
@@ -261,10 +247,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'le rucher de netreville',
           'slug'           => 'le-rucher-de-netreville',
-          'siret'          =>  12133215465,
           'adresse'        => '15 rue du Coudray',
           'zipcode'        => '27000',
           'ville'          => 'Evreux',
@@ -279,10 +264,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'Ferme de Travailles',
           'slug'           => 'ferme-de-travailles',
-          'siret'          =>  12133215465,
           'adresse'        => 'Ferme de Travailles',
           'zipcode'        => '27700',
           'ville'          => 'Harquency',
@@ -296,10 +280,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'EARL François Terrier',
           'slug'           => 'earl-françois-terrier',
-          'siret'          =>  12133215465,
           'adresse'        => '26 rue principale hameau de Feuquerolles',
           'zipcode'        => '27700',
           'ville'          => 'Les Andelys',
@@ -313,10 +296,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'La Fermette Bio de l\'Epte',
           'slug'           => 'la-fermette-bio-de-l-epte',
-          'siret'          =>  12133215465,
           'adresse'        => '29, rue d\'Eragny',
           'zipcode'        => '27140',
           'ville'          => 'Gisors',
@@ -329,10 +311,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'Les jardins de neustrie',
           'slug'           => 'les-jardins-de-neustrie',
-          'siret'          =>  12133215465,
           'adresse'        => 'Sentier maraîchère',
           'zipcode'        => '27100',
           'ville'          => 'Val de Reuil',
@@ -345,10 +326,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'la ferme du londe',
           'slug'           => 'la-ferme-du-londe',
-          'siret'          =>  12133215465,
           'adresse'        => '7 rue de la trinité hameau le Londe',
           'zipcode'        => '27700',
           'ville'          => 'heuqueville',
@@ -364,10 +344,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'Brasserie Duplessi',
           'slug'           => 'brasserie-duplessi',
-          'siret'          =>  12133215465,
           'adresse'        => '13 rue aux Moines',
           'zipcode'        => '27700',
           'ville'          => 'Les Trois Lacs',
@@ -380,10 +359,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'Le Pressoir d\'Or',
           'slug'           => 'le-pressoir-d-or',
-          'siret'          =>  12133215465,
           'adresse'        => '57 bis Route des Andelys St-Jean-de-Frenelles',
           'zipcode'        => '27150',
           'ville'          => 'Boisemont',
@@ -396,10 +374,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'Van Tornhout Brigitte',
           'slug'           => 'van-tornhout-brigitte',
-          'siret'          =>  12133215465,
           'adresse'        => '12 Rue Omer Canteloup',
           'zipcode'        => '27700',
           'ville'          => 'Guiseniers',
@@ -412,10 +389,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'M-T Glaces - Ferme des 7 épis',
           'slug'           => 'm-t-glaces-ferme-des-7-épis',
-          'siret'          =>  12133215465,
           'adresse'        => '12 Rue Omer Canteloup',
           'zipcode'        => '27250',
           'ville'          => 'La Maillardière',
@@ -428,10 +404,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'La Bikette Caugéenne',
           'slug'           => 'la-bikette-caugéenne',
-          'siret'          =>  12133215465,
           'adresse'        => 'Chemin des Hautes Forrières',
           'zipcode'        => '27180',
           'ville'          => 'Cauge',
@@ -445,10 +420,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'La Chèvrerie d\'Elise',
           'slug'           => 'la-chevrerie-d-elise',
-          'siret'          =>  12133215465,
           'adresse'        => '9 Rue de la Mare du Four',
           'zipcode'        => '27120',
           'ville'          => 'Le Plessis Hebert',
@@ -461,10 +435,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'Ô P\'tits Fruits d\'Anne',
           'slug'           => 'o-p-tits-fruits-d-anne',
-          'siret'          =>  12133215465,
           'adresse'        => '4 route de Nonancourt',
           'zipcode'        => '27320',
           'ville'          => 'Courdemanche',
@@ -477,10 +450,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'L\'Escargot des Marnières',
           'slug'           => 'l-escargot-des-marnieres',
-          'siret'          =>  12133215465,
           'adresse'        => 'Lieu-dit les Marnières RN 2012',
           'zipcode'        => '27570',
           'ville'          => 'Tillières sur Avre',
@@ -493,10 +465,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 2,
+          'user_id'        => 1,
           'name'           => 'Ferme du Clos de la Mare',
           'slug'           => 'ferme-du-clos-de-la-mare',
-          'siret'          =>  12133215465,
           'adresse'        => '2, Place Sainte-Opportune',
           'zipcode'        => '27750',
           'ville'          => 'La Couture Boussey',
@@ -509,10 +480,9 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 23,
+          'user_id'        => 1,
           'name'           => 'Ferme d\'Illièvre',
           'slug'           => 'ferme-d-illievre',
-          'siret'          =>  12133215465,
           'adresse'        => '1, rue des ventes La Bochelle',
           'zipcode'        => '27240',
           'ville'          => 'Sylvains les Moulins',

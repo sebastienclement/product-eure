@@ -27,10 +27,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function user()
+    public function article()
       {
         return $this->hasMany('\App\Models\Article');
       }
 
-
+    public function producer()
+      {
+        return $this->hasMany('\App\Models\Producer');
+      }
 }

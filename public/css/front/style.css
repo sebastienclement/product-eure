@@ -1,13 +1,11 @@
 /* ================GENERALE================ */
 body{
   /* background-color: #3E8022; */
-  /* font-family: 'Fugaz One', sans-serif; */
+  font-family: 'Dosis', sans-serif;
   background-image: url('../../img/grain-opacity.png');
+  overflow-x: hidden;
 }
 
-p{
-  /* font-family: 'Dosis', sans-serif; */
-}
 .wrap {
     max-width: 1200px;
     width: 100%;
@@ -21,7 +19,7 @@ p{
 
 a, a:visited{
     text-decoration: none;
-    color: #000;
+    color: #060606;
 }
 
 /* ================HEADER================ */
@@ -38,9 +36,15 @@ header {
 .header_flex h1{
     font-size: 4rem;
     padding: 20px;
-    color: #46879B ;
+    color: #46879B;
     font-family: 'Permanent Marker', cursive;
 }
+
+.header_flex h1 a, .header_flex h1 a:visited, .header_flex h1 a:hover {
+  color: #46879B !important;
+  text-decoration: none;
+}
+
 .header_flex h1 span{
   color: #D19B26 ;
 }
@@ -59,7 +63,6 @@ header img{
     display: inline-block;
     font-size: 1.1rem;
     color: rgba(0, 0, 0, 0.7);
-    font-family: 'Dosis', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -92,23 +95,16 @@ header img{
 /*========= Presentation + img ==========
 */
 
-#parallax{
-    position: relative;
-}
-
 #presentation{
-    background-color: rgba(104,157,113,0.7);
-    padding:10px;
-    text-align: center;
-
-
+  background-color: rgba(104,157,113,0.7);
+  padding:10px;
+  text-align: center;
 }
 
 #presentation p{
-    color: #fff;
-    font-family: 'Dosis', sans-serif;
-    font-size: 1.3rem;
-    line-height: 1.6rem;
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
 }
 
 #search-tag{
@@ -118,6 +114,7 @@ header img{
   left: 25%;
   top:50%;
   transform: translateY(-50%);
+  font-family: 'Dosis', sans-serif;
 }
 
 .inside-search h2 {
@@ -131,74 +128,112 @@ header img{
 }
 
 #icon-flex{
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
 }
 .icon{
-    width:50px;
-    height: 50px;
-    background-color: rgba(255,255,255,0.7));
-    padding:5px;
-    border-radius:4px;
-    border: 1px solid green ;
-    /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+  width:50px;
+  height: 50px;
+  background-color: rgba(255,255,255,0.7));
+  padding:5px;
+  border-radius:4px;
+  border: 1px solid green ;
+  /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
 
 }
 .icon label{
-    cursor: pointer;
+  cursor: pointer;
 }
 .inside-search input:checked + div {
   background-color:rgba(104,157,113,0.7);
   border:1px solid green;
-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .inside-search input[type=radio]{
-    position:fixed;
-    left:-9999px;
+  position:fixed;
+  left:-9999px;
 }
 .inside-search input[type=text]{
-    margin-top: 20px;
-    padding: 4px;
-    font-size:1.2rem;
-    width:50%;
-    height:30px;
-    border-radius: 4px;
-    border: none;
+  margin-top: 20px;
+  padding: 4px;
+  font-size:1.2rem;
+  width:50%;
+  height:30px;
+  border-radius: 4px;
+  border: none;
 }
 .inside-search input[type=text]:focus{
-    border: 1px solid green;
+  border: 1px solid green;
 }
 
 .inside-search input[type=submit]{
-    display: block;
-    height:30px;
-    width:80px;
-    margin: 20px auto;
-    border-radius: 4px;
-    border:none;
-    cursor: pointer;
-    background-color: rgba(104,157,113,0.7);
+  display: block;
+  height:30px;
+  width:80px;
+  margin: 20px auto;
+  border-radius: 4px;
+  border:none;
+  cursor: pointer;
+  background-color: rgba(104,157,113,0.7);
 }
 
 .inside-search input[type=submit]:hover{
-    background-color: rgba(104,157,113,1)
+  background-color: rgba(104,157,113,1)
 
 }
 
 
 div#parallax {
+  position: relative;
   background: url("../../img/deux.jpg") no-repeat fixed;
   background-size: cover;
   height: 600px;
 }
 
+
+/**
+ * ======== Parallax 2 - Presentation article
+ */
+
+
 div#parallax_2 {
- background: url("../../img/deux.jpg") no-repeat fixed;
- background-size: cover;
- height: 600px;
+  position: relative;
+  background: url("../../img/trois.jpg") no-repeat fixed;
+  background-size: cover;
+  height: 600px;
 }
+
+#news-box {
+  background-color: rgba(255,255,255,0.7);
+  position: absolute;
+  width: 50%;
+  top: 20%;
+  left: 25%;
+  height: 400px;
+  display: flex;
+  font-size: 1.3rem;
+}
+
+#news-box h3 {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(209,155,38,1);
+}
+
+.box-1 {
+  padding: 2rem;
+}
+
+.box-1 p {
+  padding: 0.8rem;
+}
+
+.box-2 {
+  padding: 2rem;
+}
+
+
 
 
 /*
@@ -231,7 +266,6 @@ div#parallax_2 {
   padding:20px 20px;
   margin: 60px 0;
   z-index: 50;
-
 }
 
 .info_flex>div h2{
@@ -245,7 +279,6 @@ div#parallax_2 {
   font-size:1.3rem;
   padding-top: 20px;
   color: aliceBlue;
-  font-family: 'Dosis','sans-serif';
   text-align: center;
 }
 
@@ -283,88 +316,92 @@ div#parallax_2 {
   z-index: -1;
   transform: skewX(-15deg);
 }
+/**
+* ===========  style listing search producer  =============
+*/
 
-/* ================FOOTER================ */
-
-footer {
-  border-top: 1px solid  grey;
-  font-family: 'Dosis','sans-serif';
-  padding: 50px;
-  color: #fff;
-  background-color: #46879B;
+.search_content{
+    position: relative;
 }
-footer div.wrap {
-  text-align:center;
-  padding:40px;
+#result-search{
+    padding:10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 5px solid #46879B;
+    font-family: 'Dosis',sans-serif;
 }
-
-footer #flex-footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  /* text-transform: uppercase; */
-  border-top: 2px solid rgba(209,155,38,1);
-  border-bottom: 2px solid rgba(209,155,38,1);
-  padding: 50px;
-}
-/* footer#content-logo {
-  display: flex;
-} */
-#list-footer {
-  width:30%;
-  /* text-align:center; */
-  margin-bottom: 10px;
-}
-footer h4 {
-  font-size:1.5rem;
-  padding-bottom: 15px;
-  /* text-transform: uppercase; */
-}
-#list-footer h4{
-  font-family: 'Permanent Marker', cursive;
+#result-search a{
+color:#3E8022;
 }
 
-#list-footer h4 span{
-  color: #99CCFF ;
+.list-prod{
+    padding:10px;
+    margin:4% 0;
+
+}
+
+.single-prod{
+    display: flex;
+    padding:2% 0;
+    background-color: #Fff;
+
+}
+
+.single-prod:nth-child(2n+1){
+    background-color: #FAFAFA;
 }
 #list-footer span.eureh4{
   color: rgba(209,155,38,1);
 }
 
 
-#nouveauté {
-  width:40%;
-  background-color: rgba(209,155,38,1);
-  padding:20px;
-  border-radius: 5px;
-}
-.footer-flex {
-  display: flex;
-  justify-content: center;
-  width: 40%;
-}
-.list-footer {
-  padding: 10px;
-  font-size: 1.2rem;
-  text-transform: uppercase;
+.single-prod .img{
+    width:150px;
 }
 
-.sprite ul{
-  display: flex;
-  justify-content: center;
+.detail-prod{
+    width: 80%;
+    padding-left: 10px;
+
 }
-.sprite li {
-  padding: 10px;
+.detail-prod h3,
+.detail-prod p{
+    font-family: 'Dosis',sans-serif;
 }
 
-#toHidden {
-  display: none;
+.detail-prod h3{
+    font-weight: bold;
+    font-size:1.3rem;
+    line-height: 2rem;
+    text-transform: uppercase;
 }
+.detail-prod p{
+    line-height: 1.3rem;
+}
+
+.detail-prod p{
+    line-height: 1.3rem;
+}
+
+
+#search-tag-2{
+    position: absolute;
+    top:40px;
+    width:100%;
+    background-color: #FAFAFA;
+    display:none;
+    z-index:1000;
+}
+
 
 /* ================= SVG MAP =================== */
+
+.scrollToMap:hover{
+  color : #46879B;
+}
+
 section#map {
   text-align: center;
-  font-family: 'Dosis','sans-serif';
   margin: 50px auto;
   border-top: 2px solid rgba(209, 155, 38, 1);
   border-bottom: 2px solid rgba(209, 155, 38, 1);
@@ -412,7 +449,7 @@ section#map p {
   border: 3px solid #D19B26;
   border-radius: 5px;
   padding: 5px;
-  font-family: 'Dosis', sans-serif;
+
 }
 
 #eure-map{
@@ -420,6 +457,78 @@ section#map p {
   /* position: absolute; */
 }
 
+
+/* ================FOOTER================ */
+
+footer {
+  border-top: 1px solid  grey;
+  padding: 50px;
+  color: #fff;
+  background-color: #46879B;
+}
+footer div.wrap {
+  text-align:center;
+  padding:40px;
+}
+
+footer #flex-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* text-transform: uppercase; */
+  border-top: 2px solid rgba(209,155,38,1);
+  border-bottom: 2px solid rgba(209,155,38,1);
+  padding: 50px;
+}
+/* footer#content-logo {
+display: flex;
+} */
+#list-footer {
+  width:30%;
+  /* text-align:center; */
+  margin-bottom: 10px;
+}
+footer h4 {
+  font-size:1.5rem;
+  padding-bottom: 15px;
+  /* text-transform: uppercase; */
+}
+#list-footer h4{
+  font-family: 'Permanent Marker', cursive;
+}
+#list-footer h4 span{
+  color: #D19B26 ;
+
+}
+
+#nouveauté {
+  width:40%;
+  background-color: rgba(209,155,38,1);
+  padding:20px;
+  border-radius: 5px;
+}
+.footer-flex {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+}
+.list-footer {
+  padding: 10px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.sprite ul{
+  display: flex;
+  justify-content: center;
+}
+.sprite li {
+  padding: 0 10px;
+}
+
+#toHidden {
+  display: none;
+}
 /* ======================Formulaire AUTH======================*/
 main div.formulaire-prod {
   margin: 0 auto;
@@ -464,9 +573,21 @@ main div.formulaire-prod {
  }
 .itemRetailProfil li {
   font-size: 1.2em;
-  font-family: 'Dosis', cursive;
+  padding: 3px 0;
+}
+
+.listDescriptionProfil h2 {
+  font-size: 2em;
+  padding-bottom: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.listDescriptionProfil p {
+  font-size: 1.2em;
   padding: 3px 0;
 
+}
 
  }
  .listDescriptionProfil {
@@ -487,47 +608,50 @@ main div.formulaire-prod {
  #itemRetailProfil {
    background-color: #46879B;
  }
- .itemRetailTile {
-   font-family: 'Dosis', cursive;
-   font-size: 1.5rem;
-   font-weight: bold;
-   text-transform: uppercase;
-   padding-bottom: 30px;
-   color: #FFF;
-   text-decoration: underline;
-   /* text-align: center; */
- }
- .itemRetailProfil {
-   display: flex;
-   justify-content: center;
-   margin-bottom: 100px;
-   background-color: #46879B;
-   /* min-height: 280px; */
-   padding: 50px 30px;
- }
- .itemProfil {
-   /* display: flex;
-   justify-content: center;
-   flex-direction: column; */
-   width: 50%;
 
- }
- .retailProfil {
-   /* display: flex;
-   justify-content: center;
-   flex-direction: column; */
-   width: 50%;
- }
- .retailProfil li ,.itemProfil li{
-   list-style: none;
-   padding-left: 10%;
- }
- .mapProfil {
+.itemRetailTile {
+ font-size: 1.5rem;
+ font-weight: bold;
+ text-transform: uppercase;
+ padding-bottom: 30px;
+ color: #FFF;
+ text-decoration: underline;
+ /* text-align: center; */
+}
+
+.itemRetailProfil {
+ display: flex;
+ justify-content: center;
+ margin-bottom: 100px;
+ background-color: #46879B;
+ /* min-height: 280px; */
+ padding: 50px 30px;
+}
+
+.itemProfil {
+ /* display: flex;
+ justify-content: center;
+ flex-direction: column; */
+ width: 50%;
+}
+
+.retailProfil {
+ /* display: flex;
+ justify-content: center;
+ flex-direction: column; */
+ width: 50%;
+}
+
+.retailProfil li ,.itemProfil li{
+ list-style: none;
+ padding-left: 10%;
+}
+
+.mapProfil {
  max-width: 1200px;
-  width: 100%;
-   margin: 0 auto;
-
- }
+ width: 100%;
+ margin: 0 auto;
+}
 
 
 
@@ -535,11 +659,15 @@ main div.formulaire-prod {
 
 @media screen and (min-width: 200px) and (max-width: 640px){
 
-.header_flex{
+.header_flex {
   flex-direction: column;
 }
 
-.header_flex h1{
+.header_flex h1 {
   display:none;
 }
+
+#news-box {
+  flex-direction: column;
+  overflow-y: auto;
 }
