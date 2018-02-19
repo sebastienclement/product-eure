@@ -16,7 +16,11 @@
   @foreach ($producers as $key => $producer)
       <div class="single-prod">
               <div class="img">
-                  {!! file_get_contents(asset('img/icons/040-farmer.svg')) !!}
+                @if (($producer->path_img != '/img/icons/040-farmer.svg') && (($producer->path_img != null)))
+                  <img src="{{asset($producer->path_img)}}" alt="Une photo de {{$producer->name}}" width="500">
+                @else
+                  {!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}
+                @endif
               </div>
               <div class="detail-prod">
                 <h3>{{$producer->name}}</a></h3>
