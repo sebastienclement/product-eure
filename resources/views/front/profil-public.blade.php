@@ -25,7 +25,6 @@
 
           <div class="listDescriptionProfil">
             <h2 id="nameProducteurProfil">{{$producer->name}}</h2>
-            <p><i class="fa fa-comment"></i> :{{ $producer->description}}</p>
             <p><i class="fa fa-home"></i> :{{ $producer->adresse}},{{$producer->zipcode}}</p>
             <p><i class="fa fa-home"></i> :{{ $producer->ville}}</p>
             <p><i class="fa fa-phone-square"></i> :{{ $producer->phone}}</p>
@@ -42,6 +41,12 @@
             @endif
           </div>
         </div>
+      </div>
+    </section>
+    <section id="descriptionProfil">
+      <div class="wrap">
+        <h3>Une petite description</h3>
+        <p><i class="fa fa-comment"></i> :{{ $producer->description}}</p>
       </div>
     </section>
     <section id="itemRetailProfil">
