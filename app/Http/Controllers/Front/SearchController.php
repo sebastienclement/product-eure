@@ -25,13 +25,13 @@ class SearchController extends Controller
                        ->join('items','items.id', '=', 'item_producer.item_id')
                        ->where('items.name', 'like', '%' . $request['search'] . '%')
                        ->orWhere('items.comment', 'like', '%' . $request['search'] . '%')
-                       ->select('*','producers.name as prod_name')
+                       ->select('*','producers.name as prod_name','items.name as item_name')
                        ->orWhere('producers.adresse', 'like', '%' . $request['search'] . '%')
                        ->orWhere('producers.description', 'like', '%' . $request['search'] . '%')
                        ->orWhere('producers.zipcode', 'like', '%' . $request['search'] . '%')
                        ->get();
 
-
+          $name_categories = Category::where('id','=', $category)->select('name')->get();
 
         }elseif(!empty($request['category']))
         {
@@ -40,7 +40,11 @@ class SearchController extends Controller
           $producers = \DB::table('producers')
                         ->join('category_producer','producers.id', '=','category_producer.producer_id')
                         ->where('category_producer.category_id', '=', $category)
+                        ->join('categories','category_producer.category_id' ,'=','categories.id')
+                        ->select('*','producers.name as prod_name','categories.name as cat')
                         ->get();
+
+          $name_categories = Category::where('id','=', $category)->select('name')->get();
 
         }elseif(!empty($request['search']))
         {
@@ -51,28 +55,24 @@ class SearchController extends Controller
                         ->join('items','items.id', '=', 'item_producer.item_id')
                         ->where('items.name', 'like', '%' . $request['search'] . '%')
                         ->orWhere('items.comment', 'like', '%' . $request['search'] . '%')
-                        ->select('*','producers.name as prod_name')
+                        ->select('*','producers.name as prod_name','items.name as item_name')
                         ->orWhere('producers.adresse', 'like', '%' . $request['search'] . '%')
                         ->orWhere('producers.description', 'like', '%' . $request['search'] . '%')
                         ->orWhere('producers.zipcode', 'like', '%' . $request['search'] . '%')
                         ->get();
 
+          //   foreach ($producers as $producer) {
+          //       $cat_id = $producer->category_id;
+          //   }
+          //
+          // $name_categories = Category::where('id','=', $cat_id)->select('name')->get();
+
+        }else{
+            return redirect()->route('home')->with('success', 'tss');
         }
-            dd($producers);
+             // dd($producers);
+           $countsearch = count($producers);
 
-        // $search['prodwith'] = Producer::with('category')
-        //             ->whereId($request['category'])
-        //             ->get();
-        // $search['prod'] = Producer::with('item')
-        //                     ->where('name', 'like', '%' . $request['search'] . '%')
-        //                     ->orWhere('adresse', 'like', '%' . $request['search'] . '%')
-        //                     ->orWhere('description', 'like', '%' . $request['search'] . '%')
-        //                     ->get();
-        // $search['item'] = Item::with('producer')
-        //                       ->where('name', 'like', '%' . $request['search'] . '%')
-        //                       ->orWhere('comment', 'like', '%' . $request['search'] . '%')
-        //                       ->get();
-
-      return view('front/search',compact('producers','request','search'));
+      return view('front/search',compact('producers','countsearch','name_categories'));
     }
 }

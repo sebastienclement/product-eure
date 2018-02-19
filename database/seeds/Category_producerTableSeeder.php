@@ -33,6 +33,16 @@ class Category_producerTableSeeder extends Seeder
           'producer_id' => 4,
         );
 
+        $categoryproducer[] = array(
+          'category_id' => 3,
+          'producer_id' => 1,
+        );
+
+        $categoryproducer[] = array(
+          'category_id' => 2,
+          'producer_id' => 1,
+        );
+
         DB::table('category_producer')->insert($categoryproducer);
     }
 }

@@ -1,10 +1,10 @@
 $( document ).ready(function() {
 
-  $('.flexslider').flexslider({
-  animation: "slide",
-  controlNav: false,
-  directionNav: false,
-  });
+  // $('.flexslider').flexslider({
+  // animation: "slide",
+  // controlNav: false,
+  // directionNav: false,
+  // });
 
 
  ///////////////////
@@ -48,4 +48,32 @@ $( document ).ready(function() {
   });
 
 
+  ////////////////////////////////////////////////////
+  ///////Affichage de la fenetre de recherche/////////
+  ////////////////////////////////////////////////////
+
+
+
+    $('#toggle-search').on('click', function(e){
+        e.preventDefault();
+        if($('#search-tag-2').is(':hidden')){
+            $('#search-tag-2').slideDown(500);
+            $('#toggle-search').html('Fermer la fenêtre de recherche');
+            $('#toggle-search').css('color','red');
+            $('.list-prod').animate({
+                opacity:0.2
+            },500);
+        }else{
+            $('#search-tag-2').slideUp(500);
+            $('#toggle-search').html('Effectuer une autre recherche');
+            $('#toggle-search').css('color','#3E8022');
+            $('.list-prod').animate({
+                opacity:1
+            },500);
+        }
+
+
+
+
+    });
 });

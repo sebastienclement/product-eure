@@ -117,13 +117,12 @@
   </div>
 </footer>
 <div id="toHidden">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" charset="utf-8"></script>
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 <script src="{{ asset('js/jquery.sticky.js') }}" charset="utf-8"></script>
 <script src="{{ asset('js/front/main.js') }}" charset="utf-8"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  //$("#sticker").sticky({topSpacing:0});
-});
-</script>
+
 @yield('js')
 </body>
