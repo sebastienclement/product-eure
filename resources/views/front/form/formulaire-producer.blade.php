@@ -5,7 +5,7 @@
     {!! Form::label('image', 'Image de votre entreprise : ', ['class' => '']) !!}
     {!! Form::file('image', ['class' => 'form-control']) !!}
     {!! $errors->first('image', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-  </div>    
+  </div>
 
   <div class="form-group">
     {!! Form::label('name', 'Nom de l\'entreprise : ', ['class' => '']) !!}
@@ -23,6 +23,12 @@
     {!! Form::label('zipcode', 'Code Postal : ', ['class' => '']) !!}
     {!! Form::number('zipcode', null,['placeholder' => '27000', 'class' => 'form-control']) !!}
     {!! $errors->first('zipcode', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+  </div>
+
+  <div class="form-group">
+    {!! Form::label('ville', 'Ville : ', ['class' => '']) !!}
+    {!! Form::text('ville', null,['placeholder' => 'Bernay', 'class' => 'form-control']) !!}
+    {!! $errors->first('ville', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
 
   <div class="form-group">

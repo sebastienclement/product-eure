@@ -7,5 +7,10 @@ use App\Http\Controllers\Controller;
 
 class AjaxController extends Controller
 {
-    //
+  public function __contsruct()
+  {
+    $this->middleware('ajax');
+  }
+
+  
 }

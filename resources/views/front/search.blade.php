@@ -8,80 +8,6 @@
 
 @section('content')
 
-    <style>
-
-
-
-        .search_content{
-            position: relative;
-        }
-        #result-search{
-            padding:10px;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 5px solid #46879B;
-            font-family: 'Dosis',sans-serif;
-        }
-        #result-search a{
-        color:#3E8022;
-        }
-
-        .list-prod{
-            padding:10px;
-            margin:4% 0;
-
-        }
-
-        .single-prod{
-            display: flex;
-            padding:2% 0;
-            background-color: #Fff;
-
-        }
-
-        .single-prod:nth-child(2n+1){
-            background-color: #FAFAFA;
-        }
-
-        .single-prod .img{
-            width:150px;
-        }
-
-        .detail-prod{
-            width: 80%;
-            padding-left: 10px;
-
-        }
-        .detail-prod h3,
-        .detail-prod p{
-            font-family: 'Dosis',sans-serif;
-        }
-
-        .detail-prod h3{
-            font-weight: bold;
-            font-size:1.3rem;
-            line-height: 2rem;
-            text-transform: uppercase;
-        }
-        .detail-prod p{
-            line-height: 1.3rem;
-        }
-
-        .detail-prod p{
-            line-height: 1.3rem;
-        }
-
-
-        #search-tag-2{
-            position: absolute;
-            top:40px;
-            width:100%;
-            background-color: #FAFAFA;
-            display:none;
-            z-index:1000;
-        }
-
-    </style>
 
 <section class="wrap search_content">
     <div id="result-search">
@@ -97,7 +23,7 @@
 
     <div>
         <div id="search-tag-2" class="inside-search">
-            @include ('front/search/search')
+            @include ('front/form/search')
         </div>
     </div>
 
@@ -112,7 +38,7 @@
                 <h3>@if (!empty($producer->prod_name)) {{ucfirst($producer->prod_name)}}
                     @else {{ucfirst($producer->name)}}
                     @endif</h3>
-                <p>{{$producer->adresse}} {{$producer->zipcode}}</p>
+                <p>{{$producer->adresse}} {{$producer->zipcode}} {{$producer->ville}}</p>
                 {{-- <p>{{ucfirst($producer->description)}}</p> --}}
                 {{-- <p> @if  (!empty($producer->item_name)) {{ucfirst($producer->item_name)}} {{ucfirst($producer->comment)}}
                     @endif
