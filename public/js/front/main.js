@@ -48,6 +48,7 @@ $( document ).ready(function() {
 
     $('#toggle-search').on('click', function(e){
         e.preventDefault();
+        e.stopImmediatePropagation();
         if($('#search-tag-2').is(':hidden')){
             $('#search-tag-2').slideDown(500);
             $('#toggle-search').html('Fermer la fenêtre de recherche');

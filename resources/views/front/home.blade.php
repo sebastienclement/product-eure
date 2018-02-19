@@ -19,7 +19,7 @@
 
         <div id="search-tag" class="inside-search">
             @include ('front/search/search')
-            <p><a class="scrollToMap" href="#search_map">Ou bien rechercher via notre carte.</a></p>
+            <p><a class="scrollToMap" href="#map">Ou bien rechercher via notre carte.</a></p>
         </div>
     </div>
   </section>
