@@ -34,10 +34,6 @@ class Category_producerTableSeeder extends Seeder
         );
 
         $categoryproducer[] = array(
-<<<<<<< HEAD
-          'category_id' => 3,
-          'producer_id' => 1,
-=======
           'category_id' => 13,
           'producer_id' => 5,
         );
@@ -65,16 +61,10 @@ class Category_producerTableSeeder extends Seeder
         $categoryproducer[] = array(
           'category_id' => 1,
           'producer_id' => 10,
->>>>>>> 74fade154e7d208523aa2d3e3d06558ae62ecec2
         );
 
         $categoryproducer[] = array(
           'category_id' => 2,
-<<<<<<< HEAD
-          'producer_id' => 1,
-        );
-
-=======
           'producer_id' => 10,
         );
 
@@ -217,7 +207,6 @@ class Category_producerTableSeeder extends Seeder
           'category_id' => 4,
           'producer_id' => 30,
         );
->>>>>>> 74fade154e7d208523aa2d3e3d06558ae62ecec2
         DB::table('category_producer')->insert($categoryproducer);
     }
 }
