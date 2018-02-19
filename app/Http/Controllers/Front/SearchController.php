@@ -13,26 +13,42 @@ class SearchController extends Controller
     {
         $request = $request->all();
 
+
         if(!empty($request['category']) && (!empty($request['search'])))
         {
           $category = $request['category'];
           $search = $request['search'];
 
-          $producers = \DB::table('producers')
-                       ->join('category_producer','producers.id', '=','category_producer.producer_id')
-                       ->where('category_producer.category_id', '=', $category)
-                       ->join('item_producer','producers.id', '=', 'item_producer.producer_id')
-                       ->join('items','items.id', '=', 'item_producer.item_id')
-                       ->where('items.name', 'like', '%' . $request['search'] . '%')
-                       ->orWhere('items.comment', 'like', '%' . $request['search'] . '%')
-                       ->select('*','producers.name as prod_name','items.name as item_name')
-                       ->orWhere('producers.adresse', 'like', '%' . $request['search'] . '%')
-                       ->orWhere('producers.description', 'like', '%' . $request['search'] . '%')
-                       ->orWhere('producers.zipcode', 'like', '%' . $request['search'] . '%')
-                       ->get();
+          $producers_id = \DB::table('producers')
+                            ->join('category_producer','producers.id', '=','category_producer.producer_id')
+                            ->where('category_producer.category_id', '=', $category)
+                            ->join('item_producer','producers.id', '=', 'item_producer.producer_id')
+                            ->join('items','items.id', '=', 'item_producer.item_id')
+                            ->where(function($query) use ($search){
+                                $query->where('items.name', 'like', '%' . $search . '%')
+                                   ->orWhere('items.comment', 'like', '%' . $search . '%')
 
-          $name_categories = Category::where('id','=', $category)->select('name')->get();
+                                   ->orWhere('producers.adresse', 'like', '%' . $search . '%')
+                                   ->orWhere('producers.description', 'like', '%' . $search . '%')
+                                   ->orWhere('producers.zipcode', 'like', '%' . $search . '%');
+                               })
+                              ->select('*','producers.name as prod_name','producers.id as prod_id','items.name as item_name')
+                            ->get();
 
+             // dd($producers);
+
+// }
+          // $name_categories = Category::where('id','=', $category)->select('name')->get();
+
+// dd($producers_id);
+                  $producers_id = array_pluck($producers_id, 'prod_id');
+                   // dd($producers_id);
+                  if(!empty($producers_id)){
+                      $producers = Producer::where('id', $producers_id)->get();
+                  }else{
+                      $producers = [];
+                  }
+// dd($producers);
         }elseif(!empty($request['category']))
         {
           $category = $request['category'];
@@ -46,41 +62,39 @@ class SearchController extends Controller
 
           $name_categories = Category::where('id','=', $category)->select('name')->get();
 
+
+
         }elseif(!empty($request['search']))
         {
           $search = $request['search'];
 
-          $producers = \DB::table('producers')
+          $producers_id = \DB::table('producers')
                         ->join('item_producer','producers.id', '=', 'item_producer.producer_id')
-                        ->join('items','items.id', '=', 'item_producer.item_id')
+                        ->leftJoin('items','items.id', '=', 'item_producer.item_id')
                         ->where('items.name', 'like', '%' . $request['search'] . '%')
                         ->orWhere('items.comment', 'like', '%' . $request['search'] . '%')
-                        ->select('*','producers.name as prod_name','items.name as item_name')
+                        ->select('*','producers.name as prod_name','producers.id as prod_id','items.name as item_name')
                         ->orWhere('producers.adresse', 'like', '%' . $request['search'] . '%')
                         ->orWhere('producers.description', 'like', '%' . $request['search'] . '%')
                         ->orWhere('producers.zipcode', 'like', '%' . $request['search'] . '%')
+                        ->distinct()
                         ->get();
+                 // dd($producers_id);
 
-          //   foreach ($producers as $producer) {
-          //       $cat_id = $producer->category_id;
-          //   }
-          //
-          // $name_categories = Category::where('id','=', $cat_id)->select('name')->get();
+                        $producers_id = array_pluck($producers_id, 'prod_id');
+                        // dd($producers_id);
+                        if(!empty($producers_id)){
+                            $producers = Producer::where('id', $producers_id)->get();
+                        }else{
+                            $producers = [];
+                        }
 
         }else{
             return redirect()->route('home')->with('success', 'tss');
         }
-             // dd($producers);
+
            $countsearch = count($producers);
 
       return view('front/search',compact('producers','countsearch','name_categories'));
-    }
-
-    public function actionSearchMap($zone)
-    {
-      $producers = Producer::where('zone', '=', $zone)->get();
-      $countsearch = count($producers);
-      // dd($producers);
-      return view('front/search',compact('producers','countsearch'));
     }
 }
