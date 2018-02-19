@@ -1,14 +1,5 @@
 $( document ).ready(function() {
 
-<<<<<<< HEAD
-  // $('.flexslider').flexslider({
-  // animation: "slide",
-  // controlNav: false,
-  // directionNav: false,
-  // });
-
-=======
->>>>>>> 74fade154e7d208523aa2d3e3d06558ae62ecec2
 
  ///////////////////
  /////SVG MAP //////
