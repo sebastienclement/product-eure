@@ -17,11 +17,11 @@
             </div>
         </div>
 
-
+<<<<<<< HEAD
         <div id="search-tag" class="inside-search">
             @include ('front/search/search')
             <p><a class="scrollToMap" href="#search_map">Ou bien rechercher via notre carte.</a></p>
-
+=======
         <div id="search-tag">
             <h2>N'hésitez pas à consultez la <span><a href="{{ route('list-producer') }}">liste de tous nos producteurs</a></span>
             <p>ou<br>Trouvez celui qui vous convient en fonction de votre envie.</p>
@@ -94,7 +94,7 @@
             <p><a class="scrollToMap" href="#map">Ou bien rechercher via notre carte.</a></p>
 
 
-
+>>>>>>> 74fade154e7d208523aa2d3e3d06558ae62ecec2
         </div>
     </div>
   </section>
