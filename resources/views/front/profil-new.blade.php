@@ -1,4 +1,7 @@
 @extends('front.layout.layout')
+@section('bootstrap-css')
+  <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet">
+@endsection
 @section('css')
 @endsection
 

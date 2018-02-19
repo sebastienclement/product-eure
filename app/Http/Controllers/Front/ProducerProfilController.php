@@ -59,22 +59,24 @@ class ProducerProfilController extends Controller
 
     // Requete d'insertion dans la bdd sur la table producer
     // puis redirect sur la page profil éditable avec mess success
-
     if(!empty($request->file('image'))) {
-    $path = new PathUpload($request->file('image'), 'formulaire');
-    $request->file('image')->move(public_path($path->path()), $path->imageName());
+
+      $path = new PathUpload($request->file('image'), 'producer');
+      $request->file('image')->move(public_path($path->path()), $path->imageName());
+
+      $image =  $path->path().'/'.$path->imageName();
+    } else {
+      $image = NULL;
     }
 
-
     $inputs = array_merge($request->all(), [
-     'zone'    => $this->generateZoning($request->zipcode),
-     'user_id' => Auth::id(),
-     'slug' => str_slug($request->name),
-     'path_img' => $path->path().'/'.$path->imageName(),
-     // 'original_name' => $path->original_name(),
-     // 'image_name' => $path->imageName(),
+      // 'zone'    => $this->generateZoning($request->zipcode),
+      'user_id'  => Auth::id(),
+      'slug'     => str_slug($request->name),
+      'path_img' => $image,
     ]);
     Producer::create($inputs);
+
     return redirect()->route('home')->with('success', 'Votre profil producteur vient d\'être créé');
 
 

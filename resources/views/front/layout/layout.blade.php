@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Dosis|Permanent+Marker" rel="stylesheet">
     {{-- <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet"> --}}
+    @yield('bootstrap-css')
     <link rel="stylesheet" href="{{asset('css/front/reset.css')}}">
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
     @yield('css')
@@ -80,7 +81,7 @@
       <ul>
         <li>
           <h4>
-            Product'Eure  <?php echo date('Y') ; ?>
+            <span>Product</span>'<span>Eure</span><?php echo date('Y') ; ?>
           </h4>
         </li>
         <li class="list-footer"><a href="{{ route('contact-view') }}">Nous Contacter</a></li>

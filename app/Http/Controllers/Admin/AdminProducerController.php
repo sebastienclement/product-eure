@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProducerRequest;
 use App\Service\PathUpload;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Models\Producer;
 use Auth;
 
@@ -35,18 +36,22 @@ class AdminProducerController extends Controller
  */
   public function actionNewProducer(ProducerRequest $request)
   {
+
     if(!empty($request->file('image'))) {
 
       $path = new PathUpload($request->file('image'), 'producer');
       $request->file('image')->move(public_path($path->path()), $path->imageName());
 
+      $image = $path->path().'/'.$path->imageName();
+    } else {
+      $image = NULL;
     }
 
     $inputs = array_merge($request->all(), [
-      'zone'    => $this->generateZoning($request->zipcode),
-      'user_id' => Auth::id(),
-      'slug' => str_slug($request->name),
-      'path_img' => $path->path().'/'.$path->imageName(),
+      // 'zone'    => $this->generateZoning($request->zipcode),
+      'user_id'  => Auth::id(),
+      'slug'     => str_slug($request->name),
+      'path_img' => $image,
     ]);
     Producer::create($inputs);
 
@@ -71,12 +76,33 @@ class AdminProducerController extends Controller
  */
   public function actionEditProducer(ProducerRequest $request ,$id)
   {
-    $producer = Producer::FindOrFail($id);
+      if(!empty($request->file('image'))) {
 
-    $producer->update($request->all());
+        $path = new PathUpload($request->file('image'), 'producer');
+        $request->file('image')->move(public_path($path->path()), $path->imageName());
 
+        $post = $request->all();
+
+        \DB::table('producers')->where('id', $id )->update([
+          'name'            => $post['name'],
+          'adresse'         => $post['adresse'],
+          'zipcode'         => $post['zipcode'],
+          'producer_email'  => $post['producer_email'],
+          'phone'           => $post['phone'],
+          'website'         => $post['website'],
+          'description'     => $post['description'],
+          'path_img'        => $path->path().'/'.$path->imageName(),
+          'updated_at'      => Carbon::now(),
+        ]);
+      } else {
+
+        $producer = Producer::FindOrFail($id);
+        // dd($producer['path_img']);
+        $producer->update($request->all());
+
+      }
     return redirect()->route('dashboard')->with('success', 'Modification du producteur prise en compte');
-  }
+}
 /**
  * [deleteProducer effacement d'un producteur]
  * @param  [type] $id [description]
