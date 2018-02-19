@@ -2,7 +2,7 @@
 body{
   /* background-color: #3E8022; */
   /* font-family: 'Fugaz One', sans-serif; */
-
+  /* background-image: url('../../img/grain-opacity.png'); */
 }
 
 p{
@@ -312,20 +312,27 @@ footer #flex-footer {
 } */
 #list-footer {
   width:30%;
-  text-align:center;
+  /* text-align:center; */
   margin-bottom: 10px;
 }
+footer h4 {
+  font-size:1.5rem;
+  padding-bottom: 15px;
+  /* text-transform: uppercase; */
+}
+#list-footer h4{
+  font-family: 'Permanent Marker', cursive;
+}
+#list-footer h4 span{
+  color: #D19B26 ;
+
+}
+
 #nouveauté {
   width:40%;
   background-color: rgba(209,155,38,1);
   padding:20px;
   border-radius: 5px;
-}
-footer h4 {
-  font-size:1.5rem;
-  padding-bottom: 15px;
-  text-transform: uppercase;
-
 }
 .footer-flex {
   display: flex;
@@ -353,51 +360,42 @@ footer h4 {
 /* ================= SVG MAP =================== */
 section#map {
   text-align: center;
+  font-family: 'Dosis','sans-serif';
+  margin: 50px auto;
+  border-top: 2px solid rgba(209, 155, 38, 1);
+  border-bottom: 2px solid rgba(209, 155, 38, 1);
 }
 
-section#map h1 {
-  font-size: 40px;
-  padding: 20px 0;
+section#map h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 20px 0 10px 0;
 }
 
-#search_map .content{
-    width:85%;
-    margin: auto;
-    padding: 70px 0;
+section#map p {
+  font-size: 1.3rem;
+  margin: 0 10%;
 }
 
-#search_map .content .img-svg{
+.img-svg{
 	width:100%;
 	display: block;
-	margin:auto;
-	margin-bottom: 5em;
+	margin:2.5rem auto;
 }
 
 .img-svg path{
-		fill: #99CCFF;
-		stroke-width: 1px;
-		/* transition: fill 0.3s; */
+	fill: #99CCFF;
+	stroke-width: 1px;
+	/* transition: fill 0.3s; */
 }
 
 .img-svg path:hover{
-		fill: #3E8022;
-    opacity: 0.7;
-    stroke-width:1px;
-    stroke:White;
-    cursor: pointer;
-    stroke-linejoin: round;
-}
-
-.full_width {
-  width:100%;
-}
-
-.full_width h1{
-  font-size:1.6em;
-  text-align: center;
-  padding-bottom: 20px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
+	fill: #3E8022;
+  opacity: 0.7;
+  stroke-width:1px;
+  stroke:White;
+  cursor: pointer;
+  stroke-linejoin: round;
 }
 
 #info-box {
@@ -405,9 +403,9 @@ section#map h1 {
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 1;
+  z-index: 2;
   background-color: whitesmoke;
-  border: 2px solid #D19B26;
+  border: 3px solid #D19B26;
   border-radius: 5px;
   padding: 5px;
   font-family: 'Dosis', sans-serif;
@@ -425,6 +423,106 @@ main div.formulaire-prod {
   width: 100%;
   padding: 50px 30px;
 }
+/*=======================Page profil
+ public=================*/
+ .profilPublic {
+   padding: 100px 0;
+   font-size: 2 rem;
+ }
+ #topContent {
+   /* background-color: #D19B26; */
+ }
+ .containerpulic {
+   display: flex;
+   height: 280px;
+   margin-bottom: 100px;
+
+ }
+ .photo {
+   width: 500px;
+   height: 280px;
+   background-color:black;
+
+ }
+ .containerpulic img {
+   max-width: 500px;
+ }
+ #nameProducteurProfil {
+
+ }
+ .descriptionProfil {
+   flex: 1;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   /* background-color: #3E8022; */
+ }
+.itemRetailProfil li {
+  font-size: 1.2em;
+  font-family: 'Dosis', cursive;
+  padding: 3px 0;
+
+
+ }
+  .listDescriptionProfil h2 {
+    font-size: 2em;
+    padding-bottom: 30px;
+    font-family: 'Dosis', cursive;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .listDescriptionProfil p {
+    font-size: 1.2em;
+    padding: 3px 0;
+    font-family: 'Dosis', cursive;
+  }
+ #itemRetailProfil {
+   background-color: #46879B;
+ }
+ .itemRetailTile {
+   font-family: 'Dosis', cursive;
+   font-size: 1.5rem;
+   font-weight: bold;
+   text-transform: uppercase;
+   padding-bottom: 30px;
+   color: #FFF;
+   text-decoration: underline;
+   /* text-align: center; */
+ }
+ .itemRetailProfil {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 100px;
+   background-color: #46879B;
+   /* min-height: 280px; */
+   padding: 50px 30px;
+ }
+ .itemProfil {
+   /* display: flex;
+   justify-content: center;
+   flex-direction: column; */
+   width: 50%;
+
+ }
+ .retailProfil {
+   /* display: flex;
+   justify-content: center;
+   flex-direction: column; */
+   width: 50%;
+ }
+ .retailProfil li ,.itemProfil li{
+   list-style: none;
+   padding-left: 10%;
+ }
+ .mapProfil {
+ max-width: 1200px;
+  width: 100%;
+   margin: 0 auto;
+
+ }
+
+
 
 /* ================MEDIA QUERIES================ */
 

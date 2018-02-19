@@ -54,7 +54,21 @@ class CategoriesTableSeeder extends Seeder
           'name'   =>  'produit fabriqué',
       );
 
+      $categories[] = array(
+          'name'   =>  'oeufs',
+      );
 
+      $categories[] = array(
+          'name'   =>  'poissons',
+      );
+
+      $categories[] = array(
+          'name'   =>  'horticulture',
+      );
+
+      $categories[] = array(
+          'name'   =>  'gibier',
+      );
     DB::table('categories')->insert($categories);
     }
 }

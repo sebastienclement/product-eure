@@ -1,22 +1,25 @@
 $( document ).ready(function() {
 
+<<<<<<< HEAD
   // $('.flexslider').flexslider({
   // animation: "slide",
   // controlNav: false,
   // directionNav: false,
   // });
 
+=======
+>>>>>>> 74fade154e7d208523aa2d3e3d06558ae62ecec2
 
  ///////////////////
  /////SVG MAP //////
  ///////////////////
 
-  $("path, circle, polygon, rect, ellipse").hover(function(e) {
+  $(".svg-path").hover(function(e) {
     $('#info-box').css('display','block');
     $('#info-box').html($(this).data('info'));
   });
 
-  $("path, circle, polygon, rect, ellipse").mouseleave(function(e) {
+  $(".svg-path").mouseleave(function(e) {
     $('#info-box').css('display','none');
   });
 
@@ -25,16 +28,14 @@ $( document ).ready(function() {
     $('#info-box').css('left',e.pageX-($('#info-box').width())/2);
   }).mouseover();
 
-  var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  if(ios) {
-    $('a').on('click touchend', function() {
-      var link = $(this).attr('href');
-      window.open(link,'_blank');
-      return false;
-    });
-  }
-
-
+  // var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  // if(ios) {
+  //   $('a').on('click touchend', function() {
+  //     var link = $(this).attr('href');
+  //     window.open(link,'_blank');
+  //     return false;
+  //   });
+  // }
 
   /////////////////////////////////////
   ///////SMOOTH SCROLL ACCUEIL/////////
@@ -42,7 +43,7 @@ $( document ).ready(function() {
 
   $('.scrollToMap').on('click', function() {
     var page = $(this).attr('href');
-    var speed = 500;
+    var speed = 800;
     $('html, body').animate( { scrollTop: $(page).offset().top }, speed );
     return false;
   });

@@ -1,5 +1,6 @@
 @extends('front.layout.layout')
 @section('css')
+  {{-- <link rel="stylesheet" href="{{ asset('css/front/foundation.css') }}"> --}}
 @endsection
 
 @section('title')
@@ -40,8 +41,6 @@
     {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}
 
   {!! Form::close() !!}
-
-  {!! file_get_contents(asset('img/icons/010-bee.svg')) !!}
 
 @endsection
 
