@@ -27,12 +27,11 @@ class SearchController extends Controller
                             ->where(function($query) use ($search){
                                 $query->where('items.name', 'like', '%' . $search . '%')
                                    ->orWhere('items.comment', 'like', '%' . $search . '%')
-
+                                   ->orWhere('producers.name', 'like', '%' . $search . '%')
                                    ->orWhere('producers.adresse', 'like', '%' . $search . '%')
-                                   ->orWhere('producers.description', 'like', '%' . $search . '%')
                                    ->orWhere('producers.zipcode', 'like', '%' . $search . '%');
                                })
-                              ->select('*','producers.name as prod_name','producers.id as prod_id','items.name as item_name')
+                              ->select('*','producers.name as prod_name','producers.id as prod_id')
                             ->get();
 
              // dd($producers);
@@ -44,10 +43,11 @@ class SearchController extends Controller
                   $producers_id = array_pluck($producers_id, 'prod_id');
                    // dd($producers_id);
                   if(!empty($producers_id)){
-                      $producers = Producer::where('id', $producers_id)->get();
+                      $producers = Producer::whereIn('id', $producers_id)->get();
                   }else{
                       $producers = [];
                   }
+                  // dd($producers);
 // dd($producers);
         }elseif(!empty($request['category']))
         {
@@ -73,18 +73,18 @@ class SearchController extends Controller
                         ->leftJoin('items','items.id', '=', 'item_producer.item_id')
                         ->where('items.name', 'like', '%' . $request['search'] . '%')
                         ->orWhere('items.comment', 'like', '%' . $request['search'] . '%')
-                        ->select('*','producers.name as prod_name','producers.id as prod_id','items.name as item_name')
+                        ->orWhere('producers.name', 'like', '%' . $request['search'] . '%')
                         ->orWhere('producers.adresse', 'like', '%' . $request['search'] . '%')
-                        ->orWhere('producers.description', 'like', '%' . $request['search'] . '%')
+                        ->orWhere('producers.ville', 'like', '%' . $request['search'] . '%')
                         ->orWhere('producers.zipcode', 'like', '%' . $request['search'] . '%')
-                        ->distinct()
+                        ->select('*','producers.id as prod_id','producers.name as prod_name')
                         ->get();
-                 // dd($producers_id);
+
 
                         $producers_id = array_pluck($producers_id, 'prod_id');
                         // dd($producers_id);
                         if(!empty($producers_id)){
-                            $producers = Producer::where('id', $producers_id)->get();
+                            $producers = Producer::whereIn('id', $producers_id)->get();
                         }else{
                             $producers = [];
                         }
