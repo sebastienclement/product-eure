@@ -52,6 +52,7 @@ class ProducerProfilController extends Controller
         'adresse'         => $post['adresse'],
         'zipcode'         => $post['zipcode'],
         'producer_email'  => $post['producer_email'],
+        'ville'           => $post['ville'],
         'phone'           => $post['phone'],
         'website'         => $post['website'],
         'description'     => $post['description'],
