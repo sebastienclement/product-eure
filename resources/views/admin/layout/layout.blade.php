@@ -26,7 +26,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Product'Eure</span></a>
+              <a href="{{ route('home')}}" class="site_title"><i class="fa fa-paw"></i> <span>Product'Eure</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -71,29 +71,12 @@
                     <ul class="nav child_menu">
                       <li><a href="{{route('admin-list-retail')}}">Lieux de ventes</a></li>
                       <li><a href="{{route('admin-new-retail-view')}}">Ajouter un lieu de vente</a></li>
-
-
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> Articles <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('admin-list-article')}}">Articles</a></li>
                       <li><a href="{{route('admin-new-article-view')}}">Nouvel Article</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -179,14 +162,24 @@
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="javascript:;"> Profile</a></li>
-                    <li>
+                    {{-- <li>
                       <a href="javascript:;">
                         <span class="badge bg-red pull-right">50%</span>
                         <span>Settings</span>
                       </a>
+                    </li> --}}
+                    {{-- <li><a href="javascript:;">Help</a></li> --}}
+                    {{-- <li><a href="{{ route('home') }}"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li> --}}
+                    <li>
+                      <a href="{{ route('logout') }}"
+                                  onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();"><i class="fa fa-sign-out pull-right"></i>
+                                  Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                        </form>
                     </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
 

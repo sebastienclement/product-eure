@@ -523,16 +523,16 @@ footer h4 {
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-.sprite {
-  display: flex;
-  justify-content: center;
-}
-.sprite ul{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
+.sprite ul{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.sprite li {
+  padding: 5px;
+}
 
 #toHidden {
   display: none;
@@ -705,6 +705,12 @@ main div.formulaire-prod {
 /*=============FOOTER=============*/
 /*=============FOOTER=============*/
 /*=============FOOTER=============*/
+#descriptionProfil, .itemRetailProfil {
+  margin: 0;
+}
+.profilPublic {
+  padding: 0;
+}
   .logoFlexfooter {
     display: none;
   }

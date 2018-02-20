@@ -38,6 +38,14 @@ class UsersTableSeeder extends Seeder
           'role'=>'admin',
       );
 
+      $users[] = array(
+          'name'   =>  'admin',
+          'email' =>  'admin@gmail.com',
+          'password' => bcrypt('admin'),
+          'created_at'=> $date->format('Y-m-d H:i:s'),
+          'role'=>'admin',
+      );
+
     DB::table('users')->insert($users);
     }
 }

@@ -19,14 +19,28 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-
     /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
+    * Where to redirect users after login.
+    *
+    * @var string
+    */
+    // protected $redirectTo = '/admin';
 
+    // public function authenticated()
+    // {
+    //     if(auth()->user('role' == 'abonne'))
+    //     {
+    //         return redirect('/profil');
+    //     }
+    //     return redirect('/admin');
+    // }
+    protected function authenticated($request, $user)
+        {
+            if($user->role === 'admin') {
+                return redirect()->intended('/admin');
+            }
+            return redirect()->intended('/profil');
+        }
     /**
      * Create a new controller instance.
      *

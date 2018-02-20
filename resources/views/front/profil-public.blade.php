@@ -52,7 +52,7 @@
         <p><i class="fa fa-comment"></i> :{{ $producer->description}}</p>
       </div>
     </section>
-    <section id="itemRetailProfil">
+    <section id="itemRetailProfil" >
 
       <div class="itemRetailProfil wrap">
 
