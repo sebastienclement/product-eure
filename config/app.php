@@ -181,6 +181,7 @@ return [
         //us
         Barryvdh\Debugbar\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Folklore\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -234,7 +235,7 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-
+        'Image' => Folklore\Image\Facades\Image::class,
     ],
 
 ];

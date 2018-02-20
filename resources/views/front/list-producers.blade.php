@@ -6,13 +6,13 @@
 @endsection
 
 @section('content')
-  <h2>Tous nos producteurs</h2>
+
 @php
   // dd($producers)
 @endphp
 
-<div class="wrap">
-
+<div class="wrap listing-all">
+    <h2>Tous nos producteurs</h2>
   @foreach ($producers as $key => $producer)
       <div class="single-prod">
               <div class="img">

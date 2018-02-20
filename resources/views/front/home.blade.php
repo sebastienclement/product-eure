@@ -62,8 +62,7 @@
     <div id="parallax_2">
       <div id="news-box">
       <article class="box-1">
-        {{-- <img src="{{$article->path_img_article}}" alt="Une photo de {{$article->title}}"> --}}
-        <img src="upload/articles/2018/02/personnage.png" alt="Une photo de {{$article->title}}" width="350px">
+        <img src="{{ Image::url( $article->path_img_article, 350, 350, array('crop')) }}" alt="Une photo de {{ $article->title }}"  />
       </article>
       <article class="box-2">
         <h3>{{$article->title}}</h3>
