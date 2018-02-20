@@ -31,10 +31,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+      // $categories = Category::with('item')->inRandomOrder()->paginate(5);
 
       $article = Article::orderBy('created_at','desc')->first();
-      // dd($article);
-      // $categories = Category::with('item')->inRandomOrder()->paginate(5);
+
+      // $path_img_article = \Image::open($article->path_img_article)
+      //                     ->thumbnail(new \Imagine\Image\Box(350,350));
+      // dd($path_img_article);
       $producers = Producer::all();
 
       $nbProdRoumois = $this->countProducersByZone('pays-roumois-et-marais-vernier',$producers);
