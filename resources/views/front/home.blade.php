@@ -62,7 +62,7 @@
     <div id="parallax_2">
       <div id="news-box">
       <article class="box-1">
-        <img src="{{ Image::url( $article->path_img_article, 350, 350, array('crop')) }}" alt="Une photo de {{ $article->title }}"  />
+        <img src="" alt="Une photo de {{ $article->title }}"  />
       </article>
       <article class="box-2">
         <h3>{{$article->title}}</h3>
@@ -80,14 +80,12 @@
   dans des variables javascript --}}
 
   <script type="text/javascript">
-  var roumois = <?php echo $nbProdRoumois; ?>;
-  var neubourg = <?php echo $nbProdNeubourg; ?>;
-  var vexin = <?php echo $nbProdVexin; ?>;
-  var lieuvin = <?php echo $nbProdLieuvin; ?>;
-  var ouche = <?php echo $nbProdOuche; ?>;
-  var andre = <?php echo $nbProdAndre; ?>;
-
-  // On injecte ainsi dynamiquement le nombre de producteurs par zone
+  var roumois = {{ $nbProdRoumois }}
+  var neubourg = {{ $nbProdNeubourg }}
+  var vexin = {{ $nbProdVexin }}
+  var lieuvin = {{ $nbProdLieuvin }}
+  var ouche = {{ $nbProdOuche }}
+  var andre = {{ $nbProdAndre }}  // On injecte ainsi dynamiquement le nombre de producteurs par zone
   // dans un attribut data définit dans les path de la zone en question du svg
   // qu'on affiche également en javascript +css (voir main.js)
   $('#svg-roumois').data('info', roumois + ' producteurs dans cette zone');

@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Liste des lieux de vente
 @endsection
 
 @section('content')

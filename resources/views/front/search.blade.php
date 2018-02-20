@@ -3,7 +3,7 @@
 @endsection
 
 @section('title')
-
+  Résultat de recherche
 @endsection
 
 @section('content')

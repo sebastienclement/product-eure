@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Nouvel article
 @endsection
 
 @section('content')

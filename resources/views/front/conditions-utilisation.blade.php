@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  CGU
 @endsection
 
 @section('content')

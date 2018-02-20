@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Liste des articles
 @endsection
 
 @section('content')

@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Modifier un lieu de vente
 @endsection
 
 @section('content')

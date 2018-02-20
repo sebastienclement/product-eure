@@ -607,6 +607,10 @@ main div.formulaire-prod {
  /* height: 280px; */
 }
 
+.profil-photo{
+  width: 300px;
+}
+
 #descriptionProfil {
 background-color: #D19B26;
 margin: 50px 0;

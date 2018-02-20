@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Modifier une catégorie
 @endsection
 
 @section('content')

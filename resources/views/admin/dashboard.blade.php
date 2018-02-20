@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Panneau d'administration
 @endsection
 
 @section('content')

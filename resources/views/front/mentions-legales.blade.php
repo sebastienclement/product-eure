@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Mentions légales
 @endsection
 
 @section('content')

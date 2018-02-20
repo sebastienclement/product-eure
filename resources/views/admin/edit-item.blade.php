@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Modifier un produit
 @endsection
 
 @section('content')

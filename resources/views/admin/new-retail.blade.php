@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Nouveau lieu de vente
 @endsection
 
 @section('content')
