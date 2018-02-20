@@ -815,7 +815,6 @@ main div.formulaire-prod {
 /*=============FOOTER=============*/
 /*=============FOOTER=============*/
 /*=============FOOTER=============*/
-<<<<<<< HEAD
 #descriptionProfil, .itemRetailProfil {
   margin: 0;
 }
@@ -834,23 +833,5 @@ main div.formulaire-prod {
   .itemProfil {
    width: 100%;
   }
-=======
-      .logoFlexfooter {
-        display: none;
-      }
-      #list-footer {
-        width:100%;
-      }
-      #nouveauté {
-        display: none;
-      }
-      .itemProfil {
-       width: 100%;
-      }
-
-      .retailProfil {
-       width: 100%;
-      }
->>>>>>> f4a77f30f84cae3286ea3ce401fd562006547d18
 
 }
