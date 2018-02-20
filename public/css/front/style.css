@@ -223,9 +223,10 @@ div#parallax_2 {
   background-color: rgba(255,255,255,0.7);
   position: absolute;
   width: 50%;
-  top: 20%;
+  top: 15%;
   left: 25%;
-  height: 400px;
+  /* height: 400px; */
+  padding: 20px;
   display: flex;
   font-size: 1.3rem;
 }
@@ -707,6 +708,12 @@ padding: 50px;
       width:60%;
       left:20%;
   }
+
+  #news-box{
+    width:60%;
+    left:20%;
+  }
+
 }
 
 /*
@@ -739,6 +746,11 @@ padding: 50px;
   .info_flex{
     justify-content: space-around;
   }
+
+  #news-box{
+    width:70%;
+    left:15%;
+  }
 }
 
 /**
@@ -751,6 +763,17 @@ padding: 50px;
       left: 0%
   }
 
+  #news-box{
+      width:100%;
+      position: static;
+      top: 0%;
+      transform: translateY(0);
+      flex-wrap: wrap;
+  }
+
+  #parallax_2{
+    height: auto;
+  }
 
   /*=============FOOTER=============*/
   /*=============FOOTER=============*/
@@ -781,6 +804,27 @@ padding: 50px;
       position: static;
       transform:translateY(0);
       width:100%;
+  }
+
+  #news-box{
+      position: static;
+      transform:translateY(0);
+      width:100%;
+      top: 0%;
+      height:600px;
+      flex-wrap: wrap;
+  }
+
+  .box-1 {
+    width: 100%;
+  }
+
+  .box-2 {
+    width: 100%;
+  }
+
+  #parallax_2{
+    height:auto;
   }
 
   .header_flex h1 {
@@ -829,10 +873,6 @@ padding: 50px;
       height:350px;
   }
 
-  #news-box {
-    flex-direction: column;
-    /* overflow-y: auto; */
-  }
 
 /*=============FOOTER=============*/
 /*=============FOOTER=============*/
