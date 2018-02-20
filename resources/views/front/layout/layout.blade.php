@@ -23,8 +23,10 @@
         <ul class="header_flex">
 
             <h1><a href="{{ route('home') }}">Pr<img src="{{ asset('img/home/logo.png')}}" width="60px" height="auto">duct<span>'Eure</span></a></h1>
+            <button id="menu">Menu</button>
             <div id="header_right">
               <nav class="menu-co" id="sticker">
+
                 <ul>
                     @if (Auth::guest())
                         <li><a href="{{ route('register') }}">Inscription</a></li>
@@ -81,7 +83,7 @@
       <ul>
         <li>
           <h4>
-            <span>Product</span>'<span class="eureh4">Eure</span><?php echo date('Y') ; ?>
+            <span>Product'</span><span class="eureh4">Eure</span>
           </h4>
         </li>
         <li class="list-footer"><a href="{{ route('contact-view') }}">Nous Contacter</a></li>
@@ -116,6 +118,7 @@
       </li>
     </ul>
   </div>
+
 </footer>
 <div id="toHidden">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 <script

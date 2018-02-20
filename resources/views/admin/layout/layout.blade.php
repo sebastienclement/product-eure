@@ -26,11 +26,10 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-<<<<<<< HEAD
+
               <a href="{{ route('home')}}" class="site_title"><i class="fa fa-paw"></i> <span>Product'Eure</span></a>
-=======
-              <a href="{{ route('home') }}" class="site_title"><i class="fa fa-paw"></i> <span>Product'Eure</span></a>
->>>>>>> f4a77f30f84cae3286ea3ce401fd562006547d18
+
+
             </div>
 
             <div class="clearfix"></div>
