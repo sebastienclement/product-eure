@@ -475,6 +475,7 @@ footer #flex-footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   /* text-transform: uppercase; */
   border-top: 2px solid rgba(209,155,38,1);
   border-bottom: 2px solid rgba(209,155,38,1);
@@ -483,11 +484,7 @@ footer #flex-footer {
 /* footer#content-logo {
 display: flex;
 } */
-#list-footer {
-  width:30%;
-  /* text-align:center; */
-  margin-bottom: 10px;
-}
+
 footer h4 {
   font-size:1.5rem;
   padding-bottom: 15px;
@@ -500,9 +497,18 @@ footer h4 {
   color: #D19B26 ;
 
 }
-
+.logoFlexfooter {
+  width: 17.5%;
+}
+#list-footer {
+  width:30%;
+  /* text-align:center; */
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
 #nouveauté {
-  width:40%;
+  width:35%;
   background-color: rgba(209,155,38,1);
   padding:20px;
   border-radius: 5px;
@@ -517,14 +523,16 @@ footer h4 {
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-
-.sprite ul{
+.sprite {
   display: flex;
   justify-content: center;
 }
-.sprite li {
-  padding: 0 10px;
+.sprite ul{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
 
 #toHidden {
   display: none;
@@ -536,35 +544,39 @@ main div.formulaire-prod {
   width: 100%;
   padding: 50px 30px;
 }
-/*=======================Page profil
- public=================*/
+/*=======================Page profil public=================*/
  .profilPublic {
    padding: 100px 0;
    font-size: 2 rem;
  }
  #topContent {
    /* background-color: #D19B26; */
+   /* overflow-y: hidden; */
  }
  .containerpulic {
    display: flex;
-   height: 280px;
-   margin-bottom: 100px;
-
+   justify-content: center;
+   flex-wrap: wrap;
+   /* height: 280px; */
  }
  .photo {
-   width: 500px;
-   height: 280px;
+   /* width: 500px;
+   height: 280px; */
    /* background-color:black; */
-   box-sizing: border-box;
+   /* box-sizing: border-box; */
  }
- .containerpulic img {
-   max-width: 500px;
+ /* .containerpulic img {
+  display: block;
+ } */
+ #descriptionProfil {
+  background-color: #D19B26;
+  margin: 50px 0;
  }
- #nameProducteurProfil {
-
+ #descriptionProfil div.wrap{
+  padding: 50px;
  }
  .descriptionProfil {
-   flex: 1;
+   width: 50%;
    display: flex;
    justify-content: center;
    flex-direction: column;
@@ -622,6 +634,7 @@ main div.formulaire-prod {
 .itemRetailProfil {
  display: flex;
  justify-content: center;
+ flex-wrap: wrap;
  margin-bottom: 100px;
  background-color: #46879B;
  /* min-height: 280px; */
@@ -629,16 +642,10 @@ main div.formulaire-prod {
 }
 
 .itemProfil {
- /* display: flex;
- justify-content: center;
- flex-direction: column; */
  width: 50%;
 }
 
 .retailProfil {
- /* display: flex;
- justify-content: center;
- flex-direction: column; */
  width: 50%;
 }
 
@@ -656,7 +663,30 @@ main div.formulaire-prod {
 
 
 /* ================MEDIA QUERIES================ */
+@media screen and (min-width: 640px) and (max-width: 960px){
 
+  /*=============FOOTER=============*/
+  /*=============FOOTER=============*/
+  /*=============FOOTER=============*/
+  .logoFlexfooter {
+    display: none;
+  }
+  #list-footer {
+    width:40%;
+  }
+  #nouveauté {
+    width:60%;
+  }
+  /*page public profil*/
+  .descriptionProfil {
+    width: 100%;
+  }
+  .itemRetailProfil {
+   display: flex;
+   flex-wrap: wrap;
+  }
+
+}
 @media screen and (min-width: 200px) and (max-width: 640px){
 
 .header_flex {
@@ -671,3 +701,23 @@ main div.formulaire-prod {
   flex-direction: column;
   overflow-y: auto;
 }
+
+/*=============FOOTER=============*/
+/*=============FOOTER=============*/
+/*=============FOOTER=============*/
+  .logoFlexfooter {
+    display: none;
+  }
+  #list-footer {
+    width:100%;
+  }
+  #nouveauté {
+    display: none;
+  }
+  .itemProfil {
+   width: 100%;
+  }
+
+  .retailProfil {
+   width: 100%;
+  }

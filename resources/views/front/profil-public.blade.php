@@ -15,11 +15,11 @@
 
     <section id="topContent">
 
-      <div class="wrap containerpulic" style>
+      <div class="wrap containerpulic" >
         <div class="photo">
           @if (($producer->path_img != '/img/icons/040-farmer.svg'))
             <img src="{{asset($producer->path_img)}}" alt="Une photo de {{$producer->name}}" width="500">
-          @else  
+          @else
             {!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}
           @endif
         </div>
@@ -47,8 +47,8 @@
       </div>
     </section>
     <section id="descriptionProfil">
-      <div class="wrap">
-        <h3>Une petite description</h3>
+      <div class="wrap ">
+        <h3 class="itemRetailTile">Une petite description</h3>
         <p><i class="fa fa-comment"></i> :{{ $producer->description}}</p>
       </div>
     </section>
