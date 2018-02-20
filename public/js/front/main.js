@@ -64,9 +64,18 @@ $( document ).ready(function() {
                 opacity:1
             },500);
         }
-
-
-
-
     });
+
+    $('#menu').on('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        if($('.menu-co').is(':hidden')){
+            $('.menu-co').slideDown('slow');
+
+        }else{
+            $('.menu-co').slideUp('slow');
+
+        }
+    });
+
 });
