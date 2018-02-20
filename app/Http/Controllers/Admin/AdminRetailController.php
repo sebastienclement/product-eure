@@ -29,7 +29,6 @@ class AdminRetailController extends Controller
     \DB::table('retails')->insert([
         'name'  => $post['name'],
         'lieu'  => $post['lieu'],
-        'zone'  => $post['zone'],
         'created_at'  => Carbon::now(),
     ]);
 
@@ -50,7 +49,6 @@ class AdminRetailController extends Controller
     \DB::table('retails')->where('id',  $id )->update([
         'name'        => $post['name'],
         'lieu'        => $post['lieu'],
-        'zone'        => $post['zone'],
         'updated_at'  => Carbon::now(),
     ]);
     return redirect()->route('dashboard')->with('success', 'Retail modifié');

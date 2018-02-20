@@ -1,6 +1,8 @@
 @extends('front.layout.layout')
 @section('bootstrap-css')
   <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet">
+  {{-- <link rel="stylesheet" href="{{ asset('css/front/foundation.css') }}"> --}}
+
 @endsection
 @section('content')
 <div class="container">
