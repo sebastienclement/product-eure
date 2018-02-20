@@ -14,10 +14,15 @@ class SearchController extends Controller
         $request = $request->all();
 
 
+    // Requete de recherche en 3 temps.
+    // 1-On recherche lorsque les deux champs sont utilisés.
+
         if(!empty($request['category']) && (!empty($request['search'])))
         {
           $category = $request['category'];
           $search = $request['search'];
+
+            //requete pour obtenir l'id des producteurs correspondant
 
           $producers_id = \DB::table('producers')
                             ->join('category_producer','producers.id', '=','category_producer.producer_id')
@@ -34,7 +39,8 @@ class SearchController extends Controller
                               ->select('producers.id as prod_id')
                             ->get();
 
-        }
+            //On crée un tableau avec les ids récupérés
+            //Dont on se sert pour récupérer les informations des producteur correspondant
 
           $producers_id = array_pluck($producers_id, 'prod_id');
 
@@ -44,22 +50,25 @@ class SearchController extends Controller
                     $producers = [];
                 }
 
+    //  2-On recherche lorsque juste la catégorie est renseigné
+    //  Selon le meme fonctionnement que précedemment.
+
         }elseif(!empty($request['category']))
         {
-          $category = $request['category'];
+            $category = $request['category'];
 
-           $producers_id =
-           \DB::table('producers')
-                        ->join('category_producer','producers.id', '=','category_producer.producer_id')
-                        ->where('category_producer.category_id', '=', $category)
-                        ->join('categories','category_producer.category_id' ,'=','categories.id')
-                        ->select('producers.id')
-                        ->get();
+            $producers_id = \DB::table('producers')
+                            ->join('category_producer','producers.id', '=','category_producer.producer_id')
+                            ->where('category_producer.category_id', '=', $category)
+                            ->join('categories','category_producer.category_id' ,'=','categories.id')
+                            ->select('producers.id')
+                            ->get();
 
-                        $producers_id = array_pluck($producers_id, 'id');
-                        $producers = Producer::with('category')->whereIn('id',  $producers_id)->get();
+            $producers_id = array_pluck($producers_id, 'id');
+            $producers = Producer::with('category')->whereIn('id',  $producers_id)->get();
 
-
+    //  2-On recherche lorsque juste le champ de recherche est renseigné
+    //  Selon le meme fonctionnement que précedemment.
 
         }elseif(!empty($request['search']))
         {
@@ -78,28 +87,27 @@ class SearchController extends Controller
                         ->get();
 
 
-                        $producers_id = array_pluck($producers_id, 'prod_id');
-                        // dd($producers_id);
-                        if(!empty($producers_id)){
-                            $producers = Producer::whereIn('id', $producers_id)->with('category')->get();
-                        }else{
-                            $producers = [];
-                        }
-                        // dd($producers);
+          $producers_id = array_pluck($producers_id, 'prod_id');
+            if(!empty($producers_id)){
+                $producers = Producer::whereIn('id', $producers_id)->with('category')->get();
+            }else{
+                $producers = [];
+            }
+
         }else{
             return redirect()->route('home')->with('success', 'tss');
         }
 
            $countsearch = count($producers);
 
-      return view('front/search',compact('producers','countsearch','name_categories'));
+      return view('front/search',compact('producers','countsearch'));
     }
 
     public function actionSearchMap($zone)
     {
       $producers = Producer::where('zone', '=', $zone)->get();
       $countsearch = count($producers);
-      // dd($producers);
+
       return view('front/search',compact('producers','countsearch'));
     }
 }

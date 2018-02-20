@@ -39,9 +39,9 @@
                     @else {{ucfirst($producer->name)}}
                     @endif</h3>
                 <p>{{$producer->adresse}} {{$producer->zipcode}} {{$producer->ville}}</p>
-                @foreach($producer->category as $cat)
+                <p>@foreach($producer->category as $cat)
                     {{ucfirst($cat->name)}}
-                @endforeach
+                @endforeach</p>
                 <p><a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">Voir le Profil</a></p>
 
             </div>
