@@ -16,7 +16,6 @@
       <th scope="col">Nom de la société</th>
       <th scope="col">Nom</th>
       <th scope="col">Adresse</th>
-      <th scope="col">Siret</th>
       <th scope="col">Zone</th>
       <th scope="col">Crée le</th>
       <th scope="col">Modifer</th>

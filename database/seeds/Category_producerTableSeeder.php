@@ -89,11 +89,6 @@ class Category_producerTableSeeder extends Seeder
         );
 
         $categoryproducer[] = array(
-          'category_id' => 1,
-          'producer_id' => 13,
-        );
-
-        $categoryproducer[] = array(
           'category_id' => 6,
           'producer_id' => 14,
         );

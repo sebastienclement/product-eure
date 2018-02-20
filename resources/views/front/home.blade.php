@@ -9,7 +9,7 @@
 
 @section('content')
 
-  <section id="para">
+  <section>
     <div id="parallax">
         <div id="presentation">
             <div class="wrap-s">
@@ -62,12 +62,12 @@
     <div id="parallax_2">
       <div id="news-box">
       <article class="box-1">
-        <h3>A l'affiche</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        {{-- <img src="{{$article->path_img_article}}" alt="Une photo de {{$article->title}}"> --}}
+        <img src="upload/articles/2018/02/personnage.png" alt="Une photo de {{$article->title}}" width="350px">
       </article>
       <article class="box-2">
-        <h3>En ce moment</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h3>{{$article->title}}</h3>
+        <p>{{$article->content}}</p>
       </article>
       </div>
     </div>
