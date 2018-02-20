@@ -9,7 +9,7 @@
 
 @section('content')
 
-  <section id="para">
+  <section>
     <div id="parallax">
         <div id="presentation">
             <div class="wrap-s">
