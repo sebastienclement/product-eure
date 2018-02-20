@@ -66,10 +66,10 @@
 </main>
 <footer>
   <ul class="wrap flex-footer" id="flex-footer">
-    <li>
+    <li class="logoFlexfooter">
       <div>{!! file_get_contents(asset('img/footer/drapeau_normandie.svg')) !!}</div>
     </li>
-    <li>
+    <li class="logoFlexfooter">
       <div>{!! file_get_contents(asset('img/footer/eure_2016.svg')) !!}</div>
     </li>
     <li id="list-footer">
