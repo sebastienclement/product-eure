@@ -17,22 +17,26 @@
 <body>
 <header>
 
-  <a href="{{ route('home') }}"><img src="{{ asset('img/home/logo.png')}}" width="200px" height="auto"></a>
+
     <div class="wrap">
 
         <ul class="header_flex">
 
-            <h1><a href="{{ route('home') }}">Product<span>'Eure</span></a></h1>
+            <h1><a href="{{ route('home') }}">Pr<img src="{{ asset('img/home/logo.png')}}" width="60px" height="auto">duct<span>'Eure</span></a></h1>
             <div id="header_right">
               <nav class="menu-co" id="sticker">
+                <ul>
                     @if (Auth::guest())
                         <li><a href="{{ route('register') }}">Inscription</a></li>
                         <li><a href="{{ route('login') }}">Connexion</a></li>
 
                     @else
-                    <li><a href="{{ route('profil-perso') }}">{{ ucfirst(Auth::user()->name) }}</a></li>
+                    <li><p>{{ ucfirst(Auth::user()->name) }}</p></li>
                     @if (Auth::user()->role == 'admin')
                       <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    @endif
+                    @if (Auth::user()->role == 'abonne')
+                      <li><a href="{{ route('profil-perso') }}">Votre Profil</a></li>
                     @endif
                     <li>
                         <a href="{{ route('logout') }}"
@@ -45,6 +49,7 @@
                         </form>
                     </li>
                   @endif
+                </ul>
               </nav>
             </div>
         </ul>
