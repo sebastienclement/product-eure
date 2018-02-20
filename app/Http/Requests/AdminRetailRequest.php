@@ -26,7 +26,6 @@ class AdminRetailRequest extends FormRequest
         return [
           'name'       => 'required',
           'lieu'       => 'required|min:5|max:100',
-          'zone'       => 'required',
         ];
     }
     public function messages()
@@ -34,7 +33,6 @@ class AdminRetailRequest extends FormRequest
         return [
             'name'      => 'Vous devez renseigner ce champ SVP',
             'lieu'   => 'Vous devez renseigner ce champ SVP',
-            'zone' => 'Vous devez renseigner ce champ SVP',
         ];
     }
 }

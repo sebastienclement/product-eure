@@ -20,12 +20,6 @@
     {!! $errors->first('lieu', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
 
-  <div class="form-group">
-    {!! Form::label('zone', 'Zone : ', ['class' => '']) !!}
-    {!! Form::text('zone', null, ['placeholder' => 'Zone', 'class' => 'form-control']) !!}
-    {!! $errors->first('zone', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-  </div>
-
     {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}
 
   {!! Form::close() !!}
