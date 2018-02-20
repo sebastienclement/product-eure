@@ -88,7 +88,7 @@
 
       <div class="mapProfil wrap">
         <iframe width="1200" height="250" frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?q={{$producer->ville}}&key=AIzaSyDgxCPbY9e8WpR9KdkOyew_FdlmaDSCK1s" allowfullscreen>    
+            src="https://www.google.com/maps/embed/v1/place?q={{$producer->adresse.' '.$producer->ville}}&key=AIzaSyDgxCPbY9e8WpR9KdkOyew_FdlmaDSCK1s" allowfullscreen>
         </iframe>
 
       </div>
