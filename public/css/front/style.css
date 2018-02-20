@@ -223,9 +223,11 @@ div#parallax_2 {
   background-color: rgba(255,255,255,0.7);
   position: absolute;
   width: 50%;
-  top: 20%;
+  top: 50%;
+  transform:translateY(-50%);
   left: 25%;
-  height: 400px;
+  /* height: 400px; */
+  padding: 20px;
   display: flex;
   font-size: 1.3rem;
 }
@@ -237,10 +239,12 @@ div#parallax_2 {
 
 .box-1 {
   padding: 1rem 2rem 0;
+  width:50%;
 }
 
 .box-2 {
   padding: 2rem;
+  width:50%;
 }
 
 .box-2 p {
@@ -707,6 +711,12 @@ padding: 50px;
       width:60%;
       left:20%;
   }
+
+  #news-box{
+    width:60%;
+    left:20%;
+  }
+
 }
 
 /*
@@ -739,6 +749,11 @@ padding: 50px;
   .info_flex{
     justify-content: space-around;
   }
+
+  #news-box{
+    width:70%;
+    left:15%;
+  }
 }
 
 /**
@@ -746,11 +761,27 @@ padding: 50px;
  */
 @media screen and (min-width: 640px) and (max-width: 960px){
 
+  div#parallax{
+      height:auto;
+  }
   #search-tag{
       width:100%;
-      left: 0%
+
+      position: static;
+      transform:translateY(0);
   }
 
+  #news-box{
+      width:100%;
+      position: static;
+      top: 0%;
+      transform: translateY(0);
+      flex-wrap: wrap;
+  }
+
+  div#parallax_2{
+    height: auto;
+  }
 
   /*=============FOOTER=============*/
   /*=============FOOTER=============*/
@@ -776,11 +807,33 @@ padding: 50px;
 }
 @media screen and (min-width: 200px) and (max-width: 639px){
 
+  div#parallax{
+      height:auto;
+  }
 
   #search-tag{
       position: static;
       transform:translateY(0);
       width:100%;
+  }
+
+  #news-box{
+      position: static;
+      transform:translateY(0);
+      width:100%;
+      flex-wrap: wrap;
+  }
+
+  .box-1 {
+    width: 100%;
+  }
+
+  .box-2 {
+    width: 100%;
+  }
+
+  div#parallax_2{
+    height: auto;
   }
 
   .header_flex h1 {
@@ -829,10 +882,6 @@ padding: 50px;
       height:350px;
   }
 
-  #news-box {
-    flex-direction: column;
-    /* overflow-y: auto; */
-  }
 
 /*=============FOOTER=============*/
 /*=============FOOTER=============*/
