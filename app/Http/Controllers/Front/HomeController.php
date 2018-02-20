@@ -32,25 +32,11 @@ class HomeController extends Controller
     public function index()
     {
 
-      $articles = Article::with('user')->orderBy('created_at','desc')->get();
-
-      $categories = Category::with('item')->inRandomOrder()->paginate(5);
-      $items = Item::inRandomOrder()->paginate(10);
-
+      $article = Article::orderBy('created_at','desc')->first();
+      // dd($article);
+      // $categories = Category::with('item')->inRandomOrder()->paginate(5);
       $producers = Producer::all();
-      $retails = Retail::all();
-      $users = User::all();
-      $a = ItemProducer::all();
-      $b = ProducerRetail::all();
 
-
-      // $c = Producer::find(2)->retail;
-      //     foreach ($c as $d) {
-      //       echo $d->name;
-      //     }
-
-
-      
       $nbProdRoumois = $this->countProducersByZone('pays-roumois-et-marais-vernier',$producers);
       $nbProdNeubourg = $this->countProducersByZone('plateau-du-neubourg',$producers);
       $nbProdVexin = $this->countProducersByZone('vexin-normand',$producers);
@@ -58,7 +44,7 @@ class HomeController extends Controller
       $nbProdOuche = $this->countProducersByZone('pays-d-ouche',$producers);
       $nbProdAndre = $this->countProducersByZone('plateau-de-saint-andre',$producers);
 
-      return view('front/home',compact('nbProdRoumois','nbProdNeubourg', 'nbProdVexin', 'nbProdLieuvin', 'nbProdOuche', 'nbProdAndre', 'articles','categories','producers','items','retails','users','a','b', 'c'));
+      return view('front/home',compact('article', 'nbProdRoumois', 'nbProdNeubourg', 'nbProdVexin', 'nbProdLieuvin', 'nbProdOuche', 'nbProdAndre', 'articles','categories','producers','items','retails','users','a','b', 'c'));
     }
 
     /**

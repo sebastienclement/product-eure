@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminArticleRequest;
 use Illuminate\Http\Request;
+use App\Service\PathUpload;
 use Carbon\Carbon;
 use App\Models\Article;
 use Auth;
@@ -26,7 +27,10 @@ class AdminArticleController extends Controller
 
   public function newArticleAction(AdminArticleRequest $request)
   {
-    $inputs = array_merge($request->all(),['user_id' => Auth::id()]);
+    $path = new PathUpload($request->file('image'), 'articles');
+    $request->file('image')->move(public_path($path->path()), $path->imageName());
+
+    $inputs = array_merge($request->all(),['user_id' => Auth::id(), 'path_img_article' => $path->path().'/'.$path->imageName()]);
     // dd($inputs);
     Article::create($inputs);
 

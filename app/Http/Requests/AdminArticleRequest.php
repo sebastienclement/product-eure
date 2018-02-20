@@ -24,16 +24,17 @@ class AdminArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'  => 'required',
-            'content'=> 'required|min:5|max:100',
+            'title'   => 'required',
+            'content' => 'required|min:5|max:1000',
             'status'  => 'required',
+            'image'   => 'image|mimes:jpeg, png, jpg, svg|max:4096',
         ];
     }
     public function messages()
     {
         return [
-            'title'      => 'Vous devez renseigner ce champ SVP',
-            'content'   => 'Vous devez renseigner ce champ SVP',
+            'title'    => 'Vous devez renseigner ce champ SVP',
+            'content'  => 'Vous devez renseigner ce champ SVP',
             'status'   => 'Vous devez renseigner ce champ SVP',
         ];
     }

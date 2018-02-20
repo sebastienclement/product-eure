@@ -222,15 +222,15 @@ div#parallax_2 {
 }
 
 .box-1 {
-  padding: 2rem;
-}
-
-.box-1 p {
-  padding: 0.8rem;
+  padding: 1rem 2rem 0;
 }
 
 .box-2 {
   padding: 2rem;
+}
+
+.box-2 p {
+  padding: 1rem;
 }
 
 
@@ -687,7 +687,7 @@ main div.formulaire-prod {
   }
 
 }
-@media screen and (min-width: 200px) and (max-width: 640px){
+@media screen and (min-width: 200px) and (max-width: 639px){
 
 .header_flex {
   flex-direction: column;
@@ -699,7 +699,7 @@ main div.formulaire-prod {
 
 #news-box {
   flex-direction: column;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 /*=============FOOTER=============*/

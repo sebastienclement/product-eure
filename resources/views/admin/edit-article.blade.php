@@ -7,7 +7,13 @@
 
 @section('content')
   {{-- {{dd($article)}} --}}
-  {!! Form::open(['route' => ['admin-edit-article-action', $article->id], 'method' => 'put', 'novalidate' => 'novalidate']) !!}
+  {!! Form::open(['route' => ['admin-edit-article-action', $article->id], 'method' => 'put', 'files' =>true, 'novalidate' => 'novalidate']) !!}
+
+  <div class="form-group">
+    {!! Form::label('image', 'Image de l\'article : ', ['class' => 'btn btn-default btn-file']) !!}
+    {!! Form::file('image', ['class' => 'form-control', 'style' => 'display: none;']) !!}
+    {!! $errors->first('image', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+  </div>
 
   <div class="form-group">
     {!! Form::label('title', 'Votre titre : ', ['class' => '']) !!}
