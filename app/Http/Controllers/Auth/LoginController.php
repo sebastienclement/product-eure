@@ -26,14 +26,6 @@ class LoginController extends Controller
     */
     // protected $redirectTo = '/admin';
 
-    // public function authenticated()
-    // {
-    //     if(auth()->user('role' == 'abonne'))
-    //     {
-    //         return redirect('/profil');
-    //     }
-    //     return redirect('/admin');
-    // }
     protected function authenticated($request, $user)
         {
             if($user->role === 'admin') {

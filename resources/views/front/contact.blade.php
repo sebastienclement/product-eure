@@ -1,6 +1,6 @@
 @extends('front.layout.layout')
-@section('css')
-  {{-- <link rel="stylesheet" href="{{ asset('css/front/foundation.css') }}"> --}}
+@section('bootstrap-css')
+  <link rel="stylesheet" href="{{ asset('css/front/foundation.css') }}">
 @endsection
 
 @section('title')
@@ -8,6 +8,8 @@
 @endsection
 
 @section('content')
+
+<div class="formulaire-prod">
 
   <h1>Pour nous contacter, c'est ici !</h1>
 
@@ -41,6 +43,7 @@
     {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}
 
   {!! Form::close() !!}
+</div>
 
 @endsection
 

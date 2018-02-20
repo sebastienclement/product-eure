@@ -27,8 +27,12 @@
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
 
+
               <a href="{{ route('home')}}" class="site_title"><i class="fa fa-paw"></i> <span>Product'Eure</span></a>
 
+
+
+              <a href="{{ route('home') }}" class="site_title"><img src="{{ asset('img/home/logo.png')}}" width="60px"> <span>Product'Eure</span></a>
 
             </div>
 
