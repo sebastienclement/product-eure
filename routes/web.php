@@ -38,11 +38,11 @@ Route::group(['namespace' => 'Front'], function() {
   Route::get('/profil/{slug}', 'ProducerController@showProfilProducer')->name('profil-public');  // avec 'slug' en parametre
 
   // Route profil public perso producteur
-  Route::get('/profil', 'ProducerController@showProfilPersoProducer')->name('profil-perso');// Ajout bastien
+  Route::get('/mon-profil', 'ProducerController@showProfilPersoProducer')->name('profil-perso');// Ajout bastien
 
   // Routes profil editable producteur
-  Route::get('/mon-profil', 'ProducerProfilController@showEditProfilProducer')->name('edit-profil-view'); // avec 'slug' en parametre
-  Route::put('/mon-profil/{id}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'slug' en parametre
+  Route::get('/editer-mon-profil', 'ProducerProfilController@showEditProfilProducer')->name('edit-profil-view'); // avec 'slug' en parametre
+  Route::put('/editer-mon-profil/{id}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'slug' en parametre
 
   // Routes profil création producteur
   Route::get('/creer-un-profil', 'ProducerProfilController@showNewProfilProducer')->name('new-profil-view');
@@ -57,6 +57,15 @@ Route::group(['namespace' => 'Front'], function() {
   Route::post('/contact', 'ContactController@actionFormContact')->name('contact-action');
 
 });
+
+
+// //Routes Ajax
+//   Route::group(['namespace' => 'Ajax', 'middleware' => ['auth', 'ajax']], function() {
+//
+//     Route::get('/mon-profil/ajax/add-item', 'addItem@AjaxController')->name('add-item');
+//     Route::get('/mon-profil/ajax/add-retail', 'addRetail@AjaxController')->name('add-retail');
+//
+//   });
 
 ////////////////////////////////////////////////////////////////////
 ////////////////===============LA SUITE==============///////////////

@@ -17,11 +17,6 @@ class Category extends Model
   protected $dates = ['deleted_at'];
 
 
-  public function item()
-  {
-    return $this->hasMany('\App\Models\Item');
-  }
-
   public function producer()
   {
     return $this->belongsToMany('App\Models\Producer');

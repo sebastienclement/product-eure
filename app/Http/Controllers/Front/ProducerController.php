@@ -29,9 +29,13 @@ class ProducerController extends Controller
      public function showProfilPersoProducer()
      {
        $user = Auth::id();
-       $producer = Producer::with('item','retail')->where('user_id', '=', $user)->firstOrFail();
-
-       return view('front/profil-public', compact('producer'));
+       $producer = Producer::with('item','retail')->where('user_id', '=', $user)->first();
+       // dd($producer);
+       if (empty($producer)) {
+         return view('front/profil-new');
+       } else {
+         return view('front/profil-public', compact('producer'));
+       }
      }
 
 }

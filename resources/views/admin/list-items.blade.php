@@ -15,9 +15,8 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Produit</th>
+      {{-- <th scope="col">Produit</th> --}}
       <th scope="col">Comment</th>
-      <th scope="col">Categorie</th>
       <th scope="col">Modifier</th>
       <th scope="col">Effacer</th>
 
@@ -28,9 +27,8 @@
   @foreach ($items as $item)
     <tr>
       <th scope="row">{{$item->id}}</th>
-      <td>{{$item->name}}</td>
+      {{-- <td>{{$item->name}}</td> --}}
       <td>{{$item->comment}}</td>
-      <td>{{$item->category->name}}</td>
       <td><a class="btn btn-success" href="{{ route('admin-edit-item-view',['id' => $item->id ]) }}">update</a></td>
       <td>
         {!! Form::open(['route' => ['admin-delete-item', $item->id], 'method' => 'delete', 'novalidate' => 'novalidate']) !!}

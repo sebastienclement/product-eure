@@ -17,7 +17,6 @@ class CreateRetailsTable extends Migration
       $table->increments('id');
       $table->string('name');
       $table->string('lieu');
-      $table->string('zone')->nullable();
       $table->softDeletes();
       $table->timestamps();
 });  }
