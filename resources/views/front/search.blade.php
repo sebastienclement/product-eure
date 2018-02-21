@@ -33,7 +33,11 @@
         @foreach($producers as $producer)
         <div class="single-prod">
             <div class="img">
-                {!! file_get_contents(asset('img/icons/040-farmer.svg')) !!}
+              @if (($producer->path_img != '/img/icons/040-farmer.svg') && ($producer->path_img != null))
+                <img src="{{ Image::url(route('home') . '/' . $producer->path_img, 300, 180, array('crop'))}}" alt="Une photo de {{$producer->name}}">
+              @else
+                {!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}
+              @endif
             </div>
             <div class="detail-prod">
                 <h3>@if (!empty($producer->prod_name)) {{ucfirst($producer->prod_name)}}
