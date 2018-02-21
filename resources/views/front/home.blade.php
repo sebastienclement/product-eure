@@ -62,7 +62,7 @@
     <div id="parallax_2">
       <div id="news-box">
       <article class="box-1">
-        <img src="<?php Image::url( route('home') . '/' . $article->path_img_article, 300, 300, array('crop'));?>" alt="Une photo de {{ $article->title }}"  />
+        <img src="<?php echo Image::url( route('home') . '/'. $article->path_img_article, 300, 300, array('crop') ); ?>" alt="Une photo de {{ $article->title }}"  />
       </article>
       <article class="box-2">
         <h3>{{$article->title}}</h3>
