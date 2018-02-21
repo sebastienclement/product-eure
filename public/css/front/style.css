@@ -600,7 +600,7 @@ footer h4 {
   padding: 5px;
 }
 
-#toHidden {
+#toHide {
   display: none;
 }
 
@@ -637,13 +637,18 @@ main div.formulaire-log-reg {
  /* height: 280px; */
 }
 
+.profil-photo {
+ width: 500px;
+ height: 280px;
+}
+
 #descriptionProfil {
-background-color: #D19B26;
-margin: 50px 0;
+ background-color: #D19B26;
+ margin: 50px 0;
 }
 
 #descriptionProfil div.wrap{
-padding: 50px 100px;
+ padding: 50px 100px;
 }
 
 .descriptionProfil {

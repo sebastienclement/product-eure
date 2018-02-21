@@ -10,7 +10,6 @@
 @endsection
 
 @section('content')
-  {{-- {{dd($producer)}} --}}
   <div class="formulaire-prod">
 
     {!! Form::open(['route' => ['edit-profil-action', $producer->id], 'method' => 'put', 'files' => true, 'novalidate' => 'novalidate']) !!}

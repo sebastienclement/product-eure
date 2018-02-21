@@ -18,7 +18,6 @@
       <div class="wrap containerpulic">
         <div class="profil-photo">
           @if (($producer->path_img != '/img/icons/040-farmer.svg') && ($producer->path_img != null))
-            {{-- <img src="{{asset($producer->path_img)}}" alt="Une photo de {{$producer->name}}"> --}}
             <img src="{!! Image::url( route('home') . '/'. $producer->path_img, 500, 280, array('crop') );!!}" alt="Une photo de {{ $producer->name }} "  />
           @else
             {!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}
@@ -95,7 +94,7 @@
 
       <div class="mapProfil wrap">
         <iframe width="100%" height="250" frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?q={{$producer->name.' '.$producer->adresse.' '.$producer->ville.' '.$producer->zipcode}}&key=AIzaSyDgxCPbY9e8WpR9KdkOyew_FdlmaDSCK1s" allowfullscreen>
+            src="https://www.google.com/maps/embed/v1/place?q={{$producer->name.' '.$producer->adresse.' '.$producer->zipcode.' '.$producer->ville}}&key=AIzaSyDgxCPbY9e8WpR9KdkOyew_FdlmaDSCK1s" allowfullscreen>
         </iframe>
 
       </div>
@@ -112,6 +111,7 @@
       headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
     });
 
+    // Traitement de l'insertion en BDD d'un nouvel item / à un producteur
 
     $('#item-submit').on('submit', function(e) {
       e.preventDefault();
@@ -137,8 +137,35 @@
           console.log('error');
         }
       });
-
-
     });
+
+    // Traitement de l'insertion en BDD d'un nouveau retail / à un producteur
+
+    $('#retail-submit').on('submit', function(e) {
+      e.preventDefault();
+      var form = $('#retail-submit');
+
+      $.ajax({
+        type: 'POST',
+        url: "{{ route('add-retail') }}",
+        data: form.serialize(),
+        dataType: "json",
+
+        beforeSend: function(){
+          console.log('dis moi ok');
+          console.log(form.serialize());
+        },
+
+        success: function(response) {
+          console.log(response);
+          $('.display-retail').html(response);
+        },
+
+        error: function(){
+          console.log('error');
+        }
+      });
+    });
+
   </script>
 @endsection

@@ -33,8 +33,15 @@ class AjaxController extends Controller
   }
 
 
-  public function addRetail()
+  public function addRetail(RetailRequest $request)
   {
+    $id_producer = Producer::select('id')->where('user_id', '=', Auth::id())->first();
 
+    $retail = array_merge($request->all(),[
+      'created_at' => Carbon::now()
+    ]);
+    Retail::create($retail)->producer()->sync($id_producer);
+
+    return response()->json($request->lieu);
   }
 }

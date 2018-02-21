@@ -10,14 +10,8 @@
   {!! Form::open(['route' => 'admin-new-retail-action', 'method' => 'post', 'novalidate' => 'novalidate']) !!}
 
   <div class="form-group">
-    {!! Form::label('name', 'Nom : ', ['class' => '']) !!}
-    {!! Form::text('name', null, ['placeholder' => 'Nom', 'class' => 'form-control']) !!}
-    {!! $errors->first('name', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-  </div>
-
-  <div class="form-group">
     {!! Form::label('lieu', 'Lieu : ', ['class' => '']) !!}
-    {!! Form::text('lieu', null, ['placeholder' => 'Lieu', 'class' => 'form-control']) !!}
+    {!! Form::textarea('lieu', null, ['placeholder' => 'Lieu', 'class' => 'form-control']) !!}
     {!! $errors->first('lieu', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
 
