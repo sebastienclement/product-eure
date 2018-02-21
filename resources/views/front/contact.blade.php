@@ -9,40 +9,20 @@
 
 @section('content')
 
-<div class="formulaire-prod">
+
+<div id="contact" class="wrap">
+
+
+  <p>Product'Eure est le projet de trois étudiants en développement Web, interessés et préoccupés par le devenir de l'agriculture et de la production locale
+    nous souhaitons pouvoir recenser le plus exhaustivement possible tous les producteur du département.<p>
+
+  <p>N'étant pas producteurs nous mêmes, nous sommes à l'écoute de toutes idées et suggestions, nous permettant d'améliorer le site et de répondre au mieux
+    aux besoins des producteurs et de leur clients</p>
 
   <h1>Pour nous contacter, c'est ici !</h1>
 
-  {!! Form::open(['route' => 'contact-action', 'method' => 'post', 'novalidate' => 'novalidate']) !!}
+  <p><a href="mailto:mabasewf3@gmail.com">contact@producteure.com</a></p>
 
-  <div class="form-group">
-    {!! Form::label('nom', 'Votre nom : ', ['class' => '']) !!}
-    {!! Form::text('nom', null, ['placeholder' => 'votre nom', 'class' => 'form-control']) !!}
-    {!! $errors->first('nom', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-  </div>
-
-  <div class="form-group">
-    {!! Form::label('email', 'Votre e-mail : ', ['class' => '']) !!}
-    {!! Form::email('email', null,['placeholder' => 'example@gmail.com', 'class' => 'form-control']) !!}
-    {!! $errors->first('email', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-  </div>
-
-  <div class="form-group">
-    {!! Form::label('sujet', 'Sujet : ', ['class' => '']) !!}
-    {!! Form::text('sujet', null, ['placeholder' => 'Sujet', 'class' => 'form-control']) !!}
-    {!! $errors->first('sujet', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-  </div>
-
-  <div class="form-group">
-    {!! Form::label('message', 'Votre message : ', ['class' => '']) !!}
-    {!! Form::textarea('message', null, ['placeholder' => 'Votre message', 'class' => 'form-control']) !!}
-    {!! $errors->first('message', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
-  </div>
-
-
-    {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}
-
-  {!! Form::close() !!}
 </div>
 
 @endsection

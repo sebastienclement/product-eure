@@ -69,10 +69,16 @@
       {!! $errors->first('phone', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
     </div>
 
+    <div class="form-group">
+    {!! Form::label('category', 'Votre(vos) catégorie : ', ['class' => '']) !!}
+    {!! Form::select('size', array('L' => 'Large', 'S' => 'Small'));!!}
+    </div>
+
     {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}
 
     {!! Form::close() !!}
   </div>
+<p>biubviubv</p>
 @endsection
 
 @section('js')
