@@ -22,6 +22,14 @@ a, a:visited,a:hover{
     color: #060606;
 }
 
+main {
+  min-height: 500px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
 /* ================HEADER================ */
 
 header {
@@ -605,6 +613,14 @@ main div.formulaire-prod {
   padding: 50px 30px;
 }
 
+main div.formulaire-log-reg {
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+  padding: 50px 30px;
+}
+
+
 
 /*=======================Page profil public=================*/
 
@@ -717,7 +733,37 @@ padding: 50px 100px;
  margin: 0 auto;
 }
 
+/*=======================Page 404=================*/
 
+.page-404 {
+  text-align: center;
+}
+
+  .page-404 h2{
+    font-size: 4rem;
+    padding: 20px;
+  }
+
+  .page-404 p{
+    font-size: 2rem;
+  }
+
+  .panneau-404 {
+    position: relative;
+    width: 200px;
+    margin:0 auto;
+  }
+
+  .lien-404 {
+    position:absolute;
+    top:40px;
+    left:80px;
+  }
+
+  .lien-404 a{
+    color: #FFF;
+    font-size: 1.2rem;
+  }
 /* ============================================= */
 /* ===============( MEDIA QUERIES )=============== */
 /* ============================================= */
