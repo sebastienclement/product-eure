@@ -631,7 +631,7 @@ margin: 50px 0;
 }
 
 #descriptionProfil div.wrap{
-padding: 50px;
+padding: 50px 100px;
 }
 
 .descriptionProfil {
@@ -644,7 +644,7 @@ padding: 50px;
 }
 
 .itemRetailProfil li {
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 3px 0;
 }
 
@@ -683,6 +683,10 @@ padding: 50px;
  background-color: #46879B;
 }
 
+#itemRetailProfil div.wrap {
+  padding: 50px;
+}
+
 .itemRetailTile {
  font-size: 1.5rem;
  font-weight: bold;
@@ -690,7 +694,6 @@ padding: 50px;
  padding-bottom: 30px;
  color: #FFF;
  text-decoration: underline;
- /* text-align: center; */
 }
 
 .itemRetailProfil {
@@ -699,21 +702,17 @@ padding: 50px;
  flex-wrap: wrap;
  margin-bottom: 100px;
  background-color: #46879B;
- /* min-height: 280px; */
  padding: 50px 30px;
 }
 
-.itemProfil {
+.itemProfil , .retailProfil{
  width: 50%;
-}
-
-.retailProfil {
- width: 50%;
+ padding: 0 50px;
 }
 
 .retailProfil li ,.itemProfil li{
  list-style: none;
- padding-left: 10%;
+ /* padding-left: 10%; */
 }
 
 .mapProfil {
@@ -721,9 +720,6 @@ padding: 50px;
  width: 100%;
  margin: 0 auto;
 }
-
-
-
 
 
 /* ============================================= */
@@ -830,6 +826,12 @@ padding: 50px;
       margin: 0;
       z-index: 50;
     }
+    #descriptionProfil, .itemRetailProfil {
+      margin: 0;
+    }
+    .profilPublic {
+      padding: 0;
+    }
 }
 /**
  *
@@ -918,13 +920,6 @@ padding: 50px;
 /*=============FOOTER=============*/
 /*=============FOOTER=============*/
 /*=============FOOTER=============*/
-
-  #descriptionProfil, .itemRetailProfil {
-    margin: 0;
-  }
-  .profilPublic {
-    padding: 0;
-  }
 
   .logoFlexfooter {
     display: none;

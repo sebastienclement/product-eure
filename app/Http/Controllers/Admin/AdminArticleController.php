@@ -53,16 +53,31 @@ class AdminArticleController extends Controller
 
   public function actionEditArticle(AdminArticleRequest $request, $id )
   {
+    if(!empty($request->file('image'))) {
 
-    $post = $request->all();
+      $path = new PathUpload($request->file('image'), 'producer');
+      $request->file('image')->move(public_path($path->path()), $path->imageName());
 
-    \DB::table('articles')->where('id',  $id )->update([
-        'title'       => $post['title'],
-        'content'     => $post['content'],
-        'status'      => $post['status'],
-        'updated_at'  => Carbon::now(),
-    ]);
+      $post = $request->all();
 
+      \DB::table('articles')->where('id',  $id )->update([
+          'title'                   => $post['title'],
+          'content'                 => $post['content'],
+          'status'                  => $post['status'],
+          'path_img_article'        => $path->path().'/'.$path->imageName(),
+          'updated_at'  => Carbon::now(),
+        ]);
+    } else {
+
+      $post = $request->all();
+
+        \DB::table('articles')->where('id',  $id )->update([
+          'title'                   => $post['title'],
+          'content'                 => $post['content'],
+          'status'                  => $post['status'],
+          'updated_at'  => Carbon::now(),
+        ]);
+    }
     return redirect()->route('dashboard')->with('success', 'Article modifié');
   }
 
