@@ -182,6 +182,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Folklore\Image\ImageServiceProvider::class,
+        Propaganistas\LaravelPhone\PhoneServiceProvider::class,//ajouté
     ],
 
     /*

@@ -31,7 +31,7 @@ class ProducerRequest extends FormRequest
             'image'          => 'image|mimes:jpeg, png, jpg, svg|max:4096',
             'website'        => 'nullable',
             'producer_email' => 'required|email',
-            'phone'          => 'required|regex:/0[1-9]{9}/',
+            'phone'          => 'required|phone:AUTO,FR',
         ];
     }
 }
