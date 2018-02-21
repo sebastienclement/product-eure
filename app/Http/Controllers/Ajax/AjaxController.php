@@ -12,5 +12,11 @@ class AjaxController extends Controller
     $this->middleware('ajax');
   }
 
-  
+  public function addItem()
+  {
+
+
+
+  }
+
 }
