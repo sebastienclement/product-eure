@@ -15,10 +15,11 @@
 
     <section id="topContent">
 
-      <div class="wrap containerpulic" >
+      <div class="wrap containerpulic">
         <div class="profil-photo">
           @if (($producer->path_img != '/img/icons/040-farmer.svg') && ($producer->path_img != null))
-            <img src="{{asset($producer->path_img)}}" alt="Une photo de {{$producer->name}}" width="500">
+            {{-- <img src="{{asset($producer->path_img)}}" alt="Une photo de {{$producer->name}}"> --}}
+            <img src="{!! Image::url( route('home') . '/'. $producer->path_img, 500, 280, array('crop') );!!}" alt="Une photo de {{ $producer->name }} "  />
           @else
             {!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}
           @endif
@@ -49,7 +50,7 @@
     <section id="descriptionProfil">
       <div class="wrap ">
         <h3 class="itemRetailTile">Une petite description</h3>
-        <p><i class="fa fa-comment"></i> :{{ $producer->description}}</p>
+        <p>{{ $producer->description}}</p>
       </div>
     </section>
     <section id="itemRetailProfil" >
@@ -88,7 +89,7 @@
 
       <div class="mapProfil wrap">
         <iframe width="100%" height="250" frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?q={{$producer->adresse.' '.$producer->ville}}&key=AIzaSyDgxCPbY9e8WpR9KdkOyew_FdlmaDSCK1s" allowfullscreen>
+            src="https://www.google.com/maps/embed/v1/place?q={{$producer->name.' '.$producer->adresse.' '.$producer->ville.' '.$producer->zipcode}}&key=AIzaSyDgxCPbY9e8WpR9KdkOyew_FdlmaDSCK1s" allowfullscreen>
         </iframe>
 
       </div>

@@ -621,10 +621,6 @@ main div.formulaire-prod {
  /* height: 280px; */
 }
 
-.profil-photo{
-  width: 300px;
-}
-
 #descriptionProfil {
 background-color: #D19B26;
 margin: 50px 0;
@@ -752,7 +748,6 @@ padding: 50px 100px;
       padding-right: 20px;
   }
 
-
   #info-prod{
       background: rgba(104,157,113,0.7);
   }
@@ -827,11 +822,20 @@ padding: 50px 100px;
     }
 
     .info_flex>div{
-      width: 100%;
-      padding:20px 20px;
-      margin: 0;
-      z-index: 50;
+        width: 100%;
+        padding:20px 20px;
+        margin: 0;
+        z-index: 50;
     }
+
+    .containerpulic {
+      padding: 50px 0;
+    }
+
+    .containerpulic .profil-photo{
+      margin-bottom: 50px;
+    }
+
     #descriptionProfil, .itemRetailProfil {
       margin: 0;
     }
@@ -839,7 +843,9 @@ padding: 50px 100px;
       padding: 0;
     }
 
-
+    .itemProfil {
+      margin-bottom: 30px;
+    }
 }
 /**
  *
@@ -880,6 +886,10 @@ padding: 50px 100px;
    flex-wrap: wrap;
   }
 
+  .itemProfil , .retailProfil{
+   width: 100%;
+  }
+
   .box-1 {
     width: 60%;
   }
@@ -893,6 +903,7 @@ padding: 50px 100px;
     width: 40%;
     padding: 0.5rem;
   }
+
 }
 @media screen and (min-width: 200px) and (max-width: 639px){
     header img{
@@ -960,14 +971,19 @@ padding: 50px 100px;
   #nouveauté {
     display: none;
   }
-  .itemProfil {
+
+  .itemProfil , .retailProfil{
    width: 100%;
+   padding: 0;
   }
 
-  .retailProfil {
-   width: 100%;
+  .itemRetailTile {
+    font-size: 1rem;
   }
 
+  #descriptionProfil div.wrap{
+  padding: 50px 50px;
+  }
 
 /*======================================================*/
   .header_flex{
@@ -998,8 +1014,6 @@ padding: 50px 100px;
   #result-search div{
     padding-top:10px;
   }
-
-
 
   #menu{
       display: block;
