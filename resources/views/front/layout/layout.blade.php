@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Dosis|Permanent+Marker" rel="stylesheet">
+    <link href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    
     {{-- <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet"> --}}
     @yield('bootstrap-css')
     <link rel="stylesheet" href="{{asset('css/front/reset.css')}}">

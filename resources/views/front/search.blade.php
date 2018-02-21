@@ -32,7 +32,7 @@
     <div class="list-prod">
         @foreach($producers as $producer)
         <div class="single-prod">
-            <div class="img">
+            <div class="img-producer">
               @if (($producer->path_img != '/img/icons/040-farmer.svg') && ($producer->path_img != null))
                 <img src="{{ Image::url(route('home') . '/' . $producer->path_img, 300, 180, array('crop'))}}" alt="Une photo de {{$producer->name}}">
               @else
