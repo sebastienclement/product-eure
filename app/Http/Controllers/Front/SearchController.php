@@ -30,8 +30,7 @@ class SearchController extends Controller
                             ->join('item_producer','producers.id', '=', 'item_producer.producer_id')
                             ->join('items','items.id', '=', 'item_producer.item_id')
                             ->where(function($query) use ($search){
-                                $query->where('items.name', 'like', '%' . $search . '%')
-                                    ->orWhere('items.comment', 'like', '%' . $search . '%')
+                                $query->where('items.comment', 'like', '%' . $search . '%')
                                     ->orWhere('producers.name', 'like', '%' . $search . '%')
                                     ->orWhere('producers.adresse', 'like', '%' . $search . '%')
                                     ->orWhere('producers.zipcode', 'like', '%' . $search . '%');
@@ -77,8 +76,7 @@ class SearchController extends Controller
           $producers_id = \DB::table('producers')
                         ->join('item_producer','producers.id', '=', 'item_producer.producer_id')
                         ->leftJoin('items','items.id', '=', 'item_producer.item_id')
-                        ->where('items.name', 'like', '%' . $request['search'] . '%')
-                        ->orWhere('items.comment', 'like', '%' . $request['search'] . '%')
+                        ->where('items.comment', 'like', '%' . $request['search'] . '%')
                         ->orWhere('producers.name', 'like', '%' . $request['search'] . '%')
                         ->orWhere('producers.adresse', 'like', '%' . $request['search'] . '%')
                         ->orWhere('producers.ville', 'like', '%' . $request['search'] . '%')
