@@ -18,7 +18,7 @@
       <div class="single-prod">
               <div class="img">
                 @if (($producer->path_img != '/img/icons/040-farmer.svg') && ($producer->path_img != null))
-                  <img src="{{asset($producer->path_img)}}" alt="Une photo de {{$producer->name}}" width="500">
+                  <img src="{{asset($producer->path_img)}}" alt="Une photo de {{$producer->name}}" width="100%" height="100%">
                 @else
                   {!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}
                 @endif
