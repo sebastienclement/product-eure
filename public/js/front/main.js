@@ -101,4 +101,33 @@ $( document ).ready(function() {
     $(window).resize(checkWidthBig);
     $(window).resize(checkWidthSmall);
 
+
+  ////////////////////////////////////////////////////
+  ///////Affichage des forms ajout item / retail//////
+  ////////////////////////////////////////////////////
+
+  $('#add-item').on('click', function(e){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    if($('#form-item').is(':hidden')){
+        $('#form-item').off().slideDown(200);
+
+    }else{
+        $('#form-item').off().slideUp(200);
+
+    }
+  });
+
+  $('#add-retail').on('click', function(e){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    if($('#form-retail').is(':hidden')){
+        $('#form-retail').off().slideDown(200);
+
+    }else{
+        $('#form-retail').off().slideUp(200);
+
+    }
+  });
+
 });

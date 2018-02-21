@@ -49,7 +49,7 @@
     </section>
     <section id="descriptionProfil">
       <div class="wrap ">
-        <h3 class="itemRetailTile">Une petite description</h3>
+        <h3 class="itemRetailTitle">Une petite description</h3>
         <p>{{ $producer->description}}</p>
       </div>
     </section>
@@ -60,28 +60,34 @@
         <div class="itemProfil ">
           @if (isset(Auth::user()->id))
             @if (Auth::user()->id == $producer->user_id)
-              <p><a href="{{ route('home') }}" class="btn btn-success">Ajouter un produit</a></p>
+              <p><a id="add-item" class="btn btn-info">Ajouter un produit</a></p>
             @endif
           @endif
-          <h3 class="itemRetailTile">Voici les articles que nous proposons</h3>
+          <h3 class="itemRetailTitle">Voici les articles que nous proposons</h3>
           <ul>
             @foreach ($producer->item as $a)
-              <li>{{$a->name}} {{ $a->comment }}</li>
+              <li class="display-item">{{ $a->comment }}</li>
             @endforeach
           </ul>
+          <div id="form-item" class="">
+            @include('front.form.form-item')
+          </div>
         </div>
         <div class="retailProfil ">
           @if (isset(Auth::user()->id))
             @if (Auth::user()->id == $producer->user_id)
-              <p><a href="{{ route('home') }}" class="btn btn-success">Ajouter un lieu de vente</a></p>
+              <p><a id="add-retail" class="btn btn-info">Ajouter un lieu de vente</a></p>
             @endif
           @endif
-          <h3 class="itemRetailTile">Les Points de vente pour nos produits</h3>
+          <h3 class="itemRetailTitle">Les Points de vente pour nos produits</h3>
           <ul>
             @foreach ($producer->retail as $b)
-              <li>{{$b->name}} à {{$b->lieu}}</li>
+              <li class="display-retail">{{$b->lieu}}</li>
             @endforeach
           </ul>
+          <div id="form-retail" class="">
+            @include('front.form.form-retail')
+          </div>
         </div>
       </div>
     </section>
@@ -100,5 +106,39 @@
 @endsection
 
 @section('js')
+  <script type="text/javascript">
 
+    $.ajaxSetup({
+      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+    });
+
+
+    $('#item-submit').on('submit', function(e) {
+      e.preventDefault();
+      var form = $('#item-submit');
+
+      $.ajax({
+        type: 'POST',
+        url: "{{ route('add-item') }}",
+        data: form.serialize(),
+        dataType: "json",
+
+        beforeSend: function(){
+          console.log('dis moi ok');
+          console.log(form.serialize());
+        },
+
+        success: function(response) {
+          console.log(response);
+          $('.display-item').html(response);
+        },
+
+        error: function(){
+          console.log('error');
+        }
+      });
+
+
+    });
+  </script>
 @endsection

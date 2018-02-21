@@ -59,13 +59,13 @@ Route::group(['namespace' => 'Front'], function() {
 });
 
 
-// //Routes Ajax
-//   Route::group(['namespace' => 'Ajax', 'middleware' => ['auth', 'ajax']], function() {
-//
-//     Route::get('/mon-profil/ajax/add-item', 'addItem@AjaxController')->name('add-item');
-//     Route::get('/mon-profil/ajax/add-retail', 'addRetail@AjaxController')->name('add-retail');
-//
-//   });
+//Routes Ajax
+  Route::group(['namespace' => 'Ajax', 'middleware' => ['auth', 'ajax']], function() {
+
+    Route::post('/mon-profil/ajax/add-item', 'AjaxController@addItem')->name('add-item');
+    Route::post('/mon-profil/ajax/add-retail', 'AjaxController@addRetail')->name('add-retail');
+
+  });
 
 ////////////////////////////////////////////////////////////////////
 ////////////////===============LA SUITE==============///////////////

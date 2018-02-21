@@ -4,6 +4,13 @@ namespace App\Http\Controllers\Ajax;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ItemRequest;
+use App\Http\Requests\RetailRequest;
+use App\Models\Item;
+use App\Models\Retail;
+use Auth;
+use Carbon\Carbon;
+use App\Models\Producer;
 
 class AjaxController extends Controller
 {
@@ -12,9 +19,16 @@ class AjaxController extends Controller
     $this->middleware('ajax');
   }
 
-  public function addItem()
+  public function addItem(ItemRequest $request)
   {
-    
+    $id_producer = Producer::select('id')->where('user_id', '=', Auth::id())->first();
+
+    $item = array_merge($request->all(),[
+      'created_at' => Carbon::now()
+    ]);
+    Item::create($item)->producer()->sync($id_producer);
+
+    return response()->json($request->comment);
 
   }
 

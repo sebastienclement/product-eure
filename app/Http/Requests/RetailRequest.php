@@ -24,7 +24,6 @@ class RetailRequest extends FormRequest
     public function rules()
     {
         return [
-            'comment' => 'required',
             'lieu'    => 'required'
         ];
     }
