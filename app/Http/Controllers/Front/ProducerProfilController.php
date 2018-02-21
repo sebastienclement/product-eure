@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Service\PathUpload;
 use App\Models\Producer;
+use App\Models\Category;
 use Carbon\Carbon;
 use App\Http\Requests\ProducerRequest;
 // use App\Http\Middleware\Abonne;
@@ -28,8 +29,9 @@ class ProducerProfilController extends Controller
 
     $user = Auth::id();
     $producer = Producer::where('user_id', '=', $user)->first();
+    $categories = Category::pluck('name', 'id');
 
-    return view('front/profil-edit', compact('producer'));
+    return view('front/profil-edit', compact('producer','categories'));
   }
 
    /**
@@ -38,6 +40,10 @@ class ProducerProfilController extends Controller
    */
   public function actionEditProfilProducer(ProducerRequest $request, $id)
   {
+
+    $post = $request->all();
+    $producer = Producer::FindOrFail($id);
+    foreach($post['category'] as $cat){$cat_ids[] = $cat ;}
     // Requete d'update sur la table producer
     // puis redirection sur la page profil éditable avec un message de succes
     if(!empty($request->file('image'))) {
@@ -46,6 +52,8 @@ class ProducerProfilController extends Controller
       $request->file('image')->move(public_path($path->path()), $path->imageName());
 
       $post = $request->all();
+
+
 
       \DB::table('producers')->where('id', $id )->update([
         'name'            => $post['name'],
@@ -60,12 +68,11 @@ class ProducerProfilController extends Controller
         'updated_at'      => Carbon::now(),
       ]);
     } else {
-
-      $producer = Producer::FindOrFail($id);
       // dd($producer['path_img']);
       $producer->update($request->all());
 
     }
+      $producer->category()->sync($cat_ids);
 
     return redirect()->route('profil-perso')->with('success', 'Votre profil a été mis à jour');
   }
@@ -76,7 +83,10 @@ class ProducerProfilController extends Controller
    */
   public function showNewProfilProducer()
   {
-    return view('front/profil-new');
+
+    $categories = Category::pluck('name', 'id');
+
+    return view('front/profil-new',compact('categories'));
   }
 
   /**
@@ -86,6 +96,9 @@ class ProducerProfilController extends Controller
    */
   public function actionNewProfilProducer(ProducerRequest $request)
   {
+
+     $post = $request->all();
+     foreach($post['category'] as $cat){$cat_ids[] = $cat ;}
 
     // Requete d'insertion dans la bdd sur la table producer
     // puis redirect sur la page profil éditable avec mess success
@@ -105,7 +118,9 @@ class ProducerProfilController extends Controller
       'slug'     => str_slug($request->name),
       'path_img' => $image,
     ]);
-    Producer::create($inputs);
+
+    Producer::create($inputs)->category()->sync($cat_ids);
+
 
     return redirect()->route('profil-perso')->with('success', 'Votre profil producteur vient d\'être créé');
 

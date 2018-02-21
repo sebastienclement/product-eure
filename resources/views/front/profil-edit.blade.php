@@ -71,8 +71,9 @@
 
     <div class="form-group">
     {!! Form::label('category', 'Votre(vos) catégorie : ', ['class' => '']) !!}
-    {!! Form::select('size', array('L' => 'Large', 'S' => 'Small'));!!}
+    {!! Form::select('category[]', $categories, null, ['multiple'=>'multiple','class' => 'form-control']) !!}
     </div>
+
 
     {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}
 

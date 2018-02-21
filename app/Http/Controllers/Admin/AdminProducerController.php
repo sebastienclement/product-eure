@@ -7,6 +7,7 @@ use App\Service\PathUpload;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Producer;
+use App\Models\Category;
 use Auth;
 
 class AdminProducerController extends Controller
@@ -27,7 +28,9 @@ class AdminProducerController extends Controller
  */
   public function showNewProducer()
   {
-    return view('admin/new-producer');
+
+    $categories = Category::pluck('name', 'id');
+    return view('admin/new-producer',compact('categories'));
   }
 /**
  * [actionNewProducer validation du formulaire d'inscription]
@@ -36,6 +39,8 @@ class AdminProducerController extends Controller
  */
   public function actionNewProducer(ProducerRequest $request)
   {
+    $post = $request->all();
+    foreach($post['category'] as $cat){$cat_ids[] = $cat ;}
 
     if(!empty($request->file('image'))) {
 
@@ -53,7 +58,7 @@ class AdminProducerController extends Controller
       'slug'     => str_slug($request->name),
       'path_img' => $image,
     ]);
-    Producer::create($inputs);
+    Producer::create($inputs)->category()->sync($cat_ids);
 
     return redirect()->route('dashboard')->with('success', 'Nouveau Producteur créé');
   }
@@ -64,9 +69,10 @@ class AdminProducerController extends Controller
  */
   public function showEditProducer($id)
   {
+    $categories = Category::pluck('name', 'id');
     $producer = Producer::FindOrFail($id);
 
-    return view('admin/edit-producer', compact('producer'));
+    return view('admin/edit-producer', compact('producer','categories'));
   }
 /**
  * [actionEditProducer validation du formulaire de modification]
@@ -76,6 +82,10 @@ class AdminProducerController extends Controller
  */
   public function actionEditProducer(ProducerRequest $request ,$id)
   {
+
+    $post = $request->all();
+    foreach($post['category'] as $cat){$cat_ids[] = $cat ;}
+
       if(!empty($request->file('image'))) {
 
         $path = new PathUpload($request->file('image'), 'producer');
@@ -95,12 +105,12 @@ class AdminProducerController extends Controller
           'updated_at'      => Carbon::now(),
         ]);
       } else {
-
         $producer = Producer::FindOrFail($id);
         // dd($producer['path_img']);
         $producer->update($request->all());
-
       }
+        $producer->category()->sync($cat_ids);
+
     return redirect()->route('dashboard')->with('success', 'Modification du producteur prise en compte');
 }
 /**

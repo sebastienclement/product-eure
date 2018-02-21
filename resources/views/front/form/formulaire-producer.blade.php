@@ -57,17 +57,7 @@
 
   <div class="form-group">
   {!! Form::label('category', 'Votre(vos) catégorie : ', ['class' => '']) !!}
-  {!! Form::select('size', ['1' => 'Bovin',
-                            '2' => 'Porc',
-                            '3' => 'Porc',
-                            '4' => 'Porc',
-                            '5' => 'Porc',
-                            '6' => 'Porc',
-                            '7' => 'Porc',
-                            '8' => 'Porc',
-                            '9' => 'Porc',
-                            '10' => 'Porc',
-                            ]);!!}
+  {!! Form::select('category[]', $categories, null, ['multiple'=>'multiple','class' => 'form-control']) !!}
   </div>
 
     {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}

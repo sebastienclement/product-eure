@@ -57,6 +57,11 @@
     {!! $errors->first('phone', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
 
+  <div class="form-group">
+  {!! Form::label('category', 'Votre(vos) catégorie : ', ['class' => '']) !!}
+  {!! Form::select('category[]', $categories, null, ['multiple'=>'multiple','class' => 'form-control']) !!}
+  </div>
+
     {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}
 
   {!! Form::close() !!}
