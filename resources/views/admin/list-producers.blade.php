@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Liste des producteurs
 @endsection
 
 @section('content')

@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Nouveau produit
 @endsection
 
 @section('content')

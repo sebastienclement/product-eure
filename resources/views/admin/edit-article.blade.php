@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Modifier un article
 @endsection
 
 @section('content')

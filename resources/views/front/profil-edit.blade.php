@@ -6,6 +6,7 @@
 @endsection
 
 @section('title')
+  Modifier mon profil
 @endsection
 
 @section('content')

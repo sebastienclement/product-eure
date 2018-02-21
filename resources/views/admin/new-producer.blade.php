@@ -3,11 +3,12 @@
 @endsection
 
 @section('title')
+  Nouveau producteur
 @endsection
 
 @section('content')
   {!! Form::open(['route' => 'admin-new-producer-action','files' => true, 'method' => 'post', 'novalidate' => 'novalidate']) !!}
-  
+
   <div class="form-group">
     {!! Form::label('image', 'Image de votre entreprise : ', ['class' => '']) !!}
     {!! Form::file('image', ['class' => 'form-control']) !!}

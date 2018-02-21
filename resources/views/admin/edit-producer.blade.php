@@ -3,6 +3,7 @@
 @endsection
 
 @section('title')
+  Modifier un profil producteur
 @endsection
 
 @section('content')

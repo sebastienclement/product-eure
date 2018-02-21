@@ -81,7 +81,7 @@ class ProducersTableSeeder extends Seeder
           'user_id'        => 1,
           'name'           => 'horticulteur spilers',
           'slug'           => 'horticulteur-spilers',
-          'adresse'        => '220 rte de la pyle',
+          'adresse'        => '220 route de la pyle',
           'zipcode'        => '27370',
           'ville'          => 'la pyle',
           'zone'           => 'pays-roumois-et-marais-vernier',

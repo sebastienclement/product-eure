@@ -27,10 +27,17 @@ class AdminArticleController extends Controller
 
   public function newArticleAction(AdminArticleRequest $request)
   {
-    $path = new PathUpload($request->file('image'), 'articles');
-    $request->file('image')->move(public_path($path->path()), $path->imageName());
+    if (!empty($request->file('image'))) {
+      $path = new PathUpload($request->file('image'), 'articles');
+      $request->file('image')->move(public_path($path->path()), $path->imageName());
+      $image = $path->path().'/'.$path->imageName();
+    } else {
+      $image = 'img/icons/040-farmers.svg';
+    }
 
-    $inputs = array_merge($request->all(),['user_id' => Auth::id(), 'path_img_article' => $path->path().'/'.$path->imageName()]);
+    $inputs = array_merge($request->all(),[
+      'user_id' => Auth::id(),
+      'path_img_article' => $image]);
     // dd($inputs);
     Article::create($inputs);
 
