@@ -28,9 +28,9 @@ class ProducerProfilController extends Controller
   {
 
     $user = Auth::id();
-    $producer = Producer::where('user_id', '=', $user)->first();
+    $producer = Producer::with('category')->where('user_id', '=', $user)->first();
     $categories = Category::pluck('name', 'id');
-
+    // dd($producer);
     return view('front/profil-edit', compact('producer','categories'));
   }
 
