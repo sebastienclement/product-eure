@@ -16,9 +16,9 @@
     <h2>Tous nos producteurs</h2>
   @foreach ($producers as $key => $producer)
       <div class="single-prod">
-              <div class="img">
+              <div class="img-producer">
                 @if (($producer->path_img != '/img/icons/040-farmer.svg') && ($producer->path_img != null))
-                  <img src="{{asset($producer->path_img)}}" alt="Une photo de {{$producer->name}}" width="500">
+                  <img src="{{ Image::url(route('home') . '/' . $producer->path_img, 300, 180, array('crop'))}}" alt="Une photo de {{$producer->name}}">
                 @else
                   {!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}
                 @endif

@@ -32,7 +32,7 @@ class AdminArticleController extends Controller
       $request->file('image')->move(public_path($path->path()), $path->imageName());
       $image = $path->path().'/'.$path->imageName();
     } else {
-      $image = 'img/icons/040-farmers.svg';
+      $image = 'img/icons/030-tree.svg';
     }
 
     $inputs = array_merge($request->all(),[

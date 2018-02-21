@@ -130,7 +130,6 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js" charset="utf-8"></script>
-<script src="{{ asset('js/front/jquery.sticky.js') }}" charset="utf-8"></script>
 <script src="{{ asset('js/front/main.js') }}" charset="utf-8"></script>
 
 @yield('js')

@@ -395,14 +395,14 @@ color:#3E8022;
   color: rgba(209,155,38,1);
 }
 
-.single-prod .img{
-    width:150px;
+.single-prod .img-producer{
+    width:300px;
+    height: 180px;
 }
 
 .detail-prod{
     width: 80%;
     padding-left: 10px;
-
 }
 
 .detail-prod h3,
