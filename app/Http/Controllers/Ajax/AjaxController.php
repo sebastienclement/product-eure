@@ -14,9 +14,13 @@ class AjaxController extends Controller
 
   public function addItem()
   {
-
-
+    
 
   }
 
+
+  public function addRetail()
+  {
+
+  }
 }

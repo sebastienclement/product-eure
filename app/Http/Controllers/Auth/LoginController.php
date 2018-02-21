@@ -31,7 +31,7 @@ class LoginController extends Controller
             if($user->role === 'admin') {
                 return redirect()->intended('/admin');
             }
-            return redirect()->intended('/profil');
+            return redirect()->intended('/mon-profil');
         }
     /**
      * Create a new controller instance.

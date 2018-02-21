@@ -6,14 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests\AdminItemRequest;
 use Carbon\Carbon;
 use App\Models\Item;
-use App\Models\Category;//ajout
 use Auth;
 
 class AdminItemController extends Controller
 {
     public function showListItems()
     {
-      $items = Item::with('category')->get();
+      $items = Item::all();
 
 
       return view('admin/list-items', compact('items'));
@@ -21,13 +20,8 @@ class AdminItemController extends Controller
 
     public function showNewItem()
     {
-      $categories = Category::all();//ajout
-      $select = [];
-      $select[''] = 'tous';
-      foreach($categories as $categorie){
-        $select[$categorie->id] = $categorie->name;
-      }
-      return view('admin/new-item', compact('select','categories'));//ajout compact
+
+      return view('admin/new-item');
     }
 
     public function actionNewItem(AdminItemRequest $request)
@@ -37,9 +31,8 @@ class AdminItemController extends Controller
       $post = $request->all();
 
       \DB::table('items')->insert([
-          'name'        => $post['name'],
+          // 'name'        => $post['name'],
           'comment'     => $post['comment'],
-          'category_id' => $post['categorie'],
           'created_at'  => Carbon::now(),
       ]);
       return redirect()->route('dashboard')->with('success', 'Nouvel item créé');
@@ -48,16 +41,10 @@ class AdminItemController extends Controller
 
     public function showEditItem($id)
     {
-      $categories = Category::all();//ajout
 
-      $select = [];
-      $select[''] = 'tous';
-      foreach($categories as $categorie){
-        $select[$categorie->id] = $categorie->name;
-      }
       $item = Item::FindOrFail($id);
 
-      return view('admin/edit-item', compact('item','select'));
+      return view('admin/edit-item', compact('item'));
     }
 
     public function actionEditItem(AdminItemRequest $request,$id)
@@ -65,9 +52,8 @@ class AdminItemController extends Controller
       $post = $request->all();
 
       \DB::table('items')->where('id', $id)->update([
-          'name'       => $post['name'],
+          // 'name'       => $post['name'],
           'comment'     => $post['comment'],
-          'category_id' => $post['categorie'],
           'updated_at'  => Carbon::now(),
       ]);
       return redirect()->route('dashboard')->with('success', 'Modification de l\'item prise en compte');
