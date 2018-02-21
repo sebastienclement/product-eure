@@ -1,5 +1,5 @@
 <h2>N'hésitez pas à consultez la <span><a href="{{ route('list-producer') }}">liste de tous nos producteurs</a></span>
-<p>ou<br>Trouvez celui qui vous convient en fonction de votre envie.</p>
+<br>ou<br>Trouvez celui qui vous convient en fonction de votre envie.</h2>
 {!!Form::open(['route' => 'search-result','method' => 'get']) !!}
 <div id="icon-flex">
 

@@ -66,16 +66,39 @@ $( document ).ready(function() {
         }
     });
 
+
+//affichage du menu responsive en dessous de 640px
+
     $('#menu').on('click', function(e){
         e.preventDefault();
         e.stopImmediatePropagation();
         if($('.menu-co').is(':hidden')){
-            $('.menu-co').slideDown('slow');
+            $('.menu-co').slideDown(200);
 
         }else{
-            $('.menu-co').slideUp('slow');
+            $('.menu-co').slideUp(200);
 
         }
     });
+
+//Detection de la largeur de la fenetre pour afficher  le menu selon la forme voulu
+    var $window = $(window);
+    var $menu = $('.menu-co');
+
+    function checkWidthBig() {
+        var windowsize = $window.width();
+        if (windowsize >= 623) {
+            $('.menu-co').show();
+        }
+    }
+    function checkWidthSmall() {
+        var windowsize = $window.width();
+        if (windowsize < 620) {
+            $('.menu-co').hide();
+        }
+    }
+
+    $(window).resize(checkWidthBig);
+    $(window).resize(checkWidthSmall);
 
 });

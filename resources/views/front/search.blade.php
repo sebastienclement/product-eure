@@ -1,5 +1,6 @@
 @extends('front.layout.layout')
 @section('css')
+    <link href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 @endsection
 
 @section('title')
@@ -18,7 +19,7 @@
         @else
         <h2>Nous n'avons pas trouvé de producteur correspondant à votre recherche</h2>
         @endif
-        <div><a href="" id="toggle-search">Effectuer une autre recherche</a></div>
+        <div><i class="fa fa-search"></i><a href="" id="toggle-search">  Effectuer une autre recherche</a></div>
     </div>
 
     <div>

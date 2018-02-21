@@ -56,12 +56,15 @@ header img{
     position: relative;
     top: 9px;
     left:3px;
+    width:60px;
+    height:auto;
 }
 
 #header_right{
-
     align-self: center;
 }
+
+
 
 .menu-co li a,
 .menu-co li p{
@@ -126,12 +129,14 @@ header img{
   transform: translateY(-50%);
   font-family: 'Dosis', sans-serif;
   padding:10px;
+  text-align: center;
+
 }
 
 .inside-search h2 {
   font-size:1.3rem;
   line-height: 1.9rem;
-  text-align: center;
+
 }
 
 .inside-search h2 span a {
@@ -146,8 +151,8 @@ header img{
 }
 
 .icon{
-  width:50px;
-  height: 50px;
+  width:9%;
+  /* height: 50px; */
   background-color: rgba(255,255,255,0.7));
   padding:5px;
   border-radius:4px;
@@ -199,7 +204,10 @@ header img{
   background-color: rgba(104,157,113,1)
 
 }
-
+.inside-search p,
+.scrollToMap{
+    font-size: 1.3rem;
+}
 
 div#parallax {
   position: relative;
@@ -418,13 +426,19 @@ color:#3E8022;
 }
 
 
-#search-tag-2{
+div#search-tag-2{
     position: absolute;
     top:40px;
     width:100%;
     background-color: #FAFAFA;
     display:none;
     z-index:1000;
+    text-align: center;
+    padding: 20px;
+}
+
+div#result-search div i{
+    padding-right: 12px;
 }
 
 
@@ -820,11 +834,11 @@ padding: 50px;
 
 
   #news-box{
-      width:100%;
-      position: static;
-      top: 0%;
-      transform: translateY(0);
-      flex-wrap: wrap;
+    width:100%;
+    position: static;
+    top: 0%;
+    transform: translateY(0);
+    flex-wrap: wrap;
   }
 
   div#parallax_2{
@@ -854,8 +868,15 @@ padding: 50px;
 
 }
 @media screen and (min-width: 200px) and (max-width: 639px){
-
-
+    header img{
+      top: 8px;
+      left:3px;
+      width:40px;
+      height:auto;
+    }
+  .menu-co{
+      display: none;
+  }
   #news-box{
       position: static;
       transform:translateY(0);
@@ -879,9 +900,6 @@ padding: 50px;
       font-size: 2.5rem;
   }
 
-  .menu-co ul {
-      padding-right: 0;
-  }
 
   .scrollToMap{
       position: relative;
@@ -935,13 +953,17 @@ padding: 50px;
 
   .menu-co{
     text-align: center;
-    display:none;
-    padding:10px;
-}
+    padding:10px 0;
+  }
 
+  .menu-co ul {
+    padding-right: 0;
+  }
 
-  #search-tag-2{
+  div#search-tag-2{
     top: 80px;
+    text-align: center;
+
   }
   #result-search{
     display: flex;
@@ -951,10 +973,13 @@ padding: 50px;
 
   #result-search div{
     padding-top:10px;
-}
+  }
+
+
+
   #menu{
       display: block;
-      padding: 10px;
+      padding: 10px 0;
       font-size: 1.3rem;
       cursor:pointer;
       background-color: #46879B;
@@ -965,4 +990,23 @@ padding: 50px;
   #meun:active{
       border:none;
   }
+}
+
+
+@media screen and (min-width: 200px) and (max-width: 550px){
+
+    .icon{
+      width:20%;
+      height: 70px;
+      background-color: rgba(255,255,255,0.7));
+      padding:5px;
+      border-radius:4px;
+      border: 1px solid green ;
+    }
+
+    #icon-flex{
+        flex-wrap: wrap;
+    }
+
+
 }

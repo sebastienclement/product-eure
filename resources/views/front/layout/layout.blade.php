@@ -22,7 +22,7 @@
 
         <ul class="header_flex">
 
-            <h1><a href="{{ route('home') }}">Pr<img src="{{ asset('img/home/logo.png')}}" width="60px" height="auto">duct<span>'Eure</span></a></h1>
+            <h1><a href="{{ route('home') }}">Pr<img src="{{ asset('img/home/logo.png')}}">duct<span>'Eure</span></a></h1>
             <button id="menu">Menu</button>
             <div id="header_right">
               <nav class="menu-co" id="sticker">
