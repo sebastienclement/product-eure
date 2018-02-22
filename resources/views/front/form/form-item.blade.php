@@ -2,9 +2,9 @@
 
   <div class="form-group">
     {!! Form::label('comment', 'Votre produit : ', ['class' => '']) !!}
-    {!! Form::textarea('comment', null, ['placeholder' => 'votre produit', 'class' => 'form-control']) !!}
-    {!! $errors->first('comment', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+    {!! Form::textarea('comment', null, ['placeholder' => 'Votre produit...', 'rows' => 3, 'class' => 'form-control']) !!}
+    {{-- {!! $errors->first('comment', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!} --}}
   </div>
 
-{{Form::submit('Envoyer', array('class' => ''))}}
+{{Form::submit('Envoyer', array('class' => 'btn btn-success'))}}
 {{Form::close()}}

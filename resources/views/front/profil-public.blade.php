@@ -64,15 +64,17 @@
         <div class="itemProfil ">
           @if (isset(Auth::user()->id))
             @if (Auth::user()->id == $producer->user_id)
-              <p><a id="add-item" class="btn btn-info">Ajouter un produit</a></p>
+              <p><a id="add-item" class="btn btn-info"> + </a></p>
             @endif
           @endif
           <h3 class="itemRetailTitle">Voici les articles que nous proposons</h3>
           <ul id="item-list-added">
             @foreach ($producer->item as $a)
               <li class="display-item">{{ $a->comment }}</li>
+              <li class="error-item-added"></li>
             @endforeach
           </ul>
+
           <div id="form-item" class="toHide">
             @include('front.form.form-item')
           </div>
@@ -80,7 +82,7 @@
         <div class="retailProfil ">
           @if (isset(Auth::user()->id))
             @if (Auth::user()->id == $producer->user_id)
-              <p><a id="add-retail" class="btn btn-info">Ajouter un lieu de vente</a></p>
+              <p><a id="add-retail" class="btn btn-info"> + </a></p>
             @endif
           @endif
           <h3 class="itemRetailTitle">Les Points de vente pour nos produits</h3>
@@ -129,17 +131,25 @@
         dataType: "json",
 
         beforeSend: function(){
-          console.log('dis moi ok');
           console.log(form.serialize());
         },
 
         success: function(response) {
           console.log(response);
-          $('#item-list-added').append(response);
+
+          if (response.err !== true) {
+            $(':input','#item-submit').not(':submit').val('');
+            $('.help-block').html('');
+            $('#item-list-added').append(response);
+          } else {
+            $('.error-item-added').html('');
+            $('#item-list-added').append(response.error.comment);
+          }
+
         },
 
         error: function(){
-          console.log('error');
+          console.error('erreur');
         }
       });
     });
@@ -157,17 +167,18 @@
         dataType: "json",
 
         beforeSend: function(){
-          console.log('dis moi ok');
           console.log(form.serialize());
         },
 
         success: function(response) {
           console.log(response);
+          $(':input','#retail-submit').not(':submit').val('');
+          $('.help-block').html('');
           $('#retail-list-added').append(response);
         },
 
         error: function(){
-          console.log('error');
+          console.error('erreur');
         }
       });
     });

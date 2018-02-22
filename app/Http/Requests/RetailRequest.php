@@ -24,7 +24,7 @@ class RetailRequest extends FormRequest
     public function rules()
     {
         return [
-            'lieu'    => 'required'
+            'lieu'    => 'required|min:3|max:200'
         ];
     }
 }

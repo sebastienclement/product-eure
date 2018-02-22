@@ -34,6 +34,7 @@
     </tr>
   </thead>
   <tbody>
+    <td></td>
     <td>{{$producer['user']['id']}}</td>
     <td>{{$producer->name}}</td>
     {{-- <td>{{$producer->slug}}</td> --}}

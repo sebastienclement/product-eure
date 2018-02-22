@@ -75,7 +75,7 @@ return [
     'required_without' => "Au moins l'un des deux critères de recherche est requis",
     'required_without_all' => "Le champ :attribute est requis quand aucun de :values n'est présent.",
     'same' => 'Les champs :attribute et :other doivent être identiques.',
-    'phone'  =>  "Le champ d'attribut: contient un numéro invalide.",//ajouté
+    'phone'  =>  "Le numéro de :attribute est invalide.",//ajouté
     'size' => [
         'numeric' => 'La valeur de :attribute doit être :size.',
         'file' => 'La taille du fichier de :attribute doit être de :size kilo-octets.',
@@ -146,5 +146,7 @@ return [
         'time' => 'heure',
         'available' => 'disponible',
         'size' => 'taille',
+        'comment' => 'produit',
+        'retail' => 'lieu',
     ],
 ];

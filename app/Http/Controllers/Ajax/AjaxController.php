@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Ajax;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ItemRequest;
@@ -19,25 +20,38 @@ class AjaxController extends Controller
     $this->middleware('ajax');
   }
 
-  public function addItem(ItemRequest $request)
+  public function addItem(Request $request)
   {
     $id_producer = Producer::select('id')->where('user_id', '=', Auth::id())->first();
 
     $item = array_merge($request->all(),[
       'created_at' => Carbon::now()
     ]);
-    Item::create($item)->producer()->sync($id_producer);
 
 
-    $html = '<li>'.$request->comment.'</li>';
+    $validator = Validator::make($request->all(), [
+            'comment' => 'required|min:3|max:200'
+        ]);
 
+    if ($validator->fails()) {
 
-    return response()->json($html);
+      return response()->json([
+        'err'   => true,
+        'error' => $validator->errors()
+      ]);
+
+    } else {
+
+      Item::create($item)->producer()->sync($id_producer);
+
+      $html = '<li>'.$request->comment.'</li>';
+      return response()->json($html);
+    }
 
   }
 
 
-  public function addRetail(RetailRequest $request)
+  public function addRetail(Request $request)
   {
     $id_producer = Producer::select('id')->where('user_id', '=', Auth::id())->first();
 
