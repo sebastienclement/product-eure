@@ -70,7 +70,7 @@ class AdminProducerController extends Controller
   public function showEditProducer($id)
   {
     $categories = Category::pluck('name', 'id');
-    $producer = Producer::FindOrFail($id);
+    $producer = Producer::with('category')->FindOrFail($id);
 
     return view('admin/edit-producer', compact('producer','categories'));
   }

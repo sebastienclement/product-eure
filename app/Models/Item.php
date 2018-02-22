@@ -10,9 +10,9 @@ class Item extends Model
   use SoftDeletes;
 
 
-  protected $table = "items" ;
+  protected $table = "items";
 
-  protected $fillable = ['producer_id','comment'];
+  protected $fillable = ['comment', 'created_at'];
 
   protected $dates = ['deleted_at'];
 

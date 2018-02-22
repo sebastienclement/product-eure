@@ -9,14 +9,14 @@ class Retail extends Model
 {
   use SoftDeletes;
 
-  protected $table = "retails" ;
+  protected $table = "retails";
 
-  protected $fillable = ['title','content','statut','user_id'];
+  protected $fillable = ['lieu','created_at'];
 
-    protected $dates = ['deleted_at'];
+  protected $dates = ['deleted_at'];
 
   public function producer()
   {
-    return $this->belongsToMany('App\Models\Retail');
+    return $this->belongsToMany('App\Models\Producer');
   }
 }

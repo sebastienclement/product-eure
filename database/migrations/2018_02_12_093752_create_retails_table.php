@@ -15,7 +15,6 @@ class CreateRetailsTable extends Migration
     {
       Schema::create('retails', function (Blueprint $table){
       $table->increments('id');
-      $table->string('name');
       $table->string('lieu');
       $table->softDeletes();
       $table->timestamps();

@@ -27,7 +27,6 @@ class AdminRetailController extends Controller
     $post = $request->all();
 
     \DB::table('retails')->insert([
-        'name'  => $post['name'],
         'lieu'  => $post['lieu'],
         'created_at'  => Carbon::now(),
     ]);
@@ -47,7 +46,6 @@ class AdminRetailController extends Controller
     $post = $request->all();
 
     \DB::table('retails')->where('id',  $id )->update([
-        'name'        => $post['name'],
         'lieu'        => $post['lieu'],
         'updated_at'  => Carbon::now(),
     ]);
