@@ -28,7 +28,11 @@ class AjaxController extends Controller
     ]);
     Item::create($item)->producer()->sync($id_producer);
 
-    return response()->json($request->comment);
+
+    $html = '<li>'.$request->comment.'</li>';
+
+
+    return response()->json($html);
 
   }
 
@@ -42,6 +46,8 @@ class AjaxController extends Controller
     ]);
     Retail::create($retail)->producer()->sync($id_producer);
 
-    return response()->json($request->lieu);
+    $html = '<li>'.$request->lieu.'</li>';
+
+    return response()->json($html);
   }
 }
