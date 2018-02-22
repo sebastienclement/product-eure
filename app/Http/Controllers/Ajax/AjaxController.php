@@ -20,6 +20,11 @@ class AjaxController extends Controller
     $this->middleware('ajax');
   }
 
+
+  /**
+   * [addItem Permet l'insertion en base de données en Ajax d'un item pour un producteur]
+   * @param Request $request [description]
+   */
   public function addItem(Request $request)
   {
     $id_producer = Producer::select('id')->where('user_id', '=', Auth::id())->first();
@@ -50,7 +55,10 @@ class AjaxController extends Controller
 
   }
 
-
+  /**
+   * [addRetail Permet l'insertion en base de données en Ajax d'un retail pour un producteur]
+   * @param Request $request [description]
+   */
   public function addRetail(Request $request)
   {
     $id_producer = Producer::select('id')->where('user_id', '=', Auth::id())->first();
@@ -58,14 +66,29 @@ class AjaxController extends Controller
     $retail = array_merge($request->all(),[
       'created_at' => Carbon::now()
     ]);
+
+    $validator = Validator::make($request->all(), [
+            'lieu' => 'required|min:3|max:200'
+        ]);
+
+    if ($validator->fails()) {
+
+      return response()->json([
+        'err'   => true,
+        'error' => $validator->errors()
+      ]);
+
+    } else {
+
     Retail::create($retail)->producer()->sync($id_producer);
 
     $html = '<li>'.$request->lieu.'</li>';
-
     return response()->json($html);
   }
 
-  
+  }
+
+
 
 
 }

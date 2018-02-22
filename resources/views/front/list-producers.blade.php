@@ -33,7 +33,7 @@
                 <p>@foreach($producer->category as $cat)
                     {{ucfirst($cat->name)}}
                 @endforeach</p>
-                <p>{{ substr($producer->description, 0, 200) }}</p>
+                <p>{{ ucfirst(substr($producer->description, 0, 200)) }}</p>
               </div>
         </div>
   @endforeach

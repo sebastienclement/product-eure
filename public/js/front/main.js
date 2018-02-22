@@ -81,7 +81,7 @@ $( document ).ready(function() {
         }
     });
 
-//Detection de la largeur de la fenetre pour afficher  le menu selon la forme voulu
+//Detection de la largeur de la fenetre pour afficher  le menu selon la forme voulue
     var $window = $(window);
     var $menu = $('.menu-co');
 
@@ -111,10 +111,11 @@ $( document ).ready(function() {
     e.stopImmediatePropagation();
     if($('#form-item').is(':hidden')){
         $('#form-item').off().slideDown(200);
+        $('#add-item').html('Réduire');
 
     }else{
         $('#form-item').off().slideUp(200);
-
+        $('#add-item').html('Ajouter');
     }
   });
 
@@ -123,9 +124,11 @@ $( document ).ready(function() {
     e.stopImmediatePropagation();
     if($('#form-retail').is(':hidden')){
         $('#form-retail').off().slideDown(200);
+        $('#add-retail').html('Réduire');
 
     }else{
         $('#form-retail').off().slideUp(200);
+        $('#add-retail').html('Ajouter');
 
     }
   });
