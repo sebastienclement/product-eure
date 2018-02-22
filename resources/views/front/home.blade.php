@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Accueil
+    Product'Eure
 @endsection
 
 @section('content')
@@ -33,7 +33,7 @@
           <li>Présentez vos produits</li>
           <li>Renseignez vos différents point de ventes</li>
           <li>Votre profil sera accessible à tous les visiteurs de Product'eur.fr</li>
-          <li><button><a href="{{ route('register') }}">Inscrivez vous gratruitement</a></button></li>
+          <li><button id="register-prod" class="register-btn"><a href="{{ route('register') }}">Inscrivez vous gratruitement</a></button></li>
         </ul>
       </div>
       <div id="info-abo">
@@ -43,7 +43,7 @@
           <li>Rechercher par catégorie ou par zone géographique</li>
           <li>Inscrivez vous pour accéder à notre newsletter</li>
           <li>Et c'est entièrement gratuit, aussi</li>
-          <li><button>Inscription bientôt disponible</button></li>
+          <li><button id="register-prod" class="register-btn">Inscription bientôt disponible</button></li>
         </ul>
       </div>
     </div>
