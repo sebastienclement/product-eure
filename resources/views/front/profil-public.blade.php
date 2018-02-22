@@ -32,7 +32,7 @@
             <p><i class="fa fa-crosshairs"></i> : {{$producer->zipcode}}, {{ $producer->ville}}</p>
             <p><i class="fa fa-phone-square"></i> : {{ $producer->phone}}</p>
             @if (!empty($producer->website))
-              <p><a href="{{ $producer->website}}"><i class="fa fa-globe"></i> : Voir mon site web</a></p>
+              <p><a id="website" href="{{ $producer->website}}"><i class="fa fa-globe"></i> : Voir mon site web</a></p>
             @endif
             @if (!empty($producer->producer_email))
               <p><i class="fa fa-envelope"></i> : {{ $producer->producer_email}}</p>
@@ -47,12 +47,12 @@
       </div>
     </section>
     <section id="descriptionProfil">
-      <p style="text-align: center; padding-bottom:20px;">
-        @foreach($producer->category as $cat)
-          <span class="badge badge-secondary" style="font-size: 1rem;background-color: LightSlateGray; padding: 10px;">{{ucfirst($cat->name)}}</span>
-        @endforeach
-      </>
       <div class="wrap ">
+        <div class="badge">
+          @foreach($producer->category as $cat)
+            <span class="badge badge-secondary">{{ucfirst($cat->name)}}</span>
+          @endforeach
+        </div>
         <h3 class="descriptionTitle">Une petite description</h3>
         <p>{{ $producer->description}}</p>
       </div>

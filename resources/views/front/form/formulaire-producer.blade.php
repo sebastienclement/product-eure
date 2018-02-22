@@ -38,7 +38,7 @@
   </div>
 
   <div class="form-group">
-    {!! Form::label('producer_email', 'Votre e-mail de contact : ', ['class' => '']) !!}
+    {!! Form::label('producer_email', 'Votre e-mail de contact : ', ['class' => 'requis']) !!}
     {!! Form::email('producer_email', null, ['placeholder' => 'exemple@mail.com', 'class' => 'form-control']) !!}
     {!! $errors->first('producer_email', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
   </div>
