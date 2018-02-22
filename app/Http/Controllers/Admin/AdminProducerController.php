@@ -13,7 +13,8 @@ use Auth;
 class AdminProducerController extends Controller
 {
   /**
-   * [showListProducers affiche la vue la liste des pruducteurs]
+   * [showListProducers
+   * affiche la vue de la liste des pruducteurs]
    * @return [type] [description]
   */
   public function showListProducers()
@@ -24,7 +25,8 @@ class AdminProducerController extends Controller
   }
 
   /**
-   * [showProfilProducer affichage d'un profil single avec les items et retails associés]
+   * [showProfilProducer
+   * affichage d'un profil single avec les items et retails associés]
    * @return [type] [description]
    */
   public function showProfilProducer($id)
@@ -36,7 +38,8 @@ class AdminProducerController extends Controller
 
 
   /**
-  * [showNewProducer affiche la vue du formulaire d'ajout de producteur]
+  * [showNewProducer
+  * affiche la vue du formulaire d'ajout de producteur]
   * @return [type] [description]
   */
   public function showNewProducer()
@@ -48,7 +51,8 @@ class AdminProducerController extends Controller
 
 
   /**
-  * [actionNewProducer validation du formulaire d'inscription]
+  * [actionNewProducer
+  * validation du formulaire d'inscription]
   * @param  ProducerRequest $request [description]
   * @return [type]                   [description]
   */
@@ -80,7 +84,8 @@ class AdminProducerController extends Controller
 
 
   /**
-  * [showEditProducer affiche la vue pour modifier un producteur]
+  * [showEditProducer
+  * affiche la vue pour modifier un producteur]
   * @param  [type] $id [description]
   * @return [type]     [description]
   */
@@ -94,7 +99,8 @@ class AdminProducerController extends Controller
 
 
  /**
-  * [actionEditProducer validation du formulaire de modification]
+  * [actionEditProducer
+  * validation du formulaire de modification]
   * @param  ProducerRequest $request [description]
   * @param  [type]          $id      [description]
   * @return [type]                   [description]
@@ -135,7 +141,8 @@ class AdminProducerController extends Controller
 
 
   /**
-  * [deleteProducer effacement d'un producteur]
+  * [deleteProducer
+  * effacement d'un producteur]
   * @param  [type] $id [description]
   * @return [type]     [description]
   */

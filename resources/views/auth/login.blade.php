@@ -43,7 +43,7 @@ z
           </div>
 
           <div class="form-group">
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-info">
               Se connecter
             </button>
             <a class="btn btn-link" href="{{ route('password.request') }}">

@@ -34,20 +34,26 @@
         <div class="single-prod">
             <div class="img-producer">
               @if (($producer->path_img != '/img/icons/040-farmer.svg') && ($producer->path_img != null))
-                <img src="{{ Image::url(route('home') . '/' . $producer->path_img, 300, 180, array('crop'))}}" alt="Une photo de {{$producer->name}}">
+                <a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">
+                  <img src="{{ Image::url(route('home') . '/' . $producer->path_img, 300, 180, array('crop'))}}" alt="Une photo de {{$producer->name}}">
+                </a>
               @else
-                {!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}
+                <a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">{!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}</a>
               @endif
             </div>
             <div class="detail-prod">
-                <h3>@if (!empty($producer->prod_name)) {{ucfirst($producer->prod_name)}}
-                    @else {{ucfirst($producer->name)}}
-                    @endif</h3>
+                <h3>
+                    @if (!empty($producer->prod_name))
+                      <a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">{{ucfirst($producer->prod_name)}}</a>
+                    @else
+                      <a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">{{ucfirst($producer->name)}}</a>
+                    @endif
+                </h3>
                 <p>{{$producer->adresse}} {{$producer->zipcode}} {{$producer->ville}}</p>
                 <p>@foreach($producer->category as $cat)
                     {{ucfirst($cat->name)}}
                 @endforeach</p>
-                <p><a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">Voir le Profil</a></p>
+                <p>{{ substr($producer->description, 0, 200) }}</p>
 
             </div>
         </div>

@@ -35,13 +35,13 @@
 </div>
 
 <div class="form-group">
-  {!! Form::label('producer_email', 'Votre e-mail de contact : ', ['class' => '']) !!}
+  {!! Form::label('producer_email', 'Votre e-mail de contact : ', ['class' => 'requis']) !!}
   {!! Form::email('producer_email', $producer->producer_email, ['placeholder' => 'exemple@mail.com', 'class' => 'form-control']) !!}
   {!! $errors->first('producer_email', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
 </div>
 
 <div class="form-group">
-  {!! Form::label('website', 'Site web : ', ['class' => 'requis']) !!}
+  {!! Form::label('website', 'Site web : ', ['class' => '']) !!}
   {!! Form::text('website', $producer->website,['placeholder' => 'www.exemple.fr', 'class' => 'form-control']) !!}
   {!! $errors->first('website', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
 </div>
