@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Producer;
 use App\Models\Category;
 use App\Models\Item;
+use App\Http\Requests\SearchRequest;
 
 class SearchController extends Controller
 {
-    public function actionSearchForm(Request $request)
+    public function actionSearchForm(SearchRequest $request)
     {
         $request = $request->all();
 

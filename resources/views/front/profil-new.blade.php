@@ -11,6 +11,7 @@
 
 @section('content')
   <div class="formulaire-prod">
+    <p>Les champs suivis d'un <span class="requis-ast">*</span> sont obligatoires</p>
 
     {!! Form::open(['route' => 'new-profil-action', 'method' => 'post','files' => true, 'novalidate' => 'novalidate']) !!}
 

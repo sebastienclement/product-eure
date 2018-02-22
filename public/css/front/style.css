@@ -2,8 +2,9 @@
 body{
   /* background-color: #3E8022; */
   font-family: 'Dosis', sans-serif;
-  background-image: url('../../img/home/grain-opacity.png');
+  /* background-image: url('../../img/home/grain-opacity.png'); */
   overflow-x: hidden;
+
 }
 
 .wrap {
@@ -25,15 +26,38 @@ a, a:visited,a:hover{
 main {
   min-height: 500px;
 }
+/* ================== FORM ================== */
 
 label {
   margin-bottom: 5px;
 }
 
+label.requis::after{
+  content:'*';
+  color:red;
+}
+.requis-ast{
+  color:red;
+}
+
+.formulaire-prod p,
+.formulaire-log-reg p{
+  padding:20px 0;
+  font-weight: bold;
+}
+input[type=submit]{
+  color:#fff;
+  background-color: #79A184  !important;
+  border:1px solid #79A184;
+
+}
+input[type=submit]:hover{
+  background-color: #a3ceaa  !important;
+  border:1px solid #a3ceaa;
+}
 .toHide {
   display: none;
 }
-
 /* ================HEADER================ */
 
 header {
@@ -140,7 +164,7 @@ header img{
   top:50%;
   transform: translateY(-50%);
   font-family: 'Dosis', sans-serif;
-  padding:10px;
+  padding:20px;
   text-align: center;
 
 }
@@ -148,7 +172,7 @@ header img{
 .inside-search h2 {
   font-size:1.3rem;
   line-height: 1.9rem;
-
+  font-weight: bolder;
 }
 
 .inside-search h2 span a {
@@ -169,16 +193,17 @@ header img{
   padding:5px;
   border-radius:4px;
   border: 1px solid green ;
-  /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
 }
 
 .icon label{
   cursor: pointer;
 }
-
+.inside-search input:hover + div {
+  background-color:#90B596;
+}
 .inside-search input:checked + div {
   background-color:rgba(104,157,113,0.7);
-  border:1px solid green;
+  border:3px solid green;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
@@ -216,10 +241,24 @@ header img{
   background-color: rgba(104,157,113,1)
 
 }
-.inside-search p,
-.scrollToMap{
+.inside-search p{
     font-size: 1.3rem;
+    font-weight: bolder;
+
 }
+.scrollToMap{
+    font-size: 1.2rem;
+    color:#79A184;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-top: 20px;
+}
+
+.scrollToMap:hover,
+.inside-search h2 a:hover{
+  color: #D19B26;
+}
+
 
 div#parallax {
   position: relative;
@@ -228,7 +267,10 @@ div#parallax {
   height: 600px;
 }
 
+#map{
+    background-image: url('../../img/home/grain-opacity.png');
 
+}
 /**
  * ======== Parallax 2 - Presentation article
  */
@@ -456,15 +498,17 @@ div#result-search div i{
 
 /* ================= SVG MAP =================== */
 
-.scrollToMap:hover{
-  color : #46879B;
-}
 
 section#map {
   text-align: center;
-  margin: 50px auto;
+  margin: 2.7rem auto;
+
+}
+
+.border-map{
   border-top: 2px solid rgba(209, 155, 38, 1);
   border-bottom: 2px solid rgba(209, 155, 38, 1);
+
 }
 
 section#map h2 {
@@ -647,12 +691,12 @@ main div.formulaire-log-reg {
 }
 
 #descriptionProfil {
- background-color: #D19B26;
  margin: 50px 0;
 }
 
 #descriptionProfil div.wrap{
- padding: 50px 100px;
+  /* border-left: 2px solid #D19B26; */
+  padding: 0.5rem 100px;
 }
 
 .descriptionProfil {
@@ -700,12 +744,21 @@ main div.formulaire-log-reg {
   font-family: 'Dosis', cursive;
 }
 
+.descriptionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+  color: #D19B26;
+  text-decoration: underline;
+}
+
 #itemRetailProfil {
- background-color: #46879B;
 }
 
 #itemRetailProfil div.wrap {
-  padding: 50px;
+  /* border-left: 2px solid #46879B; */
+  padding: 0.5rem 50px;
 }
 
 .itemRetailTitle {
@@ -713,7 +766,7 @@ main div.formulaire-log-reg {
  font-weight: bold;
  text-transform: uppercase;
  padding-bottom: 30px;
- color: #FFF;
+ color: #46879B;
  text-decoration: underline;
 }
 
@@ -722,7 +775,7 @@ main div.formulaire-log-reg {
  justify-content: center;
  flex-wrap: wrap;
  margin-bottom: 100px;
- background-color: #46879B;
+ /* background-color: #46879B; */
  padding: 50px 30px;
 }
 
@@ -1042,7 +1095,7 @@ main div.formulaire-log-reg {
    padding: 0;
   }
 
-  .itemRetailTitle {
+  .itemRetailTitle, .descriptionTitle {
     font-size: 1rem;
   }
 

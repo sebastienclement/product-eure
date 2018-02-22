@@ -33,7 +33,7 @@
           <li>Présentez vos produits</li>
           <li>Renseignez vos différents point de ventes</li>
           <li>Votre profil sera accessible à tous les visiteurs de Product'eur.fr</li>
-          <li>Et c'est entièrement gratuit</li>
+          <li><button><a href="{{ route('register') }}">Inscrivez vous gratruitement</a></button></li>
         </ul>
       </div>
       <div id="info-abo">
@@ -43,19 +43,22 @@
           <li>Rechercher par catégorie ou par zone géographique</li>
           <li>Inscrivez vous pour accéder à notre newsletter</li>
           <li>Et c'est entièrement gratuit, aussi</li>
+          <li><button>Inscription bientôt disponible</button></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="map" class="wrap">
-    <h2>La carte des producteurs de l'Eure</h2>
-    <p> Trouver en un clic tous les producteurs proches de chez vous.</p>
-          <div class="content">
-              <div class="img-svg">
-                {!! file_get_contents(asset('img/home/eure-region-naturelle.svg')) !!}
-              </div>
-          </div>
+  <section id="map">
+    <div class="wrap border-map">
+      <h2>La carte des producteurs de l'Eure</h2>
+      <p> Trouver en un clic tous les producteurs proches de chez vous.</p>
+            <div class="content">
+                <div class="img-svg">
+                  {!! file_get_contents(asset('img/home/eure-region-naturelle.svg')) !!}
+                </div>
+            </div>
+    </div>
   </section>
 
   <section>
