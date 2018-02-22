@@ -17,6 +17,6 @@ class Retail extends Model
 
   public function producer()
   {
-    return $this->belongsToMany('App\Models\Retail');
+    return $this->belongsToMany('App\Models\Producer');
   }
 }
