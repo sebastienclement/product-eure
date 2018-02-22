@@ -647,12 +647,12 @@ main div.formulaire-log-reg {
 }
 
 #descriptionProfil {
- background-color: #D19B26;
  margin: 50px 0;
 }
 
 #descriptionProfil div.wrap{
- padding: 50px 100px;
+  /* border-left: 2px solid #D19B26; */
+  padding: 0.5rem 100px;
 }
 
 .descriptionProfil {
@@ -700,12 +700,21 @@ main div.formulaire-log-reg {
   font-family: 'Dosis', cursive;
 }
 
+.descriptionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+  color: #D19B26;
+  text-decoration: underline;
+}
+
 #itemRetailProfil {
- background-color: #46879B;
 }
 
 #itemRetailProfil div.wrap {
-  padding: 50px;
+  /* border-left: 2px solid #46879B; */
+  padding: 0.5rem 50px;
 }
 
 .itemRetailTitle {
@@ -713,7 +722,7 @@ main div.formulaire-log-reg {
  font-weight: bold;
  text-transform: uppercase;
  padding-bottom: 30px;
- color: #FFF;
+ color: #46879B;
  text-decoration: underline;
 }
 
@@ -722,7 +731,7 @@ main div.formulaire-log-reg {
  justify-content: center;
  flex-wrap: wrap;
  margin-bottom: 100px;
- background-color: #46879B;
+ /* background-color: #46879B; */
  padding: 50px 30px;
 }
 
@@ -1032,7 +1041,7 @@ main div.formulaire-log-reg {
    padding: 0;
   }
 
-  .itemRetailTitle {
+  .itemRetailTitle, .descriptionTitle {
     font-size: 1rem;
   }
 

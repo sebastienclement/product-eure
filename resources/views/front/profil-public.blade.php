@@ -28,14 +28,14 @@
 
           <div class="listDescriptionProfil">
             <h2 id="nameProducteurProfil">{{$producer->name}}</h2>
-            <p><i class="fa fa-home"></i> :{{ $producer->adresse}},{{$producer->zipcode}}</p>
-            <p><i class="fa fa-home"></i> :{{ $producer->ville}}</p>
-            <p><i class="fa fa-phone-square"></i> :{{ $producer->phone}}</p>
+            <p><i class="fa fa-home"></i> : {{ $producer->adresse}}</p>
+            <p><i class="fa fa-crosshairs"></i> : {{$producer->zipcode}}, {{ $producer->ville}}</p>
+            <p><i class="fa fa-phone-square"></i> : {{ $producer->phone}}</p>
             @if (!empty($producer->website))
-              <p><i class="fa fa-phone-square"></i> :{{ $producer->website}}</p>
+              <p><a href="{{ $producer->website}}"><i class="fa fa-globe"></i> : Voir mon site web</a></p>
             @endif
             @if (!empty($producer->producer_email))
-              <p><i class="fa fa-envelope"></i> :{{ $producer->producer_email}}</p>
+              <p><i class="fa fa-envelope"></i> : {{ $producer->producer_email}}</p>
             @endif
             @if (isset(Auth::user()->id))
               @if (Auth::user()->id == $producer->user_id)
@@ -47,8 +47,13 @@
       </div>
     </section>
     <section id="descriptionProfil">
+      <p style="text-align: center; padding-bottom:20px;">
+        @foreach($producer->category as $cat)
+          <span class="badge badge-secondary" style="font-size: 1rem;background-color: LightSlateGray; padding: 10px;">{{ucfirst($cat->name)}}</span>
+        @endforeach
+      </>
       <div class="wrap ">
-        <h3 class="itemRetailTitle">Une petite description</h3>
+        <h3 class="descriptionTitle">Une petite description</h3>
         <p>{{ $producer->description}}</p>
       </div>
     </section>
@@ -94,7 +99,7 @@
 
       <div class="mapProfil wrap">
         <iframe width="100%" height="250" frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?q={{$producer->name.' '.$producer->adresse.' '.$producer->zipcode.' '.$producer->ville}}&key=AIzaSyDgxCPbY9e8WpR9KdkOyew_FdlmaDSCK1s" allowfullscreen>
+            src="https://www.google.com/maps/embed/v1/place?q={{$producer->adresse.' '.$producer->zipcode.' '.$producer->ville}}&key=AIzaSyDgxCPbY9e8WpR9KdkOyew_FdlmaDSCK1s" allowfullscreen>
         </iframe>
 
       </div>

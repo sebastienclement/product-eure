@@ -13,7 +13,7 @@ class ProducerController extends Controller
 {
     public function showProfilProducer($slug)
     {
-      $producer = Producer::with('item','retail')->where('slug', '=', $slug)->firstOrFail();
+      $producer = Producer::with('item','retail','category')->where('slug', '=', $slug)->firstOrFail();
       // dd($producer);
       return view('front/profil-public', compact('producer'));
     }
@@ -31,7 +31,7 @@ class ProducerController extends Controller
      {
        $categories = Category::pluck('name', 'id');
        $user = Auth::id();
-       $producer = Producer::with('item','retail')->where('user_id', '=', $user)->first();
+       $producer = Producer::with('item','retail', 'category')->where('user_id', '=', $user)->first();
        // dd($producer);
        if (empty($producer)) {
          return view('front/profil-new',compact('categories'));
