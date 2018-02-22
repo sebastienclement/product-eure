@@ -11,7 +11,7 @@
 
 @section('content')
   <div class="formulaire-prod">
-
+  <p>Les champs suivis d'un <span class="requis-ast">*</span> sont obligatoires</p>
     {!! Form::open(['route' => ['edit-profil-action', $producer->id], 'method' => 'put', 'files' => true, 'novalidate' => 'novalidate']) !!}
 
         @include('front.form.form-edit-producer')
