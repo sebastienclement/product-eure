@@ -141,6 +141,9 @@ Route::group(['namespace' => 'Front'], function() {
   //Route listing Producer
   Route::get('/admin/list-producers', 'AdminProducerController@showListProducers')->name('admin-list-producer');
 
+  //Route profil single Producer
+  Route::get('/admin/profil-producer/{id}', 'AdminProducerController@showProfilProducer')->where('id','[0-9]+')->name('admin-profil-producer');
+
   //Route ajout Producer
   Route::get('/admin/new-producer', 'AdminProducerController@showNewProducer')->name('admin-new-producer-view');
   Route::post('/admin/new-producer', 'AdminProducerController@actionNewProducer')->name('admin-new-producer-action');

@@ -25,6 +25,7 @@ class SearchController extends Controller
             //requete pour obtenir l'id des producteurs correspondant
 
           $producers_id = \DB::table('producers')
+                            ->where('status', '=', 'confirmed')
                             ->join('category_producer','producers.id', '=','category_producer.producer_id')
                             ->where('category_producer.category_id', '=', $category)
                             ->join('item_producer','producers.id', '=', 'item_producer.producer_id')
@@ -57,6 +58,7 @@ class SearchController extends Controller
             $category = $request['category'];
 
             $producers_id = \DB::table('producers')
+                            ->where('status', '=', 'confirmed')
                             ->join('category_producer','producers.id', '=','category_producer.producer_id')
                             ->where('category_producer.category_id', '=', $category)
                             ->join('categories','category_producer.category_id' ,'=','categories.id')
@@ -87,7 +89,7 @@ class SearchController extends Controller
 
           $producers_id = array_pluck($producers_id, 'prod_id');
             if(!empty($producers_id)){
-                $producers = Producer::whereIn('id', $producers_id)->with('category')->get();
+                $producers = Producer::whereIn('id', $producers_id)->where('status', '=', 'confirmed')->with('category')->get();
             }else{
                 $producers = [];
             }
@@ -103,7 +105,7 @@ class SearchController extends Controller
 
     public function actionSearchMap($zone)
     {
-      $producers = Producer::where('zone', '=', $zone)->get();
+      $producers = Producer::where('zone', '=', $zone)->where('status', '=', 'confirmed')->get();
       $countsearch = count($producers);
 
       return view('front/search',compact('producers','countsearch'));

@@ -18,9 +18,11 @@
       <th scope="col">Nom</th>
       <th scope="col">Adresse</th>
       <th scope="col">Zone</th>
+      <th scope="col">Statut</th>
       <th scope="col">Crée le</th>
       <th scope="col">Modifer</th>
       <th scope="col">Effacer</th>
+      <th scope="col">Voir profil</th>
     </tr>
   </thead>
   <tbody>
@@ -31,8 +33,8 @@
       <td>{{$producer->name}}</td>
       <td>{{$producer->user->name}}</td>
       <td>{{$producer->adresse}}</td>
-      <td>{{$producer->siret}}</td>
       <td>{{$producer->zone}}</td>
+      <td>{{$producer->status}}</td>
       <td>{{$producer->created_at}}</td>
       <td><a class="btn btn-success" href="{{ route('admin-edit-producer-view',['id' => $producer->id ]) }}">update</a></td>
       <td>
@@ -42,6 +44,7 @@
 
       {!! Form::close() !!}
       </td>
+      <td><a class="btn btn-info" href="{{ route('admin-profil-producer',['id' => $producer->id ]) }}">Voir profil</a></td>
     </tr>
 
   @endforeach

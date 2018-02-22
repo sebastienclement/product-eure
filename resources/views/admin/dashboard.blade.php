@@ -27,6 +27,7 @@
         <h2>{{$countarticles}} Fabuleux articles</h2></a></a>
       </div>
     </div>
+  </div>  
 @endsection
 
 @section('js')

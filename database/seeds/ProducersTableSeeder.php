@@ -28,6 +28,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'vente de viande bovine par caissette de 10 kg',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -43,6 +44,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'Petite ferme paysanne en AB avec un élevage de pondeuses : vente à la ferme d\'oeufs biologiques et sur les marchés de Beuzeville le mardi et Honfleur le mercredi ',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -59,6 +61,7 @@ class ProducersTableSeeder extends Seeder
           'description'    => 'Vente directe de volailles fermières élevées en plein air sur une durée de 14 semaines minimum.
           Poulets, pintades, canards (dinde, mi sauvages ) et volailles festives (chapons, dindes ).',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'refused'
       );
 
       $producers[] = array(
@@ -75,6 +78,7 @@ class ProducersTableSeeder extends Seeder
           'description' => 'apiculteurs récoltants fabrication de Miel, pollen,propolis, miel en rayons, pain d\'épices,bougies, nougat, etc...
           Vente directe au domicile sur rdv du mardi au samedi et vente sur les marchés de Bernay le samedi matin et Brionne le dimanche matin.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -90,6 +94,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => 'http://jardindefleurs.jimdo.com/',
           'description'    => 'Horticulteur depuis 21 ans,nous produisons des plants de légumes et fleurs dans le plus grand respect de la nature.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -105,6 +110,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => 'www.domainedelabehotiere.com',
           'description'    => 'élevage de faisans et perdrix rouges et grises.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -120,6 +126,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'Horticulteur en Normandie depuis plus de 60 ans, Maison Haas met à votre service son expertise et son savoir-faire pour vous proposer différentes variétés de fleurs, de plantes ou de plants de légumes tout au long de l\'année. Grâce à une équipe de professionnels, profitez d\'une relation de producteur à consommateur de qualité en achetant directement à la source, sans intermédiaire !',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -135,6 +142,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'L\'entreprise familiale s\'est diversifiée depuis 2 ans, avec la production d\'agneaux d\'herbes, par Lisa (jeune diplômée en temps qu\'ingénieur en Agronomie). Installée sur 20 ha de prairies, l\'élevage compte actuellement 150 brebis de race Romane/Shosphire. Les agneaux naissent entre le début du mois de Mars et la Fin avril, dans la bergerie, après 72h de surveillance, ils sont mis à l\'herbe dans nos belles prairies Normandes plantées de pommiers, et ce jusqu\'à l\'abattage des agneaux. Les agneaux sont nourris exclusivement du lait maternel (les 2 premiers mois) puis ils complémentent cet aliment de base avec l\'herbe.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -150,6 +158,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'Nous sommes producteurs de lait au centre du département de l\'Eure, nous produisons l\'alimentation du troupeau essentiellement à base d\'herbe. Nous transformons une partie de notre lait en fromages, faisselles, fromage blanc, crème et yaourts. Venez découvrir nos produits sur les marchés de Conches en Ouche, Beaumont le Roger, Bernay et Le Fidelaire.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -184,6 +193,7 @@ class ProducersTableSeeder extends Seeder
 
           La société VDE s\'occupe de l\'abattage, la découpe et la mise sous vide de la viande. Celui-ci est étiqueté avec la date de mise sous vide.',
           'created_at'      => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -199,6 +209,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => 'http://www.artisanduvegetal-laigle.fr',
           'description'    => 'Spécialistes du végétal, nous produisons des arbres, des plantes et des fleurs adaptés au climat et au sol de notre région. Pour vous aider à réussir votre jardin, nous vous proposons egalement une gamme de produits professionnels que nous utilisons dans nos serres et pépinières.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -214,6 +225,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => 'www.jardin-d-etienne.fr',
           'description'    => 'Jardin d\'Etienne est une petite exploitation familiale située à quelques kilomètres de Thuit Signol. Nous avons débuté notre activité en vendant des produits de notre potager sur les marchés de la région. Grâce au soutien de nos clients, nous avons pu développer notre petite entreprise et ainsi cultiver de plus en plus de légumes variés, et bon pour la santé.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -229,6 +241,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => 'http://www.laviandedepapa.com',
           'description'    => 'Laurent, agriculteur dans l\'Eure à Daubeuf la Campagne depuis 1999, passionné par l\'élevage et le bien manger. Je propose des colis de viande de boeuf du pré à l\'assiette avec livraison sur Rouen.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -244,6 +257,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'Petite ferme familiale perchée sur les hauteurs du plateau du Mesnil, venez découvrir nos incroyables fruit frais de saison qui vous prodigueront force et vie éternelle !',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -261,6 +275,7 @@ class ProducersTableSeeder extends Seeder
           Miel primé en 2014 de la médaille d\'argent de l\'Eure ,de la médaille d\'argent de Conches en ouche,et de la médaille d\'argent de Normandie.
           Vente sur place ,sur foire ,ou sur point de rendez-vous sur Évreux.la vente par correspondance engage des frais de port à la charge du client.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -277,6 +292,7 @@ class ProducersTableSeeder extends Seeder
           'description'    => 'Notre ferme est située près de Les Andelys, Vernon et Gisors. Nous proposons de la vente directe producteur de colis de viande charolaise.
           Ferme familiale en polyculture élevage de vaches Charolaises depuis 3 générations, toutes nos vaches sont nées et élevées sur la ferme.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -293,6 +309,7 @@ class ProducersTableSeeder extends Seeder
           'description'    => 'Agriculteur depuis 25 ans, nous nous sommes engagés en agriculture BIOlogique depuis 2009. Notre exploitation poly culture élevage est basée en Normandie plus exactement sur la commune des Andelys.
           Pommes de terre, pommes, jus de pommes sont en vente tous les vendredis à la ferme de 9h 12h/ 14h/18h et viande bovine uniquement sur réservation.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -308,6 +325,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => 'http://lafermettebiodelepte.fr/',
           'description'    => 'Exploitation maraîchère Biologiques, nous sommes installés et certifié Agriculture Biologique depuis 2013. Nous vous proposons des légumes de saison en vente directe sur le point de vente de la ferme. Il est ouvert les mercredis et vendredis de 16h à 19h et le samedi matin de 9h30 à 12h30.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -323,6 +341,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => 'https://www.facebook.com/lesjardinsdeneustrie/',
           'description'    => 'Les Jardins de Neustrie, jardins d\'insertion du réseau Cocagne où des légumes de saisons sont cultivés toute l\'année en agriculture biologique.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -341,6 +360,7 @@ class ProducersTableSeeder extends Seeder
           A la ferme il faut commander avant le Mercredi de chaque semaine.
           Horaires : le vendredi de 17h à 19h',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -356,6 +376,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'Richard Cœur de Lion, Roi d\'Angleterre et Duc de Normandie : tout le monde connait. Mais saviez-vous que c\'était aussi le nom d\'une bière artisanale normande ? La Brasserie Duplessi, à Tosny, sur la rive gauche de la Seine et face à Château-Gaillard, vous ouvre ses portes pour découvrir le processus de fabrication. Du concassage des orges maltés à l’embouteillage en passant par le filtrage et la fermentation, vous dégusterez ensuite la bière de votre choix. Blonde, brune ou ambrée, décidément cette Cœur de Lion est pleine de surprises !',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -371,6 +392,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => 'www.pressoirdor.com',
           'description'    => 'A proximité de la forêt de Lyons-la-Forêt et du château Gaillard, entre les Andelys et Etrepagny, Eric Doré vous accueille dans sa ferme cidricole et vous propose ses produits fermiers. Vous pénètrerez dans une ferme typique du Vexin Normand, au coeur de ses bâtiments en colombages du XVIIème et XVIIIème siècles. Vous découvrirez un verger de 27 ha, un atelier de production cidricole, une collection d\'objets anciens. Typique du XVIIe et XVIIIe s., bâtiments à colombages, corps de ferme fleuri, verger, atelier cidricole, collection d\'objets anciens.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -386,6 +408,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'Oeufs de poule élevées en plein air. Propose occasionnelement des oeufs d\'autruche et de caille.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -401,6 +424,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => 'www.mtglaces.fr',
           'description'    => 'Marie-Thé est heureuse de vous faire découvrir et apprécier les saveurs incomparables de ses glaces fabriquées artisanalement avec le lait et la crème de la ferme, selon des recettes à haute qualité gustative. Elles sont garanties sans colorant artificiel ni conservateur ou autre produit de synthèse. Découvrez plus de 50 parfums (caramel au beurre salé, spéculoos, kiwi...)!',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -417,6 +441,7 @@ class ProducersTableSeeder extends Seeder
           'description'    => 'Venez déguster le fromage et voir les chèvres ainsi que la traite à 17h tous les jours du 1er avril au 20 janvier la boutique est ouverte les mercredi, vendredi et samedi à partir de 10h.
           Ferme familiale, production céréalière, élevage de chèvre et production de fromage',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -432,6 +457,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'Bienvenue à la Chèvrerie d\'Elise, ferme en polycultures élevages avec un atelier chèvres laitières nourries avec le foin cultivé sur la ferme et des aliments (sans OGM ni huile de palme, enrichis en graines de lin) ainsi que la transformation à la ferme en fromages.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -447,6 +473,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'Nous cultivons, sur 50 ares, un verger de fruits rouges de plein champ : fraises, framboises, groseilles et mûres. A la saison, nous vous proposons nos fruits frais, cueillis et préparés en barquettes. Toute l\'année, profitez de nos Gourmandises Maison, réalisées, à la ferme, de manière traditionnelle, à partir des fruits issus de notre production : confitures, gelées, sirops, pâtes de fruits...',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -462,6 +489,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => 'lescargotdesmarnieres.wifeo.com/',
           'description'    => 'C\'est dans un cadre champêtre et de tranquillité que l\'escargot des Marnières a ouvert ses portes en 2008! Les escargots y sont élevés en plein air! Véronique et Bruno sont heureux de vous faire découvrir la ferme aux escargots. Ils vous proposent un produit fermier de qualité, élevé en plein air et cuisiné par leurs soins dans un laboratoire agréé CE.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -477,6 +505,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => 'www.ferme-du-clos-de-la-mare.com/',
           'description'    => 'Dans le hameau de Boussey en bordure de la vallée de l\'Eure, Jean-Marie Lenfant a repris l\'activité familiale qu\'il diversifie vers la production et la vente de nouveaux produits de Normandie. Jean-Marie sera heureux de vous rencontrer pour présenter ses nouveaux produits et ses moyens de production : presse à huile, moulin à farine... Vous pouvez découvrir et déguster des produits insolites : huile de colza, gamme de cosmétique à base d\'huile de colza...',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
 
       $producers[] = array(
@@ -493,6 +522,7 @@ class ProducersTableSeeder extends Seeder
           'description'    => 'Bienvenue à la Ferme d\'Illièvre où Christophe Guicheux vous fera découvrir son troupeau de brebis et ses lapins. Tous les animaux sont nés et élevés sur la ferme.
           Depuis 4 générations, la famille Guicheux cultive des céréales sur la Ferme d\'Illièvre. Depuis 5ans, elle vous propose également ses produits 100% fermiers: des agneaux et du lapin.',
           'created_at'     => $date->format('Y-m-d H:i:s'),
+          'status'         => 'confirmed'
       );
         DB::table('producers')->insert($producers);
 

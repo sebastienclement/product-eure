@@ -29,6 +29,7 @@ class CreateProducersTable extends Migration
         $table->string('website')->nullable();
         $table->text('description');
         $table->string('path_img')->nullable();
+        $table->enum('status', ['new', 'confirmed', 'refused'])->default('new');
         $table->timestamps();
         $table->softDeletes();
 

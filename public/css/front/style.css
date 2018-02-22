@@ -907,6 +907,9 @@ main div.formulaire-log-reg {
  */
 @media screen and (min-width: 640px) and (max-width: 960px){
 
+  main {
+      min-height: auto;
+  }
 
   #news-box{
     width:100%;
@@ -961,15 +964,22 @@ main div.formulaire-log-reg {
 
 }
 @media screen and (min-width: 200px) and (max-width: 639px){
-    header img{
+
+  main {
+      min-height: auto;
+  }
+
+  header img{
       top: 8px;
       left:3px;
       width:40px;
       height:auto;
-    }
+  }
+
   .menu-co{
       display: none;
   }
+
   #news-box{
       position: static;
       transform:translateY(0);

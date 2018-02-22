@@ -13,14 +13,14 @@ class ProducerController extends Controller
 {
     public function showProfilProducer($slug)
     {
-      $producer = Producer::with('item','retail')->where('slug', '=', $slug)->firstOrFail();
+      $producer = Producer::with('item','retail')->where('slug', '=', $slug)->where('status', '=', 'confirmed')->firstOrFail();
       // dd($producer);
       return view('front/profil-public', compact('producer'));
     }
 
     public function showAllProducers()
     {
-      $producers = Producer::all();
+      $producers = Producer::where('status', '=', 'confirmed')->get();
       return view('front/list-producers', compact('producers'));
     }
 

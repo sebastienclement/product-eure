@@ -15,28 +15,43 @@ class AdminProducerController extends Controller
   /**
    * [showListProducers affiche la vue la liste des pruducteurs]
    * @return [type] [description]
-   */
+  */
   public function showListProducers()
   {
     $producers = Producer::with('user')->get();
 
     return view('admin/list-producers', compact('producers'));
   }
-/**
- * [showNewProducer affiche la vue du formulaire d'ajout de producteur]
- * @return [type] [description]
- */
+
+  /**
+   * [showProfilProducer affichage d'un profil single avec les items et retails associés]
+   * @return [type] [description]
+   */
+  public function showProfilProducer($id)
+  {
+    $producer = Producer::with('user', 'item', 'retail', 'category')->where('id', '=', $id)->firstOrFail();
+    // dd($producer);
+    return view('admin/profil-producer', compact('producer'));
+  }
+
+
+  /**
+  * [showNewProducer affiche la vue du formulaire d'ajout de producteur]
+  * @return [type] [description]
+  */
   public function showNewProducer()
   {
 
     $categories = Category::pluck('name', 'id');
     return view('admin/new-producer',compact('categories'));
   }
-/**
- * [actionNewProducer validation du formulaire d'inscription]
- * @param  ProducerRequest $request [description]
- * @return [type]                   [description]
- */
+
+
+  /**
+  * [actionNewProducer validation du formulaire d'inscription]
+  * @param  ProducerRequest $request [description]
+  * @return [type]                   [description]
+  */
   public function actionNewProducer(ProducerRequest $request)
   {
     $post = $request->all();
@@ -61,12 +76,14 @@ class AdminProducerController extends Controller
     Producer::create($inputs)->category()->sync($cat_ids);
 
     return redirect()->route('dashboard')->with('success', 'Nouveau Producteur créé');
-  }
-/**
- * [showEditProducer affiche la vue pour modifier un producteur]
- * @param  [type] $id [description]
- * @return [type]     [description]
- */
+}
+
+
+  /**
+  * [showEditProducer affiche la vue pour modifier un producteur]
+  * @param  [type] $id [description]
+  * @return [type]     [description]
+  */
   public function showEditProducer($id)
   {
     $categories = Category::pluck('name', 'id');
@@ -74,12 +91,14 @@ class AdminProducerController extends Controller
 
     return view('admin/edit-producer', compact('producer','categories'));
   }
-/**
- * [actionEditProducer validation du formulaire de modification]
- * @param  ProducerRequest $request [description]
- * @param  [type]          $id      [description]
- * @return [type]                   [description]
- */
+
+
+ /**
+  * [actionEditProducer validation du formulaire de modification]
+  * @param  ProducerRequest $request [description]
+  * @param  [type]          $id      [description]
+  * @return [type]                   [description]
+  */
   public function actionEditProducer(ProducerRequest $request ,$id)
   {
 
@@ -112,12 +131,14 @@ class AdminProducerController extends Controller
         $producer->category()->sync($cat_ids);
 
     return redirect()->route('dashboard')->with('success', 'Modification du producteur prise en compte');
-}
-/**
- * [deleteProducer effacement d'un producteur]
- * @param  [type] $id [description]
- * @return [type]     [description]
- */
+  }
+
+
+  /**
+  * [deleteProducer effacement d'un producteur]
+  * @param  [type] $id [description]
+  * @return [type]     [description]
+  */
   public function deleteProducer($id)
   {
     $producer = Producer::FindOrFail($id);
@@ -125,33 +146,37 @@ class AdminProducerController extends Controller
     $producer->delete();
     return redirect()->route('dashboard')->with('success', 'Producteur supprimé');
   }
+
+
   /**
-   * [permet de d'affilier la zone depuis le code postal de la production
-   * afin de pouvoir utiliser cette donnée pour la recherche via la carte sur la page d'accueil]
-   * @param  [int] $zipcode [code postal du producteur]
-   * @return [str]          [la zone du producteur]
-   */
+  * [permet de d'affilier la zone depuis le code postal de la production
+  * afin de pouvoir utiliser cette donnée pour la recherche via la carte sur la page d'accueil]
+  * @param  [int] $zipcode [code postal du producteur]
+  * @return [str]          [la zone du producteur]
+  */
   private function generateZoning($zipcode)
   {
-    $zipcodeA = [27290,27310,27350,27370,27500,27520,27670,27680];
-    $zipcodeB = [27100,27110,27340,27400,27430,27460,27590,27690,27740];
-    $zipcodeC = [27140,27150,27200,27360,27380,27420,27440,27480,27510,27610,27620,27630,27660,27700,27720,27790,27830,27850,27860,27870,27910];
-    $zipcodeD = [27170,27210,27230,27260,27300,27410,27450,27470,27550,27560,27800,27890];
-    $zipcodeE = [27130,27160,27190,27240,27250,27270,27320,27330,27390,27570,27580,27760,27770,27820];
-    $zipcodeF = [27000,27120,27180,27220,27490,27530,27540,27600,27640,27650,27710,27730,27750,27780,27810,27920,27930,27940,27950];
+  $zipcodeA = [27290,27310,27350,27370,27500,27520,27670,27680];
+  $zipcodeB = [27100,27110,27340,27400,27430,27460,27590,27690,27740];
+  $zipcodeC = [27140,27150,27200,27360,27380,27420,27440,27480,27510,27610,27620,27630,27660,27700,27720,27790,27830,27850,27860,27870,27910];
+  $zipcodeD = [27170,27210,27230,27260,27300,27410,27450,27470,27550,27560,27800,27890];
+  $zipcodeE = [27130,27160,27190,27240,27250,27270,27320,27330,27390,27570,27580,27760,27770,27820];
+  $zipcodeF = [27000,27120,27180,27220,27490,27530,27540,27600,27640,27650,27710,27730,27750,27780,27810,27920,27930,27940,27950];
 
     if (in_array($zipcode, $zipcodeA)) {
       return 'a';
     } elseif (in_array($zipcode, $zipcodeB)) {
       return 'b';
     } elseif (in_array($zipcode, $zipcodeC)) {
-      return 'c';
+        return 'c';
     } elseif (in_array($zipcode, $zipcodeD)) {
-      return 'd';
+        return 'd';
     } elseif (in_array($zipcode, $zipcodeE)) {
-      return 'e';
+        return 'e';
     } elseif (in_array($zipcode, $zipcodeF)) {
-      return 'f';
+        return 'f';
     }
+
   }
+
 }
