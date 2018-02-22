@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <meta name="description" content="">
+
     <link href="https://fonts.googleapis.com/css?family=Roboto|Dosis|Permanent+Marker" rel="stylesheet">
     <link href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <link rel="shortcut icon" href="{{asset('img/home/logo.png')}}" >
+
 
 
     {{-- <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet"> --}}

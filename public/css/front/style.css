@@ -55,7 +55,9 @@ input[type=submit]:hover{
   background-color: #a3ceaa  !important;
   border:1px solid #a3ceaa;
 }
-
+.toHide {
+  display: none;
+}
 /* ================HEADER================ */
 
 header {

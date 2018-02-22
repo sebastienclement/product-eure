@@ -63,12 +63,12 @@
             @endif
           @endif
           <h3 class="itemRetailTitle">Voici les articles que nous proposons</h3>
-          <ul>
+          <ul id="item-list-added">
             @foreach ($producer->item as $a)
               <li class="display-item">{{ $a->comment }}</li>
             @endforeach
           </ul>
-          <div id="form-item" class="">
+          <div id="form-item" class="toHide">
             @include('front.form.form-item')
           </div>
         </div>
@@ -79,12 +79,12 @@
             @endif
           @endif
           <h3 class="itemRetailTitle">Les Points de vente pour nos produits</h3>
-          <ul>
+          <ul id="retail-list-added">
             @foreach ($producer->retail as $b)
               <li class="display-retail">{{$b->lieu}}</li>
             @endforeach
           </ul>
-          <div id="form-retail" class="">
+          <div id="form-retail" class="toHide">
             @include('front.form.form-retail')
           </div>
         </div>
@@ -130,7 +130,7 @@
 
         success: function(response) {
           console.log(response);
-          $('.display-item').html(response);
+          $('#item-list-added').append(response);
         },
 
         error: function(){
@@ -158,7 +158,7 @@
 
         success: function(response) {
           console.log(response);
-          $('.display-retail').html(response);
+          $('#retail-list-added').append(response);
         },
 
         error: function(){
