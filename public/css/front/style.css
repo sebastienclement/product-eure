@@ -4,7 +4,7 @@ body{
   font-family: 'Dosis', sans-serif;
   /* background-image: url('../../img/home/grain-opacity.png'); */
   overflow-x: hidden;
-
+  color: #504e4e;
 }
 
 .wrap {
@@ -475,11 +475,6 @@ color:#3E8022;
     line-height: 1.3rem;
 }
 
-.detail-prod p{
-    line-height: 1.3rem;
-}
-
-
 div#search-tag-2{
     position: absolute;
     top:40px;
@@ -553,7 +548,6 @@ section#map p {
   border: 3px solid #D19B26;
   border-radius: 5px;
   padding: 5px;
-
 }
 
 #eure-map{
@@ -587,10 +581,6 @@ footer #flex-footer {
   padding: 50px;
 }
 
-/* footer#content-logo {
-display: flex;
-} */
-
 footer h4 {
   font-size:1.5rem;
   padding-bottom: 15px;
@@ -603,7 +593,6 @@ footer h4 {
 
 #list-footer h4 span{
   color: #99D420 ;
-
 }
 
 .logoFlexfooter {
@@ -682,21 +671,37 @@ main div.formulaire-log-reg {
  display: flex;
  justify-content: center;
  flex-wrap: wrap;
- /* height: 280px; */
 }
 
 .profil-photo {
- width: 500px;
- height: 280px;
+  width: 500px;
+  height: 280px;
 }
 
 #descriptionProfil {
- margin: 50px 0;
+  margin: 50px 0;
 }
 
 #descriptionProfil div.wrap{
-  /* border-left: 2px solid #D19B26; */
   padding: 0.5rem 100px;
+}
+
+#website {
+  color: #504e4e;
+}
+
+#website:hover {
+  color: blue;
+}
+
+#descriptionProfil div.badge{
+  margin-bottom:20px;
+}
+
+#descriptionProfil span.badge{
+  font-size: 1rem;
+  padding: 6px;
+  margin-right: 10px;
 }
 
 .descriptionProfil {
@@ -705,25 +710,11 @@ main div.formulaire-log-reg {
  justify-content: center;
  flex-direction: column;
  align-items: center;
- /* background-color: #3E8022; */
 }
 
 .itemRetailProfil li {
   font-size: 1em;
   padding: 3px 0;
-}
-
-.listDescriptionProfil h2 {
-  font-size: 2em;
-  padding-bottom: 30px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.listDescriptionProfil p {
-  font-size: 1.2em;
-  padding: 3px 0;
-
 }
 
 .listDescriptionProfil {
@@ -757,7 +748,6 @@ main div.formulaire-log-reg {
 }
 
 #itemRetailProfil div.wrap {
-  /* border-left: 2px solid #46879B; */
   padding: 0.5rem 50px;
 }
 
@@ -775,7 +765,6 @@ main div.formulaire-log-reg {
  justify-content: center;
  flex-wrap: wrap;
  margin-bottom: 100px;
- /* background-color: #46879B; */
  padding: 50px 30px;
 }
 
@@ -786,7 +775,6 @@ main div.formulaire-log-reg {
 
 .retailProfil li ,.itemProfil li{
  list-style: none;
- /* padding-left: 10%; */
 }
 
 .mapProfil {

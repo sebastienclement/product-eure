@@ -18,7 +18,7 @@
 
     {!! Form::close() !!}
   </div>
-<p>biubviubv</p>
+
 @endsection
 
 @section('js')
