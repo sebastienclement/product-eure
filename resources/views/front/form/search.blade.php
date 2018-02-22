@@ -59,8 +59,9 @@
 <div class="form-group">
   <i class="fa fa-search"></i>
   {!! Form::text('search', null, ['placeholder' => 'Votre recherche', 'class' => 'form-control']) !!}
-  {!! $errors->first('search', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
 </div>
+  {!! $errors->first('category', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+
 
 
 {{Form::submit('Envoyer', array('class' => ''))}}

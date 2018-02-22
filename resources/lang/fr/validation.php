@@ -72,10 +72,10 @@ return [
     'required_unless' => 'Le champ :attribute est obligatoire sauf si :other est :values.',
     'required_with' => 'Le champ :attribute est obligatoire quand :values est présent.',
     'required_with_all' => 'Le champ :attribute est obligatoire quand :values est présent.',
-    'required_without' => "Le champ :attribute est obligatoire quand :values n'est pas présent.",
+    'required_without' => "Au moins l'un des deux critères de recherche est requis",
     'required_without_all' => "Le champ :attribute est requis quand aucun de :values n'est présent.",
     'same' => 'Les champs :attribute et :other doivent être identiques.',
-    'phone'  =>  "Le champ d'attribut: contient un numéro invalide.",//ajouté 
+    'phone'  =>  "Le champ d'attribut: contient un numéro invalide.",//ajouté
     'size' => [
         'numeric' => 'La valeur de :attribute doit être :size.',
         'file' => 'La taille du fichier de :attribute doit être de :size kilo-octets.',

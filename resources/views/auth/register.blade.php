@@ -14,7 +14,9 @@
                 <div class="panel-heading">S'inscrire</div> --}}
 
                 <div class="formulaire-log-reg">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+
+                    <p>Tous les champs sont obligatoires</p>
+                    <form class="form-horizontal" method="POST" novalidate action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} ">
@@ -32,7 +34,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="">Adresse E-Mail</label>
+                            <label for="email" class="">Adresse Courriel</label>
 
                             {{-- <div class="col-md-6"> --}}
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
