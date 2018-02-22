@@ -8,7 +8,8 @@
 @endsection
 @section('content')
   <div class="formulaire-log-reg">
-    <form class="form-horizontal" method="POST" action="{{ route('register')}}"  novalidate>
+  <p>Tous les champs sont obligatoires</p>
+    <form class="form-horizontal" method="POST" action="{{ route('register') }}" novalidate>
       {{ csrf_field() }}
 
       <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} ">
@@ -57,4 +58,8 @@
     </form>
   </div>
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6b0c79aeac3f75727cae07ba9e832c87ed261a5b
 @endsection

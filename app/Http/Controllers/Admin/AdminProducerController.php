@@ -19,7 +19,7 @@ class AdminProducerController extends Controller
   */
   public function showListProducers()
   {
-    $producers = Producer::with('user')->get();
+    $producers = Producer::with('user')->orderBy('created_at', 'DESC')->get();
 
     return view('admin/list-producers', compact('producers'));
   }
@@ -186,4 +186,19 @@ class AdminProducerController extends Controller
 
   }
 
+  public function confirmProducer($id){
+
+    Producer::where('id','=', $id)->update(['status' => 'confirmed']);
+
+    return redirect()->route('admin-list-producer')->with('success', 'Producteur confirmed');
+
+  }
+  public function refuseProducer($id){
+
+    Producer::where('id','=', $id)->update(['status' => 'refused']);
+
+    return redirect()->route('admin-list-producer')->with('success', 'Producteur refused');
+
+
+  }
 }

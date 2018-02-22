@@ -34,7 +34,17 @@
       <td>{{$producer->user->name}}</td>
       <td>{{$producer->adresse}}</td>
       <td>{{$producer->zone}}</td>
-      <td>{{$producer->status}}</td>
+      <td>{{$producer->status}}
+
+      {!! Form::open(['route' => ['confirm-prod', $producer->id], 'method' => 'put', 'novalidate' => 'novalidate']) !!}
+        {!! Form::submit('Confirm', ['class' => '']) !!}
+      {!! Form::close() !!}
+      {!! Form::open(['route' => ['refuse-prod', $producer->id], 'method' => 'put', 'novalidate' => 'novalidate']) !!}
+        {!! Form::submit('Refuse', ['class' => '']) !!}
+      {!! Form::close() !!}
+
+
+      </td>
       <td>{{$producer->created_at}}</td>
       <td><a class="btn btn-success" href="{{ route('admin-edit-producer-view',['id' => $producer->id ]) }}">update</a></td>
       <td>

@@ -8,7 +8,7 @@
   Connexion
 @endsection
 @section('content')
-
+z
   <div class="formulaire-log-reg">
 
       <form  method="POST" action="{{ route('login') }}" novalidate>

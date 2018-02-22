@@ -256,14 +256,14 @@ header img{
 .inside-search p{
     font-size: 1.3rem;
     font-weight: bolder;
-
 }
 .scrollToMap{
     font-size: 1.2rem;
     color:#79A184;
     text-transform: uppercase;
     font-weight: bolder;
-    padding-top: 20px;
+    line-height: 2rem;
+
 }
 
 .scrollToMap:hover,
@@ -342,18 +342,6 @@ div#parallax_2 {
   position: relative;
 }
 
-/* .info_flex:after{
-  content: " ";
-  background: tomato;
-  position: absolute;
-  width:120%;
-  top:0;
-  left:-60px;
-  right:-40px;
-  bottom:0;
-  z-index: 1;
-  transform: skewX(-15deg);
-} */
 
 .info_flex>div{
   width: 48%;
@@ -413,7 +401,22 @@ div#parallax_2 {
   transform: skewX(-15deg);
 }
 
+.register-btn{
+  border-radius: 4px;
+  border:none;
+  box-shadow: none;
+  padding:0.8rem;
+  font-size: 1.1rem;
+  font-family: 'Dosis','sans-serif';
+  background-color: lightgrey;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
 
+.register-btn:hover{
+  background-color: #FAFAFA;
+
+}
 /**
 * ===========  style listing search producer  =============
 */

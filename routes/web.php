@@ -67,6 +67,13 @@ Route::group(['namespace' => 'Front'], function() {
 
   });
 
+//Routes Ajax admin
+  Route::group(['namespace' => 'Ajax', 'middleware' => ['auth', 'ajax','admin']], function() {
+
+
+
+  });
+
 ////////////////////////////////////////////////////////////////////
 ////////////////===============LA SUITE==============///////////////
 ////////////////////////////////////////////////////////////////////
@@ -154,6 +161,12 @@ Route::group(['namespace' => 'Front'], function() {
 
   //Route supp producer
   Route::delete('/admin/delete-producer/{id}', 'AdminProducerController@deleteProducer')->name('admin-delete-producer');
+
+  //Route moderation
+  Route::put('/amin/confirm/{id}', 'AdminProducerController@confirmProducer')->name('confirm-prod');
+  Route::put('/admin/refuse/{id}', 'AdminProducerController@refuseProducer')->name('refuse-prod');
+
+
 //
 //////
 
