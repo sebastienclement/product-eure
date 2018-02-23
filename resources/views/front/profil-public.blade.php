@@ -39,7 +39,7 @@
             @endif
             @if (isset(Auth::user()->id))
               @if (Auth::user()->id == $producer->user_id)
-                <p><a href="{{ route('edit-profil-view') }}" class="btn btn-success">Modifier mon profil</a></p>
+                <p><a href="{{ route('edit-profil-view') }}" class="btn btn-success edit-btn-profil">Modifier mon profil</a></p>
               @endif
             @endif
           </div>
@@ -50,11 +50,11 @@
       <div class="wrap ">
         <div class="badge">
           @foreach($producer->category as $cat)
-            <span class="badge badge-secondary">{{ucfirst($cat->name)}}</span>
+            <span class="badge-secondary">{{ucfirst($cat->name)}}</span>
           @endforeach
         </div>
         <h3 class="descriptionTitle">Une petite description</h3>
-        <p>{{ $producer->description}}</p>
+        <p class="descriptionProducer">{{ ucfirst($producer->description) }}</p>
       </div>
     </section>
     <section id="itemRetailProfil" >
@@ -64,16 +64,16 @@
         <div class="itemProfil ">
           @if (isset(Auth::user()->id))
             @if (Auth::user()->id == $producer->user_id)
-              <p><a id="add-item" class="btn btn-info"> + </a></p>
+              <p><a id="add-item" class="btn btn-info">Ajouter</a></p>
             @endif
           @endif
           <h3 class="itemRetailTitle">Voici les articles que nous proposons</h3>
           <ul id="item-list-added">
             @foreach ($producer->item as $a)
               <li class="display-item">{{ $a->comment }}</li>
-              <li class="error-item-added"></li>
             @endforeach
           </ul>
+          <span class="error-item-added"></span>
 
           <div id="form-item" class="toHide">
             @include('front.form.form-item')
@@ -82,7 +82,7 @@
         <div class="retailProfil ">
           @if (isset(Auth::user()->id))
             @if (Auth::user()->id == $producer->user_id)
-              <p><a id="add-retail" class="btn btn-info"> + </a></p>
+              <p><a id="add-retail" class="btn btn-info">Ajouter</a></p>
             @endif
           @endif
           <h3 class="itemRetailTitle">Les Points de vente pour nos produits</h3>
@@ -91,6 +91,8 @@
               <li class="display-retail">{{$b->lieu}}</li>
             @endforeach
           </ul>
+          <span class="error-retail-added"></span>
+
           <div id="form-retail" class="toHide">
             @include('front.form.form-retail')
           </div>
@@ -138,12 +140,16 @@
           console.log(response);
 
           if (response.err !== true) {
+
+            $('.error-item-added').html('');
             $(':input','#item-submit').not(':submit').val('');
             $('.help-block').html('');
             $('#item-list-added').append(response);
+
           } else {
+
             $('.error-item-added').html('');
-            $('#item-list-added').append(response.error.comment);
+            $('.error-item-added').html(response.error.comment);
           }
 
         },
@@ -172,9 +178,20 @@
 
         success: function(response) {
           console.log(response);
-          $(':input','#retail-submit').not(':submit').val('');
-          $('.help-block').html('');
-          $('#retail-list-added').append(response);
+
+          if (response.err !== true) {
+
+            $('.error-retail-added').html('');
+            $(':input','#retail-submit').not(':submit').val('');
+            $('.help-block').html('');
+            $('#retail-list-added').append(response);
+
+          } else {
+
+            $('.error-retail-added').html('');
+            $('.error-retail-added').html(response.error.lieu);
+
+          }
         },
 
         error: function(){

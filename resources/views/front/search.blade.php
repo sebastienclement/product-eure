@@ -34,19 +34,19 @@
         <div class="single-prod">
             <div class="img-producer">
               @if (($producer->path_img != '/img/icons/040-farmer.svg') && ($producer->path_img != null))
-                <a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">
+                <a href="{{ route('profil-public', ['slug' => $producer->slug]) }}">
                   <img src="{{ Image::url(route('home') . '/' . $producer->path_img, 300, 180, array('crop'))}}" alt="Une photo de {{$producer->name}}">
                 </a>
               @else
-                <a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">{!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}</a>
+                <a href="{{ route('profil-public', ['slug' => $producer->slug]) }}">{!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}</a>
               @endif
             </div>
             <div class="detail-prod">
                 <h3>
                     @if (!empty($producer->prod_name))
-                      <a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">{{ucfirst($producer->prod_name)}}</a>
+                      <a href="{{ route('profil-public', ['slug' => $producer->slug]) }}">{{ucfirst($producer->prod_name)}}</a>
                     @else
-                      <a href="{{ route('profil-public', ['slug' => $producer->slug, 'id' => $producer->id]) }}">{{ucfirst($producer->name)}}</a>
+                      <a href="{{ route('profil-public', ['slug' => $producer->slug]) }}">{{ucfirst($producer->name)}}</a>
                     @endif
                 </h3>
                 <p>{{$producer->adresse}} {{$producer->zipcode}} {{$producer->ville}}</p>

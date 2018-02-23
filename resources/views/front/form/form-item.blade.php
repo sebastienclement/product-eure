@@ -2,7 +2,7 @@
 
   <div class="form-group">
     {!! Form::label('comment', 'Votre produit : ', ['class' => '']) !!}
-    {!! Form::textarea('comment', null, ['placeholder' => 'Votre produit...', 'rows' => 3, 'class' => 'form-control']) !!}
+    {!! Form::textarea('comment', null, ['placeholder' => 'Décrivez vos produits un par un ici...', 'rows' => 3, 'class' => 'form-control']) !!}
     {{-- {!! $errors->first('comment', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!} --}}
   </div>
 
