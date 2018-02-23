@@ -298,7 +298,7 @@ header img{
 
 div#parallax {
   position: relative;
-  background: url("../../img/home/test.jpg") no-repeat fixed;
+   background: url("../../img/home/test.jpg"); /*no-repeat fixed;*/
   background-size: cover;
   height: 700px;
 }
@@ -1294,5 +1294,12 @@ main div.formulaire-log-reg {
 
     div.containerpulic .profil-photo {
       margin-bottom: 0;
+    }
+
+
+
+    #lottie{width:50px;
+        height:auto;
+        display: none;
     }
 }
