@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Producer;
 use App\Models\Category;
+use App\Mail\NewProducer;
+use Illuminate\Support\Facades\Mail;
 use Auth;
 
 class AdminProducerController extends Controller
@@ -189,6 +191,10 @@ class AdminProducerController extends Controller
   public function confirmProducer($id){
 
     Producer::where('id','=', $id)->update(['status' => 'confirmed']);
+
+    $producer = Producer::where('id','=', $id)->find(1);
+    
+    Mail::to('lecoeur.matthieu@gmail.com')->send(new NewProducer($producer->name));
 
     return redirect()->route('admin-list-producer')->with('success', 'Producteur confirmed');
 
