@@ -79,8 +79,8 @@
 			}
 		</style>
 	</head>
-	<body style="margin:0; padding:0;" bgcolor="#eaeced">
-		<table style="min-width:320px;" width="100%" cellspacing="0" cellpadding="0" bgcolor="#eaeced">
+	<body style="margin:0; padding:0;" bgcolor="#46879B">
+		<table style="min-width:320px;" width="100%" cellspacing="0" cellpadding="0" bgcolor="#46879B">
 			<!-- fix for gmail -->
 			<tr>
 				<td class="hide">
@@ -96,7 +96,7 @@
 					<!-- module 1 -->
 					<table data-module="module-1" data-thumb="thumbnails/01.png" width="100%" cellpadding="0" cellspacing="0">
 						<tr>
-							<td data-bgcolor="bg-module" bgcolor="#eaeced">
+							<td data-bgcolor="bg-module" bgcolor="#46879B">
 								<table class="flexible" width="600" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
 									<tr>
 										<td style="padding:29px 0 30px;">
@@ -106,8 +106,9 @@
 														<table class="center" cellpadding="0" cellspacing="0">
 															<tr>
 																<td style="line-height:0;">
-																	<a target="_blank" style="text-decoration:none;" href="https://www.psd2html.com/"><img src="{{asset('img/home/logo.png')}}" border="0" style="font:bold 12px/12px Arial, Helvetica, sans-serif; color:#606060;" align="left" vspace="0" hspace="0" width="113" height="12" alt="On peut mettre le logo?" /></a>
+
 																</td>
+
 															</tr>
 														</table>
 													</th>
@@ -122,16 +123,16 @@
 					<!-- module 2 -->
 					<table data-module="module-2" data-thumb="thumbnails/02.png" width="100%" cellpadding="0" cellspacing="0">
 						<tr>
-							<td data-bgcolor="bg-module" bgcolor="#eaeced">
+							<td data-bgcolor="bg-module" bgcolor="#46879B">
 								<table class="flexible" width="600" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
 									<tr>
-										<td class="img-flex"><img src="images/img-01.jpg" style="vertical-align:top;" width="600" height="306" alt="" /></td>
+										<td class="img-flex"><img src="{{ $message->embed(public_path() . '/img/home/test.jpg') }}" style="vertical-align:top;" width="600" height="306" alt="" /></td>
 									</tr>
 									<tr>
 										<td data-bgcolor="bg-block" class="holder" style="padding:58px 60px 52px;" bgcolor="#f9f9f9">
 											<table width="100%" cellpadding="0" cellspacing="0">
 												<tr>
-													<td data-color="title" data-size="size title" data-min="25" data-max="45" data-link-color="link title color" data-link-style="text-decoration:none; color:#292c34;" class="title" align="center" style="font:35px/38px Arial, Helvetica, sans-serif; color:#292c34; padding:0 0 24px;">
+													<td data-color="title" data-size="size title" data-min="25" data-max="45" data-link-color="link title color" data-link-style="text-decoration:none; color:#D19B26;" class="title" align="center" style="font:bold 35px/38px Arial, Helvetica, sans-serif; color:#D19B26; padding:0 0 24px;">
 														Product'Eure
 													</td>
 												</tr>
@@ -139,7 +140,7 @@
 													<td data-color="text" data-size="size text" data-min="10" data-max="26" data-link-color="link text color" data-link-style="font-weight:bold; text-decoration:underline; color:#40aceb;" align="center" style="font:bold 16px/25px Arial, Helvetica, sans-serif; color:#888; padding:0 0 23px;">
 														Votre inscription à Product'Eure vient d'être validée.
 
-                                                        {{$name}} sera maintenant visible à tous les utilisateurs du site. <br>Merci de nous avoir rejoint.<br> Nous espérons que nos services vous conviendront.
+                            Votre Profil sera maintenant visible à tous les utilisateurs du site. <br>Merci de nous avoir rejoint.<br> Nous espérons que nos services vous conviendront.
 													</td>
 												</tr>
 												<tr>
@@ -164,7 +165,7 @@
 					<!-- module 3 -->
 					<table data-module="module-3" data-thumb="thumbnails/03.png" width="100%" cellpadding="0" cellspacing="0">
 						<tr>
-							<td data-bgcolor="bg-module" bgcolor="#eaeced">
+							<td data-bgcolor="bg-module" bgcolor="#46879B">
 								<table class="flexible" width="600" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
 									<tr>
 										<td class="img-flex"><img src="images/img-02.jpg" style="vertical-align:top;" width="600" height="249" alt="" /></td>
@@ -173,13 +174,13 @@
 										<td data-bgcolor="bg-block" class="holder" style="padding:65px 60px 50px;" bgcolor="#f9f9f9">
 											<table width="100%" cellpadding="0" cellspacing="0">
 												<tr>
-													<td data-color="title" data-size="size title" data-min="20" data-max="40" data-link-color="link title color" data-link-style="text-decoration:none; color:#292c34;" class="title" align="center" style="font:30px/33px Arial, Helvetica, sans-serif; color:#292c34; padding:0 0 24px;">
-														Free book mock-up
+													<td data-color="title" data-size="size title" data-min="25" data-max="45" data-link-color="link title color" data-link-style="text-decoration:none; color:#D19B26;" class="title" align="center" style="font:bold 35px/38px Arial, Helvetica, sans-serif; color:#D19B26; padding:0 0 24px;">
+														Récapitulatif
 													</td>
 												</tr>
 												<tr>
-													<td data-color="text" data-size="size text" data-min="10" data-max="26" data-link-color="link text color" data-link-style="font-weight:bold; text-decoration:underline; color:#40aceb;" align="center" style="font:16px/29px Arial, Helvetica, sans-serif; color:#888; padding:0 0 21px;">
-														Lorem Ipsum is simply dummy text of the printing and typesetting industry. Use this offer has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.
+													<td data-color="text" data-size="size text" data-min="10" data-max="26" data-link-color="link text color" data-link-style="font-weight:bold; text-decoration:underline; color:#40aceb;" align="center" style="font:bold 16px/25px Arial, Helvetica, sans-serif; color:#888; padding:0 0 23px;">
+														{{$name}}<br>{{$adresse}}<br>{{$zipcode}}<br>{{$ville}}
 													</td>
 												</tr>
 												<tr>
@@ -204,7 +205,7 @@
 					<!-- module 7 -->
 					<table data-module="module-7" data-thumb="thumbnails/07.png" width="100%" cellpadding="0" cellspacing="0">
 						<tr>
-							<td data-bgcolor="bg-module" bgcolor="#eaeced">
+							<td data-bgcolor="bg-module" bgcolor="#46879B">
 								<table class="flexible" width="600" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
 									<tr>
 										<td class="footer" style="padding:0 0 10px;">

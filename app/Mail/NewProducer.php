@@ -19,9 +19,12 @@ class NewProducer extends Mailable
      *
      * @return void
      */
-    public function __construct($name)
+    public function __construct($name,$adresse,$zipcode,$ville)
     {
         $this->name = $name;
+        $this->adresse = $adresse;
+        $this->zipcode = $zipcode;
+        $this->ville = $ville;
     }
 
     /**
@@ -34,6 +37,9 @@ class NewProducer extends Mailable
         return $this->view('email.newproducer')
         ->with([
               'name'    => $this->name,
+              'adresse'    => $this->adresse,
+              'zipcode'    => $this->zipcode,
+              'ville'    => $this->ville,
 
           ])
         ->subject('Validation d\'inscription - Product\'Eure') ;

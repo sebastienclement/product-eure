@@ -194,7 +194,7 @@ class AdminProducerController extends Controller
 
     $producer = Producer::FindOrFail($id);
 
-    Mail::to('lecoeur.matthieu@gmail.com')->send(new NewProducer($producer->name));
+    Mail::to('lecoeur.matthieu@gmail.com')->send(new NewProducer($producer->name,$producer->adresse,$producer->zipcode,$producer->ville));
 
     return redirect()->route('admin-list-producer')->with('success', 'Producteur confirmed');
 
