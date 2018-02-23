@@ -8,6 +8,11 @@ use App\Models\Item;
 
 class CategoryController extends Controller
 {
+  /**
+   * [showAllCategories description]
+   * affiche toute les categories
+   * @return [type] [description]
+   */
   public function showAllCategories()
   {
     $categories = Category::all();

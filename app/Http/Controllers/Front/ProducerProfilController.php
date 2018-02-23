@@ -22,6 +22,7 @@ class ProducerProfilController extends Controller
 
   /**
    * [showEditProfilProducer description]
+   * affiche la vue pour modifier un producteur
    * @return [type] [description]
    */
   public function showEditProfilProducer()
@@ -36,6 +37,7 @@ class ProducerProfilController extends Controller
 
    /**
    * [actionEditProfilProducer description]
+   * validation du formulaire de modification
    * @return [type] [description]
    */
   public function actionEditProfilProducer(ProducerRequest $request, $id)
@@ -79,6 +81,7 @@ class ProducerProfilController extends Controller
 
   /**
    * [showNewProfilProducer description]
+   * affiche la vue du formulaire d'inscription de producteur
    * @return [type] [description]
    */
   public function showNewProfilProducer()
@@ -91,6 +94,7 @@ class ProducerProfilController extends Controller
 
   /**
    * [actionNewProfilProducer description]
+   * validation du formulaire d'inscription
    * @param  ProducerRequest $request [description]
    * @return [type]                   [description]
    */
