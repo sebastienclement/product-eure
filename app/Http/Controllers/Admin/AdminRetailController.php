@@ -10,6 +10,11 @@ use Auth;
 
 class AdminRetailController extends Controller
 {
+  /**
+   * [showListRetails description]
+   * affiche la vue de la liste des retails
+   * @return [type] [description]
+   */
   public function showListRetails()
   {
     $retails = Retail::all();
@@ -17,11 +22,22 @@ class AdminRetailController extends Controller
     return view('admin/list-retails', compact('retails'));
   }
 
+  /**
+   * [showNewRetail description]
+   * affiche la vue du formulaire d'ajout de retail
+   * @return [type] [description]
+   */
   public function showNewRetail()
   {
     return view('admin/new-retail');
   }
 
+  /**
+   * [actionNewRetail description]
+   * validation du formulaire d'ajout de retail
+   * @param  AdminRetailRequest $request [description]
+   * @return [type]                      [description]
+   */
   public function actionNewRetail(AdminRetailRequest $request)
   {
     $post = $request->all();
@@ -34,6 +50,12 @@ class AdminRetailController extends Controller
     return redirect()->route('dashboard')->with('success', 'Retail créé');
   }
 
+  /**
+   * [showEditRetail description]
+   * affiche la vue pour modifier un retail
+   * @param  [type] $id [description]
+   * @return [type]     [description]
+   */
   public function showEditRetail($id)
   {
     $retail = Retail::FindOrFail($id);
@@ -41,6 +63,13 @@ class AdminRetailController extends Controller
     return view('admin/edit-retail', compact('retail'));
   }
 
+  /**
+   * [actionEditRetail description]
+   * validation du formulaire de modification
+   * @param  AdminRetailRequest $request [description]
+   * @param  [type]             $id      [description]
+   * @return [type]                      [description]
+   */
   public function actionEditRetail(AdminRetailRequest $request, $id)
   {
     $post = $request->all();
@@ -52,6 +81,12 @@ class AdminRetailController extends Controller
     return redirect()->route('dashboard')->with('success', 'Retail modifié');
   }
 
+  /**
+   * [deleteRetail description]
+   * effacement d'un retail
+   * @param  [type] $id [description]
+   * @return [type]     [description]
+   */
   public function deleteRetail($id)
   {
     $retail = Retail::FindOrFail($id);

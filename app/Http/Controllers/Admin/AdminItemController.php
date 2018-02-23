@@ -10,6 +10,12 @@ use Auth;
 
 class AdminItemController extends Controller
 {
+
+    /**
+     * [showListItems description]
+     * affiche la vue de la liste des items
+     * @return [type] [description]
+     */
     public function showListItems()
     {
       $items = Item::all();
@@ -18,12 +24,23 @@ class AdminItemController extends Controller
       return view('admin/list-items', compact('items'));
     }
 
+    /**
+     * [showNewItem description]
+     * affiche la vue du formulaire d'ajout d'item
+     * @return [type] [description]
+     */
     public function showNewItem()
     {
 
       return view('admin/new-item');
     }
 
+    /**
+     * [actionNewItem description]
+     * validation du formulaire d'ajout
+     * @param  AdminItemRequest $request [description]
+     * @return [type]                    [description]
+     */
     public function actionNewItem(AdminItemRequest $request)
     {
       // Item::create($request->all());//ne fonctionne que si on modifie le nom du champ concerné
@@ -39,6 +56,12 @@ class AdminItemController extends Controller
 
     }
 
+    /**
+     * [showEditItem description]
+     * affiche la vue pour modifier un item
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function showEditItem($id)
     {
 
@@ -47,6 +70,13 @@ class AdminItemController extends Controller
       return view('admin/edit-item', compact('item'));
     }
 
+    /**
+     * [actionEditItem description]
+     *  validation du formulaire de modification
+     * @param  AdminItemRequest $request [description]
+     * @param  [type]           $id      [description]
+     * @return [type]                    [description]
+     */
     public function actionEditItem(AdminItemRequest $request,$id)
     {
       $post = $request->all();
@@ -59,6 +89,12 @@ class AdminItemController extends Controller
       return redirect()->route('dashboard')->with('success', 'Modification de l\'item prise en compte');
     }
 
+    /**
+     * [deleteItem description]
+     * effacement d'un item
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function deleteItem($id)
     {
       $item = Item::FindOrFail($id);

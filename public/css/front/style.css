@@ -62,12 +62,22 @@ input[type=submit]:hover{
 /* ================Form Ajax ============ */
 
 .error-item-added {
-  /* display: none; */
   color: MediumVioletRed;
 }
 
-.error-retail-added{
-  display: none;
+#item-list-added li{
+  list-style: disc;
+  padding: 5px 0;
+  font-size: 18px;
+}
+
+#retail-list-added li{
+  list-style: disc;
+  padding: 5px 0;
+  font-size: 18px;
+}
+
+.error-retail-added {
   color: MediumVioletRed;
 }
 /* ================HEADER================ */
@@ -429,6 +439,7 @@ div#parallax_2 {
     text-transform: uppercase;
     color:#3E8022;
 }
+
 .search_content{
     position: relative;
 }
@@ -477,6 +488,8 @@ color:#3E8022;
 .detail-prod h3,
 .detail-prod p{
     font-family: 'Dosis',sans-serif;
+    font-size: 20px;
+    padding-top: 5px;
 }
 
 .detail-prod h3{
@@ -575,14 +588,14 @@ section#map p {
 
 footer {
   border-top: 1px solid  grey;
-  padding: 50px;
+  padding: 50px 50px 30px;
   color: #fff;
   background-color: #46879B;
 }
 
 footer div.wrap {
   text-align:center;
-  padding:40px;
+  padding: 40px 40px 30px;
 }
 
 footer #flex-footer {
@@ -642,14 +655,14 @@ footer h4 {
 }
 
 .sprite ul{
-  width: 200px;
+  width: 280px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
 }
 
 .sprite li {
-  padding: 5px;
+  padding: 15px;
 }
 
 #toHide {
@@ -710,13 +723,46 @@ main div.formulaire-log-reg {
 }
 
 #descriptionProfil div.badge{
-  margin-bottom:20px;
+  margin-bottom:30px;
 }
 
 #descriptionProfil span.badge{
   font-size: 1rem;
-  padding: 6px;
-  margin-right: 10px;
+  padding: 10px 10px;
+}
+
+.badge-secondary {
+  padding: 10px;
+  font-size: 1.3rem;
+  line-height: normal;
+  border-right: 2px white solid;
+}
+
+.badge-secondary:last-child {
+  border-right: 0px;
+}
+
+.edit-btn-profil {
+  background-color: #79A184;
+  border:1px solid #79A184;
+  margin-top: 0.5rem;
+}
+
+.edit-btn-profil:hover {
+  background-color: #a3ceaa;
+  border:1px solid #a3ceaa;
+}
+
+#add-item, #add-retail {
+  background-color: #D19B26;
+  border:1px solid #D19B26;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+#add-item:hover, #add-retail:hover {
+  background-color: #a3ceaa;
+  border:1px solid #a3ceaa;
 }
 
 .descriptionProfil {
@@ -759,7 +805,8 @@ main div.formulaire-log-reg {
   text-decoration: underline;
 }
 
-#itemRetailProfil {
+.descriptionProducer {
+  font-size: 18px;
 }
 
 #itemRetailProfil div.wrap {
@@ -1066,17 +1113,17 @@ main div.formulaire-log-reg {
   }
 
   .header_flex h1 {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
   }
 
 
   .scrollToMap{
-      position: relative;
-      top:-20px;
+    position: relative;
+    top:-20px;
   }
 
   #eure-map{
-      height:350px;
+    height:350px;
   }
 
   .box-1 {
