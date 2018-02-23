@@ -91,7 +91,9 @@ class AjaxController extends Controller
 
   }
 
-
+  public function editItem() {
+    
+  }
 
 
 }

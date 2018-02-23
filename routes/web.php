@@ -65,7 +65,7 @@ Route::group(['namespace' => 'Front'], function() {
     Route::post('/mon-profil/ajax/add-item', 'AjaxController@addItem')->name('add-item');
     Route::post('/mon-profil/ajax/add-retail', 'AjaxController@addRetail')->name('add-retail');
 
-    // Route::get('/mon-profil/ajax/edit-item/{id}, AjaxController@editItem')->('edit-item-profil');
+    Route::get('/mon-profil/ajax/edit-item/{id}, AjaxController@editItem')->name('edit-item-profil');
 
   });
 
