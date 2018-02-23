@@ -62,40 +62,40 @@
       <div class="itemRetailProfil wrap">
 
         <div class="itemProfil ">
+          <h3 class="itemRetailTitle">Les produits que je propose</h3>
           @if (isset(Auth::user()->id))
             @if (Auth::user()->id == $producer->user_id)
-              <p><a id="add-item" class="btn btn-info">Ajouter</a></p>
+              <p class="add-item-label">Ajouter un produit à mon profil : <a id="add-item" class="modify-element-producer btn btn-info">+</a></p>
             @endif
           @endif
-          <h3 class="itemRetailTitle">Voici les articles que nous proposons</h3>
-          <ul id="item-list-added">
-            @foreach ($producer->item as $a)
-              <li class="display-item">{{ $a->comment }}</li>
-            @endforeach
-          </ul>
           <span class="error-item-added"></span>
-
           <div id="form-item" class="toHide">
             @include('front.form.form-item')
           </div>
-        </div>
-        <div class="retailProfil ">
-          @if (isset(Auth::user()->id))
-            @if (Auth::user()->id == $producer->user_id)
-              <p><a id="add-retail" class="btn btn-info">Ajouter</a></p>
-            @endif
-          @endif
-          <h3 class="itemRetailTitle">Les Points de vente pour nos produits</h3>
-          <ul id="retail-list-added">
-            @foreach ($producer->retail as $b)
-              <li class="display-retail">{{$b->lieu}}</li>
+          <ul id="item-list-added">
+            @foreach ($producer->item as $a)
+              <li class="display-item">{{ $a->comment }}{{$a->id}}</li>
             @endforeach
           </ul>
-          <span class="error-retail-added"></span>
 
+        </div>
+        <div class="retailProfil ">
+          <h3 class="itemRetailTitle">Les lieux où trouver mes produits</h3>
+          @if (isset(Auth::user()->id))
+            @if (Auth::user()->id == $producer->user_id)
+              <p class="add-retail-label">Ajouter un lieu où retrouver mes produits : <a id="add-retail" class="modify-element-producer btn btn-info">+</a></p>
+            @endif
+          @endif
+          <span class="error-retail-added"></span>
           <div id="form-retail" class="toHide">
             @include('front.form.form-retail')
           </div>
+          <ul id="retail-list-added">
+            @foreach ($producer->retail as $b)
+              <li class="display-retail">{{$b->lieu}}{{$b->id}}</li>
+            @endforeach
+          </ul>
+
         </div>
       </div>
     </section>

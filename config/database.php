@@ -49,7 +49,7 @@ return [
             'unix_socket' => env('DB_SOCKET', '/Applications/MAMP/tmp/mysql/mysql.sock'),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix' => '',
+            'prefix' => 'product_',
             'strict' => false,
             'engine' => null,
         ],

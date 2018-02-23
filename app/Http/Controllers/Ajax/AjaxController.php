@@ -49,7 +49,10 @@ class AjaxController extends Controller
 
       Item::create($item)->producer()->sync($id_producer);
 
-      $html = '<li>'.$request->comment.'</li>';
+      $lastIdItem = Item::select('id')->orderBy('created_at', 'desc')->first();
+
+      $html = '<li>' . $request->comment . '<a href="'.route('edit-item-profil', ['id' => $lastIdItem->id]).'" id="edit-item" class="modify-element-producer"></a></li>';
+
       return response()->json($html);
     }
 

@@ -12,4 +12,4 @@ yarn-error.log
 .env
 .DS_Store
 composer.lock
-/upload/producer
+/upload/producer/2018/02

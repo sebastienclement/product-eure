@@ -63,16 +63,25 @@ input[type=submit]:hover{
 
 .error-item-added {
   color: MediumVioletRed;
+  padding-bottom: 5px;
 }
+
+.add-item-label, .add-retail-label {
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+
 
 #item-list-added li{
   list-style: disc;
+  margin-top: 5px;
   padding: 5px 0;
   font-size: 18px;
 }
 
 #retail-list-added li{
   list-style: disc;
+  margin-top: 5px;
   padding: 5px 0;
   font-size: 18px;
 }
@@ -80,6 +89,11 @@ input[type=submit]:hover{
 .error-retail-added {
   color: MediumVioletRed;
 }
+
+#form-item, #form-retail {
+  padding-top: 5px;
+}
+
 /* ================HEADER================ */
 
 header {
@@ -431,13 +445,29 @@ div#parallax_2 {
 * ===========  style listing search producer  =============
 */
 
+.excerpt-end {
+  color: #46879B;
+  position: relative;
+  top: 1px;
+}
+
+.dots {
+  position: relative;
+  top: -5px;
+}
+
+.excerpt-end:hover {
+  color: #99CCFF;
+  opacity: 0.7;
+}
+
 .listing-all h2{
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    padding:20px 10px;
-    text-transform: uppercase;
-    color:#3E8022;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding:20px 10px;
+  text-transform: uppercase;
+  color:#3E8022;
 }
 
 .search_content{
@@ -755,14 +785,34 @@ main div.formulaire-log-reg {
 
 #add-item, #add-retail {
   background-color: #D19B26;
+  /* border-radius: 50%; */
+  /* padding: 5px; */
   border:1px solid #D19B26;
-  line-height: 1;
-  margin-bottom: 1rem;
+  /* line-height: 1; */
+  /* margin-bottom: 1rem; */
+  /* width: 25px;
+  height: 25px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 0.2; */
 }
 
 #add-item:hover, #add-retail:hover {
-  background-color: #a3ceaa;
-  border:1px solid #a3ceaa;
+  background-color: #D19B26;
+  border:1px solid #D19B26;
+  opacity: 0.7;
+}
+
+.modify-element-producer {
+  width: 25px;
+  height: 25px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 0.2;
 }
 
 .descriptionProfil {
@@ -802,7 +852,7 @@ main div.formulaire-log-reg {
   text-transform: uppercase;
   padding-bottom: 30px;
   color: #D19B26;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .descriptionProducer {
@@ -817,9 +867,9 @@ main div.formulaire-log-reg {
  font-size: 1.5rem;
  font-weight: bold;
  text-transform: uppercase;
- padding-bottom: 30px;
+ padding-bottom: 20px;
  color: #46879B;
- text-decoration: underline;
+ /* text-decoration: underline; */
 }
 
 .itemRetailProfil {

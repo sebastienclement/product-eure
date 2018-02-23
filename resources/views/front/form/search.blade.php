@@ -30,7 +30,7 @@
     </div>
     <input id="fruit" type="radio"  value="6" name="category" >
     <div class="icon">
-        <label for="fruit" class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/023-tomato.svg')) !!}
+        <label for="fruit" class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/030-tree.svg')) !!}
         </label>
     </div>
     <input id="legume" type="radio"  value="7" name="category" >
@@ -38,9 +38,9 @@
         <label for="legume" class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/013-vegetable.svg')) !!}
         </label>
     </div>
-    <input id="plante" type="radio"  value="8" name="category" >
+    <input id="boisson" type="radio"  value="8" name="category" >
     <div class="icon">
-        <label for="plante" class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/030-tree.svg')) !!}
+        <label for="boisson" class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/beer.svg')) !!}
         </label>
     </div>
     <input id="miel" type="radio"  value="9" name="category" >
@@ -48,9 +48,9 @@
         <label for="miel" class="btn btn-default m-r-mini">{!!     file_get_contents(asset('img/icons/010-bee.svg')) !!}
         </label>
     </div>
-    <input id="prod" type="radio"  value="10" name="category" >
+    <input id="oeuf" type="radio"  value="11" name="category" >
     <div class="icon">
-        <label for="prod" class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/beer.svg')) !!}
+        <label for="oeuf" class="btn btn-default m-r-mini">{!! file_get_contents(asset('img/icons/043-egg.svg')) !!}
         </label>
     </div>
 </div>

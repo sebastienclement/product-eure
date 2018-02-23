@@ -111,11 +111,11 @@ $( document ).ready(function() {
     e.stopImmediatePropagation();
     if($('#form-item').is(':hidden')){
         $('#form-item').off().slideDown(200);
-        $('#add-item').html('Réduire');
+        $('#add-item').html('-');
 
     }else{
         $('#form-item').off().slideUp(200);
-        $('#add-item').html('Ajouter');
+        $('#add-item').html('+');
     }
   });
 
@@ -124,11 +124,11 @@ $( document ).ready(function() {
     e.stopImmediatePropagation();
     if($('#form-retail').is(':hidden')){
         $('#form-retail').off().slideDown(200);
-        $('#add-retail').html('Réduire');
+        $('#add-retail').html('-');
 
     }else{
         $('#form-retail').off().slideUp(200);
-        $('#add-retail').html('Ajouter');
+        $('#add-retail').html('+');
 
     }
   });

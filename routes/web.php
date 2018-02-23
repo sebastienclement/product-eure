@@ -65,14 +65,10 @@ Route::group(['namespace' => 'Front'], function() {
     Route::post('/mon-profil/ajax/add-item', 'AjaxController@addItem')->name('add-item');
     Route::post('/mon-profil/ajax/add-retail', 'AjaxController@addRetail')->name('add-retail');
 
-  });
-
-//Routes Ajax admin
-  Route::group(['namespace' => 'Ajax', 'middleware' => ['auth', 'ajax','admin']], function() {
-
-
+    // Route::get('/mon-profil/ajax/edit-item/{id}, AjaxController@editItem')->('edit-item-profil');
 
   });
+
 
 ////////////////////////////////////////////////////////////////////
 ////////////////===============LA SUITE==============///////////////

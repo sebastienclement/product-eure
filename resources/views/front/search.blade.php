@@ -53,7 +53,7 @@
                 <p>@foreach($producer->category as $cat)
                     {{ucfirst($cat->name)}}
                 @endforeach</p>
-                <p>{{ substr($producer->description, 0, 200) }}</p>
+                <p>{{ substr($producer->description, 0, 200) }}<a href="{{ route('profil-public', ['slug' => $producer->slug]) }}"><span class="excerpt-end"> [<span class="dots">...</span>] </span></a></p>
 
             </div>
         </div>
