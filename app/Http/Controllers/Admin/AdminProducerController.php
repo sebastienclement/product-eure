@@ -192,8 +192,8 @@ class AdminProducerController extends Controller
 
     Producer::where('id','=', $id)->update(['status' => 'confirmed']);
 
-    $producer = Producer::where('id','=', $id)->find(1);
-    
+    $producer = Producer::FindOrFail($id);
+
     Mail::to('lecoeur.matthieu@gmail.com')->send(new NewProducer($producer->name));
 
     return redirect()->route('admin-list-producer')->with('success', 'Producteur confirmed');
