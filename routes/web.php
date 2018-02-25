@@ -37,12 +37,20 @@ Route::group(['namespace' => 'Front'], function() {
   // Route profil public producteur
   Route::get('/profil/{slug}', 'ProducerController@showProfilProducer')->name('profil-public');  // avec 'slug' en parametre
 
-  // Route profil public perso producteur
+  // Route profil perso producteur
   Route::get('/mon-profil', 'ProducerController@showProfilPersoProducer')->name('profil-perso');// Ajout bastien
 
   // Routes profil editable producteur
-  Route::get('/editer-mon-profil', 'ProducerProfilController@showEditProfilProducer')->name('edit-profil-view'); // avec 'slug' en parametre
-  Route::put('/editer-mon-profil/{id}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'slug' en parametre
+  Route::get('/modifier-mon-profil/{slug}', 'ProducerProfilController@showEditProfilProducer')->name('edit-profil-view'); // avec 'slug' en parametre
+  Route::put('/modifier-mon-profil/{id}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'slug' en parametre
+
+  //Routes profil producteur de modif items
+  Route::put('/modifier-produit/{id}', 'ProducerProfilController@actionEditItemProfilProducer')->name('edit-item-profil-action');
+  Route::delete('/supprimer-produit/{id}', 'ProducerProfilController@actionDeleteItemProfilProducer')->name('delete-item-profil-action');
+
+  //Routes profil producteur de modif retails
+  Route::put('/modifier-lieu/{id}', 'ProducerProfilController@actionEditRetailProfilProducer')->name('edit-retail-profil-action');
+  Route::delete('/supprimer-lieu/{id}', 'ProducerProfilController@actionDeleteRetailProfilProducer')->name('delete-retail-profil-action');
 
   // Routes profil création producteur
   Route::get('/creer-un-profil', 'ProducerProfilController@showNewProfilProducer')->name('new-profil-view');
@@ -64,8 +72,6 @@ Route::group(['namespace' => 'Front'], function() {
 
     Route::post('/mon-profil/ajax/add-item', 'AjaxController@addItem')->name('add-item');
     Route::post('/mon-profil/ajax/add-retail', 'AjaxController@addRetail')->name('add-retail');
-
-    Route::get('/mon-profil/ajax/edit-item/{id}, AjaxController@editItem')->name('edit-item-profil');
 
   });
 
