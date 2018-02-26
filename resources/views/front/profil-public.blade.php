@@ -12,6 +12,11 @@
 @endsection
 
 @section('content')
+
+  @if (Auth::user()->id == $producer->user_id && $producer->status === 'new')
+    <div class ="alert alert-success"><p>Félicitation, votre profil est créé et en attende de validation. Vous pouvez le modifier et ajouter des produits ou des lieux de ventes. Vous recevrez un courriel sous 24h pour vous informer de l'activation publique de votre profil. </p></div>
+  @endif
+
   <div class="profilPublic">
 
     <section id="topContent">
@@ -41,6 +46,7 @@
             @if (isset(Auth::user()->id))
               @if (Auth::user()->id == $producer->user_id)
                 <p><a href="{{ route('edit-profil-view', ['slug' => $producer->slug]) }}" class="btn btn-success edit-btn-profil">Modifier mon profil</a></p>
+
               @endif
             @endif
           </div>
@@ -49,7 +55,7 @@
     </section>
 
     <section id="descriptionProfil">
-      <div class="itemRetailProfil wrap"> <!-- enlever la classe itemretailprofil-->
+      <div class="shadow wrap"> <!-- enlever la classe itemretailprofil-->
         <div class="badge">
           @foreach($producer->category as $cat)
             <span class="badge-secondary"><a href="{{ route('search-result-category', ['cat' => $cat->name]) }}">{{ucfirst($cat->name)}}</a></span>
