@@ -8,8 +8,6 @@
 
 @section('content')
   <div>
-
-
       <a href="{{route('admin-list-producer')}}"><div class="panel row dash">
         <h2>{{$countproducers}} Producteurs</h2>
       </div></a>
@@ -19,17 +17,13 @@
       <a href="{{route('admin-list-category')}}"><div class="panel row dash">
         <h2>{{$countcategories}} Catégories</h2>
       </div></a>
-
-
-
       <a href="{{route('admin-list-retail')}}"><div class="panel row dash">
         <h2>{{$countretails}} Lieux de ventes</h2>
       </div></a>
       <a href="{{route('admin-list-article')}}"><div class="panel row dash">
         <h2>{{$countarticles}} Fabuleux articles</h2>
       </div></a>
-
-    </div>
+  </div>
 
     {{-- <div class="row">
       <a href="{{route('admin-list-retail')}}"><div class="col col-lg-6" style="border:1px solid black;">
@@ -40,7 +34,7 @@
       </div>
     </div>
 
-  </div>
+  </div> --}}
 @endsection
 
 @section('js')

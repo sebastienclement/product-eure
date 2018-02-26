@@ -13,9 +13,6 @@ class SearchController extends Controller
 
     public function actionSearchForm(SearchRequest $request)
     {
-
-        if(!empty($request)){
-
         $request = $request->all();
 
         if(!empty($request['category']) && (!empty($request['search'])))
@@ -35,9 +32,8 @@ class SearchController extends Controller
           $countsearch = count($producers);
 
         return view('front/search',compact('producers','countsearch'));
-      }else{
-          redirect('home');
-}
+      }
+
     }
 
 
