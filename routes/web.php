@@ -42,22 +42,22 @@ Route::group(['namespace' => 'Front'], function() {
 
   // Routes profil editable producteur
   Route::get('/modifier-mon-profil/{slug}', 'ProducerProfilController@showEditProfilProducer')->name('edit-profil-view'); // avec 'slug' en parametre
-  Route::put('/modifier-mon-profil/{id}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'slug' en parametre
+  Route::put('/modifier-mon-profil/{id}', 'ProducerProfilController@actionEditProfilProducer')->where('id','[0-9]+')->name('edit-profil-action'); // avec 'slug' en parametre
 
   //Routes profil producteur de modif items
-  Route::put('/modifier-produit/{id}', 'ProducerProfilController@actionEditItemProfilProducer')->name('edit-item-profil-action');
-  Route::delete('/supprimer-produit/{id}', 'ProducerProfilController@actionDeleteItemProfilProducer')->name('delete-item-profil-action');
+  Route::put('/modifier-produit/{id}', 'ProducerProfilController@actionEditItemProfilProducer')->where('id','[0-9]+')->name('edit-item-profil-action');
+  Route::delete('/supprimer-produit/{id}', 'ProducerProfilController@actionDeleteItemProfilProducer')->where('id','[0-9]+')->name('delete-item-profil-action');
 
   //Routes profil producteur de modif retails
-  Route::put('/modifier-lieu/{id}', 'ProducerProfilController@actionEditRetailProfilProducer')->name('edit-retail-profil-action');
-  Route::delete('/supprimer-lieu/{id}', 'ProducerProfilController@actionDeleteRetailProfilProducer')->name('delete-retail-profil-action');
+  Route::put('/modifier-lieu/{id}', 'ProducerProfilController@actionEditRetailProfilProducer')->where('id','[0-9]+')->name('edit-retail-profil-action');
+  Route::delete('/supprimer-lieu/{id}', 'ProducerProfilController@actionDeleteRetailProfilProducer')->where('id','[0-9]+')->name('delete-retail-profil-action');
 
   // Routes profil création producteur
   Route::get('/creer-un-profil', 'ProducerProfilController@showNewProfilProducer')->name('new-profil-view');
   Route::post('/creer-un-profil', 'ProducerProfilController@actionNewProfilProducer')->name('new-profil-action');
 
   //Routes resultats de recherche
-  Route::post('/recherche', 'SearchController@actionSearchForm')->name('search-result');
+  Route::get('/recherche', 'SearchController@actionSearchForm')->name('search-result');
   Route::get('/recherche/{zone}', 'SearchController@actionSearchMap')->name('search-result-map');
   Route::get('/categorie/{cat}', 'SearchController@actionSearchCategory')->name('search-result-category');
 
@@ -103,10 +103,10 @@ Route::group(['namespace' => 'Front'], function() {
 
   //Route update item
   Route::get('/admin/edit-item/{id}', 'AdminItemController@showEditItem')->where('id','[0-9]+')->name('admin-edit-item-view');
-  Route::put('/admin/edit-item/{id}', 'AdminItemController@actionEditItem')->name('admin-edit-item-action');
+  Route::put('/admin/edit-item/{id}', 'AdminItemController@actionEditItem')->where('id','[0-9]+')->name('admin-edit-item-action');
 
   // Route suppression item
-  Route::delete('/admin/delete-item/{id}', 'AdminItemController@deleteItem')->name('admin-delete-item');
+  Route::delete('/admin/delete-item/{id}', 'AdminItemController@deleteItem')->where('id','[0-9]+')->name('admin-delete-item');
 //
 //////
 
@@ -122,10 +122,10 @@ Route::group(['namespace' => 'Front'], function() {
 
   // Route update retail
   Route::get('/admin/edit-retail/{id}', 'AdminRetailController@showEditRetail')->where('id','[0-9]+')->name('admin-edit-retail-view');
-  Route::put('/admin/edit-retail/{id}', 'AdminRetailController@actionEditRetail')->name('admin-edit-retail-action');
+  Route::put('/admin/edit-retail/{id}', 'AdminRetailController@actionEditRetail')->where('id','[0-9]+')->name('admin-edit-retail-action');
 
   //Route supp retail
-  Route::delete('/admin/delete-retail/{id}', 'AdminRetailController@deleteRetail')->name('admin-delete-retail');
+  Route::delete('/admin/delete-retail/{id}', 'AdminRetailController@deleteRetail')->where('id','[0-9]+')->name('admin-delete-retail');
 //
 //////
 
@@ -141,10 +141,10 @@ Route::group(['namespace' => 'Front'], function() {
 
   //Route update categorie
   Route::get('/admin/edit-category/{id}', 'AdminCategoryController@showEditCategory')->where('id','[0-9]+')->name('admin-edit-category-view');
-  Route::put('/admin/edit-category/{id}', 'AdminCategoryController@actionEditCategory')->name('admin-edit-category-action');
+  Route::put('/admin/edit-category/{id}', 'AdminCategoryController@actionEditCategory')->where('id','[0-9]+')->name('admin-edit-category-action');
 
   //Route supp categorie
-  Route::delete('/admin/delete-category/{id}', 'AdminCategoryController@deleteCategory')->name('admin-delete-category');
+  Route::delete('/admin/delete-category/{id}', 'AdminCategoryController@deleteCategory')->where('id','[0-9]+')->name('admin-delete-category');
 //
 //////
 
@@ -163,14 +163,14 @@ Route::group(['namespace' => 'Front'], function() {
 
   //Route update producer
   Route::get('/admin/edit-producer/{id}', 'AdminProducerController@showEditProducer')->where('id','[0-9]+')->name('admin-edit-producer-view');
-  Route::put('/admin/edit-producer/{id}', 'AdminProducerController@actionEditProducer')->name('admin-edit-producer-action');
+  Route::put('/admin/edit-producer/{id}', 'AdminProducerController@actionEditProducer')->where('id','[0-9]+')->name('admin-edit-producer-action');
 
   //Route supp producer
-  Route::delete('/admin/delete-producer/{id}', 'AdminProducerController@deleteProducer')->name('admin-delete-producer');
+  Route::delete('/admin/delete-producer/{id}', 'AdminProducerController@deleteProducer')->where('id','[0-9]+')->name('admin-delete-producer');
 
   //Route moderation
-  Route::put('/admin/confirm/{id}', 'AdminProducerController@confirmProducer')->name('confirm-prod');
-  Route::put('/admin/refuse/{id}', 'AdminProducerController@refuseProducer')->name('refuse-prod');
+  Route::put('/admin/confirm/{id}', 'AdminProducerController@confirmProducer')->where('id','[0-9]+')->name('confirm-prod');
+  Route::put('/admin/refuse/{id}', 'AdminProducerController@refuseProducer')->where('id','[0-9]+')->name('refuse-prod');
 
 
 //
@@ -188,10 +188,10 @@ Route::group(['namespace' => 'Front'], function() {
 
   //Route update article
   Route::get('/admin/edit-article/{id}', 'AdminArticleController@showEditArticle')->where('id','[0-9]+')->name('admin-edit-article-view');
-  Route::put('/admin/edit-article/{id}', 'AdminArticleController@actionEditArticle')->name('admin-edit-article-action');
+  Route::put('/admin/edit-article/{id}', 'AdminArticleController@actionEditArticle')->where('id','[0-9]+')->name('admin-edit-article-action');
 
   //Route supp article
-  Route::delete('/admin/delete-article/{id}', 'AdminArticleController@deleteArticle')->name('admin-delete-article');
+  Route::delete('/admin/delete-article/{id}', 'AdminArticleController@deleteArticle')->where('id','[0-9]+')->name('admin-delete-article');
 //
 //////
 

@@ -10,133 +10,54 @@ use App\Http\Requests\SearchRequest;
 
 class SearchController extends Controller
 {
+
     public function actionSearchForm(SearchRequest $request)
     {
+
+        if(!empty($request)){
+
         $request = $request->all();
-
-
-    // Requete de recherche en 3 temps.
-    // 1-On recherche lorsque les deux champs sont utilisés.
 
         if(!empty($request['category']) && (!empty($request['search'])))
         {
           $category = $request['category'];
           $search = $request['search'];
-
-            //requete pour obtenir l'id des producteurs correspondant
-
-          $producers_id = \DB::table('producers')
-                            ->join('category_producer','producers.id', '=','category_producer.producer_id')
-                            ->where('category_producer.category_id', '=', $category)
-                            ->join('item_producer','producers.id', '=', 'item_producer.producer_id')
-                            ->join('items','items.id', '=', 'item_producer.item_id')
-                            ->where(function($query) use ($search){
-                                $query->where('items.comment', 'like', '%' . $search . '%')
-                                    ->orWhere('producers.name', 'like', '%' . $search . '%')
-                                    ->orWhere('producers.ville', 'like', '%' . $search . '%')
-                                    ->orWhere('producers.adresse', 'like', '%' . $search . '%')
-                                    ->orWhere('producers.zipcode', 'like', '%' . $search . '%');
-                               })
-                              ->select('producers.id as prod_id')
-                            ->get();
-
-            //On recupere les ids de producteurs recherché
-            //(Avec Array Pluck chaque id n'est récupéré qu'une seule fois)
-            //Dont on se sert pour récupérer les informations des producteur correspondant
-
-          $producers_id = array_pluck($producers_id, 'prod_id');
-
-                if(!empty($producers_id)){
-                    $producers = Producer::whereIn('id', $producers_id)->where('status', '=', 'confirmed')->with('category')->get();
-                }else{
-                    $producers = [];
-                }
-
-    //  2-On recherche lorsque juste la catégorie est renseigné
-    //  Selon le meme fonctionnement que précedemment.
-
-        }elseif(!empty($request['category']))
-        {
-            $category = $request['category'];
-
-            $producers_id = \DB::table('producers')
-                            ->where('status', '=', 'confirmed')
-                            ->join('category_producer','producers.id', '=','category_producer.producer_id')
-                            ->where('category_producer.category_id', '=', $category)
-                            ->join('categories','category_producer.category_id' ,'=','categories.id')
-                            ->select('producers.id')
-                            ->get();
-
-            $producers_id = array_pluck($producers_id, 'id');
-            $producers = Producer::with('category')->whereIn('id',  $producers_id)->get();
-
-    //  2-On recherche lorsque juste le champ de recherche est renseigné
-    //  Selon le meme fonctionnement que précedemment.
-
-        }elseif(!empty($request['search']))
-        {
-          $search = $request['search'];
-
-          $producers_id = \DB::table('producers')
-
-                        ->join('item_producer','producers.id', '=', 'item_producer.producer_id')
-                        ->leftJoin('items','items.id', '=', 'item_producer.item_id')
-                        ->where(function($query) use ($search){
-                            $query->where('items.comment', 'like', '%' . $search . '%')
-                                ->orWhere('producers.name', 'like', '%' . $search . '%')
-                                ->orWhere('producers.ville', 'like', '%' . $search . '%')
-                                ->orWhere('producers.adresse', 'like', '%' . $search . '%')
-                                ->orWhere('producers.zipcode', 'like', '%' . $search . '%');
-                           })
-                        ->select('producers.id as prod_id')
-                        ->get();
-           // dd($producers_id);
-
-          $producers_id = array_pluck($producers_id, 'prod_id');
-            if(!empty($producers_id)){
-                $producers = Producer::where('status', '=', 'confirmed')->whereIn('id', $producers_id)->with('category')->get();
-            }else{
-                $producers = [];
-            }
-
+          $producers = Producer::searchBoth($category,$search);
         }
+        elseif(!empty($request['category'])){
+          $category = $request['category'];
+          $producers = Producer::searchCat($category);
+        }
+        elseif(!empty($request['search'])){
+          $search = $request['search'];
+          $producers = Producer::searchInput($search);
+        }
+          $countsearch = count($producers);
 
-           $countsearch = count($producers);
-
-      return view('front/search',compact('producers','countsearch'));
+        return view('front/search',compact('producers','countsearch'));
+      }else{
+          redirect('home');
+}
     }
+
 
     public function actionSearchMap($zone)
     {
-      $producers = Producer::where('zone', '=', $zone)->where('status', '=', 'confirmed')->get();
-      $countsearch = count($producers);
-
-      return view('front/search',compact('producers','countsearch'));
-    }
-
-    public function actionSearchCategory($cat)
-    {
-
-        //En affichant le nom de la categorie dans l'url, il faut récupérer son id avec une premiere requete pour ensuite pouvoire effectuer la jointure et la recherche
-
-        $category_id = Category::where('name','=', $cat)->select('id')->first();
-
-        $producers_id = \DB::table('producers')
-                        ->where('status', '=', 'confirmed')
-                        ->join('category_producer','producers.id', '=','category_producer.producer_id')
-                        ->where('category_producer.category_id', '=', $category_id->id)
-                        ->join('categories','category_producer.category_id' ,'=','categories.id')
-                        ->select('producers.id')
-                        ->get();
-
-        $producers_id = array_pluck($producers_id, 'id');
-
-        $producers = Producer::with('category')->whereIn('id',  $producers_id)->get();
-
+        $producers = Producer::where('zone', '=', $zone)->where('status', '=', 'confirmed')->get();
         $countsearch = count($producers);
 
-      return view('front/search',compact('producers','countsearch'));
+        return view('front/search',compact('producers','countsearch'));
     }
 
+
+
+    public function actionSearchCategory($category)
+    {
+        $category_id = Category::where('name','=', $category)->select('id')->first();
+        $producers = Producer::searchCat($category_id->id);
+        $countsearch = count($producers);
+
+        return view('front/search',compact('producers','countsearch'));
+    }
 
 }
