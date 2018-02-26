@@ -17,6 +17,7 @@ $( document ).ready(function() {
   $(document).mousemove(function(e) {
     $('#info-box').offset({top:e.pageY-$('#info-box').height()-30});
     $('#info-box').css('left',e.pageX-($('#info-box').width())/2);
+
   }).mouseover();
 
 
@@ -143,14 +144,14 @@ $( document ).ready(function() {
               frictionX: 0.075,
               });
 
-// var scenep = document.getElementById('scenep');
-//                 var parallaxInstance = new Parallax(scenep, {
-//                 relativeInput: true,
-//                 invertY: false,
-//             });
-//
+var scenep = document.getElementById('scenep');
+                var parallaxInstance = new Parallax(scenep, {
+                relativeInput: true,
+                invertY: false,
+            });
 
-    //Gestion de l'animation des abeilles
+
+  //  Gestion de l'animation des abeilles
 
     var params = {
       container: document.getElementById('lottie'),

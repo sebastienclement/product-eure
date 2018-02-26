@@ -48,7 +48,9 @@
           <li>Présentez vos produits</li>
           <li>Renseignez vos différents point de ventes</li>
           <li>Votre profil sera accessible à tous les visiteurs de Product'eur.fr</li>
-          <li><button id="register-prod" class="register-btn"><a href="{{ route('register') }}">Inscrivez vous gratruitement</a></button></li>
+          @if(!isset(Auth::user()->id))
+            <li><button id="register-prod" class="register-btn"><a href="{{ route('register') }}">Inscrivez vous gratruitement</a></button></li>
+          @endif
         </ul>
       </div>
       <div id="info-abo">
@@ -103,22 +105,25 @@
 
   {{-- On fait passer nos variables php contenant le nombre de producteurs par zones
   dans des variables javascript --}}
-<script type="text/javascript">
-  var roumois = {{ $nbProdRoumois }}
-  var neubourg = {{ $nbProdNeubourg }}
-  var vexin = {{ $nbProdVexin }}
-  var lieuvin = {{ $nbProdLieuvin }}
-  var ouche = {{ $nbProdOuche }}
-  var andre = {{ $nbProdAndre }}  // On injecte ainsi dynamiquement le nombre de producteurs par zone
-  // dans un attribut data définit dans les path de la zone en question du svg
-  // qu'on affiche également en javascript +css (voir main.js)
-  $('#svg-roumois').data('info', 'Pays Roumois et Marais Vernier : ' + roumois + ' producteurs');
-  $('#svg-neubourg').data('info', 'Plateau du Neubourg : ' + neubourg + ' producteurs');
-  $('#svg-vexin').data('info', 'Vexin Normand : ' + vexin + ' producteurs');
-  $('#svg-lieuvin').data('info', 'Lieuvin : ' + lieuvin + ' producteurs');
-  $('#svg-ouche').data('info', 'Pays d\'Ouche : ' + ouche + ' producteurs');
-  $('#svg-andre').data('info', 'Plateau de Saint-André : ' + andre + ' producteurs');
-</script>
+  <script type="text/javascript">
+    var roumois = {{ $nbProdRoumois }}
+    var neubourg = {{ $nbProdNeubourg }}
+    var vexin = {{ $nbProdVexin }}
+    var lieuvin = {{ $nbProdLieuvin }}
+    var ouche = {{ $nbProdOuche }}
+    var andre = {{ $nbProdAndre }}
+
+    // On injecte ainsi dynamiquement le nombre de producteurs par zone
+    // dans un attribut data définit dans les path de la zone en question du svg
+    // qu'on affiche également en javascript +css (voir main.js)
+
+    $('#svg-roumois').data('info', 'Pays Roumois et Marais Vernier : ' + roumois + ' producteurs');
+    $('#svg-neubourg').data('info', 'Plateau du Neubourg : ' + neubourg + ' producteurs');
+    $('#svg-vexin').data('info', 'Vexin Normand : ' + vexin + ' producteurs');
+    $('#svg-lieuvin').data('info', 'Lieuvin : ' + lieuvin + ' producteurs');
+    $('#svg-ouche').data('info', 'Pays d\'Ouche : ' + ouche + ' producteurs');
+    $('#svg-andre').data('info', 'Plateau de Saint-André : ' + andre + ' producteurs');
+  </script>
 
 
 @endsection
