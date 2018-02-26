@@ -21,7 +21,7 @@
             @include ('front/form/search')
             <p><a class="scrollToMap" href="#map">Ou bien rechercher via notre carte.</a></p>
         </div>
-        <div id="scene" class="animals" style="position:absolute;top:550px;left:40px;">
+        {{-- <div id="scene" class="animals" style="position:absolute;top:550px;left:40px;">
             <div id="mouton" data-depth="0.1" style="width:200px;height:auto;">{!! file_get_contents(asset('img/home/mouton.svg')) !!}
             </div>
         </div>
@@ -35,7 +35,7 @@
                 text-align: center;
                 opacity: 1;" >
             </div>
-        </div>
+        </div> --}}
     </div>
   </section>
 
@@ -48,7 +48,9 @@
           <li>Présentez vos produits</li>
           <li>Renseignez vos différents point de ventes</li>
           <li>Votre profil sera accessible à tous les visiteurs de Product'eur.fr</li>
-          <li><button id="register-prod" class="register-btn"><a href="{{ route('register') }}">Inscrivez vous gratruitement</a></button></li>
+          @if(!isset(Auth::user()->id))
+            <li><button id="register-prod" class="register-btn"><a href="{{ route('register') }}">Inscrivez vous gratruitement</a></button></li>
+          @endif
         </ul>
       </div>
       <div id="info-abo">
@@ -74,10 +76,10 @@
                 </div>
             </div>
     </div>
-    <div id="scenep" class="animals" style="position:absolute;bottom:0;right:0;">
+    {{-- <div id="scenep" class="animals" style="position:absolute;bottom:0;right:0;">
         <div id="poule" data-depth="0.08" style="width:500px;height:auto;">{!! file_get_contents(asset('img/home/poules.svg')) !!}
         </div>
-    </div>
+    </div> --}}
   </section>
 
   <section>
@@ -100,7 +102,7 @@
 @section('js')
 
 
-<script src="{{ asset('js/amim/anim_un.js') }}" type="text/javascript" charset="utf-8"></script>
+{{-- <script src="{{ asset('js/amim/anim_un.js') }}" type="text/javascript" charset="utf-8"></script> --}}
 
 
   {{-- On fait passer nos variables php contenant le nombre de producteurs par zones

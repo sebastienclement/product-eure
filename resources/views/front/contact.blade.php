@@ -21,7 +21,9 @@
 
   <h1>Pour nous contacter, c'est ici !</h1>
 
-  <p><a href="mailto:mabasewf3@gmail.com">contact@producteure.com</a></p>
+  <h2><a href="mailto:mabasewf3@gmail.com">contact@producteure.com</a></h2>
+
+  {!! file_get_contents(asset('img/home/poules.svg')) !!}
 
 </div>
 
