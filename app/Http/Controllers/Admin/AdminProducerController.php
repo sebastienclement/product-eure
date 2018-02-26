@@ -21,7 +21,7 @@ class AdminProducerController extends Controller
   */
   public function showListProducers()
   {
-    $producers = Producer::with('user')->orderBy('created_at', 'DESC')->get();
+    $producers = Producer::with('user')->orderBy('id', 'DESC')->get();
 
     return view('admin/list-producers', compact('producers'));
   }

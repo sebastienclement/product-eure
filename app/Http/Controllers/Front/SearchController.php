@@ -40,7 +40,8 @@ class SearchController extends Controller
                               ->select('producers.id as prod_id')
                             ->get();
 
-            //On crée un tableau avec les ids récupérés
+            //On recupere les ids de producteurs recherché
+            //(Avec Array Pluck chaque id n'est récupéré qu'une seule fois)
             //Dont on se sert pour récupérer les informations des producteur correspondant
 
           $producers_id = array_pluck($producers_id, 'prod_id');
@@ -89,7 +90,7 @@ class SearchController extends Controller
                            })
                         ->select('producers.id as prod_id')
                         ->get();
-          // dd($producers_id);
+           // dd($producers_id);
 
           $producers_id = array_pluck($producers_id, 'prod_id');
             if(!empty($producers_id)){
@@ -112,4 +113,30 @@ class SearchController extends Controller
 
       return view('front/search',compact('producers','countsearch'));
     }
+
+    public function actionSearchCategory($cat)
+    {
+
+        //En affichant le nom de la categorie dans l'url, il faut récupérer son id avec une premiere requete pour ensuite pouvoire effectuer la jointure et la recherche
+
+        $category_id = Category::where('name','=', $cat)->select('id')->first();
+
+        $producers_id = \DB::table('producers')
+                        ->where('status', '=', 'confirmed')
+                        ->join('category_producer','producers.id', '=','category_producer.producer_id')
+                        ->where('category_producer.category_id', '=', $category_id->id)
+                        ->join('categories','category_producer.category_id' ,'=','categories.id')
+                        ->select('producers.id')
+                        ->get();
+
+        $producers_id = array_pluck($producers_id, 'id');
+
+        $producers = Producer::with('category')->whereIn('id',  $producers_id)->get();
+
+        $countsearch = count($producers);
+
+      return view('front/search',compact('producers','countsearch'));
+    }
+
+
 }

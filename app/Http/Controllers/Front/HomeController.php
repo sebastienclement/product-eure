@@ -35,7 +35,7 @@ class HomeController extends Controller
       // $categories = Category::with('item')->inRandomOrder()->paginate(5);
 
       $article = Article::orderBy('created_at','desc')->first();
-      
+
       // $path_img_article = \Image::open($article->path_img_article)
       //                     ->thumbnail(new \Imagine\Image\Box(350,350));
       // dd($path_img_article);
@@ -86,5 +86,14 @@ class HomeController extends Controller
     public function conditions()
     {
       return view('front/conditions-utilisation');
+    }
+
+    /**
+     * Renvoie la page qui relaxe
+     * @return
+     */
+    public function relax()
+    {
+      return view('front/relax');
     }
 }

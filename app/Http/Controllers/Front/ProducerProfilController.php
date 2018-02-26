@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 use App\Service\PathUpload;
 use App\Models\Producer;
 use App\Models\Category;
+use App\Models\Item;
+use App\Models\Retail;
 use Carbon\Carbon;
 use App\Http\Requests\ProducerRequest;
+use App\Http\Requests\ItemRequest;
+use App\Http\Requests\RetailRequest;
 // use App\Http\Middleware\Abonne;
 use Auth;
 
@@ -25,11 +29,9 @@ class ProducerProfilController extends Controller
    * affiche la vue pour modifier un producteur
    * @return [type] [description]
    */
-  public function showEditProfilProducer()
+  public function showEditProfilProducer($slug)
   {
-
-    $user = Auth::id();
-    $producer = Producer::with('category')->where('user_id', '=', $user)->first();
+    $producer = Producer::with('category')->where('slug', '=', $slug)->first();
     $categories = Category::pluck('name', 'id');
     // dd($producer);
     return view('front/profil-edit', compact('producer','categories'));
@@ -159,5 +161,56 @@ class ProducerProfilController extends Controller
     } elseif (in_array($zipcode, $zipcodeF)) {
       return 'plateau-de-saint-andre';
     }
+  }
+
+
+  /**
+   * [actionEditItemProfilProducer Modification d'un item lié au profil perso via un update]
+   * @return [type] [description]
+   */
+  public function actionEditItemProfilProducer(ItemRequest $request, $id)
+  {
+    $item = Item::FindOrFail($id);
+
+    $item->update($request->all());
+
+    return redirect()->route('profil-perso')->with('success', 'Votre produit a été mis à jour');
+  }
+
+  /**
+   * [actionDeleteItemProfilProducer Suppression d'un item lié au profil perso via un soft delete]
+   * @return [type] [description]
+   */
+  public function actionDeleteItemProfilProducer($id)
+  {
+    $item = Item::FindOrFail($id);
+    $item->delete();
+
+    return redirect()->route('profil-perso')->with('success', 'Votre produit a bien été supprimé');
+  }
+
+  /**
+   * [actionEditRetailProfilProducer Modification d'un retail lié au profil perso via un update]
+   * @return [type] [description]
+   */
+  public function actionEditRetailProfilProducer(RetailRequest $request, $id)
+  {
+    $retail = Retail::FindOrFail($id);
+
+    $retail->update($request->all());
+
+    return redirect()->route('profil-perso')->with('success', 'Le lieu où l\'on peut trouver vos produits a été mis à jour');
+  }
+
+  /**
+   * [actionDeleteRetailProfilProducer Suppression d'un retail lié au profil perso via un soft delete]
+   * @return [type] [description]
+   */
+  public function actionDeleteRetailProfilProducer($id)
+  {
+    $retail = Retail::FindOrFail($id);
+    $retail->delete();
+
+    return redirect()->route('profil-perso')->with('success', 'Votre lieu de vente a bien été supprimé');
   }
 }

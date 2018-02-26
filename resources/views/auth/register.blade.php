@@ -3,7 +3,6 @@
   Inscription
 @endsection
 @section('bootstrap-css')
-  {{-- <link rel="stylesheet" href="{{ asset('css/front/foundation.css') }}"> --}}
   <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet">
 @endsection
 @section('content')

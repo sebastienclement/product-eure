@@ -1,0 +1,15 @@
+.dash{
+    padding: 20px;
+    color:dimgrey;
+    box-sizing: border-box;
+    background-image: linear-gradient(#E5E5E5, #CFCFCF);
+}
+.dash h2{
+    font-weight: bold;
+}
+
+.dash:hover{
+
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
+                -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
+}

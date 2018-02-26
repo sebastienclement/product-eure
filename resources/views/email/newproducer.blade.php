@@ -125,15 +125,13 @@
 						<tr>
 							<td data-bgcolor="bg-module" bgcolor="#46879B">
 								<table class="flexible" width="600" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
-									<tr>
-										<td class="img-flex"><img src="{{ $message->embed(public_path() . '/img/home/test.jpg') }}" style="vertical-align:top;" width="600" height="306" alt="" /></td>
-									</tr>
+
 									<tr>
 										<td data-bgcolor="bg-block" class="holder" style="padding:58px 60px 52px;" bgcolor="#f9f9f9">
 											<table width="100%" cellpadding="0" cellspacing="0">
 												<tr>
 													<td data-color="title" data-size="size title" data-min="25" data-max="45" data-link-color="link title color" data-link-style="text-decoration:none; color:#D19B26;" class="title" align="center" style="font:bold 35px/38px Arial, Helvetica, sans-serif; color:#D19B26; padding:0 0 24px;">
-														Product'Eure
+														<img width="100" src="{{ $message->embed(public_path() . '/img/home/logo.png') }}"><p>Product'Eure</p>
 													</td>
 												</tr>
 												<tr>
@@ -148,7 +146,7 @@
 														<table width="134" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
 															<tr>
 																<td data-bgcolor="bg-button" data-size="size button" data-min="10" data-max="16" class="btn" align="center" style="font:12px/14px Arial, Helvetica, sans-serif; color:#f8f9fb; text-transform:uppercase; mso-padding-alt:12px 10px 10px; border-radius:2px;" bgcolor="#7bb84f">
-																	<a target="_blank" style="text-decoration:none; color:#f8f9fb; display:block; padding:12px 10px 10px;" href="#">Aller sur le site</a>
+																	<a target="_blank" href="http://localhost/leprojet/product-eure/public/" style="text-decoration:none; color:#f8f9fb; display:block; padding:12px 10px 10px;" href="#">Aller sur le site</a>
 																</td>
 															</tr>
 														</table>
@@ -156,6 +154,9 @@
 												</tr>
 											</table>
 										</td>
+									</tr>
+									<tr>
+										<td class="img-flex"><img src="{{ $message->embed(public_path() . '/img/home/test.jpg') }}" style="vertical-align:top;" width="600" height="306" alt="" /></td>
 									</tr>
 									<tr><td height="28"></td></tr>
 								</table>
@@ -168,7 +169,7 @@
 							<td data-bgcolor="bg-module" bgcolor="#46879B">
 								<table class="flexible" width="600" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
 									<tr>
-										<td class="img-flex"><img src="images/img-02.jpg" style="vertical-align:top;" width="600" height="249" alt="" /></td>
+										<td class="img-flex"><img src="{{ $message->embed(public_path() . '/img/home/test.jpg') }}" style="vertical-align:top;" width="600" height="306" alt="" /></td>
 									</tr>
 									<tr>
 										<td data-bgcolor="bg-block" class="holder" style="padding:65px 60px 50px;" bgcolor="#f9f9f9">
@@ -180,17 +181,12 @@
 												</tr>
 												<tr>
 													<td data-color="text" data-size="size text" data-min="10" data-max="26" data-link-color="link text color" data-link-style="font-weight:bold; text-decoration:underline; color:#40aceb;" align="center" style="font:bold 16px/25px Arial, Helvetica, sans-serif; color:#888; padding:0 0 23px;">
-														{{$name}}<br>{{$adresse}}<br>{{$zipcode}}<br>{{$ville}}
+														Nom : {{$name}}<br>Adresse : {{$adresse}}<br>Code Postale : {{$zipcode}}<br>Vile : {{$ville}}
 													</td>
 												</tr>
 												<tr>
 													<td style="padding:0 0 20px;">
 														<table width="134" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
-															<tr>
-																<td data-bgcolor="bg-button" data-size="size button" data-min="10" data-max="16" class="btn" align="center" style="font:12px/14px Arial, Helvetica, sans-serif; color:#f8f9fb; text-transform:uppercase; mso-padding-alt:12px 10px 10px; border-radius:2px;" bgcolor="#f5ba1c">
-																	<a target="_blank" style="text-decoration:none; color:#f8f9fb; display:block; padding:12px 10px 10px;" href="#">Learn More</a>
-																</td>
-															</tr>
 														</table>
 													</td>
 												</tr>
@@ -216,27 +212,6 @@
 															<tr>
 																<td data-color="text" data-link-color="link text color" data-link-style="text-decoration:underline; color:#797c82;" class="aligncenter" style="font:12px/16px Arial, Helvetica, sans-serif; color:#797c82; padding:0 0 10px;">
 																	Product'Eure, 2018. &nbsp; Tous droits réservés.
-																</td>
-															</tr>
-														</table>
-													</th>
-													<th class="thead" width="200" align="left" style="vertical-align:top; padding:0;">
-														<table class="center" align="right" cellpadding="0" cellspacing="0">
-															<tr>
-																<td class="btn" valign="top" style="line-height:0; padding:3px 0 0;">
-																	<a target="_blank" style="text-decoration:none;" href="#"><img src="images/ico-facebook.png" border="0" style="font:12px/15px Arial, Helvetica, sans-serif; color:#797c82;" align="left" vspace="0" hspace="0" width="6" height="13" alt="fb" /></a>
-																</td>
-																<td width="20"></td>
-																<td class="btn" valign="top" style="line-height:0; padding:3px 0 0;">
-																	<a target="_blank" style="text-decoration:none;" href="#"><img src="images/ico-twitter.png" border="0" style="font:12px/15px Arial, Helvetica, sans-serif; color:#797c82;" align="left" vspace="0" hspace="0" width="13" height="11" alt="tw" /></a>
-																</td>
-																<td width="19"></td>
-																<td class="btn" valign="top" style="line-height:0; padding:3px 0 0;">
-																	<a target="_blank" style="text-decoration:none;" href="#"><img src="images/ico-google-plus.png" border="0" style="font:12px/15px Arial, Helvetica, sans-serif; color:#797c82;" align="left" vspace="0" hspace="0" width="19" height="15" alt="g+" /></a>
-																</td>
-																<td width="20"></td>
-																<td class="btn" valign="top" style="line-height:0; padding:3px 0 0;">
-																	<a target="_blank" style="text-decoration:none;" href="#"><img src="images/ico-linkedin.png" border="0" style="font:12px/15px Arial, Helvetica, sans-serif; color:#797c82;" align="left" vspace="0" hspace="0" width="13" height="11" alt="in" /></a>
 																</td>
 															</tr>
 														</table>

@@ -37,24 +37,36 @@ Route::group(['namespace' => 'Front'], function() {
   // Route profil public producteur
   Route::get('/profil/{slug}', 'ProducerController@showProfilProducer')->name('profil-public');  // avec 'slug' en parametre
 
-  // Route profil public perso producteur
+  // Route profil perso producteur
   Route::get('/mon-profil', 'ProducerController@showProfilPersoProducer')->name('profil-perso');// Ajout bastien
 
   // Routes profil editable producteur
-  Route::get('/editer-mon-profil', 'ProducerProfilController@showEditProfilProducer')->name('edit-profil-view'); // avec 'slug' en parametre
-  Route::put('/editer-mon-profil/{id}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'slug' en parametre
+  Route::get('/modifier-mon-profil/{slug}', 'ProducerProfilController@showEditProfilProducer')->name('edit-profil-view'); // avec 'slug' en parametre
+  Route::put('/modifier-mon-profil/{id}', 'ProducerProfilController@actionEditProfilProducer')->name('edit-profil-action'); // avec 'slug' en parametre
+
+  //Routes profil producteur de modif items
+  Route::put('/modifier-produit/{id}', 'ProducerProfilController@actionEditItemProfilProducer')->name('edit-item-profil-action');
+  Route::delete('/supprimer-produit/{id}', 'ProducerProfilController@actionDeleteItemProfilProducer')->name('delete-item-profil-action');
+
+  //Routes profil producteur de modif retails
+  Route::put('/modifier-lieu/{id}', 'ProducerProfilController@actionEditRetailProfilProducer')->name('edit-retail-profil-action');
+  Route::delete('/supprimer-lieu/{id}', 'ProducerProfilController@actionDeleteRetailProfilProducer')->name('delete-retail-profil-action');
 
   // Routes profil création producteur
   Route::get('/creer-un-profil', 'ProducerProfilController@showNewProfilProducer')->name('new-profil-view');
   Route::post('/creer-un-profil', 'ProducerProfilController@actionNewProfilProducer')->name('new-profil-action');
 
   //Routes resultats de recherche
-  Route::get('/recherche', 'SearchController@actionSearchForm')->name('search-result');
+  Route::post('/recherche', 'SearchController@actionSearchForm')->name('search-result');
   Route::get('/recherche/{zone}', 'SearchController@actionSearchMap')->name('search-result-map');
+  Route::get('/categorie/{cat}', 'SearchController@actionSearchCategory')->name('search-result-category');
 
   //Routes contact
   Route::get('/contact', 'ContactController@showFormContact')->name('contact-view');
   Route::post('/contact', 'ContactController@actionFormContact')->name('contact-action');
+
+  //Route relax
+  Route::get('/relax', 'HomeController@relax')->name('relax');
 
 });
 
@@ -64,8 +76,6 @@ Route::group(['namespace' => 'Front'], function() {
 
     Route::post('/mon-profil/ajax/add-item', 'AjaxController@addItem')->name('add-item');
     Route::post('/mon-profil/ajax/add-retail', 'AjaxController@addRetail')->name('add-retail');
-
-    Route::get('/mon-profil/ajax/edit-item/{id}, AjaxController@editItem')->name('edit-item-profil');
 
   });
 
@@ -159,7 +169,7 @@ Route::group(['namespace' => 'Front'], function() {
   Route::delete('/admin/delete-producer/{id}', 'AdminProducerController@deleteProducer')->name('admin-delete-producer');
 
   //Route moderation
-  Route::put('/amin/confirm/{id}', 'AdminProducerController@confirmProducer')->name('confirm-prod');
+  Route::put('/admin/confirm/{id}', 'AdminProducerController@confirmProducer')->name('confirm-prod');
   Route::put('/admin/refuse/{id}', 'AdminProducerController@refuseProducer')->name('refuse-prod');
 
 

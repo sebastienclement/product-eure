@@ -324,7 +324,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'Agriculteur depuis 25 ans, nous nous sommes engagés en agriculture BIOlogique depuis 2009. Notre exploitation poly culture élevage est basée en Normandie plus exactement sur la commune des Andelys.
           Pommes de terre, pommes, jus de pommes sont en vente tous les vendredis à la ferme de 9h 12h/ 14h/18h et viande bovine uniquement sur réservation.',
-          'path_img'       => 'upload/producer/2018/01/producteur-pommes-2.jpg',
+          'path_img'       => 'upload/producer/2018/01/producteur-de-pommes.jpg',
           'created_at'     => $date->format('Y-m-d H:i:s'),
           'status'         => 'confirmed'
       );

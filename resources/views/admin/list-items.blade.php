@@ -35,7 +35,7 @@
 
           {!! Form::submit('Effacer', ['class' => 'btn btn-danger']) !!}
 
-      {!! Form::close() !!}
+        {!! Form::close() !!}
       </td>
     </tr>
   @endforeach

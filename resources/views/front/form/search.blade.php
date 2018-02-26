@@ -1,6 +1,6 @@
 <h2>N'hésitez pas à consultez la <span><a href="{{ route('list-producer') }}">liste de tous nos producteurs</a></span>
 <br>ou<br>Trouvez celui qui vous convient en fonction de votre envie.</h2>
-{!!Form::open(['route' => 'search-result','method' => 'get']) !!}
+{!!Form::open(['route' => 'search-result','method' => 'post']) !!}
 <div id="icon-flex">
 
     <input id="bovin"  value="1" type="radio" name="category" >
@@ -60,7 +60,7 @@
   <i class="fa fa-search"></i>
   {!! Form::text('search', null, ['placeholder' => 'Votre recherche', 'class' => 'form-control']) !!}
 </div>
-  {!! $errors->first('category', '<small class="help-block" style="color:MediumVioletRed;">:message</small>') !!}
+    <span class="error-search">{!! $errors->first('search', ':message') !!}</span>
 
 
 

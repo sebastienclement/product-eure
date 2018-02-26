@@ -8,15 +8,29 @@
 
 @section('content')
   <div>
-    <div class="row">
 
-      <a href="{{route('admin-list-producer')}}"><div class="col col-lg-6" style="border:1px solid black;">
-        <h2>{{$countusers}} Utilisateurs, dont {{$countproducers}} Producteurs</h2>
+
+      <a href="{{route('admin-list-producer')}}"><div class="panel row dash">
+        <h2>{{$countproducers}} Producteurs</h2>
+      </div></a>
+      <a href="{{route('admin-list-item')}}"><div class="panel row dash">
+        <h2>{{$countitems}} Items</h2>
+      </div></a>
+      <a href="{{route('admin-list-category')}}"><div class="panel row dash">
+        <h2>{{$countcategories}} Catégories</h2>
       </div></a>
 
-      <a href="{{route('admin-list-item')}}"><div class="col col-lg-6" style="border:1px solid black;">
-        <h2>{{$countitems}} Items, dans {{$countcategories}} Catégories</h2>
+
+
+      <a href="{{route('admin-list-retail')}}"><div class="panel row dash">
+        <h2>{{$countretails}} Lieux de ventes</h2>
       </div></a>
+      <a href="{{route('admin-list-article')}}"><div class="panel row dash">
+        <h2>{{$countarticles}} Fabuleux articles</h2>
+      </div></a>
+<<<<<<< HEAD
+
+=======
     </div>
 
     <div class="row">
@@ -27,7 +41,8 @@
         <h2>{{$countarticles}} Fabuleux articles</h2></a></a>
       </div>
     </div>
-  </div>  
+>>>>>>> 6ab6f9ec3152c6fdd57c53c1e6e33e8f6dd5e59f
+  </div>
 @endsection
 
 @section('js')

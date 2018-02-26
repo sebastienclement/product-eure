@@ -51,7 +51,7 @@ class AjaxController extends Controller
 
       $lastIdItem = Item::select('id')->orderBy('created_at', 'desc')->first();
 
-      $html = '<li>' . $request->comment . '<a href="'.route('edit-item-profil', ['id' => $lastIdItem->id]).'" id="edit-item" class="modify-element-producer"></a></li>';
+      $html = '<li><a data-toggle="modal" data-target="#myModal' . $lastIdItem->id . '"><i class="fa fa-edit" aria-hidden="true"></i></a>' . $request->comment . '</li>';
 
       return response()->json($html);
     }
@@ -85,15 +85,15 @@ class AjaxController extends Controller
 
     Retail::create($retail)->producer()->sync($id_producer);
 
-    $html = '<li>'.$request->lieu.'</li>';
+    $lastIdRetail = Retail::select('id')->orderBy('created_at', 'desc')->first();
+
+    $html = '<li><a data-toggle="modal" data-target="#myModal' . $lastIdRetail->id . '"><i class="fa fa-edit" aria-hidden="true"></i></a>' . $request->lieu . '</li>';
     return response()->json($html);
-  }
+    }
 
   }
 
-  public function editItem() {
-    
-  }
+
 
 
 }

@@ -36,12 +36,17 @@
       <td>{{$producer->zone}}</td>
       <td>{{$producer->status}}
 
+
+      @if($producer->status !== 'confirmed')
       {!! Form::open(['route' => ['confirm-prod', $producer->id], 'method' => 'put', 'novalidate' => 'novalidate']) !!}
-        {!! Form::submit('Confirm', ['class' => '']) !!}
+        {!! Form::submit('Confirmer', ['class' => 'btn btn-success']) !!}
       {!! Form::close() !!}
-      {!! Form::open(['route' => ['refuse-prod', $producer->id], 'method' => 'put', 'novalidate' => 'novalidate']) !!}
-        {!! Form::submit('Refuse', ['class' => '']) !!}
-      {!! Form::close() !!}
+      @endif
+      @if($producer->status === 'new')
+          {!! Form::open(['route' => ['refuse-prod', $producer->id], 'method' => 'put', 'novalidate' => 'novalidate']) !!}
+            {!! Form::submit('Refuser', ['class' => 'btn btn-danger']) !!}
+          {!! Form::close() !!}
+      @endif
 
 
       </td>

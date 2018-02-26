@@ -129,8 +129,47 @@ $( document ).ready(function() {
     }else{
         $('#form-retail').off().slideUp(200);
         $('#add-retail').html('+');
-
     }
   });
+
+
+  //Instanciation des parallaxs
+
+  var scene = document.getElementById('scene');
+              var parallaxInstance = new Parallax(scene, {
+              relativeInput: true,
+              invertY: false,
+              limitY: true,
+              scalarX: 20,
+              frictionY: 0.15,
+              });
+
+  var scenev = document.getElementById('scenev');
+              var parallaxInstance = new Parallax(scenev, {
+              relativeInput: true,
+              invertX: false,
+              frictionX: 0.075,
+              });
+
+// var scenep = document.getElementById('scenep');
+//                 var parallaxInstance = new Parallax(scenep, {
+//                 relativeInput: true,
+//                 invertY: false,
+//             });
+//
+
+    //Gestion de l'animation des abeilles
+
+    var params = {
+      container: document.getElementById('lottie'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: animationData
+    };
+
+    var anim;
+
+    anim = lottie.loadAnimation(params);
 
 });
