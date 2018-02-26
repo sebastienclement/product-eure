@@ -13,7 +13,6 @@
     <a
        class="path region-c"
        xlink:href="recherche/vexin-normand"
-       xlink:title="Vexin Normand"
        id="vexin-normand">
       <path
          class="svg-path"
@@ -27,7 +26,6 @@
     <a
        class="path region-d"
        xlink:href="recherche/lieuvin"
-       xlink:title="Lieuvin"
        id="lieuvin">
       <path
          class="svg-path"
@@ -41,7 +39,6 @@
     <a
        class="path region-a"
        xlink:href="recherche/pays-roumois-et-marais-vernier"
-       xlink:title="Pays Roumois et Marais Vernier"
        id="pays-roumois-et-marais-vernier">
       <path
          class="svg-path"
@@ -55,7 +52,6 @@
     <a
        class="path region-e"
        xlink:href="recherche/pays-d-ouche"
-       xlink:title="Pays d'Ouche"
        id="pays-d-ouche">
       <path
          class="svg-path"
@@ -69,7 +65,6 @@
     <a
        class="path region-f"
        xlink:href="recherche/plateau-de-saint-andre"
-       xlink:title="Plateau de Saint André"
        id="plateau-de-saint-andre">
       <path
          class="svg-path"
@@ -83,7 +78,6 @@
     <a
        class="path region-b"
        xlink:href="recherche/plateau-du-neubourg"
-       xlink:title="Campagne du Neubourg"
        id="plateau-du-neubourg">
       <path
          class="svg-path"

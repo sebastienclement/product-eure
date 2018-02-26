@@ -12,8 +12,10 @@
 
 @section('content')
 
-  @if (Auth::user()->id == $producer->user_id && $producer->status === 'new')
-    <div class ="alert alert-success"><p>Félicitation, votre profil est créé et en attende de validation. Vous pouvez le modifier et ajouter des produits ou des lieux de ventes. Vous recevrez un courriel sous 24h pour vous informer de l'activation publique de votre profil. </p></div>
+  @if (isset(Auth::user()->id))
+    @if (Auth::user()->id == $producer->user_id && $producer->status === 'new')
+      <div class ="alert alert-success"><p>Félicitation, votre profil est créé et en attende de validation. Vous pouvez le modifier et ajouter des produits ou des lieux de ventes. Vous recevrez un courriel sous 24h pour vous informer de l'activation publique de votre profil. </p></div>
+    @endif
   @endif
 
   <div class="profilPublic">

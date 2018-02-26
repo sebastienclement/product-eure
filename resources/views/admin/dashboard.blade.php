@@ -61,7 +61,7 @@
             }
         },
         series: [{
-            name: '2017',
+            name: '2018',
             data: [{{$countproducers}}, {{$countitems}}, {{$countcategories}}, {{$countretails}}, {{$countarticles}}]
         }]
     });

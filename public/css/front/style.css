@@ -296,7 +296,7 @@ header img{
 }
 .scrollToMap{
     font-size: 1.2rem;
-    color:#79A184;
+    color:#79A184 !important;
     text-transform: uppercase;
     font-weight: bolder;
     line-height: 2rem;
@@ -305,13 +305,13 @@ header img{
 
 .scrollToMap:hover,
 .inside-search h2 a:hover{
-  color: #D19B26;
+  color: #D19B26 !important;
 }
 
 
 div#parallax {
   position: relative;
-   background: url("../../img/home/test.jpg") no-repeat fixed;
+  background: url("../../img/home/test.jpg") no-repeat fixed;
   background-size: cover;
   height: 700px;
 }
@@ -661,11 +661,14 @@ section#map p {
   border: 3px solid #D19B26;
   border-radius: 5px;
   padding: 5px;
+
+
+
 }
 
 #eure-map{
   display: block;
-  /* position: absolute; */
+  /* position: relative; */
 }
 
 
@@ -677,7 +680,7 @@ footer {
   color: #fff;
   background-color: #46879B;
   position: relative !important;
-  z-index: 10 !important;
+  /* z-index: 10 !important; */
 }
 
 footer div.wrap {
@@ -1024,6 +1027,48 @@ div.modal-footer input[type=submit].btn-danger:hover {
     color: #FFF;
     font-size: 1.2rem;
   }
+/* ============================================= */
+/* ===============( Mentions légales )=============== */
+/* ============================================= */
+
+.ml{
+  margin-bottom: 2rem;
+}
+.ml h2
+{
+font-weight: bold;
+font-size: 1.5rem;
+text-align: center;
+}
+.ml h2,
+.ml h3{
+  font-weight: bold;
+  margin: 1rem;
+}
+
+
+#contact{
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+#contact h1,
+#contact h2{
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* ============================================= */
