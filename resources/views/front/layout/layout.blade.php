@@ -95,7 +95,7 @@
         </li>
         <li class="list-footer"><a href="{{ route('contact-view') }}">Nous Contacter</a></li>
         <li class="list-footer"><a href="{{ route('mentions') }}">Mentions Légales</a></li>
-        <li class="list-footer"><a href="{{ route('conditions') }}">CGU</a></li>
+        <li class="list-footer"><a href="{{ route('relax') }}">Relaxez Vous</a></li>
       </ul>
     </li>
     <div id="nouveauté">
@@ -138,7 +138,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js" charset="utf-8"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
 <script src="{{ asset('js/front/main.js') }}" charset="utf-8"></script>
 
 @yield('js')

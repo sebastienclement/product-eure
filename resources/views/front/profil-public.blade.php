@@ -47,10 +47,10 @@
       </div>
     </section>
     <section id="descriptionProfil">
-      <div class="wrap ">
+      <div class="itemRetailProfil wrap"> <!-- enlever la classe itemretailprofil-->
         <div class="badge">
           @foreach($producer->category as $cat)
-            <span class="badge-secondary">{{ucfirst($cat->name)}}</span>
+            <span class="badge-secondary"><a href="{{ route('search-result-category', ['cat' => $cat->name]) }}">{{ucfirst($cat->name)}}</a></span>
           @endforeach
         </div>
         <h3 class="descriptionTitle">Une petite description</h3>

@@ -18,6 +18,8 @@
 
     <!-- Custom Theme Style -->
     <link href="{{asset('css/admin/custom.min.css')}}" rel="stylesheet">
+
+    <link href="{{asset('css/admin/admin-style.css')}}" rel="stylesheet">
   </head>
 
   <body class="nav-md" >

@@ -49,12 +49,16 @@ Route::group(['namespace' => 'Front'], function() {
   Route::post('/creer-un-profil', 'ProducerProfilController@actionNewProfilProducer')->name('new-profil-action');
 
   //Routes resultats de recherche
-  Route::get('/recherche', 'SearchController@actionSearchForm')->name('search-result');
+  Route::post('/recherche', 'SearchController@actionSearchForm')->name('search-result');
   Route::get('/recherche/{zone}', 'SearchController@actionSearchMap')->name('search-result-map');
+  Route::get('/categorie/{cat}', 'SearchController@actionSearchCategory')->name('search-result-category');
 
   //Routes contact
   Route::get('/contact', 'ContactController@showFormContact')->name('contact-view');
   Route::post('/contact', 'ContactController@actionFormContact')->name('contact-action');
+
+  //Route relax
+  Route::get('/relax', 'HomeController@relax')->name('relax');
 
 });
 
@@ -159,7 +163,7 @@ Route::group(['namespace' => 'Front'], function() {
   Route::delete('/admin/delete-producer/{id}', 'AdminProducerController@deleteProducer')->name('admin-delete-producer');
 
   //Route moderation
-  Route::put('/amin/confirm/{id}', 'AdminProducerController@confirmProducer')->name('confirm-prod');
+  Route::put('/admin/confirm/{id}', 'AdminProducerController@confirmProducer')->name('confirm-prod');
   Route::put('/admin/refuse/{id}', 'AdminProducerController@refuseProducer')->name('refuse-prod');
 
 
