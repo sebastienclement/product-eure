@@ -14,7 +14,6 @@
 
 <div class="wrap listing-all">
   <h2>Tous nos producteurs</h2>
-  <div>{{ $producers->links() }}</div>
   @foreach ($producers as $key => $producer)
       <div class="single-prod">
               <div class="img-producer">
@@ -44,7 +43,7 @@
               </div>
         </div>
   @endforeach
-  {{-- <div>{{ $producers->links() }}</div> --}}
+  <div>{{ $producers->links() }}</div>
 </div>
 
 <div class="clear">
