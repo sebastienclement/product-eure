@@ -35,7 +35,37 @@
     </div>
 
   </div> --}}
+
+  <div id="container" style="width:100%; height:400px;"></div>
+
 @endsection
 
 @section('js')
+  <script src = "https://code.highcharts.com/highcharts.js"></script>
+  <script type="text/javascript">
+
+  $(function () {
+    var myChart = Highcharts.chart('container', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Le site en un ;)'
+        },
+        xAxis: {
+            categories: ['Producteurs', 'Items', 'Catégories', 'Retails', 'Articles']
+        },
+        yAxis: {
+            title: {
+                text: 'En nombre'
+            }
+        },
+        series: [{
+            name: '2017',
+            data: [{{$countproducers}}, {{$countitems}}, {{$countcategories}}, {{$countretails}}, {{$countarticles}}]
+        }]
+    });
+  });
+
+ </script>
 @endsection
