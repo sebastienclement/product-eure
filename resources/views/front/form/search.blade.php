@@ -1,6 +1,6 @@
 <h2>N'hésitez pas à consultez la <span><a href="{{ route('list-producer') }}">liste de tous nos producteurs</a></span>
 <br>ou<br>Trouvez celui qui vous convient en fonction de votre envie.</h2>
-{!!Form::open(['route' => 'search-result','method' => 'post']) !!}
+{!!Form::open(['route' => 'search-result','method' => 'get']) !!}
 <div id="icon-flex">
 
     <input id="bovin"  value="1" type="radio" name="category" >
