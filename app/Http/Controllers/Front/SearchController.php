@@ -32,7 +32,7 @@ class SearchController extends Controller
           $countsearch = count($producers);
 
         return view('front/search',compact('producers','countsearch'));
-      }
+      
 
     }
 

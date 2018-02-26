@@ -196,7 +196,7 @@ class AdminProducerController extends Controller
 
     Mail::to('lecoeur.matthieu@gmail.com')->send(new NewProducer($producer->name,$producer->adresse,$producer->zipcode,$producer->ville));
 
-    return redirect()->route('admin-list-producer')->with('success', 'Producteur confirmed');
+    return redirect()->route('admin-list-producer')->with('success', 'Producteur confirmed | Email envoyé');
 
   }
   public function refuseProducer($id){

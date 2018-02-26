@@ -128,7 +128,7 @@ class ProducerProfilController extends Controller
     Producer::create($inputs)->category()->sync($cat_ids);
 
 
-    return redirect()->route('profil-perso')->with('success', 'Votre profil producteur vient d\'être créé');
+    return redirect()->route('profil-perso');
 
 
   }
