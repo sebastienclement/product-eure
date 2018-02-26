@@ -456,6 +456,30 @@ div#parallax_2 {
 /**
 * ===========  style listing search producer  =============
 */
+ul.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+    ul.pagination li a, ul.pagination li span{
+      padding: 10px;
+      margin: 2px;
+      color: #FFF;
+      background-color: #46879B;
+      border-radius: 3px;
+    }
+
+    ul.pagination li a:hover{
+      opacity: 0.7;
+    }
+
+    ul.pagination li span{
+      color: rgba(209,155,38,1) ;
+    }
+
+
+
 
 .excerpt-end {
   color: #46879B;
@@ -1196,7 +1220,7 @@ div.modal-footer input[type=submit].btn-danger:hover {
     }
     .animals{
         display: none;
-    }    
+    }
 }
 /**
  *
