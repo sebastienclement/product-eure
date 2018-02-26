@@ -812,18 +812,7 @@ main div.formulaire-log-reg {
 
 #add-item, #add-retail {
   background-color: #D19B26;
-  /* border-radius: 50%; */
-  /* padding: 5px; */
   border:1px solid #D19B26;
-  /* line-height: 1; */
-  /* margin-bottom: 1rem; */
-  /* width: 25px;
-  height: 25px;
-  padding: 6px 0px;
-  border-radius: 15px;
-  text-align: center;
-  font-size: 24px;
-  line-height: 0.2; */
 }
 
 #add-item:hover, #add-retail:hover {
@@ -924,6 +913,35 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
  width: 100%;
  margin: 0 auto;
  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/*=======================Modal====================*/
+.fa-edit {
+  font-size: 22px !important;
+  color: #46879B;
+  margin-right: 0.5rem;
+  cursor: pointer
+}
+
+.fa-edit:hover {
+  opacity: 0.8;
+}
+
+div.modal-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+div.modal-footer input[type=submit].btn-danger {
+  background-color: tomato !important;
+  border: 1px solid tomato;
+  opacity: 1;
+}
+
+div.modal-footer input[type=submit].btn-danger:hover {
+  background-color: red !important;
+  border: 1px solid red;
+  opacity: 0.8;
 }
 
 /*=======================Page 404=================*/
