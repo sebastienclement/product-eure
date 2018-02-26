@@ -31,7 +31,7 @@
 
     </div>
 
-    <div class="row">
+    {{-- <div class="row">
       <a href="{{route('admin-list-retail')}}"><div class="col col-lg-6" style="border:1px solid black;">
         <h2>{{$countretails}} Lieux de ventes</h2></a>
       </div>

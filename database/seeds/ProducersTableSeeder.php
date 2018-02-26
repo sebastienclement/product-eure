@@ -16,7 +16,7 @@ class ProducersTableSeeder extends Seeder
       $date = new Datetime();
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 4,
           'name'           => 'gaec des monts huglets',
           'slug'           => 'gaec-des-monts-huglets',
           'adresse'        => '1795 rue du lion',
@@ -33,7 +33,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 5,
           'name'           => 'La ferme des cocottes',
           'slug'           => 'la-ferme-des-cocottes',
           'adresse'        => '1827 route de Foulbec',
@@ -50,7 +50,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 6,
           'name'           => 'EARL LES LANDES',
           'slug'           => 'earl-les-landes',
           'adresse'        => 'Les Jouveaux',
@@ -68,7 +68,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 7,
           'name'           => 'le rucher d\'écaquelon',
           'slug'           => 'le-rucher-d-ecaquelon',
           'adresse'        => '28 rue de labas',
@@ -86,7 +86,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 8,
           'name'           => 'horticulteur spilers',
           'slug'           => 'horticulteur-spilers',
           'adresse'        => '220 route de la pyle',
@@ -103,7 +103,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 9,
           'name'           => 'faisanderie de brionne',
           'slug'           => 'faisanderie-de-brionne',
           'adresse'        => '25 rue jacques anquetil',
@@ -120,7 +120,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 10,
           'name'           => 'Maison Haas',
           'slug'           => 'maison-haas',
           'adresse'        => '12 Rue Ernest Neuville',
@@ -137,7 +137,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 11,
           'name'           => 'EARL Mérimée',
           'slug'           => 'earl-merimee',
           'adresse'        => 'Route de Broglie 1',
@@ -154,7 +154,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 12,
           'name'           => 'EARL Du Puits',
           'slug'           => 'earldu-puits',
           'adresse'        => '16 rue du Puits',
@@ -171,7 +171,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 13,
           'name'           => 'la ferme saint aubinoise',
           'slug'           => 'la-ferme-saint-aubinoise',
           'adresse'        => '3 chemin de la hêtraie',
@@ -207,7 +207,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 14,
           'name'           => 'Artisan du végétal - Earl Bourgeais',
           'slug'           => 'artisan-du-végétal-earl-bourgeais',
           'adresse'        => '2 route de Verneuil',
@@ -224,7 +224,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 15,
           'name'           => 'jardin d\'etienne',
           'slug'           => 'jardin-d-etienne',
           'adresse'        => '5 rue du Thuit Agron',
@@ -241,7 +241,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 16,
           'name'           => 'SARL DEBOOS',
           'slug'           => 'sarl-deboos',
           'adresse'        => '4 Rue aux juifs',
@@ -258,7 +258,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 17,
           'name'           => 'Ferme Fruitière Les Vergers',
           'slug'           => 'ferme-fruitiere-les-vergers',
           'adresse'        => '22 Rue de l\'Eglise',
@@ -275,7 +275,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 18,
           'name'           => 'le rucher de netreville',
           'slug'           => 'le-rucher-de-netreville',
           'adresse'        => '15 rue du Coudray',
@@ -294,7 +294,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 19,
           'name'           => 'Ferme de Travailles',
           'slug'           => 'ferme-de-travailles',
           'adresse'        => 'Ferme de Travailles',
@@ -312,7 +312,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 20,
           'name'           => 'EARL François Terrier',
           'slug'           => 'earl-françois-terrier',
           'adresse'        => '26 rue principale hameau de Feuquerolles',
@@ -330,7 +330,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 21,
           'name'           => 'La Fermette Bio de l\'Epte',
           'slug'           => 'la-fermette-bio-de-l-epte',
           'adresse'        => '29, rue d\'Eragny',
@@ -347,7 +347,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 22,
           'name'           => 'Les jardins de neustrie',
           'slug'           => 'les-jardins-de-neustrie',
           'adresse'        => 'Sentier maraîchère',
@@ -364,7 +364,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 23,
           'name'           => 'la ferme du londe',
           'slug'           => 'la-ferme-du-londe',
           'adresse'        => '7 rue de la trinité hameau le Londe',
@@ -384,7 +384,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 24,
           'name'           => 'Brasserie Duplessi',
           'slug'           => 'brasserie-duplessi',
           'adresse'        => '13 rue aux Moines',
@@ -401,7 +401,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 25,
           'name'           => 'Le Pressoir d\'Or',
           'slug'           => 'le-pressoir-d-or',
           'adresse'        => '57 bis Route des Andelys St-Jean-de-Frenelles',
@@ -418,7 +418,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 26,
           'name'           => 'Van Tornhout Brigitte',
           'slug'           => 'van-tornhout-brigitte',
           'adresse'        => '12 Rue Omer Canteloup',
@@ -435,7 +435,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 27,
           'name'           => 'M-T Glaces - Ferme des 7 épis',
           'slug'           => 'm-t-glaces-ferme-des-7-épis',
           'adresse'        => '12 Rue Omer Canteloup',
@@ -452,7 +452,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 28,
           'name'           => 'La Bikette Caugéenne',
           'slug'           => 'la-bikette-caugéenne',
           'adresse'        => 'Chemin des Hautes Forrières',
@@ -470,7 +470,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 29,
           'name'           => 'La Chèvrerie d\'Elise',
           'slug'           => 'la-chevrerie-d-elise',
           'adresse'        => '9 Rue de la Mare du Four',
@@ -487,7 +487,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 30,
           'name'           => 'Ô P\'tits Fruits d\'Anne',
           'slug'           => 'o-p-tits-fruits-d-anne',
           'adresse'        => '4 route de Nonancourt',
@@ -504,7 +504,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 31,
           'name'           => 'L\'Escargot des Marnières',
           'slug'           => 'l-escargot-des-marnieres',
           'adresse'        => 'Lieu-dit les Marnières RN 2012',
@@ -521,7 +521,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 32,
           'name'           => 'Ferme du Clos de la Mare',
           'slug'           => 'ferme-du-clos-de-la-mare',
           'adresse'        => '2, Place Sainte-Opportune',
@@ -538,7 +538,7 @@ class ProducersTableSeeder extends Seeder
       );
 
       $producers[] = array(
-          'user_id'        => 1,
+          'user_id'        => 33,
           'name'           => 'Ferme d\'Illièvre',
           'slug'           => 'ferme-d-illievre',
           'adresse'        => '1, rue des ventes La Bochelle',

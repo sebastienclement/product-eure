@@ -20,7 +20,7 @@ class ProducerController extends Controller
 
     public function showAllProducers()
     {
-      $producers = Producer::where('status', '=', 'confirmed')->get();
+      $producers = Producer::where('status', '=', 'confirmed')->paginate(10);
       return view('front/list-producers', compact('producers'));
     }
 
