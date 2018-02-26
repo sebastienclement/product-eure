@@ -99,10 +99,10 @@
 
 @section('js')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
 <script src="{{ asset('js/amim/anim_un.js') }}" type="text/javascript" charset="utf-8"></script>
 
-{{-- <script src="{{ asset('js/anim/anim_deux.js') }}" charset="utf-8"></script> --}}
+
   {{-- On fait passer nos variables php contenant le nombre de producteurs par zones
   dans des variables javascript --}}
 <script type="text/javascript">

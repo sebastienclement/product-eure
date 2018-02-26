@@ -3,7 +3,6 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 @endsection
 @section('css')
-  <link href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 
@@ -108,7 +107,7 @@
                         {!! Form::open(['route' => ['delete-item-profil-action', $a->id], 'method' => 'delete', 'novalidate' => 'novalidate']) !!}
                           {!! Form::submit('Supprimer', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                       </div>
                     </div>
 
@@ -164,7 +163,7 @@
                       {!! Form::open(['route' => ['delete-retail-profil-action', $b->id], 'method' => 'delete', 'novalidate' => 'novalidate']) !!}
                         {!! Form::submit('Supprimer', ['class' => 'btn btn-danger']) !!}
                       {!! Form::close() !!}
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                     </div>
                   </div>
 
@@ -222,6 +221,7 @@
             $(':input','#item-submit').not(':submit').val('');
             $('.help-block').html('');
             $('#item-list-added').append(response);
+
 
           } else {
 

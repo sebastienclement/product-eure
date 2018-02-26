@@ -18,7 +18,7 @@ class ArticlesTableSeeder extends Seeder
           'title'   =>  'Fête de la pomme',
           'content'=> 'Week-end du 3 et 4 mars 2018 à Epaignes !
           Venez nombreux pour la fête de la pomme, de nombreux producteurs de la région seront présents afin de faire découvrir leurs spécialités. Démonstration du pressage de pomme à l\'ancienne et course de tracteurs.',
-          'path_img_article' => 'upload/articles/2018/02/deuxjpg-1519120056.jpg',
+          'path_img_article' => 'upload/articles/2018/02/fete-de-la-pomme.jpg',
           'status' => 'publié',
           'created_at'=> $date->format('Y-m-d H:i:s'),
           'user_id' => 1

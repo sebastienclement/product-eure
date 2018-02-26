@@ -28,9 +28,7 @@
       <a href="{{route('admin-list-article')}}"><div class="panel row dash">
         <h2>{{$countarticles}} Fabuleux articles</h2>
       </div></a>
-<<<<<<< HEAD
 
-=======
     </div>
 
     <div class="row">
@@ -41,7 +39,7 @@
         <h2>{{$countarticles}} Fabuleux articles</h2></a></a>
       </div>
     </div>
->>>>>>> 6ab6f9ec3152c6fdd57c53c1e6e33e8f6dd5e59f
+
   </div>
 @endsection
 
