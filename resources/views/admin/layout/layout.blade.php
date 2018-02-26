@@ -318,5 +318,6 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{asset('js/admin/custom.min.js')}}"></script>
+    @yield('js')
   </body>
 </html>

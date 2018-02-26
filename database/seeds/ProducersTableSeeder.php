@@ -28,7 +28,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'vente de viande bovine par caissette de 10 kg',
           'path_img'       => 'upload/producer/2018/01/viande-1.jpg',
-          'created_at'     => $date->format('Y-m-d H:i:s'),
+          'created_at'     => '2018-02-26 13:09:37',
           'status'         => 'confirmed'
       );
 
