@@ -42,6 +42,7 @@
               @endif
             </div>
             <div class="detail-prod">
+              <div class="title-category-producer">
                 <h3>
                     @if (!empty($producer->prod_name))
                       <a href="{{ route('profil-public', ['slug' => $producer->slug]) }}">{{ucfirst($producer->prod_name)}}</a>
@@ -49,10 +50,12 @@
                       <a href="{{ route('profil-public', ['slug' => $producer->slug]) }}">{{ucfirst($producer->name)}}</a>
                     @endif
                 </h3>
-                <p>{{$producer->adresse}} {{$producer->zipcode}} {{$producer->ville}}</p>
                 <p>@foreach($producer->category as $cat)
                     {{ucfirst($cat->name)}}
                 @endforeach</p>
+              </div>
+
+                <p>{{$producer->adresse}} {{$producer->zipcode}} {{$producer->ville}}</p>
                 <p>{{ substr($producer->description, 0, 200) }}<a href="{{ route('profil-public', ['slug' => $producer->slug]) }}"><span class="excerpt-end"> [<span class="dots">...</span>] </span></a></p>
 
             </div>
