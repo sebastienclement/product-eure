@@ -99,9 +99,7 @@
 
 @section('js')
 
-
-<script src="{{ asset('js/amim/anim_un.js') }}" type="text/javascript" charset="utf-8"></script>
-
+  <script src="{{ asset('js/amim/anim_un.js') }}" type="text/javascript" charset="utf-8"></script>
 
   {{-- On fait passer nos variables php contenant le nombre de producteurs par zones
   dans des variables javascript --}}
@@ -114,12 +112,12 @@
   var andre = {{ $nbProdAndre }}  // On injecte ainsi dynamiquement le nombre de producteurs par zone
   // dans un attribut data définit dans les path de la zone en question du svg
   // qu'on affiche également en javascript +css (voir main.js)
-  $('#svg-roumois').data('info', roumois + ' producteurs dans cette zone');
-  $('#svg-neubourg').data('info', neubourg + ' producteurs dans cette zone');
-  $('#svg-vexin').data('info', vexin + ' producteurs  dans cette zone dans cette zone');
-  $('#svg-lieuvin').data('info', lieuvin + ' producteurs dans cette dans cette zone');
-  $('#svg-ouche').data('info', ouche + ' producteurs dans cette zone');
-  $('#svg-andre').data('info', andre + ' producteurs dans cette zone');
+  $('#svg-roumois').data('info', 'Pays Roumois et Marais Vernier : ' + roumois + ' producteurs');
+  $('#svg-neubourg').data('info', 'Plateau du Neubourg : ' + neubourg + ' producteurs');
+  $('#svg-vexin').data('info', 'Vexin Normand : ' + vexin + ' producteurs');
+  $('#svg-lieuvin').data('info', 'Lieuvin : ' + lieuvin + ' producteurs');
+  $('#svg-ouche').data('info', 'Pays d\'Ouche : ' + ouche + ' producteurs');
+  $('#svg-andre').data('info', 'Plateau de Saint-André : ' + andre + ' producteurs');
 </script>
 
 

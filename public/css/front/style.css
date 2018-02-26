@@ -296,7 +296,7 @@ header img{
 }
 .scrollToMap{
     font-size: 1.2rem;
-    color:#79A184;
+    color:#79A184 !important;
     text-transform: uppercase;
     font-weight: bolder;
     line-height: 2rem;
@@ -305,7 +305,7 @@ header img{
 
 .scrollToMap:hover,
 .inside-search h2 a:hover{
-  color: #D19B26;
+  color: #D19B26 !important;
 }
 
 
