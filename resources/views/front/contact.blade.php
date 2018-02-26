@@ -19,9 +19,9 @@
   <p>N'étant pas producteurs nous mêmes, nous sommes à l'écoute de toutes idées et suggestions, nous permettant d'améliorer le site et de répondre au mieux
     aux besoins des producteurs et de leur clients</p>
 
-  <h1>Pour nous contacter, c'est ici !</h1>
+  <h2>Pour nous contacter, c'est ici !</h2>
 
-  <h2><a href="mailto:mabasewf3@gmail.com">contact@producteure.com</a></h2>
+  <h3><a href="mailto:mabasewf3@gmail.com">contact@producteure.com</a></h3>
 
   {!! file_get_contents(asset('img/home/poules.svg')) !!}
 
