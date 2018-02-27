@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 674.33 616.15" width="100%"
 height="100%">
   <title>Asset 2</title>
-  <g id="Layer_2" data-name="Layer 2">
-    <g id="Calque_1" data-name="Calque 1">
+  <g class="vide" data-name="Layer 2">
+    <g class="vide" data-name="Calque 1">
       <g>
         <path d="M.39,584.75c-1.57,17.34,97,31.4,220.19,31.4s224.29-14.06,225.86-31.4-97-31.41-220.19-31.41S2,567.4.39,584.75Z" fill="#d8d0bf"/>
         <g>

@@ -60,7 +60,7 @@
           <li>Rechercher par catégorie ou par zone géographique</li>
           <li>Inscrivez vous pour accéder à notre newsletter</li>
           <li>Et c'est entièrement gratuit, aussi</li>
-          <li><button id="register-prod" class="register-btn">Inscription bientôt disponible</button></li>
+          <li><button id="register-abo" class="register-btn">Inscription bientôt disponible</button></li>
         </ul>
       </div>
     </div>

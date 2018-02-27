@@ -13,8 +13,8 @@
   </defs>
   <title>Asset 1</title>
   <g style="isolation: isolate">
-    <g id="Layer_2" data-name="Layer 2">
-      <g id="Calque_1" data-name="Calque 1">
+    <g class="vide" data-name="Layer 2">
+      <g class="vide" data-name="Calque 1">
         <g>
           <path d="M244.74,360c0,4.93-37.9,8.92-84.66,8.92s-84.66-4-84.66-8.92,37.9-8.92,84.66-8.92S244.74,355,244.74,360Z" fill="#d8d0bf"/>
           <path d="M141.67,31.47c3.17,1.17,27.57-11.09,31.69-4.43s-.63,24.08-24.08,20.27C145.79,39.08,141.67,31.47,141.67,31.47Z" fill="#ebebeb"/>

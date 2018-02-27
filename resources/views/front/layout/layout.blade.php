@@ -7,17 +7,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <meta name="description" content="">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Dosis|Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    {{-- <link href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet"> --}}
     <link rel="shortcut icon" href="{{asset('img/home/logo.png')}}" >
 
 
 
-    {{-- <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet"> --}}
+
     @yield('bootstrap-css')
     <link rel="stylesheet" href="{{asset('css/front/reset.css')}}"/>
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
     <link rel="stylesheet" href="{{asset('css/front/style.css')}}"/>
     @yield('css')
     <title>@yield('title')</title>
@@ -29,8 +27,8 @@
     <div class="wrap">
 
         <div class="header_flex">
+          <h1><a href="{{ route('home') }}">Pr<img src="{{ asset('img/home/logo.png')}}" alt="Notre logo">duct<span>'Eure</span></a></h1>
 
-            <h1><a href="{{ route('home') }}">Pr<img src="{{ asset('img/home/logo.png')}}">duct<span>'Eure</span></a></h1>
             <button id="menu">Menu</button>
             <div id="header_right">
               <nav class="menu-co" id="sticker">
@@ -99,10 +97,10 @@
         <li class="list-footer"><a href="{{ route('relax') }}">Relaxez Vous</a></li>
       </ul>
     </li>
-    <div id="nouveauté">
+    <li id="nouveauté">
       <h4>Nouveautés</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+    </li>
 
   </ul>
   <div class="wrap">
