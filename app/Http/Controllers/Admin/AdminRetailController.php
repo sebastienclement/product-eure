@@ -41,9 +41,9 @@ class AdminRetailController extends Controller
   public function actionNewRetail(AdminRetailRequest $request)
   {
     $post = $request->all();
-
+    // dd($post);
     \DB::table('retails')->insert([
-        'lieu'  => $post['lieu'],
+        'lieu'        => $post['lieu'],
         'created_at'  => Carbon::now(),
     ]);
 
@@ -72,6 +72,7 @@ class AdminRetailController extends Controller
    */
   public function actionEditRetail(AdminRetailRequest $request, $id)
   {
+
     $post = $request->all();
 
     \DB::table('retails')->where('id',  $id )->update([

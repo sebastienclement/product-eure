@@ -22,9 +22,11 @@
                     <img src="{{ Image::url(route('home') . '/' . $producer->path_img, 300, 180, array('crop'))}}" alt="Une photo de {{$producer->name}}">
                   </a>
                 @else
-                  <a href="{{ route('profil-public', ['slug' => $producer->slug]) }}">
-                    {!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}
-                  </a>
+                  <div class="image-default">
+                    <a href="{{ route('profil-public', ['slug' => $producer->slug]) }}">
+                      {!! file_get_contents(asset('/img/icons/040-farmer.svg')) !!}
+                    </a>
+                  </div>
                 @endif
               </div>
               <div class="detail-prod">

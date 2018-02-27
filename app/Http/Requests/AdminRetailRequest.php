@@ -24,14 +24,14 @@ class AdminRetailRequest extends FormRequest
     public function rules()
     {
         return [
-          'name'       => 'required',
+
           'lieu'       => 'required|min:5|max:100',
         ];
     }
     public function messages()
     {
         return [
-            'name'      => 'Vous devez renseigner ce champ SVP',
+
             'lieu'   => 'Vous devez renseigner ce champ SVP',
         ];
     }

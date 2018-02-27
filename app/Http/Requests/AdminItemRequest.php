@@ -24,17 +24,17 @@ class AdminItemRequest extends FormRequest
     public function rules()
     {
         return [
-          'name'       => 'required',
-          'comment'    => 'required|min:5|max:100',
-          'categorie'  => 'required',
+
+          'comment'    => 'required|min:5|max:400',
+          
         ];
     }
     public function messages()
     {
         return [
-            'name'      => 'Vous devez renseigner ce champ SVP',
+
             'comment'   => 'Vous devez renseigner ce champ SVP',
-            'categorie' => 'Vous devez renseigner ce champ SVP',
+
         ];
     }
 }

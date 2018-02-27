@@ -43,15 +43,17 @@ class AdminItemController extends Controller
      */
     public function actionNewItem(AdminItemRequest $request)
     {
-      // Item::create($request->all());//ne fonctionne que si on modifie le nom du champ concerné
+      // dd($request);
+      Item::create($request->all());//ne fonctionne que si on modifie le nom du champ concerné
 
-      $post = $request->all();
-
-      \DB::table('items')->insert([
-          // 'name'        => $post['name'],
-          'comment'     => $post['comment'],
-          'created_at'  => Carbon::now(),
-      ]);
+      // $post = $request->all();
+      // dd($post);
+      //
+      // \DB::table('items')->insert([
+      //     // 'name'        => $post['name'],
+      //     'comment'     => $post['comment'],
+      //     'created_at'  => Carbon::now(),
+      // ]);
       return redirect()->route('dashboard')->with('success', 'Nouvel item créé');
 
     }
