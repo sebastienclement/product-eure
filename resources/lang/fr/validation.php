@@ -42,7 +42,7 @@ return [
     'file' => 'Le champ :attribute doit être un fichier.',
     'filled' => 'Le champ :attribute doit avoir une valeur.',
     'image' => 'Le champ :attribute doit être une image.',
-    'in' => 'Le champ :attribute est invalide.',
+    'in' => 'Le champ :attribute doit appartenir au département de l\'Eure (27).',
     'in_array' => "Le champ :attribute n'existe pas dans :other.",
     'integer' => 'Le champ :attribute doit être un entier.',
     'ip' => 'Le champ :attribute doit être une adresse IP valide.',
@@ -148,5 +148,6 @@ return [
         'size' => 'taille',
         'comment' => 'produit',
         'retail' => 'lieu',
+        'zipcode' => 'code postal'
     ],
 ];

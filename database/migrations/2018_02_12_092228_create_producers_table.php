@@ -19,12 +19,12 @@ class CreateProducersTable extends Migration
         $table->foreign('user_id')->references('id')->on('users')
               ->onDelete('restrict')->onUpdate('restrict');
         $table->string('name')->unique();
-        $table->string('slug')->unique();
+        $table->string('slug');
         $table->string('adresse');
         $table->integer('zipcode');
         $table->string('ville');
         $table->string('zone');
-        $table->string('producer_email');
+        $table->string('producer_email')->unique();
         $table->string('phone')->nullable();
         $table->string('website')->nullable();
         $table->text('description');
