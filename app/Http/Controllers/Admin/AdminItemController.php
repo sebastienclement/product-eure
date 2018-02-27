@@ -7,10 +7,15 @@ use App\Http\Requests\AdminItemRequest;
 use Carbon\Carbon;
 use App\Models\Item;
 use Auth;
+use App\Http\Middleware\Admin;
 
 class AdminItemController extends Controller
 {
-
+  public function __construct()
+  {
+    $this->middleware('auth');
+    $this->middleware('admin');
+  }
     /**
      * [showListItems description]
      * affiche la vue de la liste des items

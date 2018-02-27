@@ -12,7 +12,7 @@ use Carbon\Carbon;
 use App\Http\Requests\ProducerRequest;
 use App\Http\Requests\ItemRequest;
 use App\Http\Requests\RetailRequest;
-// use App\Http\Middleware\Abonne;
+use App\Http\Middleware\Abonne;
 use Auth;
 
 class ProducerProfilController extends Controller

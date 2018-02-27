@@ -6,10 +6,18 @@ use App\Http\Requests\AdminCategoryRequest;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Category;
+use App\Http\Middleware\Admin;
 use Auth;
 
 class AdminCategoryController extends Controller
 {
+
+  public function __construct()
+  {
+    $this->middleware('auth');
+    $this->middleware('admin');
+  }
+
   /**
    * [showListCategories description]
    * affiche la vue de la liste des categories

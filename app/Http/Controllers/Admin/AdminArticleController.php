@@ -7,10 +7,18 @@ use Illuminate\Http\Request;
 use App\Service\PathUpload;
 use Carbon\Carbon;
 use App\Models\Article;
+use App\Http\Middleware\Admin;
 use Auth;
 
 class AdminArticleController extends Controller
 {
+
+
+  public function __construct()
+  {
+    $this->middleware('auth');
+    $this->middleware('admin');
+  }
   /**
    * [showListArticles description
    * affiche la vue de la liste des articles]

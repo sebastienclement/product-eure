@@ -7,9 +7,17 @@ use Illuminate\Http\Request;
 use App\Models\Retail;
 use Carbon\Carbon;
 use Auth;
+use App\Http\Middleware\Admin;
 
 class AdminRetailController extends Controller
 {
+
+  public function __construct()
+  {
+    $this->middleware('auth');
+    $this->middleware('admin');
+  }
+
   /**
    * [showListRetails description]
    * affiche la vue de la liste des retails

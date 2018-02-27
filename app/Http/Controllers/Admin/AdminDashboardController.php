@@ -9,9 +9,21 @@ use App\Models\Item;
 use App\Models\Category;
 use App\Models\Article;
 use App\Models\Retail;
+use App\Http\Middleware\Admin;
 
 class AdminDashboardController extends Controller
 {
+
+  public function __construct()
+  {
+    $this->middleware('auth');
+    $this->middleware('admin');
+  }
+
+
+
+
+
     //Listing des producteurs
     //Lien vers leur produits->Admin Item Controller
     //Lien vers leurs profils->Admin Producer Controller

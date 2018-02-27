@@ -11,9 +11,17 @@ use App\Models\Category;
 use App\Mail\NewProducer;
 use Illuminate\Support\Facades\Mail;
 use Auth;
+use App\Http\Middleware\Admin;
 
 class AdminProducerController extends Controller
 {
+
+  public function __construct()
+  {
+    $this->middleware('auth');
+    $this->middleware('admin');
+  }
+
   /**
    * [showListProducers
    * affiche la vue de la liste des pruducteurs]
