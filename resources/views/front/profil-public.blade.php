@@ -18,6 +18,7 @@
     @endif
   @endif
 
+  <div class="wrap link-listing"><a href="{{route('home')}}">Retour à l'Acceuil</a></div>
   <div class="profilPublic">
 
     <section id="topContent">
@@ -56,7 +57,7 @@
     </section>
 
     <section id="descriptionProfil">
-      <div class="shadow wrap"> <!-- enlever la classe itemretailprofil-->
+      <div class="shadow wrap">
         <div class="badge">
           @foreach($producer->category as $cat)
             <span class="badge-secondary"><a href="{{ route('search-result-category', ['cat' => $cat->name]) }}">{{ucfirst($cat->name)}}</a></span>
