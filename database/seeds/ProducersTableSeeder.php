@@ -165,7 +165,7 @@ class ProducersTableSeeder extends Seeder
           'phone'          => '0617290491',
           'website'        => null,
           'description'    => 'Nous sommes producteurs de lait au centre du département de l\'Eure, nous produisons l\'alimentation du troupeau essentiellement à base d\'herbe. Nous transformons une partie de notre lait en fromages, faisselles, fromage blanc, crème et yaourts. Venez découvrir nos produits sur les marchés de Conches en Ouche, Beaumont le Roger, Bernay et Le Fidelaire.',
-          'path_img'       => 'upload/producer/2018/01/éleveur-vache.jpg',
+          'path_img'       => 'upload/producer/2018/01/eleveur-vache.jpg',
           'created_at'     => $date->format('Y-m-d H:i:s'),
           'status'         => 'confirmed'
       );
@@ -464,7 +464,7 @@ class ProducersTableSeeder extends Seeder
           'website'        => null,
           'description'    => 'Venez déguster le fromage et voir les chèvres ainsi que la traite à 17h tous les jours du 1er avril au 20 janvier la boutique est ouverte les mercredi, vendredi et samedi à partir de 10h.
           Ferme familiale, production céréalière, élevage de chèvre et production de fromage',
-          'path_img'       => 'upload/producer/2018/01/chèvres-1.jpg',
+          'path_img'       => 'upload/producer/2018/01/chevres-1.jpg',
           'created_at'     => $date->format('Y-m-d H:i:s'),
           'status'         => 'confirmed'
       );
@@ -481,7 +481,7 @@ class ProducersTableSeeder extends Seeder
           'phone'          => '0232260655',
           'website'        => null,
           'description'    => 'Bienvenue à la Chèvrerie d\'Elise, ferme en polycultures élevages avec un atelier chèvres laitières nourries avec le foin cultivé sur la ferme et des aliments (sans OGM ni huile de palme, enrichis en graines de lin) ainsi que la transformation à la ferme en fromages.',
-          'path_img'       => 'upload/producer/2018/01/chèvre-2.jpg',
+          'path_img'       => 'upload/producer/2018/01/chevre-2.jpg',
           'created_at'     => $date->format('Y-m-d H:i:s'),
           'status'         => 'confirmed'
       );
