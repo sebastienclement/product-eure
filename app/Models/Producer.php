@@ -41,12 +41,15 @@ class Producer extends Model
   }
 
 /**
- * [Recherche lorsque les deux champs sont existants]
+ *[Recherche lorsque les deux champs ne sont pas vides]
  * @param  SearchRequest $request
  * @return [Object]
  */
   public static function searchBoth($category,$search)
   {
+
+    //on récupère l'id des producteurs leurs catégories et leurs items correspondant à la recherched l'utilisateur
+
 
     $producers_id = Producer::join('category_producer','producers.id', '=','category_producer.producer_id')
                       ->where('category_producer.category_id', '=', $category)
@@ -61,6 +64,9 @@ class Producer extends Model
                          })
                         ->select('producers.id as prod_id')
                       ->get();
+
+
+    //On ne garde qu'un exemplaire de chaque id, dont on se sert pour retrouver les infos du producteurs
 
     $producers_id = array_pluck($producers_id, 'prod_id');
 

@@ -158,7 +158,6 @@
 									<tr>
 										<td class="img-flex"><img src="{{ $message->embed(public_path() . '/img/home/test.jpg') }}" style="vertical-align:top;" width="600" height="306" alt="" /></td>
 									</tr>
-									<tr><td height="28"></td></tr>
 								</table>
 							</td>
 						</tr>
@@ -168,9 +167,6 @@
 						<tr>
 							<td data-bgcolor="bg-module" bgcolor="#46879B">
 								<table class="flexible" width="600" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
-									<tr>
-										<td class="img-flex"><img src="{{ $message->embed(public_path() . '/img/home/test.jpg') }}" style="vertical-align:top;" width="600" height="306" alt="" /></td>
-									</tr>
 									<tr>
 										<td data-bgcolor="bg-block" class="holder" style="padding:65px 60px 50px;" bgcolor="#f9f9f9">
 											<table width="100%" cellpadding="0" cellspacing="0">
