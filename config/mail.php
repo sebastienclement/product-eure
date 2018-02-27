@@ -130,7 +130,7 @@ return [
 
     //a enlever en prod , Ok pour dev
     'to' => [
-      'address' => 's.clement.n@gmail.com',
+      'address' => 'mabasewf3@gmail.com',
       'name' => 'Johnny'
     ]
 
