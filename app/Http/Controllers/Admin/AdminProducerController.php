@@ -74,7 +74,7 @@ class AdminProducerController extends Controller
     }
 
     $inputs = array_merge($request->all(), [
-      // 'zone'    => $this->generateZoning($request->zipcode),
+      'zone'    => $this->generateBackZoning($request->zipcode),
       'user_id'  => Auth::id(),
       'slug'     => str_slug($request->name),
       'path_img' => $image,
@@ -82,7 +82,37 @@ class AdminProducerController extends Controller
     Producer::create($inputs)->category()->sync($cat_ids);
 
     return redirect()->route('dashboard')->with('success', 'Nouveau Producteur créé');
-}
+  }
+
+  /**
+   * [permet de d'affilier la zone depuis le code postal de la production
+   * afin de pouvoir utiliser cette donnée pour la recherche via la carte sur la page d'accueil]
+   * @param  [int] $zipcode [code postal du producteur]
+   * @return [str]          [la zone du producteur]
+   */
+  private function generateBackZoning($zipcode)
+  {
+    $zipcodeA = [27290,27310,27350,27370,27500,27520,27670,27680];
+    $zipcodeB = [27100,27110,27340,27400,27430,27460,27590,27690,27740];
+    $zipcodeC = [27140,27150,27200,27360,27380,27420,27440,27480,27510,27610,27620,27630,27660,27700,27720,27790,27830,27850,27860,27870,27910];
+    $zipcodeD = [27170,27210,27230,27260,27300,27410,27450,27470,27550,27560,27800,27890];
+    $zipcodeE = [27130,27160,27190,27240,27250,27270,27320,27330,27390,27570,27580,27760,27770,27820];
+    $zipcodeF = [27000,27120,27180,27220,27490,27530,27540,27600,27640,27650,27710,27730,27750,27780,27810,27920,27930,27940,27950];
+
+    if (in_array($zipcode, $zipcodeA)) {
+      return 'pays-roumois-et-marais-vernier';
+    } elseif (in_array($zipcode, $zipcodeB)) {
+      return 'plateau-du-neubourg';
+    } elseif (in_array($zipcode, $zipcodeC)) {
+      return 'vexin-normand';
+    } elseif (in_array($zipcode, $zipcodeD)) {
+      return 'lieuvin';
+    } elseif (in_array($zipcode, $zipcodeE)) {
+      return 'pays-d-ouche';
+    } elseif (in_array($zipcode, $zipcodeF)) {
+      return 'plateau-de-saint-andre';
+    }
+  }
 
 
   /**

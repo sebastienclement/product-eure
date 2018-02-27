@@ -129,9 +129,9 @@ return [
 ],
 
     //a enlever en prod , Ok pour dev
-    // 'to' => [
-    //   'address' => 's.clement.n@gmail.com',
-    //   'name' => 'Johnny'
-    // ]
+    'to' => [
+      'address' => 'mabasewf3@gmail.com',
+      'name' => 'Johnny'
+    ]
 
 ];
