@@ -11,6 +11,14 @@ use App\Http\Requests\SearchRequest;
 class SearchController extends Controller
 {
 
+/**
+ * [actionSearchForm description]
+ * @param  SearchRequest $request [Request]
+ * @return [type]                 [Les producteurs]
+ */
+
+  //on effectue la recherche selon 3 possibilitées. Les méthodes correspondantes sont définies dans le model Producer
+
     public function actionSearchForm(SearchRequest $request)
     {
         $request = $request->all();
@@ -32,10 +40,13 @@ class SearchController extends Controller
           $countsearch = count($producers);
 
         return view('front/search',compact('producers','countsearch'));
-      
-
     }
 
+/**
+ * [actionSearchMap description]
+ * @param  [type] $zone [description]
+ * @return [type]       [Les producteurs]
+ */
 
     public function actionSearchMap($zone)
     {
@@ -45,7 +56,11 @@ class SearchController extends Controller
         return view('front/search',compact('producers','countsearch'));
     }
 
-
+/**
+ * [actionSearchCategory description]
+ * @param  [type] $category [description]
+ * @return [type]           [Les producteurs]
+ */
 
     public function actionSearchCategory($category)
     {

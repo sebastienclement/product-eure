@@ -199,7 +199,7 @@ header img{
 }
 
 #search-tag{
-  background-color: rgba(255,255,255,0.7);
+  background-color: rgba(255,255,255,0.9);
   position:absolute;
   width: 50%;
   left: 25%;
@@ -311,7 +311,7 @@ header img{
 
 div#parallax {
   position: relative;
-  background: url("../../img/home/test.jpg") no-repeat fixed;
+  background: url("../../img/home/par2.jpg") no-repeat fixed;
   background-size: cover;
   height: 700px;
 }
@@ -353,6 +353,7 @@ div#parallax_2 {
 .box-1 {
   padding: 0 0.7rem;
   width:50%;
+  align-self: center;
 }
 
 .box-2 {
@@ -392,6 +393,7 @@ div#parallax_2 {
   text-align: center;
   padding-bottom: 20px;
   font-weight: bold;
+  color:#2d2d2d;
 }
 
 .info_flex>div li{

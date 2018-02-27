@@ -24,7 +24,7 @@ class ItemRequest extends FormRequest
     public function rules()
     {
         return [
-            'comment' => 'required|min:3|max:200'
+            'comment' => 'required|min:3|max:500'
         ];
     }
 
