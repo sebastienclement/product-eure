@@ -28,7 +28,7 @@
 
     <div class="wrap">
 
-        <ul class="header_flex">
+        <div class="header_flex">
 
             <h1><a href="{{ route('home') }}">Pr<img src="{{ asset('img/home/logo.png')}}">duct<span>'Eure</span></a></h1>
             <button id="menu">Menu</button>
@@ -62,7 +62,7 @@
                 </ul>
               </nav>
             </div>
-        </ul>
+        </div>
     </div>
 </header>
 <main>

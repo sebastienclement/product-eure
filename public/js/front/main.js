@@ -144,11 +144,7 @@ $( document ).ready(function() {
               frictionX: 0.075,
               });
 
-var scenep = document.getElementById('scenep');
-                var parallaxInstance = new Parallax(scenep, {
-                relativeInput: true,
-                invertY: false,
-            });
+
 
 
   //  Gestion de l'animation des abeilles
