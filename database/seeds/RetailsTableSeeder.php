@@ -58,13 +58,14 @@ class RetailsTableSeeder extends Seeder
           'created_at' => $date->format('Y-m-d H:i:s')
       );
       $retails[] = array(
-          'lieu'       => 'March de producteur de Jouy sur Eure le 2ème samedi du mois - 9h à 12h',
+          'lieu'       => 'Marché de producteur de Jouy sur Eure le 2ème samedi du mois - 9h à 12h',
           'created_at' => $date->format('Y-m-d H:i:s')
       );
       $retails[] = array(
           'lieu'       => 'Marché de Verneuil sur Avre tous les samedi matin',
           'created_at' => $date->format('Y-m-d H:i:s')
       );
+
 
     DB::table('retails')->insert($retails);
     }

@@ -73,6 +73,14 @@ class Producer_retailTableSeeder extends Seeder
           'producer_id' => 28,
           'retail_id'   => 11,
       );
+      $producerretail[] = array(
+          'producer_id' => 16,
+          'retail_id'   => 9,
+      );
+      $producerretail[] = array(
+          'producer_id' => 16,
+          'retail_id'   => 10,
+      );
 
       DB::table('producer_retail')->insert($producerretail);
     }
